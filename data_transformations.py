@@ -1,5 +1,3 @@
-import random
-
 def prepare_for_translation(dataset, columns: list):
   '''
   Prepares dataset for translation with simple_generate by 
@@ -28,5 +26,5 @@ def generate_samples_dict(prepared_dataset, n, generator):
   Generates a dictionary with as keys n samples selected from
   the prepared_dataset with as value their translation using generator.
   '''
-  data = random.shuffle(prepared_dataset)[:n]
+  data = np.random.shuffle(prepared_dataset)[:n]
   return generate_translation_dict(data,generator)
