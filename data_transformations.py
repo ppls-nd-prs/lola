@@ -1,3 +1,5 @@
+import random
+
 def prepare_for_translation(dataset, columns: list):
   '''
   Prepares dataset for translation with simple_generate by 
