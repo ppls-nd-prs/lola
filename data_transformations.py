@@ -20,3 +20,11 @@ def generate_translation_dict(nl_dataset, FOL_generator):
   for i in nl_dataset:
     translation_dict[i] = FOL_generator(input_str={"NL":i})[1][1]
   return translation_dict
+
+def generate_samples_dict(prepared_dataset, n, generator):
+  '''
+  Generates a dictionary with as keys n samples selected from
+  the prepared_dataset with as value their translation using generator.
+  '''
+  data = random.shuffle(prepared_dataset)[:n]
+  return generate_translation_dict(data,generator)
