@@ -2,12 +2,12 @@ def prepare_for_translation(dataset, columns: list):
   '''
   Prepares dataset for translation with simple_generate by 
   appending all dataset entries from the different columns
-  and returning as one list.
+  and returning as one numpy-array.
   '''
   res = []
   for column in columns:
     res = res + dataset[column]
-  return res
+  return np.array(res)
 
 def generate_translation_dict(nl_dataset, FOL_generator):
   '''
