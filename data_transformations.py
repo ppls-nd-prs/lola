@@ -19,10 +19,10 @@ def generate_translation_dict(nl_dataset, FOL_generator):
   	- FOL_generator: logicllama translator from nl to fol
   '''
   translation_dict = {}
-  for i in nl_dataset:
+  for i,sent in enumerate(nl_dataset):
     if i % 100 == 0:
       print(f"{i/100} hundred done")
-    translation_dict[i] = FOL_generator(input_str={"NL":i})[1][1]
+    translation_dict[sent] = FOL_generator(input_str={"NL":sent})[1][1]
   return translation_dict
 
 def generate_samples_dict(prepared_dataset, n, generator):
