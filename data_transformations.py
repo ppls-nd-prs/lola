@@ -23,7 +23,7 @@ def generate_translation_dict(nl_dataset, FOL_generator):
     translation_dict[i] = FOL_generator(input_str={"NL":i})[1][1]
   return translation_dict
 
-def generate_dict(prepared_dataset, generator, n=len(prepared_dataset)):
+def generate_dict(prepared_dataset, n, generator):
   '''
   Generates a dictionary with as keys n samples selected from
   the prepared_dataset with as value their translation using generator.
