@@ -13,17 +13,19 @@ def prepare_for_translation(dataset, columns: list):
 
 def generate_translation_dict(nl_dataset, FOL_generator):
   '''
-  Generates translation dictionary with for {"nl_sentence":"fol_translation"}.
+  Generates translation dictionary of the form {"nl_sentence":"fol_translation"} from nl_dataset using FOL_generator.
   Params:
   	- nl_dataset: list of nl sentences
   	- FOL_generator: logicllama translator from nl to fol
   '''
   translation_dict = {}
   for i in nl_dataset:
+    if i % 100 == 0:
+      print(f"{i/100} hundred done")
     translation_dict[i] = FOL_generator(input_str={"NL":i})[1][1]
   return translation_dict
 
-def generate_dict(prepared_dataset, n, generator):
+def generate_samples_dict(prepared_dataset, n, generator):
   '''
   Generates a dictionary with as keys n samples selected from
   the prepared_dataset with as value their translation using generator.
