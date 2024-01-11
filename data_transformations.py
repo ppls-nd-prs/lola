@@ -25,11 +25,23 @@ def generate_translation_dict(nl_dataset, FOL_generator):
     translation_dict[sent] = FOL_generator(input_str={"NL":sent})[1][1]
   return translation_dict
 
-def generate_samples_dict(prepared_dataset, n, generator):
+def generate_samples_dict(dataset, n, generator):
   '''
   Generates a dictionary with as keys n samples selected from
-  the prepared_dataset with as value their translation using generator.
+  the dataset with as value their translation using generator.
   '''
-  np.random.shuffle(prepared_dataset)
-  data = prepared_dataset[:n]
+  first_15_indexes = np.random.shuffle(dataset["id"])
+  for i in first_15_indexes:
+    data = data + [data['sentence_A'][i]] + [data['sentence_B'][i]]
   return generate_translation_dict(data,generator)
+
+def prepare_for_sample(dataset, columns: list):
+  '''
+  Prepares dataset for translation with simple_generate by 
+  appending all dataset entries from the different columns
+  and returning as one numpy-array.
+  '''
+  res = []
+  for column in columns:
+    res = res + dataset[column]
+  return np.array(res)
