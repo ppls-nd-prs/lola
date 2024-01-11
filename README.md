@@ -1,2 +1,2 @@
 # LoLa
-Contains necessary functions for research project for lola
+This repository contains code for research project LoLa
