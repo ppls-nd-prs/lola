@@ -8,7 +8,6 @@ def prepare_for_translation(dataset: pd.DataFrame, columns: list):
   and returning as one numpy-array with unique entries.
   '''
   res = []
-  print(dataset['sentence_A'])
   for column in columns:
     res = res + list(dataset[column])
   return np.unique(res)
