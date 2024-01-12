@@ -1,15 +1,17 @@
 import numpy as np
+import pandas as pd
 
-def prepare_for_translation(dataset, columns: list):
+def prepare_for_translation(dataset: pd.DataFrame, columns: list):
   '''
-  Prepares dataset for translation with simple_generate by 
+  Prepares a pandas_dataset for translation with simple_generate by 
   appending all dataset entries from the different columns
-  and returning as one numpy-array.
+  and returning as one numpy-array with unique entries.
   '''
   res = []
+  print(dataset['sentence_A'])
   for column in columns:
-    res = res + dataset[column]
-  return np.array(res)
+    res = res + list(dataset[column])
+  return np.unique(res)
 
 def generate_translation_dict(nl_dataset, FOL_generator):
   '''
