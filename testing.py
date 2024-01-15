@@ -3,6 +3,7 @@ from assigntools.LoLa.tp import prover9_prove
 from prepocessing import preprocessing
 from datasets import load_dataset, concatenate_datasets
 import json
+import nltk
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
@@ -51,13 +52,10 @@ with open("dictionaries/fracas/full_fracas_dict.json","r") as file:
 
 # print(evaluate_on_sick(sample_dict))
 
-# FIX BELOW:
-def negated(fol_expression):
-    return "not " + fol_expression
+def negated(fol_string):
+    return "not " + fol_string
 
 print(negated("all x. man(x)"))
-
-print("judgement: ", prover9_prove(PROVER9_BIN,"exists x. man(x)",negated("all x. man(x)")))
 
 def evaluate(translation_dict,dataset,columns,judgment_dict):
     '''
@@ -101,4 +99,4 @@ def evaluate(translation_dict,dataset,columns,judgment_dict):
 
 
 
-print(evaluate(fracas_dict,fracas_dataset,['premise','hypothesis','label'],{0:"entailment",1:"neutral",2:"contradiction"}))
+# print(evaluate(fracas_dict,fracas_dataset,['premise','hypothesis','label'],{0:"entailment",1:"neutral",2:"contradiction"}))
