@@ -6,6 +6,7 @@ import json
 import nltk
 import pandas as pd
 import re
+import os
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
@@ -55,7 +56,7 @@ with open("dictionaries/fracas/full_fracas_dict.json","r") as file:
 def negated(fol_string):
     return "not " + fol_string
 
-def evaluate(translation_dict,dataset,columns,judgment_dict):
+def evaluate(translation_dict,dataset,columns,judgment_dict,dataset_name: str):
     '''
     columns should have format [premise-column-name,hypothesis-column-name,
     label-column-name]
@@ -63,6 +64,7 @@ def evaluate(translation_dict,dataset,columns,judgment_dict):
     [value]:"c"}.
     Returns a pandas dataframe with columns p_nl, h_nl, p_fol, h_fol, label, e_pred, c_pred
     '''
+    #TODO: allow for multiple premises
     df = pd.DataFrame({'p_nl':[],'h_nl':[],'p_fol':[],'h_fol':[],'label':[],'e_pred':[],
                        'c_pred':[]})
     e_df = pd.DataFrame({'nl_p':[],'nl_h':[],'exception':[]})
@@ -91,9 +93,10 @@ def evaluate(translation_dict,dataset,columns,judgment_dict):
             df.loc[len(df)] = dat_temp_dict
         except Exception as a:
             e_df.loc[len(e_df)] = {'nl_p':nl_premise,'nl_h':nl_hypothesis,'exception':str(a)}
-    return df, e_df
 
-df, e_df = evaluate(fracas_dict,fracas_dataset,['premise','hypothesis','label'],{0:"e",1:"n",2:"c"})
-print(df.head())
-df.to_csv("evaluation.csv")
-e_df.to_csv("exceptions.csv")
+    if not os.path.isdir("evaluations"):        
+        os.mkdir("evaluations")
+    df.to_csv(f"evaluations/{dataset_name}_evaluation.csv")
+    e_df.to_csv(f"evaluations/{dataset_name}_exceptions.csv")
+
+evaluate(fracas_dict,fracas_dataset,['premise','hypothesis','label'],{0:"e",1:"n",2:"c"},"fracas")
