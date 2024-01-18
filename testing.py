@@ -7,18 +7,20 @@ import nltk
 import pandas as pd
 import re
 import os
+from data_transformations import prepare_for_translation
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
 print(prover9_prove(PROVER9_BIN, "some y. man(y)", ["man(Alex)"]))
 
 #load fracas
-fracas = load_dataset("pietrolesci/fracas")
-fracas_dataset = concatenate_datasets([fracas["train"],fracas["dev"]])
+# fracas = load_dataset("pietrolesci/fracas")
+# fracas_dataset = concatenate_datasets([fracas["train"],fracas["dev"]])
 
 #get the dictionary
-with open("dictionaries/fracas/full_fracas_dict.json","r") as file:
-    fracas_dict = json.load(file)
+sick = pd.read_csv("datasets/sick/SICK_test_annotated.csv",sep="\t")
+prepared_sick = prepare_for_translation(sick,["sentence_A","sentence_B"])
+print("length sick trial: ", len(prepared_sick))
 
 # def evaluate_on_sick(translation_dict):
 #     #0: entailment; 1: neutral; 2: contradiction

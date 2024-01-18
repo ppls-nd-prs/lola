@@ -1,11 +1,18 @@
 import json
+import os 
 
 d = {}
 
-for i in [100,200,300,400,500,600]:
-    with open(f"dictionaries/fracas/fracas_dict_tm_{i}.json") as file:
+directory = "dictionaries/sick"
+out_filename = "dictionaries/sick/full_sick_dictionary.json"
+
+print(os.listdir(directory))
+
+for filename in os.listdir(directory):
+    print("file name: ", filename)
+    with open(directory + "/" + filename,"r") as file:
         new_d = json.load(file)
         d.update(new_d)
 
-with open("dictionaries/fracas/full_fracas_dict.json",'w') as file:
+with open(out_filename,"w") as file:
     json.dump(d,file)
