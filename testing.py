@@ -16,7 +16,7 @@ print(prover9_prove(PROVER9_BIN, "some y. man(y)", ["man(Alex)"]))
 def negated(fol_string):
     return "not " + fol_string
 
-def evaluate(translation_dict,dataset,columns,judgment_dict,dataset_name: str):
+def evaluate(translation_dict,dataset,columns,judgment_dict,csv_name: str):
     '''
     columns should have format [premise-column-name,hypothesis-column-name,
     label-column-name]
@@ -28,15 +28,14 @@ def evaluate(translation_dict,dataset,columns,judgment_dict,dataset_name: str):
     df = pd.DataFrame({'p_nl':[],'h_nl':[],'p_fol':[],'h_fol':[],'label':[],'e_pred':[],
                        'c_pred':[]})
     e_df = pd.DataFrame({'nl_p':[],'nl_h':[],'exception':[]})
-    for datapoint in dataset:
+    for i in range(len(dataset)):
         dat_temp_dict = {}
-        e_temp_dict = {}
         # get premise and hypothesis natural string representation
-        nl_premise = datapoint[columns[0]]
+        nl_premise = dataset[columns[0]][i]
         dat_temp_dict['p_nl'] = nl_premise
-        nl_hypothesis = datapoint[columns[1]]
+        nl_hypothesis = dataset[columns[1]][i]
         dat_temp_dict['h_nl'] = nl_hypothesis
-        true_label = judgment_dict[datapoint[columns[2]]]
+        true_label = judgment_dict[dataset[columns[2]][i]]
         dat_temp_dict['label'] = true_label
 
         #Get nl_premise, hypothesis and not(hypothesis) fol string representation
@@ -56,7 +55,17 @@ def evaluate(translation_dict,dataset,columns,judgment_dict,dataset_name: str):
 
     if not os.path.isdir("evaluations"):        
         os.mkdir("evaluations")
-    df.to_csv(f"evaluations/{dataset_name}_evaluation.csv")
-    e_df.to_csv(f"evaluations/{dataset_name}_exceptions.csv")
+    df.to_csv(f"evaluations/{csv_name}_evaluation.csv")
+    e_df.to_csv(f"evaluations/{csv_name}_exceptions.csv")
 
-evaluate(sick_,fracas_dataset,['premise','hypothesis','label'],{0:"e",1:"n",2:"c"},"fracas")
+#load dataset
+df_sick = pd.read_csv("datasets/sick/SICK_trial.csv",header=0,sep="\t")
+
+#get the dictionary
+with open("dictionaries/sick/full_sick_dictionary.json","r") as file:
+    sick_dictionary = json.load(file)
+
+#evaluate the dictionary
+#NOTE: necessary info for sick is ['sentence_A','sentence_B','entailment_judgment']
+    #and {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
+evaluate(sick_dictionary,df_sick,['sentence_A','sentence_B','entailment_judgment'],{"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"},"sick_trial")
