@@ -1,257 +1,257 @@
-,prem_1,prem_2,hypothesis,label
-0,All logicians are engineers,All linguists are logicians,All linguists are engineers,entailment
-1,All logicians are engineers,No linguists are logicians,All linguists are engineers,neutral
-2,All logicians are engineers,Some linguists are logicians,All linguists are engineers,neutral
-3,All logicians are engineers,Some linguists are non logicians,All linguists are engineers,neutral
-4,No logicians are engineers,All linguists are logicians,All linguists are engineers,neutral
-5,No logicians are engineers,No linguists are logicians,All linguists are engineers,neutral
-6,No logicians are engineers,Some linguists are logicians,All linguists are engineers,contradiction
-7,No logicians are engineers,Some linguists are non logicians,All linguists are engineers,neutral
-8,Some logicians are engineers,All linguists are logicians,All linguists are engineers,neutral
-9,Some logicians are engineers,No linguists are logicians,All linguists are engineers,neutral
-10,Some logicians are engineers,Some linguists are logicians,All linguists are engineers,neutral
-11,Some logicians are engineers,Some linguists are non logicians,All linguists are engineers,neutral
-12,Some logicians are non engineers,All linguists are logicians,All linguists are engineers,neutral
-13,Some logicians are non engineers,No linguists are logicians,All linguists are engineers,neutral
-14,Some logicians are non engineers,Some linguists are logicians,All linguists are engineers,neutral
-15,Some logicians are non engineers,Some linguists are non logicians,All linguists are engineers,neutral
-16,All logicians are engineers,All linguists are logicians,No linguists are engineers,neutral
-17,All logicians are engineers,No linguists are logicians,No linguists are engineers,neutral
-18,All logicians are engineers,Some linguists are logicians,No linguists are engineers,contradiction
-19,All logicians are engineers,Some linguists are non logicians,No linguists are engineers,neutral
-20,No logicians are engineers,All linguists are logicians,No linguists are engineers,entailment
-21,No logicians are engineers,No linguists are logicians,No linguists are engineers,neutral
-22,No logicians are engineers,Some linguists are logicians,No linguists are engineers,neutral
-23,No logicians are engineers,Some linguists are non logicians,No linguists are engineers,neutral
-24,Some logicians are engineers,All linguists are logicians,No linguists are engineers,neutral
-25,Some logicians are engineers,No linguists are logicians,No linguists are engineers,neutral
-26,Some logicians are engineers,Some linguists are logicians,No linguists are engineers,neutral
-27,Some logicians are engineers,Some linguists are non logicians,No linguists are engineers,neutral
-28,Some logicians are non engineers,All linguists are logicians,No linguists are engineers,neutral
-29,Some logicians are non engineers,No linguists are logicians,No linguists are engineers,neutral
-30,Some logicians are non engineers,Some linguists are logicians,No linguists are engineers,neutral
-31,Some logicians are non engineers,Some linguists are non logicians,No linguists are engineers,neutral
-32,All logicians are engineers,All linguists are logicians,Some linguists are engineers,neutral
-33,All logicians are engineers,No linguists are logicians,Some linguists are engineers,neutral
-34,All logicians are engineers,Some linguists are logicians,Some linguists are engineers,entailment
-35,All logicians are engineers,Some linguists are non logicians,Some linguists are engineers,neutral
-36,No logicians are engineers,All linguists are logicians,Some linguists are engineers,contradiction
-37,No logicians are engineers,No linguists are logicians,Some linguists are engineers,neutral
-38,No logicians are engineers,Some linguists are logicians,Some linguists are engineers,neutral
-39,No logicians are engineers,Some linguists are non logicians,Some linguists are engineers,neutral
-40,Some logicians are engineers,All linguists are logicians,Some linguists are engineers,neutral
-41,Some logicians are engineers,No linguists are logicians,Some linguists are engineers,neutral
-42,Some logicians are engineers,Some linguists are logicians,Some linguists are engineers,neutral
-43,Some logicians are engineers,Some linguists are non logicians,Some linguists are engineers,neutral
-44,Some logicians are non engineers,All linguists are logicians,Some linguists are engineers,neutral
-45,Some logicians are non engineers,No linguists are logicians,Some linguists are engineers,neutral
-46,Some logicians are non engineers,Some linguists are logicians,Some linguists are engineers,neutral
-47,Some logicians are non engineers,Some linguists are non logicians,Some linguists are engineers,neutral
-48,All logicians are engineers,All linguists are logicians,Some linguists are non engineers,contradiction
-49,All logicians are engineers,No linguists are logicians,Some linguists are non engineers,neutral
-50,All logicians are engineers,Some linguists are logicians,Some linguists are non engineers,neutral
-51,All logicians are engineers,Some linguists are non logicians,Some linguists are non engineers,neutral
-52,No logicians are engineers,All linguists are logicians,Some linguists are non engineers,neutral
-53,No logicians are engineers,No linguists are logicians,Some linguists are non engineers,neutral
-54,No logicians are engineers,Some linguists are logicians,Some linguists are non engineers,entailment
-55,No logicians are engineers,Some linguists are non logicians,Some linguists are non engineers,neutral
-56,Some logicians are engineers,All linguists are logicians,Some linguists are non engineers,neutral
-57,Some logicians are engineers,No linguists are logicians,Some linguists are non engineers,neutral
-58,Some logicians are engineers,Some linguists are logicians,Some linguists are non engineers,neutral
-59,Some logicians are engineers,Some linguists are non logicians,Some linguists are non engineers,neutral
-60,Some logicians are non engineers,All linguists are logicians,Some linguists are non engineers,neutral
-61,Some logicians are non engineers,No linguists are logicians,Some linguists are non engineers,neutral
-62,Some logicians are non engineers,Some linguists are logicians,Some linguists are non engineers,neutral
-63,Some logicians are non engineers,Some linguists are non logicians,Some linguists are non engineers,neutral
-64,All engineers are logicians,All linguists are logicians,All linguists are engineers,neutral
-65,All engineers are logicians,No linguists are logicians,All linguists are engineers,neutral
-66,All engineers are logicians,Some linguists are logicians,All linguists are engineers,neutral
-67,All engineers are logicians,Some linguists are non logicians,All linguists are engineers,contradiction
-68,No engineers are logicians,All linguists are logicians,All linguists are engineers,neutral
-69,No engineers are logicians,No linguists are logicians,All linguists are engineers,neutral
-70,No engineers are logicians,Some linguists are logicians,All linguists are engineers,contradiction
-71,No engineers are logicians,Some linguists are non logicians,All linguists are engineers,neutral
-72,Some engineers are logicians,All linguists are logicians,All linguists are engineers,neutral
-73,Some engineers are logicians,No linguists are logicians,All linguists are engineers,neutral
-74,Some engineers are logicians,Some linguists are logicians,All linguists are engineers,neutral
-75,Some engineers are logicians,Some linguists are non logicians,All linguists are engineers,neutral
-76,Some engineers are non logicians,All linguists are logicians,All linguists are engineers,neutral
-77,Some engineers are non logicians,No linguists are logicians,All linguists are engineers,neutral
-78,Some engineers are non logicians,Some linguists are logicians,All linguists are engineers,neutral
-79,Some engineers are non logicians,Some linguists are non logicians,All linguists are engineers,neutral
-80,All engineers are logicians,All linguists are logicians,No linguists are engineers,neutral
-81,All engineers are logicians,No linguists are logicians,No linguists are engineers,entailment
-82,All engineers are logicians,Some linguists are logicians,No linguists are engineers,neutral
-83,All engineers are logicians,Some linguists are non logicians,No linguists are engineers,neutral
-84,No engineers are logicians,All linguists are logicians,No linguists are engineers,entailment
-85,No engineers are logicians,No linguists are logicians,No linguists are engineers,neutral
-86,No engineers are logicians,Some linguists are logicians,No linguists are engineers,neutral
-87,No engineers are logicians,Some linguists are non logicians,No linguists are engineers,neutral
-88,Some engineers are logicians,All linguists are logicians,No linguists are engineers,neutral
-89,Some engineers are logicians,No linguists are logicians,No linguists are engineers,neutral
-90,Some engineers are logicians,Some linguists are logicians,No linguists are engineers,neutral
-91,Some engineers are logicians,Some linguists are non logicians,No linguists are engineers,neutral
-92,Some engineers are non logicians,All linguists are logicians,No linguists are engineers,neutral
-93,Some engineers are non logicians,No linguists are logicians,No linguists are engineers,neutral
-94,Some engineers are non logicians,Some linguists are logicians,No linguists are engineers,neutral
-95,Some engineers are non logicians,Some linguists are non logicians,No linguists are engineers,neutral
-96,All engineers are logicians,All linguists are logicians,Some linguists are engineers,neutral
-97,All engineers are logicians,No linguists are logicians,Some linguists are engineers,contradiction
-98,All engineers are logicians,Some linguists are logicians,Some linguists are engineers,neutral
-99,All engineers are logicians,Some linguists are non logicians,Some linguists are engineers,neutral
-100,No engineers are logicians,All linguists are logicians,Some linguists are engineers,contradiction
-101,No engineers are logicians,No linguists are logicians,Some linguists are engineers,neutral
-102,No engineers are logicians,Some linguists are logicians,Some linguists are engineers,neutral
-103,No engineers are logicians,Some linguists are non logicians,Some linguists are engineers,neutral
-104,Some engineers are logicians,All linguists are logicians,Some linguists are engineers,neutral
-105,Some engineers are logicians,No linguists are logicians,Some linguists are engineers,neutral
-106,Some engineers are logicians,Some linguists are logicians,Some linguists are engineers,neutral
-107,Some engineers are logicians,Some linguists are non logicians,Some linguists are engineers,neutral
-108,Some engineers are non logicians,All linguists are logicians,Some linguists are engineers,neutral
-109,Some engineers are non logicians,No linguists are logicians,Some linguists are engineers,neutral
-110,Some engineers are non logicians,Some linguists are logicians,Some linguists are engineers,neutral
-111,Some engineers are non logicians,Some linguists are non logicians,Some linguists are engineers,neutral
-112,All engineers are logicians,All linguists are logicians,Some linguists are non engineers,neutral
-113,All engineers are logicians,No linguists are logicians,Some linguists are non engineers,neutral
-114,All engineers are logicians,Some linguists are logicians,Some linguists are non engineers,neutral
-115,All engineers are logicians,Some linguists are non logicians,Some linguists are non engineers,entailment
-116,No engineers are logicians,All linguists are logicians,Some linguists are non engineers,neutral
-117,No engineers are logicians,No linguists are logicians,Some linguists are non engineers,neutral
-118,No engineers are logicians,Some linguists are logicians,Some linguists are non engineers,entailment
-119,No engineers are logicians,Some linguists are non logicians,Some linguists are non engineers,neutral
-120,Some engineers are logicians,All linguists are logicians,Some linguists are non engineers,neutral
-121,Some engineers are logicians,No linguists are logicians,Some linguists are non engineers,neutral
-122,Some engineers are logicians,Some linguists are logicians,Some linguists are non engineers,neutral
-123,Some engineers are logicians,Some linguists are non logicians,Some linguists are non engineers,neutral
-124,Some engineers are non logicians,All linguists are logicians,Some linguists are non engineers,neutral
-125,Some engineers are non logicians,No linguists are logicians,Some linguists are non engineers,neutral
-126,Some engineers are non logicians,Some linguists are logicians,Some linguists are non engineers,neutral
-127,Some engineers are non logicians,Some linguists are non logicians,Some linguists are non engineers,neutral
-128,All logicians are engineers,All logicians are linguists,All linguists are engineers,neutral
-129,All logicians are engineers,No logicians are linguists,All linguists are engineers,neutral
-130,All logicians are engineers,Some logicians are linguists,All linguists are engineers,neutral
-131,All logicians are engineers,Some logicians are non linguists,All linguists are engineers,neutral
-132,No logicians are engineers,All logicians are linguists,All linguists are engineers,neutral
-133,No logicians are engineers,No logicians are linguists,All linguists are engineers,neutral
-134,No logicians are engineers,Some logicians are linguists,All linguists are engineers,contradiction
-135,No logicians are engineers,Some logicians are non linguists,All linguists are engineers,neutral
-136,Some logicians are engineers,All logicians are linguists,All linguists are engineers,neutral
-137,Some logicians are engineers,No logicians are linguists,All linguists are engineers,neutral
-138,Some logicians are engineers,Some logicians are linguists,All linguists are engineers,neutral
-139,Some logicians are engineers,Some logicians are non linguists,All linguists are engineers,neutral
-140,Some logicians are non engineers,All logicians are linguists,All linguists are engineers,contradiction
-141,Some logicians are non engineers,No logicians are linguists,All linguists are engineers,neutral
-142,Some logicians are non engineers,Some logicians are linguists,All linguists are engineers,neutral
-143,Some logicians are non engineers,Some logicians are non linguists,All linguists are engineers,neutral
-144,All logicians are engineers,All logicians are linguists,No linguists are engineers,neutral
-145,All logicians are engineers,No logicians are linguists,No linguists are engineers,neutral
-146,All logicians are engineers,Some logicians are linguists,No linguists are engineers,contradiction
-147,All logicians are engineers,Some logicians are non linguists,No linguists are engineers,neutral
-148,No logicians are engineers,All logicians are linguists,No linguists are engineers,neutral
-149,No logicians are engineers,No logicians are linguists,No linguists are engineers,neutral
-150,No logicians are engineers,Some logicians are linguists,No linguists are engineers,neutral
-151,No logicians are engineers,Some logicians are non linguists,No linguists are engineers,neutral
-152,Some logicians are engineers,All logicians are linguists,No linguists are engineers,contradiction
-153,Some logicians are engineers,No logicians are linguists,No linguists are engineers,neutral
-154,Some logicians are engineers,Some logicians are linguists,No linguists are engineers,neutral
-155,Some logicians are engineers,Some logicians are non linguists,No linguists are engineers,neutral
-156,Some logicians are non engineers,All logicians are linguists,No linguists are engineers,neutral
-157,Some logicians are non engineers,No logicians are linguists,No linguists are engineers,neutral
-158,Some logicians are non engineers,Some logicians are linguists,No linguists are engineers,neutral
-159,Some logicians are non engineers,Some logicians are non linguists,No linguists are engineers,neutral
-160,All logicians are engineers,All logicians are linguists,Some linguists are engineers,neutral
-161,All logicians are engineers,No logicians are linguists,Some linguists are engineers,neutral
-162,All logicians are engineers,Some logicians are linguists,Some linguists are engineers,entailment
-163,All logicians are engineers,Some logicians are non linguists,Some linguists are engineers,neutral
-164,No logicians are engineers,All logicians are linguists,Some linguists are engineers,neutral
-165,No logicians are engineers,No logicians are linguists,Some linguists are engineers,neutral
-166,No logicians are engineers,Some logicians are linguists,Some linguists are engineers,neutral
-167,No logicians are engineers,Some logicians are non linguists,Some linguists are engineers,neutral
-168,Some logicians are engineers,All logicians are linguists,Some linguists are engineers,entailment
-169,Some logicians are engineers,No logicians are linguists,Some linguists are engineers,neutral
-170,Some logicians are engineers,Some logicians are linguists,Some linguists are engineers,neutral
-171,Some logicians are engineers,Some logicians are non linguists,Some linguists are engineers,neutral
-172,Some logicians are non engineers,All logicians are linguists,Some linguists are engineers,neutral
-173,Some logicians are non engineers,No logicians are linguists,Some linguists are engineers,neutral
-174,Some logicians are non engineers,Some logicians are linguists,Some linguists are engineers,neutral
-175,Some logicians are non engineers,Some logicians are non linguists,Some linguists are engineers,neutral
-176,All logicians are engineers,All logicians are linguists,Some linguists are non engineers,neutral
-177,All logicians are engineers,No logicians are linguists,Some linguists are non engineers,neutral
-178,All logicians are engineers,Some logicians are linguists,Some linguists are non engineers,neutral
-179,All logicians are engineers,Some logicians are non linguists,Some linguists are non engineers,neutral
-180,No logicians are engineers,All logicians are linguists,Some linguists are non engineers,neutral
-181,No logicians are engineers,No logicians are linguists,Some linguists are non engineers,neutral
-182,No logicians are engineers,Some logicians are linguists,Some linguists are non engineers,entailment
-183,No logicians are engineers,Some logicians are non linguists,Some linguists are non engineers,neutral
-184,Some logicians are engineers,All logicians are linguists,Some linguists are non engineers,neutral
-185,Some logicians are engineers,No logicians are linguists,Some linguists are non engineers,neutral
-186,Some logicians are engineers,Some logicians are linguists,Some linguists are non engineers,neutral
-187,Some logicians are engineers,Some logicians are non linguists,Some linguists are non engineers,neutral
-188,Some logicians are non engineers,All logicians are linguists,Some linguists are non engineers,entailment
-189,Some logicians are non engineers,No logicians are linguists,Some linguists are non engineers,neutral
-190,Some logicians are non engineers,Some logicians are linguists,Some linguists are non engineers,neutral
-191,Some logicians are non engineers,Some logicians are non linguists,Some linguists are non engineers,neutral
-192,All engineers are logicians,All logicians are linguists,All linguists are engineers,neutral
-193,All engineers are logicians,No logicians are linguists,All linguists are engineers,neutral
-194,All engineers are logicians,Some logicians are linguists,All linguists are engineers,neutral
-195,All engineers are logicians,Some logicians are non linguists,All linguists are engineers,neutral
-196,No engineers are logicians,All logicians are linguists,All linguists are engineers,neutral
-197,No engineers are logicians,No logicians are linguists,All linguists are engineers,neutral
-198,No engineers are logicians,Some logicians are linguists,All linguists are engineers,contradiction
-199,No engineers are logicians,Some logicians are non linguists,All linguists are engineers,neutral
-200,Some engineers are logicians,All logicians are linguists,All linguists are engineers,neutral
-201,Some engineers are logicians,No logicians are linguists,All linguists are engineers,neutral
-202,Some engineers are logicians,Some logicians are linguists,All linguists are engineers,neutral
-203,Some engineers are logicians,Some logicians are non linguists,All linguists are engineers,neutral
-204,Some engineers are non logicians,All logicians are linguists,All linguists are engineers,neutral
-205,Some engineers are non logicians,No logicians are linguists,All linguists are engineers,neutral
-206,Some engineers are non logicians,Some logicians are linguists,All linguists are engineers,neutral
-207,Some engineers are non logicians,Some logicians are non linguists,All linguists are engineers,neutral
-208,All engineers are logicians,All logicians are linguists,No linguists are engineers,neutral
-209,All engineers are logicians,No logicians are linguists,No linguists are engineers,entailment
-210,All engineers are logicians,Some logicians are linguists,No linguists are engineers,neutral
-211,All engineers are logicians,Some logicians are non linguists,No linguists are engineers,neutral
-212,No engineers are logicians,All logicians are linguists,No linguists are engineers,neutral
-213,No engineers are logicians,No logicians are linguists,No linguists are engineers,neutral
-214,No engineers are logicians,Some logicians are linguists,No linguists are engineers,neutral
-215,No engineers are logicians,Some logicians are non linguists,No linguists are engineers,neutral
-216,Some engineers are logicians,All logicians are linguists,No linguists are engineers,contradiction
-217,Some engineers are logicians,No logicians are linguists,No linguists are engineers,neutral
-218,Some engineers are logicians,Some logicians are linguists,No linguists are engineers,neutral
-219,Some engineers are logicians,Some logicians are non linguists,No linguists are engineers,neutral
-220,Some engineers are non logicians,All logicians are linguists,No linguists are engineers,neutral
-221,Some engineers are non logicians,No logicians are linguists,No linguists are engineers,neutral
-222,Some engineers are non logicians,Some logicians are linguists,No linguists are engineers,neutral
-223,Some engineers are non logicians,Some logicians are non linguists,No linguists are engineers,neutral
-224,All engineers are logicians,All logicians are linguists,Some linguists are engineers,neutral
-225,All engineers are logicians,No logicians are linguists,Some linguists are engineers,contradiction
-226,All engineers are logicians,Some logicians are linguists,Some linguists are engineers,neutral
-227,All engineers are logicians,Some logicians are non linguists,Some linguists are engineers,neutral
-228,No engineers are logicians,All logicians are linguists,Some linguists are engineers,neutral
-229,No engineers are logicians,No logicians are linguists,Some linguists are engineers,neutral
-230,No engineers are logicians,Some logicians are linguists,Some linguists are engineers,neutral
-231,No engineers are logicians,Some logicians are non linguists,Some linguists are engineers,neutral
-232,Some engineers are logicians,All logicians are linguists,Some linguists are engineers,entailment
-233,Some engineers are logicians,No logicians are linguists,Some linguists are engineers,neutral
-234,Some engineers are logicians,Some logicians are linguists,Some linguists are engineers,neutral
-235,Some engineers are logicians,Some logicians are non linguists,Some linguists are engineers,neutral
-236,Some engineers are non logicians,All logicians are linguists,Some linguists are engineers,neutral
-237,Some engineers are non logicians,No logicians are linguists,Some linguists are engineers,neutral
-238,Some engineers are non logicians,Some logicians are linguists,Some linguists are engineers,neutral
-239,Some engineers are non logicians,Some logicians are non linguists,Some linguists are engineers,neutral
-240,All engineers are logicians,All logicians are linguists,Some linguists are non engineers,neutral
-241,All engineers are logicians,No logicians are linguists,Some linguists are non engineers,neutral
-242,All engineers are logicians,Some logicians are linguists,Some linguists are non engineers,neutral
-243,All engineers are logicians,Some logicians are non linguists,Some linguists are non engineers,neutral
-244,No engineers are logicians,All logicians are linguists,Some linguists are non engineers,neutral
-245,No engineers are logicians,No logicians are linguists,Some linguists are non engineers,neutral
-246,No engineers are logicians,Some logicians are linguists,Some linguists are non engineers,entailment
-247,No engineers are logicians,Some logicians are non linguists,Some linguists are non engineers,neutral
-248,Some engineers are logicians,All logicians are linguists,Some linguists are non engineers,neutral
-249,Some engineers are logicians,No logicians are linguists,Some linguists are non engineers,neutral
-250,Some engineers are logicians,Some logicians are linguists,Some linguists are non engineers,neutral
-251,Some engineers are logicians,Some logicians are non linguists,Some linguists are non engineers,neutral
-252,Some engineers are non logicians,All logicians are linguists,Some linguists are non engineers,neutral
-253,Some engineers are non logicians,No logicians are linguists,Some linguists are non engineers,neutral
-254,Some engineers are non logicians,Some logicians are linguists,Some linguists are non engineers,neutral
-255,Some engineers are non logicians,Some logicians are non linguists,Some linguists are non engineers,neutral
+	prem_1	prem_2	hypothesis	label
+0	All logicians are engineers	All linguists are logicians	All linguists are engineers	entailment
+1	All logicians are engineers	No linguists are logicians	All linguists are engineers	neutral
+2	All logicians are engineers	Some linguists are logicians	All linguists are engineers	neutral
+3	All logicians are engineers	Some linguists are non logicians	All linguists are engineers	neutral
+4	No logicians are engineers	All linguists are logicians	All linguists are engineers	neutral
+5	No logicians are engineers	No linguists are logicians	All linguists are engineers	neutral
+6	No logicians are engineers	Some linguists are logicians	All linguists are engineers	contradiction
+7	No logicians are engineers	Some linguists are non logicians	All linguists are engineers	neutral
+8	Some logicians are engineers	All linguists are logicians	All linguists are engineers	neutral
+9	Some logicians are engineers	No linguists are logicians	All linguists are engineers	neutral
+10	Some logicians are engineers	Some linguists are logicians	All linguists are engineers	neutral
+11	Some logicians are engineers	Some linguists are non logicians	All linguists are engineers	neutral
+12	Some logicians are non engineers	All linguists are logicians	All linguists are engineers	neutral
+13	Some logicians are non engineers	No linguists are logicians	All linguists are engineers	neutral
+14	Some logicians are non engineers	Some linguists are logicians	All linguists are engineers	neutral
+15	Some logicians are non engineers	Some linguists are non logicians	All linguists are engineers	neutral
+16	All logicians are engineers	All linguists are logicians	No linguists are engineers	neutral
+17	All logicians are engineers	No linguists are logicians	No linguists are engineers	neutral
+18	All logicians are engineers	Some linguists are logicians	No linguists are engineers	contradiction
+19	All logicians are engineers	Some linguists are non logicians	No linguists are engineers	neutral
+20	No logicians are engineers	All linguists are logicians	No linguists are engineers	entailment
+21	No logicians are engineers	No linguists are logicians	No linguists are engineers	neutral
+22	No logicians are engineers	Some linguists are logicians	No linguists are engineers	neutral
+23	No logicians are engineers	Some linguists are non logicians	No linguists are engineers	neutral
+24	Some logicians are engineers	All linguists are logicians	No linguists are engineers	neutral
+25	Some logicians are engineers	No linguists are logicians	No linguists are engineers	neutral
+26	Some logicians are engineers	Some linguists are logicians	No linguists are engineers	neutral
+27	Some logicians are engineers	Some linguists are non logicians	No linguists are engineers	neutral
+28	Some logicians are non engineers	All linguists are logicians	No linguists are engineers	neutral
+29	Some logicians are non engineers	No linguists are logicians	No linguists are engineers	neutral
+30	Some logicians are non engineers	Some linguists are logicians	No linguists are engineers	neutral
+31	Some logicians are non engineers	Some linguists are non logicians	No linguists are engineers	neutral
+32	All logicians are engineers	All linguists are logicians	Some linguists are engineers	neutral
+33	All logicians are engineers	No linguists are logicians	Some linguists are engineers	neutral
+34	All logicians are engineers	Some linguists are logicians	Some linguists are engineers	entailment
+35	All logicians are engineers	Some linguists are non logicians	Some linguists are engineers	neutral
+36	No logicians are engineers	All linguists are logicians	Some linguists are engineers	contradiction
+37	No logicians are engineers	No linguists are logicians	Some linguists are engineers	neutral
+38	No logicians are engineers	Some linguists are logicians	Some linguists are engineers	neutral
+39	No logicians are engineers	Some linguists are non logicians	Some linguists are engineers	neutral
+40	Some logicians are engineers	All linguists are logicians	Some linguists are engineers	neutral
+41	Some logicians are engineers	No linguists are logicians	Some linguists are engineers	neutral
+42	Some logicians are engineers	Some linguists are logicians	Some linguists are engineers	neutral
+43	Some logicians are engineers	Some linguists are non logicians	Some linguists are engineers	neutral
+44	Some logicians are non engineers	All linguists are logicians	Some linguists are engineers	neutral
+45	Some logicians are non engineers	No linguists are logicians	Some linguists are engineers	neutral
+46	Some logicians are non engineers	Some linguists are logicians	Some linguists are engineers	neutral
+47	Some logicians are non engineers	Some linguists are non logicians	Some linguists are engineers	neutral
+48	All logicians are engineers	All linguists are logicians	Some linguists are non engineers	contradiction
+49	All logicians are engineers	No linguists are logicians	Some linguists are non engineers	neutral
+50	All logicians are engineers	Some linguists are logicians	Some linguists are non engineers	neutral
+51	All logicians are engineers	Some linguists are non logicians	Some linguists are non engineers	neutral
+52	No logicians are engineers	All linguists are logicians	Some linguists are non engineers	neutral
+53	No logicians are engineers	No linguists are logicians	Some linguists are non engineers	neutral
+54	No logicians are engineers	Some linguists are logicians	Some linguists are non engineers	entailment
+55	No logicians are engineers	Some linguists are non logicians	Some linguists are non engineers	neutral
+56	Some logicians are engineers	All linguists are logicians	Some linguists are non engineers	neutral
+57	Some logicians are engineers	No linguists are logicians	Some linguists are non engineers	neutral
+58	Some logicians are engineers	Some linguists are logicians	Some linguists are non engineers	neutral
+59	Some logicians are engineers	Some linguists are non logicians	Some linguists are non engineers	neutral
+60	Some logicians are non engineers	All linguists are logicians	Some linguists are non engineers	neutral
+61	Some logicians are non engineers	No linguists are logicians	Some linguists are non engineers	neutral
+62	Some logicians are non engineers	Some linguists are logicians	Some linguists are non engineers	neutral
+63	Some logicians are non engineers	Some linguists are non logicians	Some linguists are non engineers	neutral
+64	All engineers are logicians	All linguists are logicians	All linguists are engineers	neutral
+65	All engineers are logicians	No linguists are logicians	All linguists are engineers	neutral
+66	All engineers are logicians	Some linguists are logicians	All linguists are engineers	neutral
+67	All engineers are logicians	Some linguists are non logicians	All linguists are engineers	contradiction
+68	No engineers are logicians	All linguists are logicians	All linguists are engineers	neutral
+69	No engineers are logicians	No linguists are logicians	All linguists are engineers	neutral
+70	No engineers are logicians	Some linguists are logicians	All linguists are engineers	contradiction
+71	No engineers are logicians	Some linguists are non logicians	All linguists are engineers	neutral
+72	Some engineers are logicians	All linguists are logicians	All linguists are engineers	neutral
+73	Some engineers are logicians	No linguists are logicians	All linguists are engineers	neutral
+74	Some engineers are logicians	Some linguists are logicians	All linguists are engineers	neutral
+75	Some engineers are logicians	Some linguists are non logicians	All linguists are engineers	neutral
+76	Some engineers are non logicians	All linguists are logicians	All linguists are engineers	neutral
+77	Some engineers are non logicians	No linguists are logicians	All linguists are engineers	neutral
+78	Some engineers are non logicians	Some linguists are logicians	All linguists are engineers	neutral
+79	Some engineers are non logicians	Some linguists are non logicians	All linguists are engineers	neutral
+80	All engineers are logicians	All linguists are logicians	No linguists are engineers	neutral
+81	All engineers are logicians	No linguists are logicians	No linguists are engineers	entailment
+82	All engineers are logicians	Some linguists are logicians	No linguists are engineers	neutral
+83	All engineers are logicians	Some linguists are non logicians	No linguists are engineers	neutral
+84	No engineers are logicians	All linguists are logicians	No linguists are engineers	entailment
+85	No engineers are logicians	No linguists are logicians	No linguists are engineers	neutral
+86	No engineers are logicians	Some linguists are logicians	No linguists are engineers	neutral
+87	No engineers are logicians	Some linguists are non logicians	No linguists are engineers	neutral
+88	Some engineers are logicians	All linguists are logicians	No linguists are engineers	neutral
+89	Some engineers are logicians	No linguists are logicians	No linguists are engineers	neutral
+90	Some engineers are logicians	Some linguists are logicians	No linguists are engineers	neutral
+91	Some engineers are logicians	Some linguists are non logicians	No linguists are engineers	neutral
+92	Some engineers are non logicians	All linguists are logicians	No linguists are engineers	neutral
+93	Some engineers are non logicians	No linguists are logicians	No linguists are engineers	neutral
+94	Some engineers are non logicians	Some linguists are logicians	No linguists are engineers	neutral
+95	Some engineers are non logicians	Some linguists are non logicians	No linguists are engineers	neutral
+96	All engineers are logicians	All linguists are logicians	Some linguists are engineers	neutral
+97	All engineers are logicians	No linguists are logicians	Some linguists are engineers	contradiction
+98	All engineers are logicians	Some linguists are logicians	Some linguists are engineers	neutral
+99	All engineers are logicians	Some linguists are non logicians	Some linguists are engineers	neutral
+100	No engineers are logicians	All linguists are logicians	Some linguists are engineers	contradiction
+101	No engineers are logicians	No linguists are logicians	Some linguists are engineers	neutral
+102	No engineers are logicians	Some linguists are logicians	Some linguists are engineers	neutral
+103	No engineers are logicians	Some linguists are non logicians	Some linguists are engineers	neutral
+104	Some engineers are logicians	All linguists are logicians	Some linguists are engineers	neutral
+105	Some engineers are logicians	No linguists are logicians	Some linguists are engineers	neutral
+106	Some engineers are logicians	Some linguists are logicians	Some linguists are engineers	neutral
+107	Some engineers are logicians	Some linguists are non logicians	Some linguists are engineers	neutral
+108	Some engineers are non logicians	All linguists are logicians	Some linguists are engineers	neutral
+109	Some engineers are non logicians	No linguists are logicians	Some linguists are engineers	neutral
+110	Some engineers are non logicians	Some linguists are logicians	Some linguists are engineers	neutral
+111	Some engineers are non logicians	Some linguists are non logicians	Some linguists are engineers	neutral
+112	All engineers are logicians	All linguists are logicians	Some linguists are non engineers	neutral
+113	All engineers are logicians	No linguists are logicians	Some linguists are non engineers	neutral
+114	All engineers are logicians	Some linguists are logicians	Some linguists are non engineers	neutral
+115	All engineers are logicians	Some linguists are non logicians	Some linguists are non engineers	entailment
+116	No engineers are logicians	All linguists are logicians	Some linguists are non engineers	neutral
+117	No engineers are logicians	No linguists are logicians	Some linguists are non engineers	neutral
+118	No engineers are logicians	Some linguists are logicians	Some linguists are non engineers	entailment
+119	No engineers are logicians	Some linguists are non logicians	Some linguists are non engineers	neutral
+120	Some engineers are logicians	All linguists are logicians	Some linguists are non engineers	neutral
+121	Some engineers are logicians	No linguists are logicians	Some linguists are non engineers	neutral
+122	Some engineers are logicians	Some linguists are logicians	Some linguists are non engineers	neutral
+123	Some engineers are logicians	Some linguists are non logicians	Some linguists are non engineers	neutral
+124	Some engineers are non logicians	All linguists are logicians	Some linguists are non engineers	neutral
+125	Some engineers are non logicians	No linguists are logicians	Some linguists are non engineers	neutral
+126	Some engineers are non logicians	Some linguists are logicians	Some linguists are non engineers	neutral
+127	Some engineers are non logicians	Some linguists are non logicians	Some linguists are non engineers	neutral
+128	All logicians are engineers	All logicians are linguists	All linguists are engineers	neutral
+129	All logicians are engineers	No logicians are linguists	All linguists are engineers	neutral
+130	All logicians are engineers	Some logicians are linguists	All linguists are engineers	neutral
+131	All logicians are engineers	Some logicians are non linguists	All linguists are engineers	neutral
+132	No logicians are engineers	All logicians are linguists	All linguists are engineers	neutral
+133	No logicians are engineers	No logicians are linguists	All linguists are engineers	neutral
+134	No logicians are engineers	Some logicians are linguists	All linguists are engineers	contradiction
+135	No logicians are engineers	Some logicians are non linguists	All linguists are engineers	neutral
+136	Some logicians are engineers	All logicians are linguists	All linguists are engineers	neutral
+137	Some logicians are engineers	No logicians are linguists	All linguists are engineers	neutral
+138	Some logicians are engineers	Some logicians are linguists	All linguists are engineers	neutral
+139	Some logicians are engineers	Some logicians are non linguists	All linguists are engineers	neutral
+140	Some logicians are non engineers	All logicians are linguists	All linguists are engineers	contradiction
+141	Some logicians are non engineers	No logicians are linguists	All linguists are engineers	neutral
+142	Some logicians are non engineers	Some logicians are linguists	All linguists are engineers	neutral
+143	Some logicians are non engineers	Some logicians are non linguists	All linguists are engineers	neutral
+144	All logicians are engineers	All logicians are linguists	No linguists are engineers	neutral
+145	All logicians are engineers	No logicians are linguists	No linguists are engineers	neutral
+146	All logicians are engineers	Some logicians are linguists	No linguists are engineers	contradiction
+147	All logicians are engineers	Some logicians are non linguists	No linguists are engineers	neutral
+148	No logicians are engineers	All logicians are linguists	No linguists are engineers	neutral
+149	No logicians are engineers	No logicians are linguists	No linguists are engineers	neutral
+150	No logicians are engineers	Some logicians are linguists	No linguists are engineers	neutral
+151	No logicians are engineers	Some logicians are non linguists	No linguists are engineers	neutral
+152	Some logicians are engineers	All logicians are linguists	No linguists are engineers	contradiction
+153	Some logicians are engineers	No logicians are linguists	No linguists are engineers	neutral
+154	Some logicians are engineers	Some logicians are linguists	No linguists are engineers	neutral
+155	Some logicians are engineers	Some logicians are non linguists	No linguists are engineers	neutral
+156	Some logicians are non engineers	All logicians are linguists	No linguists are engineers	neutral
+157	Some logicians are non engineers	No logicians are linguists	No linguists are engineers	neutral
+158	Some logicians are non engineers	Some logicians are linguists	No linguists are engineers	neutral
+159	Some logicians are non engineers	Some logicians are non linguists	No linguists are engineers	neutral
+160	All logicians are engineers	All logicians are linguists	Some linguists are engineers	neutral
+161	All logicians are engineers	No logicians are linguists	Some linguists are engineers	neutral
+162	All logicians are engineers	Some logicians are linguists	Some linguists are engineers	entailment
+163	All logicians are engineers	Some logicians are non linguists	Some linguists are engineers	neutral
+164	No logicians are engineers	All logicians are linguists	Some linguists are engineers	neutral
+165	No logicians are engineers	No logicians are linguists	Some linguists are engineers	neutral
+166	No logicians are engineers	Some logicians are linguists	Some linguists are engineers	neutral
+167	No logicians are engineers	Some logicians are non linguists	Some linguists are engineers	neutral
+168	Some logicians are engineers	All logicians are linguists	Some linguists are engineers	entailment
+169	Some logicians are engineers	No logicians are linguists	Some linguists are engineers	neutral
+170	Some logicians are engineers	Some logicians are linguists	Some linguists are engineers	neutral
+171	Some logicians are engineers	Some logicians are non linguists	Some linguists are engineers	neutral
+172	Some logicians are non engineers	All logicians are linguists	Some linguists are engineers	neutral
+173	Some logicians are non engineers	No logicians are linguists	Some linguists are engineers	neutral
+174	Some logicians are non engineers	Some logicians are linguists	Some linguists are engineers	neutral
+175	Some logicians are non engineers	Some logicians are non linguists	Some linguists are engineers	neutral
+176	All logicians are engineers	All logicians are linguists	Some linguists are non engineers	neutral
+177	All logicians are engineers	No logicians are linguists	Some linguists are non engineers	neutral
+178	All logicians are engineers	Some logicians are linguists	Some linguists are non engineers	neutral
+179	All logicians are engineers	Some logicians are non linguists	Some linguists are non engineers	neutral
+180	No logicians are engineers	All logicians are linguists	Some linguists are non engineers	neutral
+181	No logicians are engineers	No logicians are linguists	Some linguists are non engineers	neutral
+182	No logicians are engineers	Some logicians are linguists	Some linguists are non engineers	entailment
+183	No logicians are engineers	Some logicians are non linguists	Some linguists are non engineers	neutral
+184	Some logicians are engineers	All logicians are linguists	Some linguists are non engineers	neutral
+185	Some logicians are engineers	No logicians are linguists	Some linguists are non engineers	neutral
+186	Some logicians are engineers	Some logicians are linguists	Some linguists are non engineers	neutral
+187	Some logicians are engineers	Some logicians are non linguists	Some linguists are non engineers	neutral
+188	Some logicians are non engineers	All logicians are linguists	Some linguists are non engineers	entailment
+189	Some logicians are non engineers	No logicians are linguists	Some linguists are non engineers	neutral
+190	Some logicians are non engineers	Some logicians are linguists	Some linguists are non engineers	neutral
+191	Some logicians are non engineers	Some logicians are non linguists	Some linguists are non engineers	neutral
+192	All engineers are logicians	All logicians are linguists	All linguists are engineers	neutral
+193	All engineers are logicians	No logicians are linguists	All linguists are engineers	neutral
+194	All engineers are logicians	Some logicians are linguists	All linguists are engineers	neutral
+195	All engineers are logicians	Some logicians are non linguists	All linguists are engineers	neutral
+196	No engineers are logicians	All logicians are linguists	All linguists are engineers	neutral
+197	No engineers are logicians	No logicians are linguists	All linguists are engineers	neutral
+198	No engineers are logicians	Some logicians are linguists	All linguists are engineers	contradiction
+199	No engineers are logicians	Some logicians are non linguists	All linguists are engineers	neutral
+200	Some engineers are logicians	All logicians are linguists	All linguists are engineers	neutral
+201	Some engineers are logicians	No logicians are linguists	All linguists are engineers	neutral
+202	Some engineers are logicians	Some logicians are linguists	All linguists are engineers	neutral
+203	Some engineers are logicians	Some logicians are non linguists	All linguists are engineers	neutral
+204	Some engineers are non logicians	All logicians are linguists	All linguists are engineers	neutral
+205	Some engineers are non logicians	No logicians are linguists	All linguists are engineers	neutral
+206	Some engineers are non logicians	Some logicians are linguists	All linguists are engineers	neutral
+207	Some engineers are non logicians	Some logicians are non linguists	All linguists are engineers	neutral
+208	All engineers are logicians	All logicians are linguists	No linguists are engineers	neutral
+209	All engineers are logicians	No logicians are linguists	No linguists are engineers	entailment
+210	All engineers are logicians	Some logicians are linguists	No linguists are engineers	neutral
+211	All engineers are logicians	Some logicians are non linguists	No linguists are engineers	neutral
+212	No engineers are logicians	All logicians are linguists	No linguists are engineers	neutral
+213	No engineers are logicians	No logicians are linguists	No linguists are engineers	neutral
+214	No engineers are logicians	Some logicians are linguists	No linguists are engineers	neutral
+215	No engineers are logicians	Some logicians are non linguists	No linguists are engineers	neutral
+216	Some engineers are logicians	All logicians are linguists	No linguists are engineers	contradiction
+217	Some engineers are logicians	No logicians are linguists	No linguists are engineers	neutral
+218	Some engineers are logicians	Some logicians are linguists	No linguists are engineers	neutral
+219	Some engineers are logicians	Some logicians are non linguists	No linguists are engineers	neutral
+220	Some engineers are non logicians	All logicians are linguists	No linguists are engineers	neutral
+221	Some engineers are non logicians	No logicians are linguists	No linguists are engineers	neutral
+222	Some engineers are non logicians	Some logicians are linguists	No linguists are engineers	neutral
+223	Some engineers are non logicians	Some logicians are non linguists	No linguists are engineers	neutral
+224	All engineers are logicians	All logicians are linguists	Some linguists are engineers	neutral
+225	All engineers are logicians	No logicians are linguists	Some linguists are engineers	contradiction
+226	All engineers are logicians	Some logicians are linguists	Some linguists are engineers	neutral
+227	All engineers are logicians	Some logicians are non linguists	Some linguists are engineers	neutral
+228	No engineers are logicians	All logicians are linguists	Some linguists are engineers	neutral
+229	No engineers are logicians	No logicians are linguists	Some linguists are engineers	neutral
+230	No engineers are logicians	Some logicians are linguists	Some linguists are engineers	neutral
+231	No engineers are logicians	Some logicians are non linguists	Some linguists are engineers	neutral
+232	Some engineers are logicians	All logicians are linguists	Some linguists are engineers	entailment
+233	Some engineers are logicians	No logicians are linguists	Some linguists are engineers	neutral
+234	Some engineers are logicians	Some logicians are linguists	Some linguists are engineers	neutral
+235	Some engineers are logicians	Some logicians are non linguists	Some linguists are engineers	neutral
+236	Some engineers are non logicians	All logicians are linguists	Some linguists are engineers	neutral
+237	Some engineers are non logicians	No logicians are linguists	Some linguists are engineers	neutral
+238	Some engineers are non logicians	Some logicians are linguists	Some linguists are engineers	neutral
+239	Some engineers are non logicians	Some logicians are non linguists	Some linguists are engineers	neutral
+240	All engineers are logicians	All logicians are linguists	Some linguists are non engineers	neutral
+241	All engineers are logicians	No logicians are linguists	Some linguists are non engineers	neutral
+242	All engineers are logicians	Some logicians are linguists	Some linguists are non engineers	neutral
+243	All engineers are logicians	Some logicians are non linguists	Some linguists are non engineers	neutral
+244	No engineers are logicians	All logicians are linguists	Some linguists are non engineers	neutral
+245	No engineers are logicians	No logicians are linguists	Some linguists are non engineers	neutral
+246	No engineers are logicians	Some logicians are linguists	Some linguists are non engineers	entailment
+247	No engineers are logicians	Some logicians are non linguists	Some linguists are non engineers	neutral
+248	Some engineers are logicians	All logicians are linguists	Some linguists are non engineers	neutral
+249	Some engineers are logicians	No logicians are linguists	Some linguists are non engineers	neutral
+250	Some engineers are logicians	Some logicians are linguists	Some linguists are non engineers	neutral
+251	Some engineers are logicians	Some logicians are non linguists	Some linguists are non engineers	neutral
+252	Some engineers are non logicians	All logicians are linguists	Some linguists are non engineers	neutral
+253	Some engineers are non logicians	No logicians are linguists	Some linguists are non engineers	neutral
+254	Some engineers are non logicians	Some logicians are linguists	Some linguists are non engineers	neutral
+255	Some engineers are non logicians	Some logicians are non linguists	Some linguists are non engineers	neutral
