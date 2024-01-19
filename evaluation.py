@@ -11,6 +11,16 @@ def get_wrong_items(results : pd.DataFrame):
 
     return wrong_items_e, wrong_items_c, wrong_items_n 
 
+def get_correct_items(results : pd.DataFrame):
+    correct_e = "label == 'e' & (e_pred == True & c_pred == False)"
+    correct_c = "label == 'c' & (c_pred == True & e_pred == False)"
+    correct_n = "label == 'n' & (e_pred == False & c_pred == False)"
+    correct_items_e = results.query(correct_e)
+    correct_items_c = results.query(correct_c)
+    correct_items_n = results.query(correct_n)
+
+    return correct_items_e, correct_items_c, correct_items_n 
+
 def get_fol_expressions(df : pd.DataFrame):
     """
     df: a dataframe with olumns 'p_fol' and 'h_fol" 
@@ -23,8 +33,8 @@ def get_fol_expressions(df : pd.DataFrame):
 
 def get_free_vars(df : pd.DataFrame):
     """
-    df: a dataframe with columns 'p_fol' and 'h_fol" 
-    returns: dict of problems that were translated with free variables. key = problem id, value = list of free variables 
+    df: a dataframe with columns 'p_fol', 'h_fol', 'label', 'e_pred', and 'c_pred'" 
+    returns: dict of problems that were translated with free variables. key = problem id, value = (list of free variables, gold label, e_pred, c_pred)
     """
     all_free_vars = {}
 
@@ -32,12 +42,10 @@ def get_free_vars(df : pd.DataFrame):
         e = Expression.fromstring(row['p_fol'])
         free = e.free()
         if free:
-            print(id)
-            all_free_vars[id] = free
+            all_free_vars[id] = (free, row['label'], row['e_pred'], row['c_pred'])
         e = Expression.fromstring(row['h_fol'])
         free = e.free()
         if free:
-            print(id)
-            all_free_vars[id] = free
+            all_free_vars[id] = (free, row['label'], row['e_pred'], row['c_pred'])
 
     return all_free_vars
