@@ -69,20 +69,26 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str):
 
 #get dataset information
 parser = argparse.ArgumentParser()
-parser.add_argument('dataset_name',choices=['sick_trial', 'syllogisms'],help='dataset_name')
+parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 args = parser.parse_args()
 dataset_name = args.dataset_name  
 
-if dataset_name == "sick_trial":
-    dataset_path = "datasets/sick/SICK_trial.csv"
+if re.search(r'sick',dataset_name):
     dictionary_path = "dictionaries/sick/full_sick_dictionary.json"
     relevant_column_list = [['sentence_A'],'sentence_B','entailment_judgment']
     judgment_dict = {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
+    if dataset_name == "sick_trial":
+        dataset_path = "datasets/sick/SICK_trial.csv"
+    elif dataset_name == "sick_train":
+        dataset_path = "datasets/sick/SICK_train.csv"
+    elif dataset_name == "sick_test":
+        dataset_path = "datasets/sick/SICK_test_annotated.csv"
 elif dataset_name == "syllogisms":
     dataset_path = "datasets/syllogisms/syllogisms.csv"
     dictionary_path = "dictionaries/syllogisms/syllogism_dict.json"
     relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
+#TODO: extend for other datasets
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
