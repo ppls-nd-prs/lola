@@ -26,7 +26,7 @@ def get_fol_expressions(df : pd.DataFrame):
     df: a dataframe with olumns 'p_fol' and 'h_fol" 
     returns: list of all fol formulas in p_fol and c_fol (as strings)
     """
-    prem_fols = list(df['p_fol'])
+    prem_fols = list(df['p_1_fol'])
     hyp_fols = list(df['h_fol'])
 
     return prem_fols + hyp_fols
@@ -39,7 +39,7 @@ def get_free_vars(df : pd.DataFrame):
     all_free_vars = {}
 
     for id, row in df.iterrows():
-        e = Expression.fromstring(row['p_fol'])
+        e = Expression.fromstring(row['p_1_fol'])
         free = e.free()
         if free:
             all_free_vars[id] = (free, row['label'], row['e_pred'], row['c_pred'])
