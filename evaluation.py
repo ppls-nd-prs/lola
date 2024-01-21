@@ -21,19 +21,24 @@ def get_correct_items(results : pd.DataFrame):
 
     return correct_items_e, correct_items_c, correct_items_n 
 
-def get_fol_expressions(df : pd.DataFrame):
+def get_fol_expressions(df : pd.DataFrame, mult_p = False):
     """
-    df: a dataframe with olumns 'p_fol' and 'h_fol" 
+    df: a dataframe with olumns 'p_1_fol' and 'h_fol' 
+    mult_p = if True it expects 2 prem columns 'p_1_fol' and 'p_2_fol'
     returns: list of all fol formulas in p_fol and c_fol (as strings)
     """
-    prem_fols = list(df['p_1_fol'])
+    if mult_p:
+        prem_fols = list(df['p_1_fol']) + list(df['p_2_fol'])
+    else:
+        prem_fols = list(df['p_1_fol'])
     hyp_fols = list(df['h_fol'])
 
     return prem_fols + hyp_fols
 
-def get_free_vars(df : pd.DataFrame):
+def get_free_vars(df : pd.DataFrame, mult_p = False):
     """
-    df: a dataframe with columns 'p_fol', 'h_fol', 'label', 'e_pred', and 'c_pred'" 
+    df: a dataframe with columns 'p_1_fol', 'h_fol', 'label', 'e_pred', and 'c_pred'" 
+    mult_p = if True it expects 2 prem columns 'p_1_fol' and 'p_2_fol'
     returns: dict of problems that were translated with free variables. key = problem id, value = (list of free variables, gold label, e_pred, c_pred)
     """
     all_free_vars = {}
@@ -43,6 +48,11 @@ def get_free_vars(df : pd.DataFrame):
         free = e.free()
         if free:
             all_free_vars[id] = (free, row['label'], row['e_pred'], row['c_pred'])
+        if mult_p:
+            e = Expression.fromstring(row['p_2_fol'])
+            free = e.free()
+            if free:
+                all_free_vars[id] = (free, row['label'], row['e_pred'], row['c_pred'])
         e = Expression.fromstring(row['h_fol'])
         free = e.free()
         if free:
