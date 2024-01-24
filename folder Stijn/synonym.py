@@ -1,4 +1,4 @@
-ef are_synonyms(word1, word2):
+def are_synonyms(word1, word2):
     # Get synsets for both words
     synsets1 = wn.synsets(word1)
     synsets2 = wn.synsets(word2)
