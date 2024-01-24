@@ -1,3 +1,7 @@
+import nltk
+nltk.download('wordnet')
+from nltk.corpus import wordnet as wn
+
 def are_synonyms(word1, word2):
     # Get synsets for both words
     synsets1 = wn.synsets(word1)
