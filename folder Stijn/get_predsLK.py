@@ -14,9 +14,6 @@ import os
 from data_transformations import prepare_for_translation
 import argparse
 
-
-
-
 def negated(fol_string):
     return "not " + fol_string
 
@@ -35,17 +32,12 @@ def has_hyponym_hypernym_relation(word1, word2):
     return False
 
 def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, csv_name: str):
-    nr_premises = len(columns[0])
-    start_d = {}
-    for i in range(nr_premises):
-        start_d[f'p_{i+1}_nl'] = []
-        start_d[f'p_{i+1}_fol'] = []
-    start_d.update({'h_nl':[],'h_fol':[],'label':[]})
-    start_d['exception'] = []
-    e_df = pd.DataFrame(start_d)
-    del start_d['exception']
-    start_d.update({'e_pred':[],'c_pred':[]})
-    df = pd.DataFrame(start_d)
+    # Initialize empty DataFrames
+    df_columns = ['p_1_nl', 'p_1_fol', 'p_2_nl', 'p_2_fol', 'h_nl', 'h_fol', 'label', 'e_pred', 'c_pred']
+    df = pd.DataFrame(columns=df_columns)
+    
+    e_df_columns = ['p_1_nl', 'p_1_fol', 'p_2_nl', 'p_2_fol', 'h_nl', 'h_fol', 'label', 'exception']
+    e_df = pd.DataFrame(columns=e_df_columns)
 
     for i_dat in range(len(dataset)):
         print("progress: " + str(int(i_dat/len(dataset)*100)) + "%", end='\r')
@@ -66,6 +58,10 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
                 prev_nl_premise = dataset[columns[0][prem_i - 1]][i_dat]
                 if has_hyponym_hypernym_relation(nl_premise, prev_nl_premise):
                     print(f"Hyponym/Hypernym relation found: {nl_premise} <-> {prev_nl_premise}")
+                    # Adjust label prediction accordingly
+                    dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
+                    dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
+                    continue  # Skip further processing for this example
 
         nl_hypothesis = dataset[columns[1]][i_dat]
         dat_temp_dict['h_nl'] = nl_hypothesis
@@ -81,19 +77,26 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
         # Check for hyponym/hypernym relation between words in the hypothesis
         if has_hyponym_hypernym_relation(nl_hypothesis, dataset[columns[0][-1]][i_dat]):
             print(f"Hyponym/Hypernym relation found: {nl_hypothesis} <-> {dataset[columns[0][-1]][i_dat]}")
+            # Adjust label prediction accordingly
+            dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
+            dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
+            continue  # Skip further processing for this example
 
         try:
-            dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list)
-            dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, negated(fol_hypothesis), prover_premise_list)
+            # Only perform the prover9_prove if hyponym/hypernym relation was not found
+            if 'e_pred' not in dat_temp_dict:
+                dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list)
+            if 'c_pred' not in dat_temp_dict:
+                dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, negated(fol_hypothesis), prover_premise_list)
             df.loc[len(df)] = dat_temp_dict
         except Exception as a:
-            dat_temp_dict['exception'] = str(a)            
+            dat_temp_dict['exception'] = str(a)
             e_df.loc[len(e_df)] = dat_temp_dict
-
-    if not os.path.isdir("evaluations_stijn"):        
-        os.mkdir("evaluations_stijn")
-    df.to_csv(f"evaluations_stijn/{csv_name}_evaluation_stijn.csv",sep='\t')
-    e_df.to_csv(f"evaluations_stijn/{csv_name}_exceptions_stijn.csv",sep='\t')
+            
+    if not os.path.isdir("evaluations_stijn2"):        
+        os.mkdir("evaluations_stijn2")
+    df.to_csv(f"evaluations_stijn2/{csv_name}_evaluation_stijn2.csv",sep='\t')
+    e_df.to_csv(f"evaluations_stijn2/{csv_name}_exceptions_stijn2.csv",sep='\t')
     
     #get dataset information
 parser = argparse.ArgumentParser()
