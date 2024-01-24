@@ -1,7 +1,7 @@
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
 from prepocessing import preprocessing
-from datasets import load_dataset, concatenate_datasets
+# from datasets import load_dataset, concatenate_datasets
 import json
 import nltk
 import pandas as pd
@@ -13,12 +13,13 @@ import argparse
 def negated(fol_string):
     return "not " + fol_string
 
-def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str):
+def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modification_id :str):
     '''
     columns should have format [[premise-1-column-name,premise-2-column-name,etc.],
     hypothesis-column-name, label-column-name]
     judgment_dict should have format {[value]:"e", [value]:"n",
     [value]:"c"}.
+    modification_id indicates the modification used
     Returns a pandas dataframe with premises, hypothesis, e_pred and c_pred
     '''
     nr_premises = len(columns[0])
@@ -61,20 +62,29 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str):
         except Exception as a:
             dat_temp_dict['exception'] = str(a)            
             e_df.loc[len(e_df)] = dat_temp_dict
-
-    if not os.path.isdir("evaluations"):        
-        os.mkdir("evaluations")
-    df.to_csv(f"evaluations/{csv_name}_evaluation.csv",sep='\t')
-    e_df.to_csv(f"evaluations/{csv_name}_exceptions.csv",sep='\t')
+    if modification_id == "none": #if there was no modification 
+        if not os.path.isdir("evaluations"):        
+            os.mkdir("evaluations")
+        df.to_csv(f"evaluations/{csv_name}_evaluation.csv",sep='\t')
+        e_df.to_csv(f"evaluations/{csv_name}_exceptions.csv",sep='\t')
+    else:
+        if not os.path.isdir("mod_evaluations"):        
+            os.mkdir("mod_evaluations")
+        df.to_csv(f"mod_evaluations/[{modification_id}]{csv_name}_evaluation.csv",sep='\t')    #just save the evaluations
 
 #get dataset information
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
+parser.add_argument('modification_id',choices=['a2e', 'none'],help='modification_id')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
+modification_id = args.modification_id
 
 if re.search(r'sick',dataset_name):
-    dictionary_path = "dictionaries/sick/full_sick_dictionary.json"
+    if modification_id == "none": 
+        dictionary_path = "dictionaries/sick/full_sick_dictionary.json"
+    else:
+        dictionary_path = f"mod_dictionaries/[{modification_id}]full_sick_dictionary.json"
     relevant_column_list = [['sentence_A'],'sentence_B','entailment_judgment']
     judgment_dict = {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
     if dataset_name == "sick_trial":
@@ -85,10 +95,13 @@ if re.search(r'sick',dataset_name):
         dataset_path = "datasets/sick/SICK_test_annotated.csv"
 elif dataset_name == "syllogisms":
     dataset_path = "datasets/syllogisms/syllogisms.csv"
-    dictionary_path = "dictionaries/syllogisms/syllogism_dict.json"
+    if modification_id == "none": 
+        dictionary_path = "dictionaries/syllogisms/syllogism_dict.json"
+    else:
+        raise(f"There are no modified dictionaries for the {dataset_name} data set")
     relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
-#TODO: extend for other datasets
+#TODO: extend for other datasets    
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
@@ -101,4 +114,4 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name)
+get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id)
