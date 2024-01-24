@@ -7,3 +7,10 @@ __pycache__/evaluation.cpython-311.pyc
 Working_NL_to_FOL.ipynb
 .DS_Store
 __pycache__/prepocessing.cpython-311.pyc
+assigntools/LoLa/__pycache__/tp.cpython-311.pyc
+assigntools/__pycache__/__init__.cpython-311.pyc
+assigntools/LoLa/__pycache__/deep_nli.cpython-311.pyc
+assigntools/LoLa/__pycache__/__init__.cpython-311.pyc
+__pycache__/data_transformations.cpython-311.pyc
+assigntools/LoLa/__pycache__/read_nli.cpython-311.pyc
+assigntools/LoLa/__pycache__/sen_analysis.cpython-311.pyc
