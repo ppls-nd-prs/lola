@@ -11,3 +11,19 @@ class preprocessing:
         s = re.sub('→', '->', s)
         s = re.sub('¬', 'not ', s)
         return s 
+
+class modifying:
+    
+    def all2exists(s:str) -> str:
+        """
+        Replace all instances of '∀' in s, with '∃' 
+        Note: this is before the strings are in NLTK friendly format 
+        """
+        s = re.sub('∀', '∃', s)
+        return s 
+    
+    def free2bound(s:str) -> str:
+        """
+        Add existential quantifiers for all free variables
+        """
+        pass
