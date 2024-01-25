@@ -22,8 +22,10 @@ class modifying:
         s = re.sub('∀', '∃', s)
         return s 
     
-    def free2bound(s:str) -> str:
+    def imp2con(s:str) -> str:
         """
-        Add existential quantifiers for all free variables
+        Replace all instances of '→' in s, with '∧' 
+        Note: this is before the strings are in NLTK friendly format 
         """
-        pass
+        s = re.sub('→', '∧', s)
+        return s 
