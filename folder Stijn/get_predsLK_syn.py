@@ -2,6 +2,8 @@ import nltk
 nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
 
+import sys
+sys.path.insert(1, '/content/lola')
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
 from prepocessing import preprocessing
