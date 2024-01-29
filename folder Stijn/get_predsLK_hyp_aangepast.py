@@ -95,11 +95,12 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
             dat_temp_dict['exception'] = str(a)
             e_df.loc[len(e_df)] = dat_temp_dict
             
-    if not os.path.isdir("evaluations_stijn2"):        
-        os.mkdir("evaluations_stijn2")
-    df.to_csv(f"evaluations_stijn2/{csv_name}_evaluation_stijn2.csv",sep='\t')
-    e_df.to_csv(f"evaluations_stijn2/{csv_name}_exceptions_stijn2.csv",sep='\t')
-    
+    if not os.path.isdir("evaluations_HYP"):        
+        os.mkdir("evaluations_HYP")
+    df.to_csv(f"evaluations_HYP/{dataset_name}_evaluation_HYP.csv", sep='\t')
+    e_df.to_csv(f"evaluations_HYP/{dataset_name}_exceptions_HYP.csv", sep='\t')
+
+
     #get dataset information
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
