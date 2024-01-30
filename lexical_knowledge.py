@@ -19,10 +19,14 @@ def get_hypo_syn_lk(prem : str, hyp : str):
     # Check if there is a hyponym/hypernym relation between two words based on WordNet.
     LK = [] #list to save all relevant lexical knowledge 
 
-    prem_preds = get_preds(prem)
-    # print(prem_preds)   #DEBUG
-    hyp_preds = get_preds(hyp)
-    # print(hyp_preds)    #DEBUG 
+    try:
+        prem_preds = get_preds(prem)
+        # print(prem_preds)   #DEBUG
+        hyp_preds = get_preds(hyp)
+        # print(hyp_preds)    #DEBUG 
+    except:
+        prem_pred = []
+        hyp_pred = []
 
     for p1, p2 in itertools.product(prem_preds, hyp_preds):  #go thrhough all combinations of words between premise and hypothesis
         # print(p1, p2)   #DEBUG 
