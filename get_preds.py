@@ -7,6 +7,7 @@ import nltk
 import pandas as pd
 import re
 import os
+import numpy as np
 from data_transformations import prepare_for_translation
 import argparse
 
@@ -22,35 +23,25 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
     modification_id indicates the modification used
     Returns a pandas dataframe with premises, hypothesis, e_pred and c_pred
     '''
-    nr_premises = len(columns[0])
+    #TODO: change premises indeling back to one column with lists
+    # Set everything up:
+    # Exception dataframe
     start_d = {}
-    for i in range(nr_premises):
-        start_d[f'p_{i+1}_nl'] = []
-        start_d[f'p_{i+1}_fol'] = []
-    start_d.update({'h_nl':[],'h_fol':[],'label':[]})
+    start_d.update({'nl_ps':[],'fol_ps':[],'nl_h':[],'fol_h':[],'label':[]})
     start_d['exception'] = []
     e_df = pd.DataFrame(start_d)
+
+    # Evaluation dataframe
     del start_d['exception']
     start_d.update({'e_pred':[],'c_pred':[]})
     df = pd.DataFrame(start_d)
+
+    # Fill out nl and fol p's and h's
     for i_dat in range(len(dataset)):
         print("progress: " + str(int(i_dat/len(dataset)*100)) + "%", end='\r')
-        dat_temp_dict = {}
-        prover_premise_list = []
-        # get premises and hypothesis natural string representation
-        for prem_i,prem_col in enumerate(columns[0]):
-            nl_premise = dataset[prem_col][i_dat]
-            dat_temp_dict[f'p_{prem_i+1}_nl'] = nl_premise
-            fol_premise = translation_dict[nl_premise]
-            fol_premise = preprocessing.fol2nltk(fol_premise)
-            prover_premise_list.append(fol_premise)
-            dat_temp_dict[f'p_{prem_i+1}_fol'] = fol_premise
-        nl_hypothesis = dataset[columns[1]][i_dat]
-        dat_temp_dict['h_nl'] = nl_hypothesis
-        true_label = judgment_dict[dataset[columns[2]][i_dat]]
-        dat_temp_dict['label'] = true_label
-
+        
         #Get nl_premise, hypothesis and not(hypothesis) fol string representation
+<<<<<<< Updated upstream
         fol_hypothesis = translation_dict[nl_hypothesis]
         fol_hypothesis = preprocessing.fol2nltk(fol_hypothesis)
         fol_not_hypothesis = negated(fol_hypothesis)
@@ -69,6 +60,42 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
             dat_temp_dict['exception'] = str(a)            
             e_df.loc[len(e_df)] = dat_temp_dict
     if modification_id == "none" and not use_lk: #if there was no modification 
+=======
+        nl_h = dataset[columns[1]][i_dat]        
+        fol_h = translation_dict[nl_h]
+        fol_h = preprocessing.fol2nltk(fol_h)
+        fol_not_h = negated(fol_h)
+
+        nl_ps_list = []
+        fol_ps_list = []
+        # Get premises and hypothesis natural string representation
+        for prem_col in columns[0]:
+            nl_p = dataset[prem_col][i_dat]
+            nl_ps_list.append(nl_p)
+            fol_p = translation_dict[nl_p]
+            fol_p = preprocessing.fol2nltk(fol_p)
+            fol_ps_list.append(fol_p)
+
+        # Get label
+        label = judgment_dict[dataset[columns[2]][i_dat]]
+
+        try:
+            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list)
+            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list)
+            
+            nl_ps = nl_ps_list[0]
+            fol_ps = fol_ps_list[0]
+            for i in range(len(nl_ps_list))[1:]:
+                nl_ps = nl_ps + " ## " + nl_ps_list[i]  
+                fol_ps = fol_ps + " ## "  + fol_ps_list[i] 
+            df.loc[len(df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
+            'e_pred':e_pred,'c_pred':c_pred}
+        except Exception as a:
+            print(a)
+            # dat_temp_dict['exception'] = str(a)            
+            # e_df.loc[len(e_df)] = dat_temp_dict
+    if modification_id == "none": #if there was no modification 
+>>>>>>> Stashed changes
         if not os.path.isdir("evaluations"):        
             os.mkdir("evaluations")
         df.to_csv(f"evaluations/{csv_name}_evaluation.csv",sep='\t')
@@ -140,4 +167,8 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
+<<<<<<< Updated upstream
 get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
+=======
+get_preds(dictionary,dataset[:10],relevant_column_list,judgment_dict,dataset_name,modification_id)
+>>>>>>> Stashed changes
