@@ -2,12 +2,9 @@ import nltk
 nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
 
-import sys
-sys.path.insert(1, '/content/lola')
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
-from prepocessing import preprocessing
-from datasets import load_dataset, concatenate_datasets
+from preprocessing import preprocessing
 import json
 import nltk
 import pandas as pd
@@ -57,6 +54,7 @@ result = are_synonyms(word5, word6)
 
 print(f"Are '{word5}' and '{word6}' synonyms? {result}")
 
+
 def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, csv_name: str):
     # Initialize empty DataFrames
     df_columns = ['p_1_nl', 'p_1_fol', 'p_2_nl', 'p_2_fol', 'h_nl', 'h_fol', 'label', 'e_pred', 'c_pred']
@@ -79,8 +77,6 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
             prover_premise_list.append(fol_premise)
             dat_temp_dict[f'p_{prem_i+1}_fol'] = fol_premise
 
-           
-
         nl_hypothesis = dataset[columns[1]][i_dat]
         dat_temp_dict['h_nl'] = nl_hypothesis
         true_label = judgment_dict[dataset[columns[2]][i_dat]]
@@ -92,32 +88,34 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
         fol_not_hypothesis = negated(fol_hypothesis)
         dat_temp_dict['h_fol'] = fol_hypothesis
         
+        # Check for synonyms between any word in premises and hypothesis
+        found_synonym = False
         for prem_i, prem_col in enumerate(columns[0]):
             nl_premise = dataset[prem_col][i_dat]
-        if are_synonyms(nl_premise, nl_hypothesis):
-            print(f"Synonym relation found: {nl_premise} <-> {nl_hypothesis}")
-            # Adjust label prediction accordingly
-            dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
-            dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
-            break  # Break the loop if a synonym relation is found
+            if are_synonyms(nl_premise, nl_hypothesis):
+                print(f"Synonym relation found: {nl_premise} <-> {nl_hypothesis}")
+                # Adjust label prediction accordingly
+                dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
+                dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
+                found_synonym = True
+                break  # Break the loop if a synonym relation is found
 
-        try:
-            # Only perform the prover9_prove if hyponym/hypernym relation was not found
-            if 'e_pred' not in dat_temp_dict:
+        # Perform the prover9_prove if no synonym relation was found
+        if not found_synonym:
+            try:
                 dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list)
-            if 'c_pred' not in dat_temp_dict:
                 dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, negated(fol_hypothesis), prover_premise_list)
-            df.loc[len(df)] = dat_temp_dict
-        except Exception as a:
-            dat_temp_dict['exception'] = str(a)
-            e_df.loc[len(e_df)] = dat_temp_dict
+                df.loc[len(df)] = dat_temp_dict
+            except Exception as a:
+                dat_temp_dict['exception'] = str(a)
+                e_df.loc[len(e_df)] = dat_temp_dict
             
-    if not os.path.isdir("evaluations_stijn2"):        
-        os.mkdir("evaluations_stijn2")
-    df.to_csv(f"evaluations_stijn2/{csv_name}_evaluation_stijn_SYN.csv",sep='\t')
-    e_df.to_csv(f"evaluations_stijn2/{csv_name}_exceptions_stijn_SYN.csv",sep='\t')
+    if not os.path.isdir("evaluations_SYN"):        
+        os.mkdir("evaluations_SYN")
+    df.to_csv(f"evaluations_SYN/{csv_name}_evaluation_SYN.csv",sep='\t')
+    e_df.to_csv(f"evaluations_SYN/{csv_name}_exceptions_SYN.csv",sep='\t')
     
-    #get dataset information
+   #get dataset information
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 args = parser.parse_args()
@@ -142,7 +140,7 @@ elif dataset_name == "syllogisms":
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
 
-#load dataslet
+#load dataset
 dataset = pd.read_csv(dataset_path,header=0,sep="\t")
 
 #get the dictionary
