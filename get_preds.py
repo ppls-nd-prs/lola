@@ -73,8 +73,8 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
             lk = [] #no lexical knowledge 
 
         try:
-            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list)
-            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list)
+            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list + lk)
+            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list + lk)
             
             nl_ps = nl_ps_list[0]
             fol_ps = fol_ps_list[0]
