@@ -1,7 +1,7 @@
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
 from prepocessing import preprocessing
-# from datasets import load_dataset, concatenate_datasets
+from lexical_knowledge import get_hypo_syn_lk
 import json
 import nltk
 import pandas as pd
@@ -10,13 +10,10 @@ import os
 from data_transformations import prepare_for_translation
 import argparse
 
-# PROVER9_BIN = "./prover9/bin"
-# prover9_prove(PROVER9_BIN, 'all x. man(x)', ['all x. thing(x)','all x. thing(x) -> man(x)'])
-
 def negated(fol_string):
     return "not " + fol_string
 
-def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modification_id :str):
+def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modification_id :str, lk : bool):
     '''
     columns should have format [[premise-1-column-name,premise-2-column-name,etc.],
     hypothesis-column-name, label-column-name]
@@ -79,15 +76,24 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'none'],help='modification_id')   #possible to have no modification
+parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
 modification_id = args.modification_id
+lexical_knowledge = args.lexical_knowledge
 
 if re.search(r'sick',dataset_name):
+    # set modification type
     if modification_id == "none": 
         dictionary_path = "dictionaries/sick/full_sick_dictionary.json"
     else:
         dictionary_path = f"mod_dictionaries/[{modification_id}]full_sick_dictionary.json"
+    #set lexical knowledge 
+    if lexical_knowledge == "True":
+        lk = True
+    else:
+        lk = False
+    #set basic info
     relevant_column_list = [['sentence_A'],'sentence_B','entailment_judgment']
     judgment_dict = {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
     if dataset_name == "sick_trial":
@@ -96,14 +102,23 @@ if re.search(r'sick',dataset_name):
         dataset_path = "datasets/sick/SICK_train.csv"
     elif dataset_name == "sick_test":
         dataset_path = "datasets/sick/SICK_test_annotated.csv"
+
 elif dataset_name == "syllogisms":
     dataset_path = "datasets/syllogisms/syllogisms.csv"
+    # set modification type
     if modification_id == "none": 
         dictionary_path = "dictionaries/syllogisms/syllogism_dict.json"
     else:
-        raise(f"There are no modified dictionaries for the {dataset_name} data set")
+        raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
+    #set lexical knowledge 
+    if lexical_knowledge == "True":
+        raise Exception(f"There is no lexical knowledge for the {dataset_name} data set")
+    else:
+        lk = False
+    #set basic info
     relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
+
 # elif dataset_name == "fracas":
 #     dataset_path = 
 #TODO: extend for other datasets    
@@ -119,4 +134,4 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id)
+get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, lk)
