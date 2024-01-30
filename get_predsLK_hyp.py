@@ -1,6 +1,18 @@
 import nltk
+
+## Note: use this block if you get "error loading wordnet ... SSL:CERTIFICATE_VERIFY_FAILED ...""
+import ssl
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+##########
+    
 nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
+
 
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
