@@ -10,6 +10,9 @@ import os
 from data_transformations import prepare_for_translation
 import argparse
 
+# PROVER9_BIN = "./prover9/bin"
+# prover9_prove(PROVER9_BIN, 'all x. man(x)', ['all x. thing(x)','all x. thing(x) -> man(x)'])
+
 def negated(fol_string):
     return "not " + fol_string
 
@@ -107,7 +110,7 @@ elif dataset_name == "syllogisms":
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
-
+print("cur dir: ", os.getcwd())
 #load dataset
 dataset = pd.read_csv(dataset_path,header=0,sep="\t")
 
