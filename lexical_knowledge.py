@@ -20,16 +20,20 @@ def get_hypo_syn_lk(prem : str, hyp : str):
     LK = [] #list to save all relevant lexical knowledge 
 
     prem_preds = get_preds(prem)
-    print(prem_preds)   #DEBUG
+    # print(prem_preds)   #DEBUG
     hyp_preds = get_preds(hyp)
-    print(hyp_preds)    #DEBUG
+    # print(hyp_preds)    #DEBUG 
 
     for p1, p2 in itertools.product(prem_preds, hyp_preds):  #go thrhough all combinations of words between premise and hypothesis
         # print(p1, p2)   #DEBUG 
-        p1_synset = wn.synsets(p1)[0] #get most common synset 
-        # print(p1_synset)    #DEBUG
-        p2_synset = wn.synsets(p2)[0]
-        # print(p2_synset)    #DEBUG
+        try:    #if either don't have a synset
+            p1_synset = wn.synsets(p1)[0] 
+            # print(p1_synset)    #DEBUG
+            p2_synset = wn.synsets(p2)[0]
+            # print(p2_synset)    #DEBUG
+        except:
+            # print(f"no synset for either {p1} or {p2}") #DEBUG 
+            continue
 
         ## Check for synonyms -> if they have the same synset 
         if p1_synset == p2_synset:
