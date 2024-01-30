@@ -49,12 +49,20 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         nl_ps_list = []
         fol_ps_list = []
         # Get premises and hypothesis natural string representation
-        for prem_col in columns[0]:
-            nl_p = dataset[prem_col][i_dat]
-            nl_ps_list.append(nl_p)
+        nl_ps_string = dataset[columns[0]][i_dat]
+        print("nl p string: ", nl_ps_string)
+        nl_ps_list = nl_ps_string.split(" ## ")
+        print("nl p list: ", nl_ps_list)
+
+        for nl_p in nl_ps_list:
             fol_p = translation_dict[nl_p]
             fol_p = preprocessing.fol2nltk(fol_p)
             fol_ps_list.append(fol_p)
+        
+        # for prem_col in columns[0]:
+        #     nl_p = dataset[prem_col][i_dat]
+        #     nl_ps_list.append(nl_p)
+            
 
         # Get label
         label = judgment_dict[dataset[columns[2]][i_dat]]
@@ -65,8 +73,8 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
             lk = [] #no lexical knowledge 
 
         try:
-            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list + lk)
-            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list + lk)
+            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list)
+            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list)
             
             nl_ps = nl_ps_list[0]
             fol_ps = fol_ps_list[0]
@@ -93,7 +101,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'none'],help='modification_id')   #possible to have no modification
-parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')  
+parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
 modification_id = args.modification_id
@@ -111,7 +119,7 @@ if re.search(r'sick',dataset_name):
     else:
         use_lk = False
     #set basic info
-    relevant_column_list = [['sentence_A'],'sentence_B','entailment_judgment']
+    relevant_column_list = ['sentence_A','sentence_B','entailment_judgment']
     judgment_dict = {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
     if dataset_name == "sick_trial":
         dataset_path = "datasets/sick/SICK_trial.csv"
@@ -133,11 +141,9 @@ elif dataset_name == "syllogisms":
     else:
         use_lk = False
     #set basic info
-    relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
+    relevant_column_list = ['premises','hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
 
-# elif dataset_name == "fracas":
-#     dataset_path = 
 #TODO: extend for other datasets    
 
 #locate prover9
@@ -151,4 +157,8 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
+get_preds(dictionary,dataset[:10],relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
+
+# The premises are now in a single column. When there is more than one premise, they are seperated by 
+# ' ## '. Therefore the premise column indicator does not have to be a list anymore
+# Furthermore, premises have to be split now in the upper part of the row loop of get_preds
