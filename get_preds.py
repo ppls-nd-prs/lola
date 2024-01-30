@@ -158,7 +158,7 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-get_preds(dictionary,dataset[:10],relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
+get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
 
 # The premises are now in a single column. When there is more than one premise, they are seperated by 
 # ' ## '. Therefore the premise column indicator does not have to be a list anymore
