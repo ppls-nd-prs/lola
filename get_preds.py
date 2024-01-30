@@ -41,26 +41,6 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         print("progress: " + str(int(i_dat/len(dataset)*100)) + "%", end='\r')
         
         #Get nl_premise, hypothesis and not(hypothesis) fol string representation
-<<<<<<< Updated upstream
-        fol_hypothesis = translation_dict[nl_hypothesis]
-        fol_hypothesis = preprocessing.fol2nltk(fol_hypothesis)
-        fol_not_hypothesis = negated(fol_hypothesis)
-        dat_temp_dict['h_fol'] = fol_hypothesis
-
-        if use_lk: 
-            lk = get_hypo_syn_lk(prover_premise_list[0], fol_hypothesis) #in sick there's only 1 premise 
-        else:
-            lk = [] #no lexical knowledge 
-
-        try:
-            dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list + lk)
-            dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, fol_not_hypothesis, prover_premise_list +lk)
-            df.loc[len(df)] = dat_temp_dict
-        except Exception as a:
-            dat_temp_dict['exception'] = str(a)            
-            e_df.loc[len(e_df)] = dat_temp_dict
-    if modification_id == "none" and not use_lk: #if there was no modification 
-=======
         nl_h = dataset[columns[1]][i_dat]        
         fol_h = translation_dict[nl_h]
         fol_h = preprocessing.fol2nltk(fol_h)
@@ -79,6 +59,11 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         # Get label
         label = judgment_dict[dataset[columns[2]][i_dat]]
 
+        if use_lk: 
+            lk = get_hypo_syn_lk(fol_ps_list[0], fol_h) #in sick there's only 1 premise 
+        else:
+            lk = [] #no lexical knowledge 
+
         try:
             e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list)
             c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list)
@@ -90,12 +75,11 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
                 fol_ps = fol_ps + " ## "  + fol_ps_list[i] 
             df.loc[len(df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
             'e_pred':e_pred,'c_pred':c_pred}
-        except Exception as a:
-            print(a)
-            # dat_temp_dict['exception'] = str(a)            
-            # e_df.loc[len(e_df)] = dat_temp_dict
-    if modification_id == "none": #if there was no modification 
->>>>>>> Stashed changes
+        except Exception as a: 
+            print(a)       
+            e_df.loc[len(e_df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
+            'exception':str(a)}
+    if modification_id == "none" and not use_lk: #if there was no modification 
         if not os.path.isdir("evaluations"):        
             os.mkdir("evaluations")
         df.to_csv(f"evaluations/{csv_name}_evaluation.csv",sep='\t')
@@ -167,8 +151,4 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-<<<<<<< Updated upstream
-get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
-=======
-get_preds(dictionary,dataset[:10],relevant_column_list,judgment_dict,dataset_name,modification_id)
->>>>>>> Stashed changes
+get_preds(dictionary,dataset[:10],relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
