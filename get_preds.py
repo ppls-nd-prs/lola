@@ -101,6 +101,8 @@ elif dataset_name == "syllogisms":
         raise(f"There are no modified dictionaries for the {dataset_name} data set")
     relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
+# elif dataset_name == "fracas":
+#     dataset_path = 
 #TODO: extend for other datasets    
 
 #locate prover9
