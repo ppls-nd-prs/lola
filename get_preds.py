@@ -68,7 +68,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         except Exception as a:
             dat_temp_dict['exception'] = str(a)            
             e_df.loc[len(e_df)] = dat_temp_dict
-    if modification_id == "none": #if there was no modification 
+    if modification_id == "none" and not use_lk: #if there was no modification 
         if not os.path.isdir("evaluations"):        
             os.mkdir("evaluations")
         df.to_csv(f"evaluations/{csv_name}_evaluation.csv",sep='\t')
@@ -76,7 +76,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
     else:
         if not os.path.isdir("mod_evaluations"):        
             os.mkdir("mod_evaluations")
-        df.to_csv(f"mod_evaluations/[{modification_id}]{csv_name}_evaluation.csv",sep='\t')    #just save the evaluations
+        df.to_csv(f"mod_evaluations/[{modification_id}][{use_lk}]{csv_name}_evaluation.csv",sep='\t')    #just save the evaluations
 
 #get dataset information
 parser = argparse.ArgumentParser()
