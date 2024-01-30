@@ -96,6 +96,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         if not os.path.isdir("mod_evaluations"):        
             os.mkdir("mod_evaluations")
         df.to_csv(f"mod_evaluations/[{modification_id}][{use_lk}]{csv_name}_evaluation.csv",sep='\t')    #just save the evaluations
+        e_df.to_csv(f"mod_evaluations/[{modification_id}][{use_lk}]{csv_name}_exceptions.csv",sep='\t')
 
 #get dataset information
 parser = argparse.ArgumentParser()
