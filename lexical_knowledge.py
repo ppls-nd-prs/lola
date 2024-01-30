@@ -13,33 +13,44 @@ else:
     
 nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
+from nltk.sem.logic import Expression
 
 def get_hypo_syn_lk(prem : str, hyp : str):
     # Check if there is a hyponym/hypernym relation between two words based on WordNet.
-    LK = [] #list to save all relevant llexical knowledge 
+    LK = [] #list to save all relevant lexical knowledge 
 
-    prem_words = list(set(prem.split())) #list of all words in the sentences, with duplicates removed
-    # print(prem_words)   #DEBUG
-    hyp_words = list(set(hyp.split()))
-    # print(hyp_words)    #DEBUG
+    prem_preds = get_preds(prem)
+    print(prem_preds)   #DEBUG
+    hyp_preds = get_preds(hyp)
+    print(hyp_preds)    #DEBUG
 
-    for w1, w2 in itertools.product(prem_words, hyp_words):  #go thrhough all combinations of words between premise and hypothesis
-        # print(w1, w2)   #DEBUG 
-        w1_synset = wn.synsets(w1)[0] #get most common synset 
-        # print(w1_synset)    #DEBUG
-        w2_synset = wn.synsets(w2)[0]
-        # print(w2_synset)    #DEBUG
+    for p1, p2 in itertools.product(prem_preds, hyp_preds):  #go thrhough all combinations of words between premise and hypothesis
+        # print(p1, p2)   #DEBUG 
+        p1_synset = wn.synsets(p1)[0] #get most common synset 
+        # print(p1_synset)    #DEBUG
+        p2_synset = wn.synsets(p2)[0]
+        # print(p2_synset)    #DEBUG
 
         ## Check for synonyms -> if they have the same synset 
-        if w1_synset == w2_synset:
-            LK.append(f"{w1} == {w2}")
+        if p1_synset == p2_synset:
+            LK.append(f"all x. ({p1}(x) -> {p2}(x))")
+            LK.append(f"all x. ({p2}(x) -> {p1}(x))")
         
         ## Check for hyperyms 
-        w1_hyper = set([i for i in w1_synset.closure(lambda s:s.hypernyms())])
-        if w2_synset in w1_hyper:
-            LK.append(f"{w1} is a {w2}")
-        w2_hyper = set([i for i in w2_synset.closure(lambda s:s.hypernyms())])
-        if w1_synset in w2_hyper:
-            LK.append(f"{w2} is a {w1}")
+        p1_hyper = set([i for i in p1_synset.closure(lambda s:s.hypernyms())])
+        if p2_synset in p1_hyper:
+            LK.append(f"all x. ({p1}(x) -> {p2}(x))")
+        p2_hyper = set([i for i in p2_synset.closure(lambda s:s.hypernyms())])
+        if p1_synset in p2_hyper:
+            LK.append(f"all x. ({p2}(x) -> {p1}(x))")
         
     return LK
+
+def get_preds(s : str):
+    """
+    s: string in NLTK expression proof format 
+    """
+    expression = Expression.fromstring(s)
+    predicates = [str(p) for p in list(expression.predicates())] #list of all predicates 
+    
+    return list(set(predicates)) #return without duplicates 
