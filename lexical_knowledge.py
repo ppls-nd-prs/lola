@@ -25,8 +25,8 @@ def get_hypo_syn_lk(prem : str, hyp : str):
         hyp_preds = get_preds(hyp)
         # print(hyp_preds)    #DEBUG 
     except:
-        prem_pred = []
-        hyp_pred = []
+        prem_preds = []
+        hyp_preds = []
 
     for p1, p2 in itertools.product(prem_preds, hyp_preds):  #go thrhough all combinations of words between premise and hypothesis
         # print(p1, p2)   #DEBUG 

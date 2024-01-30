@@ -12,8 +12,6 @@ else:
     
 nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
-
-
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
 from prepocessing import preprocessing
@@ -39,11 +37,7 @@ def has_hyponym_hypernym_relation(word1, word2):
                 return True
             elif syn2 in syn1.lowest_common_hypernyms(syn2):
                 return True
-
     return False
-
-
-
 
 def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, csv_name: str):
     # Initialize empty DataFrames
