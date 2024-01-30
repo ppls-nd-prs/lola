@@ -1,0 +1,1021 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	A group of kids is playing in a yard and an old man is standing in the background	exists x. exists y. (Kid(x) & Yard(y) & PlayingIn(x, y) & OldMan(z) & StandingInBackground(z, y))	A group of kids is playing in a yard and an old man is standing in the background	exists x. exists y. (Kid(x) & Yard(y) & PlayingIn(x, y) & OldMan(z) & StandingInBackground(z, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingInBackground/1, StandingInBackground/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingInBackground/1, StandingInBackground/2"
+1	Two people in snowsuits are lying in the snow and making snow angels	all x.all y.all z. (Person(x) & Person(y) & Snowsuit(x) & Snowsuit(y) & Snow(z) -> (LyingIn(x, z) & LyingIn(y, z) & MakingSnowAngels(x, y)))	Two people in snowsuits are lying in the snow and making snow angels	all x.all y.all z. (Person(x) & Person(y) & Snowsuit(x) & Snowsuit(y) & Snow(z) -> (LyingIn(x, z) & LyingIn(y, z) & MakingSnowAngels(x, y)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: MakingSnowAngels/1, MakingSnowAngels/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: MakingSnowAngels/1, MakingSnowAngels/2"
+2	Four kids are doing backbends in the park	exists x. exists y. exists z. exists w. (Kid(x) & Kid(y) & Kid(z) & Kid(w) & Park(p) & Backbend(x) & Backbend(y) & Backbend(z) & Backbend(w) & In(x, y, z, w, p))	Four children are doing backbends in the park	exists x. exists y. exists z. exists w. (Child(x) & Child(y) & Child(z) & Child(w) & Park(p) & DoingBackbend(x, p) & DoingBackbend(y, p) & DoingBackbend(z, p) & DoingBackbend(w, p))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: DoingBackbend/1, DoingBackbend/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: DoingBackbend/1, DoingBackbend/2"
+3	Four kids are doing backbends in the park	exists x. exists y. exists z. exists w. (Kid(x) & Kid(y) & Kid(z) & Kid(w) & Park(p) & Backbend(x) & Backbend(y) & Backbend(z) & Backbend(w) & In(x, y, z, w, p))	Four girls are doing backbends and playing outdoors	all x.all y.all z.all w. (Girl(x) & Girl(y) & Girl(z) & Girl(w) -> (DoingBackbend(x) & DoingBackbend(y) & DoingBackbend(z) & DoingBackbend(w) & PlayingOutdoors(x) & PlayingOutdoors(y) & PlayingOutdoors(z) & PlayingOutdoors(w	e	"End of input found.  Expected token ')'.
+all x.all y.all z.all w. (Girl(x) & Girl(y) & Girl(z) & Girl(w) -> (DoingBackbend(x) & DoingBackbend(y) & DoingBackbend(z) & DoingBackbend(w) & PlayingOutdoors(x) & PlayingOutdoors(y) & PlayingOutdoors(z) & PlayingOutdoors(w
+                                                                                                                                                                                                                                ^"
+4	Five wooden stands are in front of each child's hut	all x.all y. (Child(x) & Hut(y) -> WoodenStandInFront(x, y))	Five kids are standing close together and none of the kids has a gun	exists x. exists y. exists z. exists w. exists v. (Kid(x) & Kid(y) & Kid(z) & Kid(w) & Kid(v) & StandingCloseTogether(x, y, z, w, v) & not HasGun(x) & not HasGun(y) & not HasGun(z) & not HasGun(w) & not HasGun(v	c	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. exists v. (Kid(x) & Kid(y) & Kid(z) & Kid(w) & Kid(v) & StandingCloseTogether(x, y, z, w, v) & not HasGun(x) & not HasGun(y) & not HasGun(z) & not HasGun(w) & not HasGun(v
+                                                                                                                                                                                                                   ^"
+5	Five wooden stands are in front of each child's hut	all x.all y. (Child(x) & Hut(y) -> WoodenStandInFront(x, y))	Five children are standing in front of a wooden hut	exists x. exists y. (Child(x) & Child(y) & WoodenHut(z) & StandingInFrontOf(x, z) & StandingInFrontOf(y, z))	n	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. exists v. (Kid(x) & Kid(y) & Kid(z) & Kid(w) & Kid(v) & StandingCloseTogether(x, y, z, w, v) & not HasGun(x) & not HasGun(y) & not HasGun(z) & not HasGun(w) & not HasGun(v
+                                                                                                                                                                                                                   ^"
+6	People are walking inside a building that has many murals on it	all x.all y. (Person(x) & Building(y) & WalkingInside(x, y) -> HasManyMurals(y))	Nobody is in front of the colorful building	not exists x. (Person(x) & InFrontOf(x, ColorfulBuilding))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: InFrontOf/4, InFrontOf/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: InFrontOf/4, InFrontOf/2"
+7	There is no motorcyclist riding a motorbike along a roadway	not exists x. (Motorcyclist(x) & RidingMotorbike(x) & AlongRoadway(x))	A motorcyclist with a red helmet is riding a blue motorcycle down the road	all x.all y.all z. (Motorcyclist(x) & RedHelmet(x) & Motorcycle(y) & Blue(y) & Road(z) -> Riding(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/2, Riding/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/2, Riding/3"
+8	A group of people is on a beach	exists x. (Group(x) & People(x) & On(x, beach))	A group of people is on a mountain	exists x.exists y. (Group(x) & Mountain(y) & On(x, y))	n	"'beach' is an illegal variable name.  Constants may not be quantified.
+all x. all beach. (On(x, beach) -> On(x, beach))
+           ^"
+9	A group of people is on a beach	exists x. (Group(x) & People(x) & On(x, beach))	Four people are walking on the beach	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & WalkingOnBeach(x) & WalkingOnBeach(y) & WalkingOnBeach(z) & WalkingOnBeach(w))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WalkingOnBeach/3, WalkingOnBeach/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: WalkingOnBeach/3, WalkingOnBeach/1"
+10	A dog is chasing another and is holding a stick in its mouth	exists x.exists y. (Dog(x) & Dog(y) & Chasing(x, y) & HoldingStick(x))	A soccer ball is rolling into a goal net	all x.all y. (SoccerBall(x) & GoalNet(y) -> RollingInto(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RollingInto/3, RollingInto/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: RollingInto/3, RollingInto/2"
+11	A group of scouts are hiking through the grass	all x.all y. (ScoutGroup(x) & Grass(y) -> HikingThrough(x, y))	Two men are breaking into a car during a trip on a snowy road	exists x. exists y. exists z. (Man(x) & Man(y) & Car(z) & BreakingInto(x, z) & BreakingInto(y, z) & SnowyRoad(z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SnowyRoad/2, SnowyRoad/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: SnowyRoad/2, SnowyRoad/1"
+12	A group of boys are quiet in front of a large door made of wood	all x.all y.all z. (Boys(x) & Door(y) & Wood(z) & MadeOf(y, z) -> QuietInFront(x, y))	A group of boys are playing with a ball in front of a large door made of wood	exists x.exists y.exists z. (Group(x) & Boy(y) & Ball(z) & PlayingWith(y, z) & InFrontOf(y, z, x) & LargeDoor(x) & MadeOfWood(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: LargeDoor/1, LargeDoor/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: LargeDoor/1, LargeDoor/0"
+13	The children are playing in front of a large door	all x.all y. (Child(x) & Door(y) -> PlayingInFrontOf(x, y))	A woman is taking off a cloak, which is very large, and revealing extravagant apparel	all x.all y. (Woman(x) & Cloak(y) & VeryLarge(y) -> TakesOffAndRevealsExtravagantApparel(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Woman/1, Woman/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Woman/1, Woman/0"
+14	The children are playing in front of a large door	all x.all y. (Child(x) & Door(y) -> PlayingInFrontOf(x, y))	A black, red, white and pink dress is being worn by a woman	exists x. (Dress(x) & Black(x) & Red(x) & White(x) & Pink(x) & WornBy(x, Woman))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Woman/1, Woman/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Woman/1, Woman/0"
+15	One man is climbing a cliff with a rope	exists x. exists y. exists z. (Man(x) & Cliff(y) & Rope(z) & Climbing(x, y, z))	One man is climbing the cliff with a rope	exists x. (Man(x) & Climbing(x, cliff) & UsesRope(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Climbing/3, Climbing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Climbing/3, Climbing/2"
+16	A dog which is furry and black is in a back yard and is carrying a basket in its mouth	all x. (Dog(x) & Furry(x) & Black(x) -> (InBackYard(x) & CarryingBasket(x)))	Two large persons are sitting on a park bench and they have a bottle of soda between them	exists x. exists y. exists z. (LargePerson(x) & LargePerson(y) & ParkBench(z) & SittingOn(x, z) & SittingOn(y, z) & BottleOfSoda(z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: BottleOfSoda/2, BottleOfSoda/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: BottleOfSoda/2, BottleOfSoda/1"
+17	The bride and the groom are arriving after the wedding	ArrivingAfterWedding(bride, groom)	A married couple is walking down the aisle	exists x.exists y. (MarriedCouple(x, y) & WalkingDownAisle(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: MarriedCouple/1, MarriedCouple/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: MarriedCouple/1, MarriedCouple/2"
+18	An ice skating rink placed outdoors is full of people	all x. (IceSkatingRink(x) & Outdoors(x) -> FullOfPeople(x))	A girl in a uniform, which is blue, is raising her arm.	all x. (Girl(x) & WearingUniform(x) & BlueUniform(x) -> RaisingArm(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WearingUniform/2, WearingUniform/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: WearingUniform/2, WearingUniform/1"
+19	The girl in the blue and white uniform is cheering	Cheering(girl, blueAndWhiteUniform)	The girl in the blue and white uniform is cheering	Cheering(girl, blueAndWhiteUniform)	c	"'girl' is an illegal variable name.  Constants may not be quantified.
+all girl. all blueAndWhiteUniform. (Cheering(girl, blueAndWhiteUniform) -> Cheering(girl, blueAndWhiteUniform))
+    ^"
+20	A girl in a uniform, which is blue, is raising her arm.	all x. (Girl(x) & WearingUniform(x) & BlueUniform(x) -> RaisingArm(x))	People are on a beach full of sand by the ocean and are enjoying a day full of sun	all x. (Person(x) -> (exists y. (Beach(y) & FullOfSand(y) & By(x, y)) & exists z. (Ocean(z) & Near(x, z)) & exists w. (Day(w) & FullOfSun(w) & On(x, w))))	e	"'ocean' is an illegal variable name.  Constants may not be quantified.
+all x. all ocean. (By(x, ocean) -> By(x, ocean))
+           ^"
+21	A man in a blue jumpsuit is failing to perform a wheelie on a motorcycle	all x. (Man(x) & WearsBlueJumpsuit(x) -> not PerformsWheelie(x))	A courageous performer is doing a wheelie with a motorcycle over a man in a blue jumpsuit	all x.all y.all z. (Performer(x) & Motorcycle(y) & Man(z) & Wheelie(x, y) & Over(x, z) & BlueJumpsuit(z) -> Courageous(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Wheelie/3, Wheelie/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Wheelie/3, Wheelie/2"
+22	Two toddlers are sleeping in a wagon, which is really small	exists x. exists y. exists z. (Toddler(x) & Toddler(y) & Wagon(z) & SleepingIn(x, z) & SleepingIn(y, z) & Small(z))	Two toddlers are eating corndogs in a wagon, which is really small	exists x. exists y. exists z. (Toddler(x) & Toddler(y) & Corndog(z) & Eating(x, z) & Eating(y, z) & Wagon(w) & Small(w))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Eating/1, Eating/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Eating/1, Eating/2"
+23	Two toddlers are sleeping in a wagon, which is really small	exists x. exists y. exists z. (Toddler(x) & Toddler(y) & Wagon(z) & SleepingIn(x, z) & SleepingIn(y, z) & Small(z))	Two young children are eating corndogs	exists x. exists y. (YoungChild(x) & YoungChild(y) & Eating(x, corndog) & Eating(y, corndog))	e	"'corndog' is an illegal variable name.  Constants may not be quantified.
+all x. all corndog. (Eating(x, corndog) -> Eating(x, corndog))
+           ^"
+24	A man doing a pose is being watched by another man	all x.all y. (Man(x) & Man(y) & DoingPose(x) -> BeingWatchedBy(x, y))	The cowboy in blue and red pants is being tossed by a horse	all x.all y. (Cowboy(x) & Horse(y) & BluePants(x) & RedPants(x) -> BeingTossedBy(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RedPants/1, RedPants/0, BluePants/1, BluePants/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: RedPants/1, RedPants/0, BluePants/1, BluePants/0"
+25	A man doing a pose is being watched by another man	all x.all y. (Man(x) & Man(y) & DoingPose(x) -> BeingWatchedBy(x, y))	The cowboy is tossing the blue and red pants towards the horse	all x.all y.all z. (Cowboy(x) & BluePants(y) & RedPants(z) -> TossesTowardsHorse(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RedPants/1, RedPants/0, BluePants/1, BluePants/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: RedPants/1, RedPants/0, BluePants/1, BluePants/0"
+26	A man is singing and playing the guitar	exists x. (Man(x) & Singing(x) & PlayingGuitar(x))	A dog is riding a skateboard	exists x. exists y. (Dog(x) & Skateboard(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+27	There is no woman slicing a carrot	not exists x. (Woman(x) & SlicingCarrot(x))	A woman is slicing a potato	exists x. (Woman(x) & Slicing(x, potato))	c	"'potato' is an illegal variable name.  Constants may not be quantified.
+all x. all potato. (Slicing(x, potato) -> Slicing(x, potato))
+           ^"
+28	A woman is dancing and singing with other women	all x.all y.all z. (Woman(x) & Woman(y) & Woman(z) -> (Dancing(x, y) & Singing(x, z)))	A woman is dancing and singing with other women	all x.all y.all z. (Woman(x) & Woman(y) & Woman(z) -> (Dancing(x, y) & Singing(x, z)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Singing/1, Singing/2, Dancing/1, Dancing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Singing/1, Singing/2, Dancing/1, Dancing/2"
+29	A man is rinsing a large steak	exists x. exists y. (Man(x) & Steak(y) & Large(y) & Rinsing(x, y))	A person is rinsing a steak with water	exists x. (Person(x) & Rinsing(x, Steak) & With(x, Water))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Steak/1, Steak/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Steak/1, Steak/0"
+30	Nobody is rinsing a steak with water	not exists x. (Person(x) & RinsingSteak(x))	A person is rinsing a steak with water	exists x. (Person(x) & Rinsing(x, Steak) & With(x, Water))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Steak/1, Steak/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Steak/1, Steak/0"
+31	Nobody is rinsing a steak with water	not exists x. (Person(x) & RinsingSteak(x))	A person is chopping an onion	exists x. (Person(x) & Chopping(x, Onion))	e	"'redOnion' is an illegal variable name.  Constants may not be quantified.
+all x. all redOnion. (Chopping(x, redOnion) -> Chopping(x, redOnion))
+           ^"
+32	A deer is jumping over a cyclone fence	exists x. exists y. (Deer(x) & CycloneFence(y) & JumpsOver(x, y))	The man is stirring oil	exists x. (Man(x) & Stirring(x, Oil))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Oil/1, Oil/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Oil/1, Oil/0"
+33	Two men are playing table tennis	exists x. exists y. (Man(x) & Man(y) & PlayingTableTennis(x, y))	A woman is cutting broccoli	exists x. (Woman(x) & Cutting(x, Broccoli))	c	"'Broccoli' is an illegal variable name.  Constants may not be quantified.
+all x. all Broccoli. (Cutting(x, Broccoli) -> Cutting(x, Broccoli))
+           ^"
+34	A man is playing two keyboards	exists x. (Man(x) & PlayingTwoKeyboards(x))	Mimes are performing on a stage	all x.all y. (Mime(x) & Stage(y) -> PerformsOn(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PerformsOn/3, PerformsOn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: PerformsOn/3, PerformsOn/2"
+35	Some oil is being poured on the tomatoes by the man	exists x.exists y.exists z. (Oil(x) & Tomato(y) & Man(z) & PoursOn(z, y, x))	Somebody is pouring tomato oil on the man	exists x. (Pouring(x, TomatoOil, Man))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Man/1, Man/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Man/1, Man/0"
+36	The baby is being put into a trash can by a woman	exists x.exists y. (Baby(x) & Woman(y) & TrashCan(z) & PutInto(x, z) & By(x, y))	The baby is being put into a trash can by a woman	exists x.exists y. (Baby(x) & Woman(y) & TrashCan(z) & PutInto(x, z) & By(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PutInto/3, PutInto/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: PutInto/3, PutInto/2"
+37	The kitten is eagerly drinking some milk from the bowl	all x.all y. (Kitten(x) & Milk(y) & Bowl(z) -> DrinksFrom(x, y, z))	The band isn't singing	not exists x. (Band(x) & Singing(x))	c	"'band' is an illegal variable name.  Constants may not be quantified.
+all band. (Singing(band) -> Singing(band))
+    ^"
+38	A boy in his teens is talking to a girl with an internet camera	all x.all y. (Boy(x) & Girl(y) & Teenage(x) & InternetCamera(y) -> TalkingTo(x, y))	The teens are talking to a boy and a girl with a webcam	all x.all y.all z. (Teen(x) & Boy(y) & Girl(z) -> TalkingTo(x, y, z, Webcam))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: TalkingTo/2, TalkingTo/4, Webcam/1, Webcam/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: TalkingTo/2, TalkingTo/4, Webcam/1, Webcam/0"
+39	A man is ignoring a girl via an internet camera	exists x. exists y. exists z. (Man(x) & Girl(y) & InternetCamera(z) & Ignoring(x, y, z))	A boy in his teens isn't talking to a girl with a webcam	all x. all y. (Boy(x) & Teen(x) & Girl(y) & Webcam(y) -> not TalkingTo(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: TalkingTo/3, TalkingTo/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: TalkingTo/3, TalkingTo/2"
+40	A man is ignoring a girl via an internet camera	exists x. exists y. exists z. (Man(x) & Girl(y) & InternetCamera(z) & Ignoring(x, y, z))	The teens are talking to a boy and a girl with a webcam	all x.all y.all z. (Teen(x) & Boy(y) & Girl(z) -> TalkingTo(x, y, z, Webcam))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: TalkingTo/3, TalkingTo/4.
+
+
+Fatal error:  The following symbols are used with multiple arities: TalkingTo/3, TalkingTo/4"
+41	A woman is beating two eggs in a bowl and using a whisk made of wire	all x. all y. all z. (Woman(x) & Egg(y) & Bowl(z) & Beating(x, y, z) -> (UsesWhisk(x) & MadeOfWire(x)))	A woman is beating two eggs in a bowl and using a whisk made of wire	all x. all y. all z. (Woman(x) & Egg(y) & Bowl(z) & Beating(x, y, z) -> (UsesWhisk(x) & MadeOfWire(x)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Beating/2, Beating/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Beating/2, Beating/3"
+42	The interviewer is granting a break to the man	GrantsBreak(interviewer, man)	A person is driving the white car	exists x. (Person(x) & Driving(x, WhiteCar))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WhiteCar/1, WhiteCar/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: WhiteCar/1, WhiteCar/0"
+43	An inflatable crocodile is being pushed by two kids in a pool	exists x.exists y.exists z. (InflatableCrocodile(x) & Kid(y) & Kid(z) & Pushes(y, x) & Pushes(z, x) & Pool(x))	Two kids are pushing past a crocodile in an inflatable pool	exists x. exists y. exists z. (Kid(x) & Kid(y) & Crocodile(z) & Pushing(x, y, z) & InflatablePool(z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Pushing/2, Pushing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Pushing/2, Pushing/3"
+44	A dog is pushing a toddler into a puddle of rain	all x.all y.all z. (Dog(x) & Toddler(y) & Puddle(z) & Rain(z) -> PushingInto(x, y, z))	A man is eating a bowl of cereal	exists x. exists y. (Man(x) & BowlOfCereal(y) & Eating(x, y))	c	"'bowlOfCereal' is an illegal variable name.  Constants may not be quantified.
+all x. all bowlOfCereal. (Eating(x, bowlOfCereal) -> Eating(x, bowlOfCereal))
+           ^"
+45	A man is eating a bowl of cereal	exists x. exists y. (Man(x) & BowlOfCereal(y) & Eating(x, y))	A man is eating a bowl of cereal	exists x. exists y. (Man(x) & BowlOfCereal(y) & Eating(x, y))	c	"'Cereal' is an illegal variable name.  Constants may not be quantified.
+all x. all Cereal. (Eating(x, Cereal) -> Eating(x, Cereal))
+           ^"
+46	A boy is playing a guitar	exists x. (Boy(x) & PlayingGuitar(x))	The woman is waterskiing	exists x. (Woman(x) & Waterskiing(x))	e	"'woman' is an illegal variable name.  Constants may not be quantified.
+all woman. (Woman(woman) -> Woman(woman))
+    ^"
+47	The woman is waterskiing	exists x. (Woman(x) & Waterskiing(x))	Someone is banging a camera lens against a nail	exists x. (Person(x) & Banging(x, CameraLens, Nail))	e	"'lens' is an illegal variable name.  Constants may not be quantified.
+all x. all lens. all camera. (Banging(x, lens, camera) -> Banging(x, lens, camera))
+           ^"
+48	The woman is waterskiing	exists x. (Woman(x) & Waterskiing(x))	There is no one banging a camera lens against a nail	not exists x. (Person(x) & Banging(x, CameraLens, Nail))	c	"'CameraLens' is an illegal variable name.  Constants may not be quantified.
+all x. all CameraLens. all Nail. (Banging(x, CameraLens, Nail) -> Banging(x, CameraLens, Nail))
+           ^"
+49	The man is hammering a nail with a camera	exists x. exists y. exists z. (Man(x) & Nail(y) & Camera(z) & Hammering(x, y, z))	A camera is being hammered onto the nail by the man	exists x. exists y. exists z. (Camera(x) & Man(y) & Nail(z) & HammeredOnto(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Nail/1, Nail/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Nail/1, Nail/0"
+50	Someone is banging the lens of a camera against a nail	exists x. (Person(x) & Banging(x, lens, camera) & Against(x, nail))	The man is hammering a nail with a camera	exists x. exists y. exists z. (Man(x) & Nail(y) & Camera(z) & Hammering(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Nail/1, Nail/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Nail/1, Nail/0"
+51	The man is slicing a potato	exists x. exists y. (Man(x) & Potato(y) & Slicing(x, y))	Someone is cutting a tomato	exists x. (Person(x) & Cutting(x, tomato))	e	"'Tomato' is an illegal variable name.  Constants may not be quantified.
+all x. all Tomato. (Cutting(x, Tomato) -> Cutting(x, Tomato))
+           ^"
+52	A man is cleaning a dish	exists x. exists y. (Man(x) & Dish(y) & Cleaning(x, y))	The woman is slicing an onion with a knife	exists x. exists y. exists z. (Woman(x) & Onion(y) & Knife(z) & Slicing(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Knife/1, Knife/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Knife/1, Knife/0"
+53	A man is riding a motorbike	exists x. exists y. (Man(x) & Motorbike(y) & Riding(x, y))	A man is riding a motorbike	exists x. exists y. (Man(x) & Motorbike(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+54	A man is riding a motorbike	exists x. exists y. (Man(x) & Motorbike(y) & Riding(x, y))	A man is getting off the motorcycle	exists x. (Man(x) & Motorcycle(y) & Riding(x, y) & not Riding(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+55	A man is riding a motorbike	exists x. exists y. (Man(x) & Motorbike(y) & Riding(x, y))	A man is riding a motorcycle	exists x. exists y. (Man(x) & Motorcycle(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+56	People are riding and paddling a raft	all x.all y. (Person(x) & Raft(y) -> (Riding(x, y) & Paddling(x, y)))	There is no cat eating corn on the cob	not exists x. (Cat(x) & Eating(x, y) & CornOnTheCob(y))	c	"'corn' is an illegal variable name.  Constants may not be quantified.
+all x. all corn. (Eating(x, corn) -> Eating(x, corn))
+           ^"
+57	A cat is eating some corn	exists x.exists y. (Cat(x) & Corn(y) & Eating(x, y))	Nobody is slicing a tomato	not exists x. (Slicing(x) & Tomato(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Slicing/2, Slicing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Slicing/2, Slicing/1"
+58	A person is cutting some mushrooms	exists x. (Person(x) & Cutting(x, mushrooms))	A person is cutting some mushrooms	exists x. (Person(x) & Cutting(x, mushrooms))	e	"'mushrooms' is an illegal variable name.  Constants may not be quantified.
+all x. all mushrooms. (Cutting(x, mushrooms) -> Cutting(x, mushrooms))
+           ^"
+59	The lady is slicing up the meat	exists x. exists y. (Lady(x) & Meat(y) & Slicing(x, y))	The lady is slicing up the meat	exists x. exists y. (Lady(x) & Meat(y) & Slicing(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Meat/1, Meat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Meat/1, Meat/0"
+60	A person is pouring olive oil into a pot on the stove	exists x. exists y. exists z. (Person(x) & OliveOil(y) & Pot(z) & PouringInto(x, y, z))	The woman is walking the dog	exists x. exists y. (Woman(x) & Dog(y) & Walking(x, y))	c	"'dog' is an illegal variable name.  Constants may not be quantified.
+all x. all dog. (Walking(x, dog) -> Walking(x, dog))
+           ^"
+61	A man is slicing a carrot with a knife	exists x. exists y. exists z. (Man(x) & Carrot(y) & Knife(z) & Slicing(x, y, z))	An onion is being sliced by the woman	exists x.exists y. (Onion(x) & Woman(y) & Slicing(y, x))	e	"'Onion' is an illegal variable name.  Constants may not be quantified.
+all x. all Onion. (Slicing(x, Onion) -> Slicing(x, Onion))
+           ^"
+62	A man is slicing a carrot with a knife	exists x. exists y. exists z. (Man(x) & Carrot(y) & Knife(z) & Slicing(x, y, z))	A man is slicing a carrot with a knife	exists x. exists y. exists z. (Man(x) & Carrot(y) & Knife(z) & Slicing(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Slicing/2, Slicing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Slicing/2, Slicing/3"
+63	A man is slicing a carrot with a knife	exists x. exists y. exists z. (Man(x) & Carrot(y) & Knife(z) & Slicing(x, y, z))	A plane is landing	exists x. (Plane(x) & Landing(x))	e	"'plane' is an illegal variable name.  Constants may not be quantified.
+all plane. (Landing(plane) -> Landing(plane))
+    ^"
+64	A little girl is playing a grand piano on stage	exists x. exists y. exists z. (LittleGirl(x) & GrandPiano(y) & Stage(z) & PlayingOn(x, y, z))	A woman is cooking eggs	exists x. (Woman(x) & Cooking(x, Eggs))	e	"'Eggs' is an illegal variable name.  Constants may not be quantified.
+all x. all Eggs. (Cooking(x, Eggs) -> Cooking(x, Eggs))
+           ^"
+65	A little girl is playing a grand piano on stage	exists x. exists y. exists z. (LittleGirl(x) & GrandPiano(y) & Stage(z) & PlayingOn(x, y, z))	A woman is cooking eggs	exists x. (Woman(x) & Cooking(x, Eggs))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cooking/1, Cooking/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cooking/1, Cooking/2"
+66	A little girl is playing a grand piano on stage	exists x. exists y. exists z. (LittleGirl(x) & GrandPiano(y) & Stage(z) & PlayingOn(x, y, z))	The woman is cooking something	exists x. (Woman(x) & Cooking(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cooking/2, Cooking/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cooking/2, Cooking/1"
+67	A little girl is playing a grand piano on stage	exists x. exists y. exists z. (LittleGirl(x) & GrandPiano(y) & Stage(z) & PlayingOn(x, y, z))	The woman is cooking something	exists x. (Woman(x) & Cooking(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cooking/2, Cooking/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cooking/2, Cooking/1"
+68	A little girl is playing a grand piano on stage	exists x. exists y. exists z. (LittleGirl(x) & GrandPiano(y) & Stage(z) & PlayingOn(x, y, z))	The cats are playing with each other	all x.all y.all z. (Cat(x) & Cat(y) & Cat(z) -> PlayingWith(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingWith/2, PlayingWith/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingWith/2, PlayingWith/3"
+69	A woman is skillfully playing a flute	exists x. (Woman(x) & SkillfullyPlayingFlute(x))	The flute is being played by the woman	exists x. exists y. (Flute(x) & Woman(y) & Playing(y, x))	e	"'flute' is an illegal variable name.  Constants may not be quantified.
+all x. all flute. (Playing(x, flute) -> Playing(x, flute))
+           ^"
+70	Two men are fighting in a cow pasture	exists x. exists y. (Man(x) & Man(y) & Fighting(x, y) & CowPasture(x, y))	Nobody is fighting in a cow pasture	not exists x. (Fighting(x) & InCowPasture(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Fighting/2, Fighting/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Fighting/2, Fighting/1"
+71	A man is eating a banana	exists x. exists y. (Man(x) & Banana(y) & Eating(x, y))	A banana is being eaten by a man	exists x. exists y. (Banana(x) & Man(y) & Eating(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Eating/3, Eating/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Eating/3, Eating/2"
+72	A boy is sitting in a room and playing a piano by lamp light	exists x. exists y. exists z. (Boy(x) & Room(y) & Piano(z) & SittingIn(x, y) & Playing(x, z) & LampLight(z))	A woman is playing a guitar which is electric	all x.all y. (Woman(x) & Guitar(y) & Electric(y) -> Playing(x, y))	e	"'ElectricGuitar' is an illegal variable name.  Constants may not be quantified.
+all x. all ElectricGuitar. (Playing(x, ElectricGuitar) -> Playing(x, ElectricGuitar))
+           ^"
+73	There is no man in a suit standing at a microphone and singing	not exists x. (Man(x) & InSuit(x) & StandingAtMicrophone(x) & Singing(x))	The man on stage isn't singing into the microphone	all x. (Man(x) & OnStage(x) -> not SingingIntoMicrophone(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: OnStage/2, OnStage/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: OnStage/2, OnStage/1"
+74	A few children are jumping on a trampoline	exists x.exists y. (Child(x) & Trampoline(y) & JumpingOn(x, y))	Nobody is playing on a trampoline	not exists x. (Person(x) & PlayingOnTrampoline(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingOnTrampoline/2, PlayingOnTrampoline/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingOnTrampoline/2, PlayingOnTrampoline/1"
+75	The man is not cutting the tape on the box	not CuttingTapeOnBox(man)	The man is cutting the tape on the box	exists x. exists y. (Man(x) & Tape(y) & Box(z) & Cutting(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cutting/2, Cutting/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cutting/2, Cutting/3"
+76	The man is not cutting the tape on the box	not CuttingTapeOnBox(man)	There is no man cutting a box	not exists x. (Man(x) & Cutting(x, box))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cutting/3, Cutting/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cutting/3, Cutting/2"
+77	The man is not cutting the tape on the box	not CuttingTapeOnBox(man)	The man is cutting the tape on the box	exists x. exists y. (Man(x) & Tape(y) & Box(z) & Cutting(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cutting/2, Cutting/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cutting/2, Cutting/3"
+78	The young boy is running through the ocean waves	all x. (YoungBoy(x) -> exists y. (Ocean(y) & Waves(y) & RunningThrough(x, y)))	A cook is coating a pork chop	exists x. exists y. (Cook(x) & PorkChop(y) & Coating(x, y))	e	"'porkChop' is an illegal variable name.  Constants may not be quantified.
+all x. all porkChop. (Coating(x, porkChop) -> Coating(x, porkChop))
+           ^"
+79	A man and a woman are standing still in the woods	exists x. exists y. (Man(x) & Woman(y) & StandingStillInWoods(x, y))	The man and woman are walking	exists x. exists y. (Man(x) & Woman(y) & Walking(x) & Walking(y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Walking/2, Walking/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Walking/2, Walking/1"
+80	The south African plane is flying in a blue sky	exists x. (Plane(x) & SouthAfrican(x) & FlyingInBlueSky(x))	A woman is cooking a breaded pork chop	exists x. (Woman(x) & Cooking(x, breaded_pork_chop))	c	"'BreadedPorkChop' is an illegal variable name.  Constants may not be quantified.
+all x. all BreadedPorkChop. (Cooking(x, BreadedPorkChop) -> Cooking(x, BreadedPorkChop))
+           ^"
+81	The woman is chopping some bread and fried pork	exists x. (Woman(x) & ChoppingBread(x) & ChoppingFriedPork(x))	The woman is not frying a breaded pork chop	not exists x. (Woman(x) & Frying(x, breadedPorkChop))	n	"'breaded_pork_chop' is an illegal variable name.  Constants may not be quantified.
+all x. all breaded_pork_chop. (Frying(x, breaded_pork_chop) -> Cooking(x, breaded_pork_chop))
+           ^"
+82	The woman is chopping some bread and fried pork	exists x. (Woman(x) & ChoppingBread(x) & ChoppingFriedPork(x))	The woman is frying a breaded pork chop	exists x. (Woman(x) & Frying(x, breadedPorkChop))	c	"'BreadedPorkChop' is an illegal variable name.  Constants may not be quantified.
+all x. all BreadedPorkChop. (Frying(x, BreadedPorkChop) -> Cooking(x, BreadedPorkChop))
+           ^"
+83	The woman is chopping some bread and fried pork	exists x. (Woman(x) & ChoppingBread(x) & ChoppingFriedPork(x))	A woman is cooking a breaded pork chop	exists x. (Woman(x) & Cooking(x, breaded_pork_chop))	e	"'breadedPorkChop' is an illegal variable name.  Constants may not be quantified.
+all x. all breadedPorkChop. (Frying(x, breadedPorkChop) -> Cooking(x, breadedPorkChop))
+           ^"
+84	Someone is typing	exists x. (Person(x) & Typing(x))	Someone is typing on a keyboard	exists x. (Person(x) & Typing(x, Keyboard))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Typing/1, Typing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Typing/1, Typing/2"
+85	A woman is peeling a potato	exists x. (Woman(x) & PeelingPotato(x))	Someone is cleansing an animal	exists x. (Cleansing(x, Animal))	e	"'Animal' is an illegal variable name.  Constants may not be quantified.
+all x. all Animal. (Cleaning(x, Animal) -> Cleansing(x, Animal))
+           ^"
+86	A woman is peeling a potato	exists x. (Woman(x) & PeelingPotato(x))	Someone is dirtying an animal	exists x.exists y. (Person(x) & Animal(y) & Dirtying(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Animal/1, Animal/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Animal/1, Animal/0"
+87	The woman is cleaning a shrimp	exists x. exists y. (Woman(x) & Shrimp(y) & Cleaning(x, y))	Someone is cleaning an animal	exists x. (Cleaning(x, Animal))	n	"'Shrimp' is an illegal variable name.  Constants may not be quantified.
+all x. all Shrimp. (Cleaning(x, Shrimp) -> Cleaning(x, Shrimp))
+           ^"
+88	A woman is cleaning a shrimp	exists x. exists y. (Woman(x) & Shrimp(y) & Cleaning(x, y))	A woman is riding a water scooter	exists x. exists y. (Woman(x) & WaterScooter(y) & Riding(x, y))	c	"'WaterScooter' is an illegal variable name.  Constants may not be quantified.
+all x. all WaterScooter. (Riding(x, WaterScooter) -> Riding(x, WaterScooter))
+           ^"
+89	A woman is riding a water scooter	exists x. exists y. (Woman(x) & WaterScooter(y) & Riding(x, y))	The boy is riding a tricycle	exists x. (Boy(x) & Riding(x, tricycle))	e	"'boy' is an illegal variable name.  Constants may not be quantified.
+all boy. (Boy(boy) -> Boy(boy))
+    ^"
+90	The boy is speedily riding a tricycle	Boy(boy) & Tricycle(tricycle) & SpeedilyRiding(boy, tricycle)	A woman is riding a scooter towards the water	exists x. exists y. exists z. (Woman(x) & Scooter(y) & Water(z) & Riding(x, y) & Towards(x, z))	n	"'tricycle' is an illegal variable name.  Constants may not be quantified.
+all x. all tricycle. (Riding(x, tricycle) -> Riding(x, tricycle))
+           ^"
+91	The boy is speedily riding a tricycle	Boy(boy) & Tricycle(tricycle) & SpeedilyRiding(boy, tricycle)	A panda bear is eating some bamboo	exists x. (PandaBear(x) & Eating(x, bamboo))	c	"'bamboo' is an illegal variable name.  Constants may not be quantified.
+all x. all bamboo. (Eating(x, bamboo) -> Eating(x, bamboo))
+           ^"
+92	One man is chopping a log with an axe	exists x. exists y. exists z. (Man(x) & Log(y) & Axe(z) & Chopping(x, y, z))	There is no man chopping a log with an axe	not exists x. (Man(x) & Chopping(x, log) & UsingAxe(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Chopping/3, Chopping/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Chopping/3, Chopping/2"
+93	The man is chopping the trunk of a tree with an axe	exists x. exists y. exists z. (Man(x) & Tree(y) & Axe(z) & Chopping(x, y, z))	The man is chopping a tree trunk with an axe	exists x. exists y. exists z. (Man(x) & TreeTrunk(y) & Axe(z) & Chopping(x, y, z))	c	"'TreeTrunk' is an illegal variable name.  Constants may not be quantified.
+all x. all TreeTrunk. all Axe. (Chopping(x, TreeTrunk, Axe) -> Chopping(x, TreeTrunk, Axe))
+           ^"
+94	Someone is taking the okra out of a pot	exists x. (TakingOkra(x))	Someone is cooking okra in a pan	exists x. (Person(x) & Cooking(x, okra) & InPan(x))	c	"'okra' is an illegal variable name.  Constants may not be quantified.
+all x. all okra. (Cooking(x, okra) -> Cooking(x, okra))
+           ^"
+95	The boys are standing in front of the car, which is burning	all x.all y. (Boy(x) & Car(y) -> (StandingInFrontOf(x, y) & Burning(y)))	The boys are standing and burning a car	all x.all y. (Boy(x) & Car(y) -> (Standing(x) & Burning(x, y)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Burning/1, Burning/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Burning/1, Burning/2"
+96	A boy is looking at a calendar	exists x. exists y. (Boy(x) & Calendar(y) & LookingAt(x, y))	A person is throwing a cat at the ceiling	exists x. exists y. exists z. (Person(x) & Cat(y) & Ceiling(z) & Throwing(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Throwing/2, Throwing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Throwing/2, Throwing/3"
+97	A person is throwing a cat at the ceiling	exists x. exists y. exists z. (Person(x) & Cat(y) & Ceiling(z) & Throwing(x, y, z))	A person is throwing a cat at the ceiling	exists x. exists y. exists z. (Person(x) & Cat(y) & Ceiling(z) & Throwing(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Throwing/2, Throwing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Throwing/2, Throwing/3"
+98	A person is throwing a cat at the ceiling	exists x. exists y. exists z. (Person(x) & Cat(y) & Ceiling(z) & Throwing(x, y, z))	A person is throwing a cat at the ceiling	exists x. exists y. exists z. (Person(x) & Cat(y) & Ceiling(z) & Throwing(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Throwing/2, Throwing/3, Ceiling/1, Ceiling/0, Cat/1, Cat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Throwing/2, Throwing/3, Ceiling/1, Ceiling/0, Cat/1, Cat/0"
+99	A person is packing a zucchini	exists x. (Person(x) & Packing(x, zucchini))	A person is scrubbing a zucchini	exists x. exists y. (Person(x) & Zucchini(y) & Scrubbing(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Scrubbing/3, Scrubbing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Scrubbing/3, Scrubbing/2"
+100	The man is not riding a horse by a creek	not exists x. (Man(x) & RidingHorse(x) & ByCreek(x))	A man is riding a horse	exists x. exists y. (Man(x) & Horse(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+101	The man is not riding a horse by a creek	not exists x. (Man(x) & RidingHorse(x) & ByCreek(x))	A horse is being ridden by a man	exists x.exists y. (Horse(x) & Man(y) & Riding(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+102	The men are fighting with their fists in a ring	all x.all y.all z. (Man(x) & Fist(y) & Ring(z) -> FightsIn(x, y, z))	Two people are fist fighting in a ring	exists x. exists y. (Person(x) & Person(y) & FistFight(x, y) & Ring(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Ring/1, Ring/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Ring/1, Ring/2"
+103	The woman is picking up a baby kangaroo	exists x. exists y. (Woman(x) & BabyKangaroo(y) & PickingUp(x, y))	A kangaroo is picking up the woman's baby	all x.all y.all z. (Kangaroo(x) & Woman(y) & Baby(z) -> PickingUp(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PickingUp/2, PickingUp/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PickingUp/2, PickingUp/3"
+104	The man is riding a horse	exists x. exists y. (Man(x) & Horse(y) & Riding(x, y))	A man is drawing a picture	exists x. (Man(x) & Drawing(x, Picture))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Picture/1, Picture/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Picture/1, Picture/0"
+105	The man is riding a horse	exists x. exists y. (Man(x) & Horse(y) & Riding(x, y))	A man is drawing a picture	exists x. (Man(x) & Drawing(x, Picture))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Drawing/1, Drawing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Drawing/1, Drawing/2"
+106	Someone is drawing a person	exists x. (Person(x) & Drawing(x))	The person is drawing	exists x. (Person(x) & Drawing(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Drawing/2, Drawing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Drawing/2, Drawing/1"
+107	A man is eating a pizza	exists x. exists y. (Man(x) & Pizza(y) & Eating(x, y))	A man is eating some food	exists x. exists y. (Man(x) & Food(y) & Eating(x, y))	n	"'pizza' is an illegal variable name.  Constants may not be quantified.
+all x. all pizza. (Eating(x, pizza) -> Eating(x, pizza))
+           ^"
+108	The man is erasing the other man's work from the board	all x.all y. (Man(x) & Man(y) & Work(x, y) -> Erasing(x, y))	The girl is erasing the other man's work from the board	all x.all y.all z. (Girl(x) & Man(y) & Board(z) & Erasing(x, y, z) -> WorkFromBoard(y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Erasing/2, Erasing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Erasing/2, Erasing/3"
+109	A man is rapidly chopping some mushrooms with a knife	exists x. exists y. exists z. (Man(x) & Mushroom(y) & Knife(z) & RapidlyChopping(x, y, z))	A man is rapidly chopping some mushrooms with a knife	exists x. exists y. exists z. (Man(x) & Mushroom(y) & Knife(z) & RapidlyChopping(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RapidlyChopping/2, RapidlyChopping/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: RapidlyChopping/2, RapidlyChopping/3"
+110	A woman is chopping up an octopus	exists x. exists y. (Woman(x) & Octopus(y) & Chopping(x, y))	The woman is cutting cooked octopus	exists x. (Woman(x) & Cutting(x, CookedOctopus))	n	"'CookedOctopus' is an illegal variable name.  Constants may not be quantified.
+all x. all CookedOctopus. (Cutting(x, CookedOctopus) -> Cutting(x, CookedOctopus))
+           ^"
+111	The man is cutting cooked octopus	exists x. (Man(x) & Cutting(x, CookedOctopus))	A woman is cutting an octopus	exists x. exists y. (Woman(x) & Octopus(y) & Cutting(x, y))	e	"'CookedOctopus' is an illegal variable name.  Constants may not be quantified.
+all x. all CookedOctopus. (Cutting(x, CookedOctopus) -> Cutting(x, CookedOctopus))
+           ^"
+112	A man is cutting a potato	exists x. exists y. (Man(x) & Potato(y) & Cutting(x, y))	A woman is cutting a tomato	exists x. exists y. (Woman(x) & Tomato(y) & Cutting(x, y))	n	"'potato' is an illegal variable name.  Constants may not be quantified.
+all x. all potato. (Cutting(x, potato) -> Cutting(x, potato))
+           ^"
+113	A man is making a sketch	exists x. (Man(x) & MakingSketch(x))	A man is drawing	exists x. (Man(x) & Drawing(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Drawing/2, Drawing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Drawing/2, Drawing/1"
+114	The man is drawing	exists x. (Man(x) & Drawing(x))	The woman is drawing a man	exists x. exists y. (Woman(x) & Man(y) & Drawing(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Drawing/1, Drawing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Drawing/1, Drawing/2"
+115	The man is drawing	exists x. (Man(x) & Drawing(x))	A man is drawing	exists x. (Man(x) & Drawing(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Drawing/2, Drawing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Drawing/2, Drawing/1"
+116	A man is riding a horse on the beach	exists x. exists y. exists z. (Man(x) & Horse(y) & Beach(z) & Riding(x, y, z))	A guy is riding a horse	exists x. exists y. (Guy(x) & Horse(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+117	A man is riding a horse on the beach	exists x. exists y. exists z. (Man(x) & Horse(y) & Beach(z) & Riding(x, y, z))	A guy is riding a horse	exists x. exists y. (Guy(x) & Horse(y) & Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+118	A man is riding a horse on the beach	exists x. exists y. exists z. (Man(x) & Horse(y) & Beach(z) & Riding(x, y, z))	A horse is being ridden by a guy	exists x.exists y. (Horse(x) & Guy(y) & Riding(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+119	A paper plate is being cut by a man	exists x.exists y. (PaperPlate(x) & Man(y) & Cutting(y, x))	The man is cutting a paper plate	exists x. exists y. (Man(x) & PaperPlate(y) & Cutting(x, y))	c	"'PaperPlate' is an illegal variable name.  Constants may not be quantified.
+all x. all PaperPlate. (Cutting(x, PaperPlate) -> Cutting(x, PaperPlate))
+           ^"
+120	Two people in a race are flipping the tires of a tractor	exists x. exists y. exists z. (Person(x) & Person(y) & Tractor(z) & Race(x, y, z) & FlippingTires(x, z))	A man is patting an alligator on the mouth	exists x. exists y. (Man(x) & Alligator(y) & Patting(x, y) & OnMouth(x, y))	c	"'alligator' is an illegal variable name.  Constants may not be quantified.
+all x. all alligator. (Patting(x, alligator) -> Patting(x, alligator))
+           ^"
+121	Two men are not fighting	not (exists x. exists y. (Man(x) & Man(y) & Fighting(x, y)))	Some men are fighting	exists x. (Man(x) & Fighting(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Fighting/2, Fighting/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Fighting/2, Fighting/1"
+122	Two men are not fighting	not (exists x. exists y. (Man(x) & Man(y) & Fighting(x, y)))	Two men are fighting	exists x. exists y. (Man(x) & Man(y) & Fighting(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Fighting/1, Fighting/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Fighting/1, Fighting/2"
+123	Two men are not fighting	not (exists x. exists y. (Man(x) & Man(y) & Fighting(x, y)))	Some men are fighting	exists x. (Man(x) & Fighting(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Fighting/2, Fighting/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Fighting/2, Fighting/1"
+124	There is no man driving a car	not exists x. (Man(x) & DrivingCar(x))	A kid is cutting grass with scissors	exists x. (Kid(x) & CuttingGrass(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: CuttingGrass/2, CuttingGrass/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: CuttingGrass/2, CuttingGrass/1"
+125	There is no man driving a car	not exists x. (Man(x) & DrivingCar(x))	A boy is cutting grass with scissors	exists x. (Boy(x) & CuttingGrass(x, scissors))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: CuttingGrass/1, CuttingGrass/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: CuttingGrass/1, CuttingGrass/2"
+126	A man is cutting a cord with a sword	exists x. exists y. exists z. (Man(x) & Cord(y) & Sword(z) & Cutting(x, y, z))	A man is cutting a rope with a sword	exists x. exists y. exists z. (Man(x) & Rope(y) & Sword(z) & Cutting(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cutting/2, Cutting/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cutting/2, Cutting/3"
+127	A man is showing off a small monkey	exists x. exists y. (Man(x) & Monkey(y) & Small(y) & ShowsOff(x, y))	A group of boys is playing soccer on the beach	exists x.exists y.exists z. (Boy(x) & Boy(y) & Beach(z) & PlayingSoccer(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3"
+128	A man is showing off a small monkey	exists x. exists y. (Man(x) & Monkey(y) & Small(y) & ShowsOff(x, y))	A group of boys is playing soccer on the beach	exists x.exists y.exists z. (Boy(x) & Boy(y) & Beach(z) & PlayingSoccer(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3"
+129	A monkey is kicking a person	exists x. exists y. (Monkey(x) & Person(y) & Kicks(x, y))	A monkey is kicking a person	exists x. exists y. (Monkey(x) & Person(y) & Kicks(x, y))	c	"'Person' is an illegal variable name.  Constants may not be quantified.
+all x. all Person. (Kicks(x, Person) -> Kicks(x, Person))
+           ^"
+130	A boy is not playing a guitar	all x. (Boy(x) -> not PlayingGuitar(x))	A dog is being teased by a monkey at the zoo	exists x.exists y. (Dog(x) & Monkey(y) & AtZoo(x) & AtZoo(y) & Teasing(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: AtZoo/2, AtZoo/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: AtZoo/2, AtZoo/1"
+131	A person is slicing some ginger	exists x. (Person(x) & Slicing(x, ginger))	An onion is being sliced by a person	exists x.exists y. (Onion(x) & Person(y) & Slicing(y, x))	e	"'Onion' is an illegal variable name.  Constants may not be quantified.
+all x. all Onion. (Slicing(x, Onion) -> Slicing(x, Onion))
+           ^"
+132	A person is cutting some ginger	exists x. (Person(x) & Cutting(x, ginger))	A person is slicing some ginger	exists x. (Person(x) & Slicing(x, ginger))	n	"'Onion' is an illegal variable name.  Constants may not be quantified.
+all x. all Onion. (Slicing(x, Onion) -> Slicing(x, Onion))
+           ^"
+133	A little girl is selling a scooter	exists x. exists y. (LittleGirl(x) & Scooter(y) & Selling(x, y))	A little girl is peddling a scooter	exists x. exists y. (LittleGirl(x) & Scooter(y) & Peddling(x, y))	c	"'Scooter' is an illegal variable name.  Constants may not be quantified.
+all x. all Scooter. (Peddling(x, Scooter) -> Peddling(x, Scooter))
+           ^"
+134	A big cat is opening a plastic drawer with its paws and is jumping inside	all x.all y.all z. (BigCat(x) & PlasticDrawer(y) & Paws(x) & JumpingInside(z) -> OpensWithPawsAndJumps(x, y, z))	A cat is opening a drawer and climbing inside	all x.all y. (Cat(x) & Drawer(y) -> (Opening(x, y) & ClimbingInside(x, y)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: ClimbingInside/1, ClimbingInside/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: ClimbingInside/1, ClimbingInside/2"
+135	A man is opening a door	exists x. (Man(x) & OpeningDoor(x))	A man is cutting a potato	exists x. exists y. (Man(x) & Potato(y) & Cutting(x, y))	c	"'potato' is an illegal variable name.  Constants may not be quantified.
+all x. all potato. (Cutting(x, potato) -> Cutting(x, potato))
+           ^"
+136	There is no person playing a piano	not exists x. (Person(x) & PlaysPiano(x))	There is no person slicing a potato	not exists x. (Person(x) & Slicing(x, potato))	c	"'potato' is an illegal variable name.  Constants may not be quantified.
+all x. all potato. (Slicing(x, potato) -> Slicing(x, potato))
+           ^"
+137	Someone is playing with a toad	exists x.exists y. (Person(x) & Toad(y) & PlayingWith(x, y))	Someone is playing with a toad	exists x.exists y. (Person(x) & Toad(y) & PlayingWith(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Toad/1, Toad/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Toad/1, Toad/0"
+138	A rabbit is playing with a toy rabbit	all x.all y. (Rabbit(x) & ToyRabbit(y) -> PlayingWith(x, y))	A man is jumping rope outside	exists x. (Man(x) & JumpingRope(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: JumpingRope/2, JumpingRope/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: JumpingRope/2, JumpingRope/1"
+139	A rabbit is playing with a toy rabbit	all x.all y. (Rabbit(x) & ToyRabbit(y) -> PlayingWith(x, y))	A woman is slicing a cucumber	exists x. exists y. (Woman(x) & Cucumber(y) & Slicing(x, y))	c	"'cucumber' is an illegal variable name.  Constants may not be quantified.
+all x. all cucumber. (Slicing(x, cucumber) -> Slicing(x, cucumber))
+           ^"
+140	A woman is diving into a pool	exists x. (Woman(x) & DivingIntoPool(x))	The man is seasoning the meat	exists x. (Man(x) & Seasoning(x, Meat))	e	"'Sausages' is an illegal variable name.  Constants may not be quantified.
+all x. all Sausages. (Seasoning(x, Sausages) -> Seasoning(x, Sausages))
+           ^"
+141	The man is not seasoning the sausages	not exists x. (Man(x) & Seasoning(x, Sausages))	The man is seasoning the sausages	exists x. (Man(x) & Seasoning(x, Sausages))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Seasoning/1, Seasoning/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Seasoning/1, Seasoning/2"
+142	There is no man playing a flute	not exists x. (Man(x) & PlaysFlute(x))	A large flute is being played by a man	exists x. exists y. (LargeFlute(x) & Man(y) & Playing(y, x))	e	"'LargeFlute' is an illegal variable name.  Constants may not be quantified.
+all x. all LargeFlute. (Playing(x, LargeFlute) -> Playing(x, LargeFlute))
+           ^"
+143	A man is playing a small flute	exists x. (Man(x) & PlayingSmallFlute(x))	A flute is being played by a man	exists x. exists y. (Flute(x) & Man(y) & Playing(y, x))	e	"'LargeFlute' is an illegal variable name.  Constants may not be quantified.
+all x. all LargeFlute. (Playing(x, LargeFlute) -> Playing(x, LargeFlute))
+           ^"
+144	A person is passionately playing a guitar in front of an audience	all x. all y. all z. (Person(x) & Guitar(y) & Audience(z) & Playing(x, y) -> InFrontOf(x, z))	A person is reading the email	exists x. (Person(x) & Reading(x, email))	e	"'email' is an illegal variable name.  Constants may not be quantified.
+all x. all email. (Reading(x, email) -> Reading(x, email))
+           ^"
+145	A person is passionately playing a guitar in front of an audience	all x. all y. all z. (Person(x) & Guitar(y) & Audience(z) & Playing(x, y) -> InFrontOf(x, z))	A man is reading the email	exists x. (Man(x) & Reading(x, email))	c	"'email' is an illegal variable name.  Constants may not be quantified.
+all x. all email. (Reading(x, email) -> Reading(x, email))
+           ^"
+146	A man is cutting tomatoes	exists x. (Man(x) & Cutting(x, tomatoes))	A woman is cutting broccoli	exists x. (Woman(x) & Cutting(x, Broccoli))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Broccoli/1, Broccoli/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Broccoli/1, Broccoli/0"
+147	A woman is cutting broccoli	exists x. (Woman(x) & Cutting(x, Broccoli))	There is no man cutting tomatoes	not exists x. (Man(x) & Cutting(x, tomatoes))	n	"'Broccoli' is an illegal variable name.  Constants may not be quantified.
+all x. all Broccoli. (Cutting(x, Broccoli) -> Cutting(x, Broccoli))
+           ^"
+148	A woman is cutting broccoli	exists x. (Woman(x) & Cutting(x, Broccoli))	A man is cutting tomatoes	exists x. (Man(x) & Cutting(x, tomatoes))	n	"'Broccoli' is an illegal variable name.  Constants may not be quantified.
+all x. all Broccoli. (Cutting(x, Broccoli) -> Cutting(x, Broccoli))
+           ^"
+149	A dog is barking at a ball	exists x. exists y. (Dog(x) & Ball(y) & BarkingAt(x, y))	A cat is swimming after a tennis ball	exists x. (Cat(x) & Swimming(x) & After(x, tennisBall))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Swimming/2, Swimming/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Swimming/2, Swimming/1"
+150	A person is severing the toe of an empty leather boot with a sword	exists x. exists y. exists z. (Person(x) & Toe(y) & LeatherBoot(z) & Severing(x, y, z) & Empty(z))	A woman is severing the toe of an empty leather boot with a sword	exists x. exists y. exists z. (Woman(x) & Toe(y) & LeatherBoot(z) & Sword(s) & Severing(x, y, z, s))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Severing/3, Severing/4.
+
+
+Fatal error:  The following symbols are used with multiple arities: Severing/3, Severing/4"
+151	A man is severing the toe of an empty leather boot with a sword	exists x. exists y. exists z. (Man(x) & Toe(y) & LeatherBoot(z) & Severing(x, y, z) & Empty(z))	A bowl of soup is being cleaned by a chef	all x.all y. (BowlOfSoup(x) & Chef(y) -> Cleaning(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cleaning/3, Cleaning/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cleaning/3, Cleaning/2"
+152	A young boy is singing and playing a guitar	exists x. (YoungBoy(x) & Singing(x) & PlayingGuitar(x))	A pot of chili is being stirred by someone with a spoon	all x.all y. (PotOfChili(x) & Person(y) & UsesSpoon(y) -> Stirring(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Stirring/3, Stirring/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Stirring/3, Stirring/2"
+153	A young boy is singing and playing a guitar	exists x. (YoungBoy(x) & Singing(x) & PlayingGuitar(x))	Someone is stirring a pot of chili with a spoon	exists x.exists y.exists z. (Person(x) & Pot(y) & Chili(z) & Stirring(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Stirring/2, Stirring/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Stirring/2, Stirring/3"
+154	A woman is cutting butter	exists x. (Woman(x) & Cutting(x, butter))	A man is slicing butter	exists x. (Man(x) & Slicing(x, butter))	n	"'butter' is an illegal variable name.  Constants may not be quantified.
+all x. all butter. (Slicing(x, butter) -> Slicing(x, butter))
+           ^"
+155	A man is riding an electric bicycle	exists x. exists y. (Man(x) & ElectricBicycle(y) & Riding(x, y))	There is no man riding an electric bicycle	not exists x. (Man(x) & Riding(x, ElectricBicycle))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: ElectricBicycle/1, ElectricBicycle/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: ElectricBicycle/1, ElectricBicycle/0"
+156	There is no woman pouring ingredients into a bowl	not exists x. (Woman(x) & PouringIngredients(x))	The woman is seasoning the oil	Seasoning(woman, oil)	n	"'Chef' is an illegal variable name.  Constants may not be quantified.
+all Chef. all Oil. (Seasoning(Chef, Oil) -> Seasoning(Chef, Oil))
+    ^"
+157	The man is standing on a rocky mountain and gray clouds are in the background	exists x. exists y. (Man(x) & RockyMountain(y) & StandingOn(x, y) & GrayClouds(z) & Background(z, x))	A topless person with a back pack is in front of a pile of rocks and clouds are in the background	all x. (ToplessPerson(x) & HasBackPack(x) -> InFrontOfPileOfRocks(x)) & all y. (Cloud(y) -> InBackground(y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: InBackground/2, InBackground/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: InBackground/2, InBackground/1"
+158	The man is standing on a rocky mountain and gray clouds are in the background	exists x. exists y. (Man(x) & RockyMountain(y) & StandingOn(x, y) & GrayClouds(z) & Background(z, x))	A fully dressed person is behind a pile of rocks and a clear sky is in the background	all x. (Person(x) & FullyDressed(x) -> (exists y. (PileOfRocks(y) & Behind(x, y)) & exists z. (ClearSky(z) & InBackground(x, z))))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: InBackground/1, InBackground/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: InBackground/1, InBackground/2"
+159	The man in a cowboy hat is walking through a market and is putting a hand in his pocket	all x.all y.all z. (Man(x) & CowboyHat(x) & Market(y) & Pocket(z) -> (WalksThrough(x, y) & PutsHandIn(x, z)))	A man in a hat is walking through a store	all x.all y.all z. (Man(x) & Hat(x) & Store(y) & WalkingThrough(x, y) -> Walking(z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Hat/2, Hat/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Hat/2, Hat/1"
+160	A boy and a girl in swimsuits are wearing arm floats	all x.all y.all z. (Boy(x) & Girl(y) & Swimsuit(z) & Wearing(x, z) & Wearing(y, z) -> WearingArmFloat(x, y))	The boy and the girl are not playing and wearing arm floats	not (Boy(x) & Girl(y) & Playing(x) & Wearing(x, ArmFloat) & Playing(y) & Wearing(y, ArmFloat))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Playing/2, Playing/1, ArmFloat/1, ArmFloat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Playing/2, Playing/1, ArmFloat/1, ArmFloat/0"
+161	A woman in a yellow dyed shirt is surfing on a pink surfboard	all x.all y.all z. (Woman(x) & YellowDyedShirt(x) & PinkSurfboard(y) & Surfing(x, y) -> Surfer(z, x, y))	There is no woman in a yellow shirt surfing on a pink surfboard	not exists x. (Woman(x) & YellowShirt(x) & Surfing(x) & PinkSurfboard(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Surfing/2, Surfing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Surfing/2, Surfing/1"
+162	A surfer is riding the wave	all x.all y. (Surfer(x) & Wave(y) -> Riding(x, y))	A woman in a yellow shirt is surfing on a pink surfboard	all x.all y.all z. (Woman(x) & YellowShirt(x) & PinkSurfboard(y) & Surfing(x, y) -> Surfer(z, x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Surfer/1, Surfer/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Surfer/1, Surfer/3"
+163	A surfer is riding the wave	all x.all y. (Surfer(x) & Wave(y) -> Riding(x, y))	A woman in a yellow shirt is surfing on a pink surfboard	all x.all y.all z. (Woman(x) & YellowShirt(x) & PinkSurfboard(y) & Surfing(x, y) -> Surfer(z, x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Surfer/1, Surfer/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Surfer/1, Surfer/3"
+164	A surfer is riding the wave	all x.all y. (Surfer(x) & Wave(y) -> Riding(x, y))	A surfer is riding the wave	all x.all y. (Surfer(x) & Wave(y) -> Riding(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Surfer/3, Surfer/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Surfer/3, Surfer/1"
+165	The group of people is sitting on a rocky ledge and a scenic view is behind them	all x.all y. (Group(x) & Person(y) & SittingOn(y, x) & RockyLedge(x) & ScenicView(x) -> Behind(y, x))	There is no girl laughing and there is no other girl watching	not exists x. (Girl(x) & Laughing(x)) & not exists y. (Girl(y) & Watching(y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Watching/3, Watching/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Watching/3, Watching/1"
+166	The group of people is sitting on a rocky ledge and a scenic view is behind them	all x.all y. (Group(x) & Person(y) & SittingOn(y, x) & RockyLedge(x) & ScenicView(x) -> Behind(y, x))	The group of Asian girls are standing together	all x. (AsianGirl(x) -> exists y. (Group(y) & StandingTogether(y, x)))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingTogether/1, StandingTogether/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingTogether/1, StandingTogether/2"
+167	A man is sitting peacefully on a boat in front of the sunset near a flag	exists x. exists y. exists z. (Man(x) & Boat(y) & Sunset(z) & SittingOn(x, y) & Near(x, z) & Flag(x))	The crowd is watching two racing cars that are leaving the starting line	all x.all y.all z. (Crowd(x) & RacingCar(y) & RacingCar(z) & LeavingStartingLine(y, z) -> Watching(x, y, z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Watching/2, Watching/3, LeavingStartingLine/1, LeavingStartingLine/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Watching/2, Watching/3, LeavingStartingLine/1, LeavingStartingLine/2"
+168	The crowd is watching two cars designed for racing that are leaving the starting line	all x.all y.all z. (Crowd(x) & Car(y) & Car(z) & DesignedForRacing(y) & DesignedForRacing(z) -> Watching(x, y, z))	A big dog and a small dog with a white coat are playing together	all x.all y.all z. (BigDog(x) & SmallDog(y) & WhiteCoat(z) -> PlayingTogether(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingTogether/2, PlayingTogether/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingTogether/2, PlayingTogether/3"
+169	A big dog and a small white dog are walking past each other	exists x. exists y. (Dog(x) & Dog(y) & Big(x) & Small(y) & WalkingPast(x, y))	A big dog and a small dog with a white coat are playing together	all x.all y.all z. (BigDog(x) & SmallDog(y) & WhiteCoat(z) -> PlayingTogether(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingTogether/2, PlayingTogether/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingTogether/2, PlayingTogether/3"
+170	The woman is playing with two young boys at a park	exists x. exists y. exists z. (Woman(x) & YoungBoy(y) & YoungBoy(z) & Park(p) & PlayingAt(x, y, z, p))	There is no woman playing with two young boys at a park	not exists x. (Woman(x) & PlayingWith(x, 2, YoungBoys) & At(x, Park))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingWith/4, PlayingWith/3, Park/1, Park/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingWith/4, PlayingWith/3, Park/1, Park/0"
+171	A young child is walking with a bike on a rough dirt path	exists x. (YoungChild(x) & Walking(x) & exists y. (Bike(y) & On(x, y)) & exists z. (RoughDirtPath(z) & On(x, z)))	A young boy is riding a dirt bike through the mud	exists x. exists y. exists z. (YoungBoy(x) & DirtBike(y) & Mud(z) & Riding(x, y) & Through(x, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Riding/3, Riding/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Riding/3, Riding/2"
+172	A sheepdog is grouping a herd of sheep	all x.all y. (Sheepdog(x) & Sheep(y) -> GroupsHerd(x, y))	The dark skinned male is standing on one hand in front of a yellow building	all x.all y.all z. (DarkSkin(x) & Male(x) & YellowBuilding(y) & Hand(z) -> StandingOn(x, y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingOn/2, StandingOn/3, YellowBuilding/1, YellowBuilding/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingOn/2, StandingOn/3, YellowBuilding/1, YellowBuilding/0"
+173	Nobody is treading through the snow of the beautiful snowy landscape	not exists x. (Person(x) & Treading(x) & SnowyLandscape(y) & Beautiful(y) & Snow(z) & In(z, y) & On(x, z))	Four people are walking across thick snow and the sun is setting	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & WalkingAcrossSnow(x, y, z, w) & SunSetting(x, y, z, w))	e	"End of input found.  Expression expected.
+exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & DifficultlyWalking(x) & DifficultlyWalking(y) & DifficultlyWalking(z) & DifficultlyWalking(w) & ThickSnow(x) & ThickSnow(y) & ThickSnow(z) &
+                                                                                                                                                                                                                                     ^"
+174	Nobody is treading through the snow of the beautiful snowy landscape	not exists x. (Person(x) & Treading(x) & SnowyLandscape(y) & Beautiful(y) & Snow(z) & In(z, y) & On(x, z))	Four people are standing in thick snow and the sun is rising	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & StandingInThickSnow(x) & StandingInThickSnow(y) & StandingInThickSnow(z) & StandingInThickSnow(w) & SunRising(x) & SunRising(y) & SunRising(z) & SunRising	n	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & StandingInThickSnow(x) & StandingInThickSnow(y) & StandingInThickSnow(z) & StandingInThickSnow(w) & SunRising(x) & SunRising(y) & SunRising(z) & SunRising
+                                                                                                                                                                                                                                                   ^"
+175	Nobody is treading through the snow of the beautiful snowy landscape	not exists x. (Person(x) & Treading(x) & SnowyLandscape(y) & Beautiful(y) & Snow(z) & In(z, y) & On(x, z))	Some people are treading through the snow of the beautiful snowy landscape	exists x. (Person(x) & TreadingThroughSnow(x))	n	"End of input found.  Expression expected.
+exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & DifficultlyWalking(x) & DifficultlyWalking(y) & DifficultlyWalking(z) & DifficultlyWalking(w) & ThickSnow(x) & ThickSnow(y) & ThickSnow(z) &
+                                                                                                                                                                                                                                     ^"
+176	Nobody is treading through the snow of the beautiful snowy landscape	not exists x. (Person(x) & Treading(x) & SnowyLandscape(y) & Beautiful(y) & Snow(z) & In(z, y) & On(x, z))	Four people are standing in thick snow and the sun is rising	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & StandingInThickSnow(x) & StandingInThickSnow(y) & StandingInThickSnow(z) & StandingInThickSnow(w) & SunRising(x) & SunRising(y) & SunRising(z) & SunRising	n	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & StandingInThickSnow(x) & StandingInThickSnow(y) & StandingInThickSnow(z) & StandingInThickSnow(w) & SunRising(x) & SunRising(y) & SunRising(z) & SunRising
+                                                                                                                                                                                                                                                   ^"
+177	A group of kids is playing on a structure which is colorful	all x.all y. (GroupOfKids(x) & Structure(y) & Colorful(y) -> PlayingOn(x, y))	A group of kids is playing on a colorful structure	exists x.exists y. (Kid(x) & Kid(y) & Group(x) & Group(y) & PlayingOn(x, y) & ColorfulStructure(y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Group/2, Group/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Group/2, Group/1"
+178	The back of a small black dog is being sniffed by the brown dog	all x.all y. (SmallBlackDog(x) & BrownDog(y) -> SniffingBack(y, x))	There is no large brown dog and small grey dog standing on a rocky surface	not (exists x. (Dog(x) & Large(x) & Brown(x) & exists y. (Dog(y) & Small(y) & Grey(y) & StandingOn(y, rockySurface))))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingOn/3, StandingOn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingOn/3, StandingOn/2"
+179	The black player is making the white player a play near the end of a purple field	all x. all y. all z. (BlackPlayer(x) & WhitePlayer(y) & PurpleField(z) -> MakesPlayNearEnd(x, y, z))	A man on a bike is riding on the shore	all x.all y. (Man(x) & Bike(y) & RidingOn(x, y) -> OnShore(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RidingOn/3, RidingOn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: RidingOn/3, RidingOn/2"
+180	A seabird is flying over some rocks	all x. all y. (Seabird(x) & Rocks(y) -> FlyingOver(x, y))	The kids are not chasing each other in the sand	not exists x. exists y. (Kid(x) & Kid(y) & Chasing(x, y) & InSand(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Chasing/3, Chasing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Chasing/3, Chasing/2"
+181	A daughter is being pushed by her father on a go-kart and another girl is watching	all x.all y.all z. (Daughter(x) & Father(y) & GoKart(z) & Pushing(y, x, z) & Girl(w) & Watching(w, z) -> FamilyActivity(x, y, z, w))	A girl is pushing a go-kart and a daughter is watching her father	all x.all y.all z. (Girl(x) & GoKart(y) & Daughter(z) -> (Pushes(x, y) & Watches(z, Father)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Father/1, Father/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Father/1, Father/0"
+182	The crowd is watching a football game	all x. all y. (Crowd(x) & FootballGame(y) -> Watching(x, y))	The crowd is watching a football game	all x. all y. (Crowd(x) & FootballGame(y) -> Watching(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Watching/3, Watching/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Watching/3, Watching/2"
+183	A brown dog and a black dog are frolicking in the sand	exists x. exists y. (Dog(x) & Dog(y) & Brown(x) & Black(y) & FrolickingInSand(x, y))	There is no brown dog and black dog playing in the sand	not exists x. (Dog(x) & Brown(x) & exists y. (Dog(y) & Black(y) & PlayingInSand(y)))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingInSand/2, PlayingInSand/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingInSand/2, PlayingInSand/1"
+184	A wet boy is jumping around on dirty and wet grass	all x. (WetBoy(x) -> (JumpsOn(x, dirtyGrass) & JumpsOn(x, wetGrass)))	The black dog is walking through the tall grass	exists x. (Dog(x) & Black(x) & Walking(x) & Through(x, tallGrass))	e	"'tallGrass' is an illegal variable name.  Constants may not be quantified.
+all x. all tallGrass. (Through(x, tallGrass) -> Through(x, tallGrass))
+           ^"
+185	The black dog is sprinting through the grass	all x. (BlackDog(x) -> SprintingThroughGrass(x))	The black dog is not running through the grass	not exists x. (Dog(x) & Black(x) & Running(x) & Through(x, Grass))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Grass/1, Grass/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Grass/1, Grass/0"
+186	Three men are not staring at the big green hills in the distance	not exists x. (Man(x) & StaringAt(x, BigGreenHills) & InDistance(x))	Three men are looking into the distance	exists x. exists y. exists z. (Man(x) & Man(y) & Man(z) & LookingIntoDistance(x) & LookingIntoDistance(y) & LookingIntoDistance(z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StaringAt/3, StaringAt/4.
+
+
+Fatal error:  The following symbols are used with multiple arities: StaringAt/3, StaringAt/4"
+187	One man is climbing a rock wall and another man is holding a rope	exists x. exists y. (Man(x) & Man(y) & ClimbingRockWall(x) & HoldingRope(y))	Some children are playing on a statue	exists x.exists y. (Child(x) & Statue(y) & PlayingOn(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Statue/1, Statue/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Statue/1, Statue/0"
+188	A climber is parking with the children by a small statue	exists x. exists y. exists z. (Climber(x) & Child(y) & SmallStatue(z) & Parking(x, y, z))	Two children are playing on a statue	exists x. exists y. (Child(x) & Child(y) & PlayingOn(x, Statue) & PlayingOn(y, Statue))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Statue/1, Statue/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Statue/1, Statue/0"
+189	A man and two women in a darkened room are sitting at a table with candles	exists x. exists y. exists z. (Man(x) & Woman(y) & Woman(z) & DarkenedRoom(x) & DarkenedRoom(y) & DarkenedRoom(z) & SittingAtTableWithCandles(x, y, z))	Two blokes are sitting around a table and holding beers in their hands	exists x. exists y. exists z. (Bloke(x) & Bloke(y) & Bloke(z) & SittingAroundTable(x, y, z) & HoldingBeers(x) & HoldingBeers(y) & HoldingBeers(z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: HoldingBeers/3, HoldingBeers/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: HoldingBeers/3, HoldingBeers/1"
+190	The dog is chasing the ball	exists x. exists y. (Dog(x) & Ball(y) & Chasing(x, y))	There is no dog chasing a ball	not exists x. (Dog(x) & Chasing(x, Ball))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Ball/1, Ball/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Ball/1, Ball/0"
+191	Two dogs are battling for a frisbee in a lake	exists x. exists y. exists z. (Dog(x) & Dog(y) & Frisbee(z) & BattlingFor(x, y, z) & InLake(z))	Two dogs are fighting for a frisbee in a lake	exists x. exists y. exists z. (Dog(x) & Dog(y) & Frisbee(z) & FightingFor(x, y, z) & InLake(z))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: FightingFor/2, FightingFor/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: FightingFor/2, FightingFor/3"
+192	Two dogs are battling for a frisbee in a lake	exists x. exists y. exists z. (Dog(x) & Dog(y) & Frisbee(z) & BattlingFor(x, y, z) & InLake(z))	Two brown dogs are playing with a frisbee in the water	exists x. exists y. exists z. (Dog(x) & Dog(y) & Frisbee(z) & Playing(x, y, z) & Water(w) & In(z, w))	n	"'Lake' is an illegal variable name.  Constants may not be quantified.
+all x. all Lake. (In(x, Lake) -> In(x, Lake))
+           ^"
+193	The bunch of men are not playing rugby on a muddy field	not exists x. (Bunch(x) & Man(x) & PlayingRugby(x) & MuddyField(x))	The bike rider is looking at an accident of another bike rider	all x.all y. (BikeRider(x) & BikeRider(y) & Accident(y) -> LookingAt(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: LookingAt/3, LookingAt/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: LookingAt/3, LookingAt/2"
+194	A brown dog and a grey dog are fighting in the snow	exists x. exists y. (Dog(x) & Dog(y) & Brown(x) & Grey(y) & Fighting(x, y) & In(Snow))	A brown dog and a gray dog are playing in the snow	exists x. exists y. (Dog(x) & Dog(y) & Brown(x) & Gray(y) & PlayingInSnow(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingInSnow/1, PlayingInSnow/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingInSnow/1, PlayingInSnow/2"
+195	A brown dog and a grey dog are fighting in the snow	exists x. exists y. (Dog(x) & Dog(y) & Brown(x) & Grey(y) & Fighting(x, y) & In(Snow))	A girl is getting a tattoo on her hand	exists x. (Girl(x) & Tattoo(x) & On(x, Hand))	e	"'Hand' is an illegal variable name.  Constants may not be quantified.
+all x. all Hand. (On(x, Hand) -> On(x, Hand))
+           ^"
+196	A girl dressed in purple and blue is walking beside her bike at night	all x.all y. (Girl(x) & Purple(x) & Blue(x) & Bike(y) & WalkingBeside(x, y) -> Night(z) & At(x, z))	A man is wearing a red jacket and standing beside a yellow canoe on some rocks with water in the background	exists x. exists y. exists z. (Man(x) & RedJacket(x) & YellowCanoe(y) & Rocks(z) & WaterInBackground(z) & Wearing(x, y) & StandingBeside(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingBeside/2, StandingBeside/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingBeside/2, StandingBeside/3"
+197	A dog is crossing a river on a bridge made from a fallen tree	exists x. exists y. exists z. (Dog(x) & River(y) & Bridge(z) & Crossing(x, y, z) & MadeFromFallenTree(z))	A dog is crossing a river on a bridge made from a fallen tree	exists x. exists y. exists z. (Dog(x) & River(y) & Bridge(z) & Crossing(x, y, z) & MadeFromFallenTree(z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Crossing/2, Crossing/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Crossing/2, Crossing/3"
+198	The blonde girl with the pink top is smiling and wearing funny glasses with a large nose attached	all x. (BlondeGirl(x) & PinkTop(x) -> (Smiling(x) & WearingFunnyGlasses(x) & LargeNoseAttached(x)))	There is no man squirting water into the mouth of a white dog with a squirt gun	not exists x. (Man(x) & SquirtingWater(x) & IntoMouthOf(x, WhiteDog) & With(x, SquirtGun))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SquirtGun/1, SquirtGun/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: SquirtGun/1, SquirtGun/0"
+199	The dog is running into a brown light	all x. all y. (Dog(x) & Light(y) & Brown(y) -> RunsInto(x, y))	A great dog is wildly climbing a steep hill	all x. (Dog(x) & WildlyClimbing(x) & SteepHill(x) -> Great(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SteepHill/1, SteepHill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: SteepHill/1, SteepHill/0"
+200	Three people are driving four wheel ATVs in a field	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & DrivingATV(x, 4WheelATV) & DrivingATV(y, 4WheelATV) & DrivingATV(z, 4WheelATV) & Field(x, y, z))	Two white dogs and one brown dog are chasing a toy	exists x. exists y. exists z. (Dog(x) & Dog(y) & Dog(z) & White(x) & White(y) & Brown(z) & Chasing(x, y, z, toy))	e	"'Ball' is an illegal variable name.  Constants may not be quantified.
+all x. all y. all z. all Ball. (Chasing(x, y, z, Ball) -> Chasing(x, y, z, Ball))
+                         ^"
+201	Two white dogs are playing with a brown dog and a tennis ball	exists x. exists y. exists z. exists w. (WhiteDog(x) & WhiteDog(y) & BrownDog(z) & TennisBall(w) & PlayingWith(x, y, z, w))	Two white dogs and one brown dog are chasing a ball	exists x. exists y. exists z. (Dog(x) & Dog(y) & Dog(z) & White(x) & White(y) & Brown(z) & Chasing(x, y, z, Ball))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Ball/1, Ball/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Ball/1, Ball/0"
+202	Four athletes are with a man in a crowded stadium	exists x. exists y. exists z. exists w. (Athlete(x) & Athlete(y) & Athlete(z) & Athlete(w) & Man(x) & Man(y) & Man(z) & Man(w) & CrowdedStadium(x) & CrowdedStadium(y) & CrowdedStadium(z) & CrowdedStadium(w))	Four athletes are with a woman in a crowded stadium	exists x.exists y.exists z.exists w. (Athlete(x) & Athlete(y) & Athlete(z) & Athlete(w) & Woman(w) & With(x, y, z, w) & CrowdedStadium(x, y, z, w))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: CrowdedStadium/1, CrowdedStadium/4.
+
+
+Fatal error:  The following symbols are used with multiple arities: CrowdedStadium/1, CrowdedStadium/4"
+203	A young boy with a bib is watching the camera	all x. (YoungBoy(x) & HasBib(x) -> WatchingCamera(x))	The young boy in the blue shirt is jumping into the water	exists x. (YoungBoy(x) & BlueShirt(x) & JumpingIntoWater(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: JumpingIntoWater/2, JumpingIntoWater/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: JumpingIntoWater/2, JumpingIntoWater/1"
+204	A young boy is diving into a still lake	exists x. exists y. (YoungBoy(x) & Lake(y) & DivingInto(x, y))	A young boy is jumping into a still lake	exists x. exists y. exists z. (YoungBoy(x) & Lake(y) & Still(z) & JumpsInto(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: JumpsInto/2, JumpsInto/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: JumpsInto/2, JumpsInto/3"
+205	A black and white dog is playing with a frisbee in a brown field	all x.all y.all z. (Dog(x) & Frisbee(y) & BrownField(z) -> PlaysWith(x, y, z))	A black and white dog is playing with a broken volleyball	exists x. exists y. exists z. (Dog(x) & Dog(y) & Volleyball(z) & BlackAndWhite(x) & Broken(z) & PlayingWith(x, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingWith/4, PlayingWith/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingWith/4, PlayingWith/2"
+206	A young boy in a helmet is riding a bike on the lawn	all x.all y.all z. (YoungBoy(x) & Helmet(y) & Bike(z) & Wears(x, y) & Riding(x, z) -> OnLawn(x, z))	A bicycle is being ridden by the little boy in a race	all x.all y. (Bicycle(x) & LittleBoy(y) & Riding(y, x) -> Race(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Race/1, Race/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Race/1, Race/2"
+207	A man in a purple hat is climbing a rocky wall with bare hands	all x.all y.all z. (Man(x) & PurpleHat(x) & RockyWall(y) & BareHands(z) -> Climbing(x, y, z))	A woman with blond hair is sitting on the roof of a yellow vehicle and two people are inside	all x.all y.all z. (Woman(x) & BlondHair(x) & YellowVehicle(y) & Roof(z) & SittingOn(x, z) & TwoPeopleInside(y) -> WomanOnRoof(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Roof/2, Roof/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Roof/2, Roof/1"
+208	There is no dog leaping through snowy grass and rocks	not exists x. (Dog(x) & Leaping(x) & SnowyGrass(x) & Rocks(x))	A girl in blue is sliding down a slide	all x.all y. (Girl(x) & Blue(x) & Slide(y) -> SlidingDown(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SlidingDown/3, SlidingDown/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: SlidingDown/3, SlidingDown/2"
+209	Two women dressed in white and black are sitting on a bench	exists x. exists y. exists z. (Woman(x) & Woman(y) & Woman(z) & DressedInWhite(x) & DressedInWhite(y) & DressedInBlack(z) & SittingOnBench(x) & SittingOnBench(y) & SittingOnBench(z))	Five people are standing in the grass with some dogs	exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & StandingInGrass(x) & StandingInGrass(y) & StandingInGrass(z) & StandingInGrass(w) & StandingInGrass(v) & Dog(x) & Dog(y) & Dog(z) & Dog(	e	"End of input found.  Expression expected.
+exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & StandingInGrass(x) & StandingInGrass(y) & StandingInGrass(z) & StandingInGrass(w) & StandingInGrass(v) & Dog(x) & Dog(y) & Dog(z) & Dog(
+                                                                                                                                                                                                                                                   ^"
+210	Two women dressed in white and black are sitting on a bench	exists x. exists y. exists z. (Woman(x) & Woman(y) & Woman(z) & DressedInWhite(x) & DressedInWhite(y) & DressedInBlack(z) & SittingOnBench(x) & SittingOnBench(y) & SittingOnBench(z))	Five people are standing with three dogs in the park beside the road	exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & Park(x) & Park(y) & Park(z) & Park(w) & Park(v) & Road(x) & Road(y)	n	"End of input found.  Expected token ')'.
+exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & Park(x) & Park(y) & Park(z) & Park(w) & Park(v) & Road(x) & Road(y)
+                                                                                                                                                                                                                           ^"
+211	Two women dressed in white and black are sitting on a bench	exists x. exists y. exists z. (Woman(x) & Woman(y) & Woman(z) & DressedInWhite(x) & DressedInWhite(y) & DressedInBlack(z) & SittingOnBench(x) & SittingOnBench(y) & SittingOnBench(z))	Five people are standing with three dogs in the green field beside the road	exists x. exists y. exists z. exists w. exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & GreenField(x) & GreenField(y) & GreenField(z) & GreenField(w) & GreenField(v) & Road	n	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & GreenField(x) & GreenField(y) & GreenField(z) & GreenField(w) & GreenField(v) & Road
+                                                                                                                                                                                                                                                ^"
+212	Two women dressed in white and black are sitting on a bench	exists x. exists y. exists z. (Woman(x) & Woman(y) & Woman(z) & DressedInWhite(x) & DressedInWhite(y) & DressedInBlack(z) & SittingOnBench(x) & SittingOnBench(y) & SittingOnBench(z))	Five people are standing in the grass with some dogs	exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & StandingInGrass(x) & StandingInGrass(y) & StandingInGrass(z) & StandingInGrass(w) & StandingInGrass(v) & Dog(x) & Dog(y) & Dog(z) & Dog(	e	"End of input found.  Expression expected.
+exists x.exists y.exists z.exists w.exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & StandingInGrass(x) & StandingInGrass(y) & StandingInGrass(z) & StandingInGrass(w) & StandingInGrass(v) & Dog(x) & Dog(y) & Dog(z) & Dog(
+                                                                                                                                                                                                                                                   ^"
+213	Two women dressed in white and black are sitting on a bench	exists x. exists y. exists z. (Woman(x) & Woman(y) & Woman(z) & DressedInWhite(x) & DressedInWhite(y) & DressedInBlack(z) & SittingOnBench(x) & SittingOnBench(y) & SittingOnBench(z))	Five people are standing with three dogs in the green field beside the road	exists x. exists y. exists z. exists w. exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & GreenField(x) & GreenField(y) & GreenField(z) & GreenField(w) & GreenField(v) & Road	c	"End of input found.  Expected token ')'.
+exists x. exists y. exists z. exists w. exists v. (Person(x) & Person(y) & Person(z) & Person(w) & Person(v) & Dog(x) & Dog(y) & Dog(z) & Dog(w) & Dog(v) & GreenField(x) & GreenField(y) & GreenField(z) & GreenField(w) & GreenField(v) & Road
+                                                                                                                                                                                                                                                ^"
+214	A dirty tan dog is rolling in the dirt and looking right at the camera	all x. (DirtyTanDog(x) -> (RollingInDirt(x) & LookingRightAtCamera(x)))	A white hat is being worn by an Arabic man	exists x. exists y. (WhiteHat(x) & Man(y) & Wears(y, x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0"
+215	A man with a white hat and brown shirt is behind a woman in red and is looking to the right	all x.all y. (Man(x) & Woman(y) & WhiteHat(x) & BrownShirt(x) & Red(y) & LookingRight(x) -> Behind(x, y))	A man with a white hat and brown shirt is behind a woman in red and is looking to the side	all x.all y. (Man(x) & Woman(y) & WhiteHat(x) & BrownShirt(x) & Red(y) & LookingToSide(x) -> Behind(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0"
+216	An Arabic man isn't wearing a white hat	exists x. (ArabicMan(x) & not WearingWhiteHat(x))	An Arabic man is wearing a white hat	exists x. (Man(x) & Arabic(x) & Wearing(x, WhiteHat))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: WhiteHat/1, WhiteHat/0"
+217	A person on a yellow bike is airborne	all x. all y. (Person(x) & YellowBike(y) -> Airborne(x))	There is no cyclist on a yellow bike airborne	not exists x. (Cyclist(x) & YellowBike(y) & Airborne(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Airborne/1, Airborne/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Airborne/1, Airborne/2"
+218	Five adults are sitting on stone steps	exists x. exists y. exists z. exists w. exists v. (Adult(x) & Adult(y) & Adult(z) & Adult(w) & Adult(v) & SittingOnStoneSteps(x, y, z, w, v))	People are sitting near a wall	exists x. exists y. (Person(x) & Person(y) & SittingNear(x, y, Wall))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Wall/1, Wall/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Wall/1, Wall/0"
+219	People are grouping at a stand at the fair	all x.all y. (Person(x) & Stand(y) & At(x, y) -> Grouping(x))	Rollerbladers are not rolling in formation down a hill	all x. (Rollerblader(x) -> not RollingInFormation(x))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RollingInFormation/2, RollingInFormation/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: RollingInFormation/2, RollingInFormation/1"
+220	Three people are walking across a rope and steel bridge over a river	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & WalkingAcrossRopeBridge(x) & WalkingAcrossSteelBridge(y) & WalkingAcrossRiver(z))	Three people are walking across a rope and wood bridge over a river	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & WalkingAcross(x, ropeBridge) & WalkingAcross(y, woodBridge) & WalkingAcross(z, river))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WalkingAcross/3, WalkingAcross/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WalkingAcross/3, WalkingAcross/2"
+221	Four people are walking on a bridge over a body of water	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & WalkingOnBridge(x, y, z, w) & OverBodyOfWater(x, y, z, w))	Several people are not walking in line across a bridge	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & Bridge(b) & not WalkingInLine(x, y, z, b))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bridge/1, Bridge/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bridge/1, Bridge/0"
+222	Four people are walking on a bridge over a river	exists x. exists y. exists z. exists w. (Person(x) & Person(y) & Person(z) & Person(w) & WalkingOnBridge(x, y, z, w) & OverRiver(x, y, z, w))	Several people are walking in line across a bridge	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & WalkingInLine(x, y, z, Bridge))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bridge/4, Bridge/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bridge/4, Bridge/0"
+223	No young child is riding a three wheeled scooter down the sidewalk	not exists x. (YoungChild(x) & RidingThreeWheeledScooter(x) & DownSidewalk(x))	Three hikers are sitting on a mountainside and looking at the view with a pair of binoculars	exists x.exists y.exists z. (Hiker(x) & Hiker(y) & Hiker(z) & SittingOnMountainside(x) & SittingOnMountainside(y) & SittingOnMountainside(z) & LookingAtViewWithBinoculars(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SittingOnMountainside/3, SittingOnMountainside/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: SittingOnMountainside/3, SittingOnMountainside/1"
+224	A black dog on a leash is walking in the water	all x.all y. (BlackDog(x) & Leash(y) & OnLeash(x, y) -> WalkingInWater(x))	The dog is on a leash and is walking out of the water	exists x. (Dog(x) & OnLeash(x) & WalkingOutOfWater(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: OnLeash/2, OnLeash/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: OnLeash/2, OnLeash/1"
+225	A black dog on a leash is walking in the water	all x.all y. (BlackDog(x) & Leash(y) & OnLeash(x, y) -> WalkingInWater(x))	The dog is on a leash and is walking in the water	exists x. (Dog(x) & OnLeash(x) & WalkingInWater(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: OnLeash/2, OnLeash/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: OnLeash/2, OnLeash/1"
+226	A black dog on a leash is walking in the water	all x.all y. (BlackDog(x) & Leash(y) & OnLeash(x, y) -> WalkingInWater(x))	A little girl in a green coat and a boy holding a red sled are walking in the snow	exists x. exists y. (LittleGirl(x) & GreenCoat(x) & Boy(y) & RedSled(y) & WalkingInSnow(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WalkingInSnow/1, WalkingInSnow/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WalkingInSnow/1, WalkingInSnow/2"
+227	A cyclist is biking in a snowy forest in the dark	exists x. (Cyclist(x) & Biking(x) & InSnowyForest(x) & InDark(x))	A cyclist is biking in a snowy forest at night	exists x. (Cyclist(x) & Biking(x) & In(x, SnowyForest) & At(x, Night))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: In/3, In/2, Biking/2, Biking/1, SnowyForest/1, SnowyForest/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: In/3, In/2, Biking/2, Biking/1, SnowyForest/1, SnowyForest/0"
+228	Two children are rolling in muddy water	exists x. exists y. (Child(x) & Child(y) & RollingInMuddyWater(x) & RollingInMuddyWater(y))	A black and brown dog is eyeing a fly	exists x. (Dog(x) & Black(x) & Brown(x) & Eyeing(x, Fly))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Fly/1, Fly/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Fly/1, Fly/0"
+229	A dog is running with a volleyball	exists x.exists y. (Dog(x) & Volleyball(y) & Running(x, y))	A dog is running with a volleyball	exists x.exists y. (Dog(x) & Volleyball(y) & Running(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Running/1, Running/2, Volleyball/1, Volleyball/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Running/1, Running/2, Volleyball/1, Volleyball/0"
+230	A big brown and white spotted dog is lying on a jacket on the street	exists x. (Dog(x) & Big(x) & Brown(x) & WhiteSpotted(x) & LyingOn(x, jacket) & OnStreet(x))	A brown puppy is gnawing a metallic post that is stuck in the ground	all x.all y. (BrownPuppy(x) & MetallicPost(y) & Gnawing(x, y) -> StuckInGround(y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Gnawing/3, Gnawing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Gnawing/3, Gnawing/2"
+231	A group of children in a church basement is playing maracas and tambourines	all x.all y.all z. (GroupOfChildren(x) & ChurchBasement(y) & (Maracas(z) | Tambourines(z)) -> PlayingIn(x, y, z))	A dog is running through the snow	exists x. (Dog(x) & Running(x) & Through(x, snow))	e	"'whiteSnow' is an illegal variable name.  Constants may not be quantified.
+all x. all whiteSnow. (Through(x, whiteSnow) -> Through(x, whiteSnow))
+           ^"
+232	A dog is emerging from a lake	exists x. (Dog(x) & EmergingFromLake(x))	A brown and white dog is biting a dirty tennis ball in a dirt field	exists x. exists y. exists z. (Dog(x) & TennisBall(y) & DirtField(z) & Brown(x) & White(x) & Biting(x, y) & In(x, z))	n	"'dirtField' is an illegal variable name.  Constants may not be quantified.
+all x. all dirtField. (In(x, dirtField) -> In(x, dirtField))
+           ^"
+233	A bicyclist is performing a trick over a heavily graphitized wall	all x.all y.all z. (Bicyclist(x) & Trick(y) & Wall(z) & HeavilyGraphitized(z) -> PerformsOver(x, y, z))	A woman is showing a small dog to an infant	exists x. exists y. exists z. (Woman(x) & SmallDog(y) & Infant(z) & Shows(x, y) & To(x, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Shows/3, Shows/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Shows/3, Shows/2"
