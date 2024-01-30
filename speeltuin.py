@@ -2,11 +2,12 @@ from datasets import load_dataset
 import pandas as pd
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
+import os 
 
+print("cur dir: ", os.getcwd())
 PROVER9_BIN = "./prover9/bin"
 prover9_prove(PROVER9_BIN, 'all x. man(x)', ['all x. thing(x)','all x. thing(x) -> man(x)'])
 
-pass
 fracas = load_dataset("pietrolesci/fracas")
 
 df1 = pd.DataFrame(fracas['dev'])
