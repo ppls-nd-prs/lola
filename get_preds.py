@@ -13,7 +13,7 @@ import argparse
 def negated(fol_string):
     return "not " + fol_string
 
-def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modification_id :str, lk : bool):
+def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modification_id :str, use_lk : bool):
     '''
     columns should have format [[premise-1-column-name,premise-2-column-name,etc.],
     hypothesis-column-name, label-column-name]
@@ -55,9 +55,15 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         fol_hypothesis = preprocessing.fol2nltk(fol_hypothesis)
         fol_not_hypothesis = negated(fol_hypothesis)
         dat_temp_dict['h_fol'] = fol_hypothesis
+
+        if use_lk: 
+            lk = get_hypo_syn_lk(prover_premise_list[0], fol_hypothesis) #in sick there's only 1 premise 
+        else:
+            lk = [] #no lexical knowledge 
+
         try:
-            dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list)
-            dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, fol_not_hypothesis, prover_premise_list)
+            dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list + lk)
+            dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, fol_not_hypothesis, prover_premise_list +lk)
             df.loc[len(df)] = dat_temp_dict
         except Exception as a:
             dat_temp_dict['exception'] = str(a)            
@@ -90,9 +96,9 @@ if re.search(r'sick',dataset_name):
         dictionary_path = f"mod_dictionaries/[{modification_id}]full_sick_dictionary.json"
     #set lexical knowledge 
     if lexical_knowledge == "True":
-        lk = True
+        use_lk = True
     else:
-        lk = False
+        use_lk = False
     #set basic info
     relevant_column_list = [['sentence_A'],'sentence_B','entailment_judgment']
     judgment_dict = {"ENTAILMENT":"e","NEUTRAL":"n","CONTRADICTION":"c"}
@@ -114,7 +120,7 @@ elif dataset_name == "syllogisms":
     if lexical_knowledge == "True":
         raise Exception(f"There is no lexical knowledge for the {dataset_name} data set")
     else:
-        lk = False
+        use_lk = False
     #set basic info
     relevant_column_list = [['prem_1','prem_2'],'hypothesis','label']
     judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
@@ -134,4 +140,4 @@ with open(dictionary_path,"r") as file:
     dictionary = json.load(file)
 
 #get the predictions using the dictionary
-get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, lk)
+get_preds(dictionary,dataset,relevant_column_list,judgment_dict,dataset_name,modification_id, use_lk)
