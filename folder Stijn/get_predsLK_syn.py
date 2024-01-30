@@ -4,7 +4,7 @@ from nltk.corpus import wordnet as wn
 
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
-from prepocessing import preprocessing
+from preprocessing import preprocessing
 import json
 import nltk
 import pandas as pd
@@ -140,7 +140,7 @@ elif dataset_name == "syllogisms":
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
 
-#load dataslet
+#load dataset
 dataset = pd.read_csv(dataset_path,header=0,sep="\t")
 
 #get the dictionary
