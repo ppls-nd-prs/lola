@@ -4,7 +4,7 @@ from nltk.corpus import wordnet as wn
 
 import assigntools.LoLa.tp
 from assigntools.LoLa.tp import prover9_prove
-from preprocessing import preprocessing
+from prepocessing import preprocessing
 import json
 import nltk
 import pandas as pd
@@ -16,21 +16,43 @@ import argparse
 def negated(fol_string):
     return "not " + fol_string
 
-def has_hyponym_hypernym_relation(word1, word2):
-    # Check if there is a hyponym/hypernym relation between two words based on WordNet.
+
+import nltk
+nltk.download('wordnet')
+from nltk.corpus import wordnet as wn
+
+
+def are_synonyms(word1, word2):
+    # Get synsets for both words
     synsets1 = wn.synsets(word1)
     synsets2 = wn.synsets(word2)
 
-    for syn1 in synsets1:
-        for syn2 in synsets2:
-            if syn1 in syn2.lowest_common_hypernyms(syn1):
-                return True
-            elif syn2 in syn1.lowest_common_hypernyms(syn2):
-                return True
+    # Check if there is any common synset between the two words
+    common_synsets = set(synsets1).intersection(synsets2)
+
+    if common_synsets:
+        return True
+
+    # Check for similarity based on WordNet paths and print 10 examples
+    for i, syn1 in enumerate(synsets1):
+        for j, syn2 in enumerate(synsets2):
+            path_similarity = syn1.path_similarity(syn2)
+            if path_similarity is not None:
+                words1 = ", ".join(lemma.name() for lemma in syn1.lemmas())
+                words2 = ", ".join(lemma.name() for lemma in syn2.lemmas())
+                #print(f"Path Similarity {i+1}-{j+1}: {path_similarity:.4f}")
+                #print(f"Words {i+1}: {words1}")
+                #print(f"Words {j+1}: {words2}")
+                #print()
 
     return False
 
+# Example usage:
+word5 = 'couch'
+word6 = 'lounge'
+result = are_synonyms(word5, word6)
 
+print(f"Are '{word5}' and '{word6}' synonyms? {result}")
 
 
 def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, csv_name: str):
@@ -55,22 +77,6 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
             prover_premise_list.append(fol_premise)
             dat_temp_dict[f'p_{prem_i+1}_fol'] = fol_premise
 
-            # Check for hyponym/hypernym relation between current and previous premises
-            if prem_i > 0:
-                prev_nl_premise = dataset[columns[0][prem_i - 1]][i_dat]
-                if has_hyponym_hypernym_relation(nl_premise, prev_nl_premise):
-                    print(f"Hyponym/Hypernym relation found: {nl_premise} <-> {prev_nl_premise}")
-                    # Adjust label prediction accordingly
-                    dat_temp_dict['label'] = 'entailment'  # Set label to entailment
-                    dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
-                    dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
-                    break  # Skip further processing for this example
-
-        # If the label is already set to entailment, skip hypothesis processing
-        if 'label' in dat_temp_dict and dat_temp_dict['label'] == 'entailment':
-            df.loc[len(df)] = dat_temp_dict
-            continue
-
         nl_hypothesis = dataset[columns[1]][i_dat]
         dat_temp_dict['h_nl'] = nl_hypothesis
         true_label = judgment_dict[dataset[columns[2]][i_dat]]
@@ -81,29 +87,35 @@ def get_preds_with_lexical(translation_dict, dataset, columns, judgment_dict, cs
         fol_hypothesis = preprocessing.fol2nltk(fol_hypothesis)
         fol_not_hypothesis = negated(fol_hypothesis)
         dat_temp_dict['h_fol'] = fol_hypothesis
+        
+        # Check for synonyms between any word in premises and hypothesis
+        found_synonym = False
+        for prem_i, prem_col in enumerate(columns[0]):
+            nl_premise = dataset[prem_col][i_dat]
+            if are_synonyms(nl_premise, nl_hypothesis):
+                print(f"Synonym relation found: {nl_premise} <-> {nl_hypothesis}")
+                # Adjust label prediction accordingly
+                dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
+                dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
+                found_synonym = True
+                break  # Break the loop if a synonym relation is found
 
-        # Check for hyponym/hypernym relation between words in the hypothesis
-        if has_hyponym_hypernym_relation(nl_hypothesis, dataset[columns[0][-1]][i_dat]):
-            print(f"Hyponym/Hypernym relation found: {nl_hypothesis} <-> {dataset[columns[0][-1]][i_dat]}")
-            # Adjust label prediction accordingly
-            dat_temp_dict['e_pred'] = 'e'  # Set label to entailment
-            dat_temp_dict['c_pred'] = 'n'  # Set label to neutral (or adjust as needed)
-        else:
+        # Perform the prover9_prove if no synonym relation was found
+        if not found_synonym:
             try:
                 dat_temp_dict['e_pred'] = prover9_prove(PROVER9_BIN, fol_hypothesis, prover_premise_list)
                 dat_temp_dict['c_pred'] = prover9_prove(PROVER9_BIN, negated(fol_hypothesis), prover_premise_list)
+                df.loc[len(df)] = dat_temp_dict
             except Exception as a:
                 dat_temp_dict['exception'] = str(a)
                 e_df.loc[len(e_df)] = dat_temp_dict
             
-        df.loc[len(df)] = dat_temp_dict
-
-    if not os.path.isdir("evaluations_HYP"):        
-        os.mkdir("evaluations_HYP")
-    df.to_csv(f"evaluations_HYP/{csv_name}_evaluation_HYP.csv",sep='\t')
-    e_df.to_csv(f"evaluations_HYP/{csv_name}_exceptions_HYP.csv",sep='\t')
+    if not os.path.isdir("evaluations_SYN"):        
+        os.mkdir("evaluations_SYN")
+    df.to_csv(f"evaluations_SYN/{csv_name}_evaluation_SYN.csv",sep='\t')
+    e_df.to_csv(f"evaluations_SYN/{csv_name}_exceptions_SYN.csv",sep='\t')
     
-    #get dataset information
+   #get dataset information
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 args = parser.parse_args()
@@ -139,4 +151,3 @@ with open(dictionary_path,"r") as file:
 
 # Example usage
     get_preds_with_lexical(dictionary, dataset, relevant_column_list, judgment_dict, dataset_name)
-
