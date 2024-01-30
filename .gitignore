@@ -14,3 +14,4 @@ assigntools/LoLa/__pycache__/__init__.cpython-311.pyc
 __pycache__/data_transformations.cpython-311.pyc
 assigntools/LoLa/__pycache__/read_nli.cpython-311.pyc
 assigntools/LoLa/__pycache__/sen_analysis.cpython-311.pyc
+__pycache__/lexical_knowledge.cpython-311.pyc
