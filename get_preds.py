@@ -65,8 +65,8 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
             lk = [] #no lexical knowledge 
 
         try:
-            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list)
-            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list)
+            e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list + lk)
+            c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list + lk)
             
             nl_ps = nl_ps_list[0]
             fol_ps = fol_ps_list[0]
@@ -93,7 +93,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
 parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'none'],help='modification_id')   #possible to have no modification
-parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
+parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')  
 args = parser.parse_args()
 dataset_name = args.dataset_name  
 modification_id = args.modification_id
