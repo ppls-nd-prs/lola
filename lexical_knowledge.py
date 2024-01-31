@@ -83,8 +83,9 @@ def get_preds(s : str):
     
     return list(set(predicates)) #return without duplicates 
 
-def get_args(pred : str, s : str):
+def get_args(pred : str, s : str) -> list:
     """
+    s: string in NLTK expression proof format 
     Get the arguments of a specific predicate pred in a string
     """
     arguments = re.findall(f"{pred}\((.*?)\)", s)[0]
