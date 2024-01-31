@@ -2,3 +2,93 @@
 0	A person in a black jacket is doing tricks on a motorbike	all x. (Person(x) & WearsBlackJacket(x) -> TricksOnMotorbike(x))	Four girls are doing backbends and playing outdoors	all x.all y.all z.all w. (Girl(x) & Girl(y) & Girl(z) & Girl(w) -> (DoingBackbend(x) & DoingBackbend(y) & DoingBackbend(z) & DoingBackbend(w) & PlayingOutdoors(x) & PlayingOutdoors(y) & PlayingOutdoors(z) & PlayingOutdoors(w	n	"End of input found.  Expected token ')'.
 all x.all y.all z.all w. (Girl(x) & Girl(y) & Girl(z) & Girl(w) -> (DoingBackbend(x) & DoingBackbend(y) & DoingBackbend(z) & DoingBackbend(w) & PlayingOutdoors(x) & PlayingOutdoors(y) & PlayingOutdoors(z) & PlayingOutdoors(w
                                                                                                                                                                                                                                 ^"
+1	A man is slicing a bun	exists x. exists y. (Man(x) & Bun(y) & Slicing(x, y))	A woman is dancing and singing with other women	all x.all y.all z. (Woman(x) & Woman(y) & Woman(z) -> (Dancing(x, y) & Singing(x, z)))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Singing/1, Singing/2, Dancing/1, Dancing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Singing/1, Singing/2, Dancing/1, Dancing/2"
+2	Some women are dancing and singing 	exists x. (Woman(x) & Dancing(x) & Singing(x))	A woman is dancing and singing in the rain	exists x. (Woman(x) & Dancing(x) & Singing(x) & InRain(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Singing/2, Singing/1, Dancing/2, Dancing/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Singing/2, Singing/1, Dancing/2, Dancing/1"
+3	The man is kick boxing with a trainer	all x.all y. (Man(x) & Trainer(y) -> KickBoxingWith(x, y))	A seated woman is singing a song and playing the guitar	all x. (SeatedWoman(x) -> (exists y. (Song(y) & Singing(x, y)) & exists z. (Guitar(z) & Playing(x, z))))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Singing/1, Singing/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Singing/1, Singing/2"
+4	The man is kick boxing with a trainer	all x.all y. (Man(x) & Trainer(y) -> KickBoxingWith(x, y))	A woman is rocking over a blanket lying on someone reading a book	exists x. exists y. exists z. (Woman(x) & Blanket(y) & Book(z) & LyingOn(y, x) & Reading(z, x) & Rocking(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: LyingOn/3, LyingOn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: LyingOn/3, LyingOn/2"
+5	A keyboard is being played by a man	exists x. exists y. (Keyboard(x) & Man(y) & Playing(y, x))	There is no man cutting a rope with a sword	not exists x. (Man(x) & Cutting(x, rope) & Using(x, sword))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Cutting/3, Cutting/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Cutting/3, Cutting/2"
+6	A woman is slicing a potato	exists x. (Woman(x) & Slicing(x, potato))	A group of boys is playing soccer on the beach	exists x.exists y.exists z. (Boy(x) & Boy(y) & Beach(z) & PlayingSoccer(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingSoccer/1, PlayingSoccer/3"
+7	There is no boy playing guitar	not exists x. (Boy(x) & PlaysGuitar(x))	A monkey is teasing a dog at the zoo	exists x. exists y. (Monkey(x) & Dog(y) & Teasing(x, y) & AtZoo(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: AtZoo/1, AtZoo/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: AtZoo/1, AtZoo/2"
+8	A woman is riding a horse	exists x. exists y. (Woman(x) & Horse(y) & Riding(x, y))	A cat is opening a drawer and jumping inside	all x.all y.all z. (Cat(x) & Drawer(y) & JumpingInside(z) -> (Opening(x, y) & JumpingInside(x, z)))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: JumpingInside/2, JumpingInside/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: JumpingInside/2, JumpingInside/1"
+9	A white man is staging a hat and a playing guitar	exists x. (WhiteMan(x) & StagingHat(x) & StagingGuitar(x))	A man in a red uniform is making a jump in a dirt bike race	all x.all y. (Man(x) & RedUniform(x) & DirtBikeRace(y) -> MakingJump(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: MakingJump/1, MakingJump/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: MakingJump/1, MakingJump/2"
+10	A white dog is standing on fallen leaves	all x. (WhiteDog(x) -> exists y. (FallenLeaves(y) & StandingOn(x, y)))	A child in light colored clothing is standing with his arms extended outward	all x. (Child(x) & LightColoredClothing(x) -> StandingWithArmsExtended(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingWithArmsExtended/2, StandingWithArmsExtended/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingWithArmsExtended/2, StandingWithArmsExtended/1"
+11	A white dog is standing on fallen leaves	all x. (WhiteDog(x) -> exists y. (FallenLeaves(y) & StandingOn(x, y)))	The boy and girl are playing on the outdoor gym	all x.all y.all z. (Boy(x) & Girl(y) & OutdoorGym(z) -> PlayingOn(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PlayingOn/2, PlayingOn/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PlayingOn/2, PlayingOn/3"
+12	A man is wearing a blue shirt which has long sleeves and jeans and is riding a unicycle down a street	exists x. (Man(x) & WearingBlueShirt(x) & HasLongSleeves(x) & WearingJeans(x) & RidingUnicycle(x) & DownStreet(x))	Two children are playing on a statue	exists x. exists y. (Child(x) & Child(y) & PlayingOn(x, Statue) & PlayingOn(y, Statue))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Statue/1, Statue/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Statue/1, Statue/0"
+13	A man is standing on the top of the rocks with clouds behind them	exists x. (Man(x) & StandingOnRocks(x) & CloudsBehind(x))	A child is swimming underwater in a pool	exists x. exists y. (Child(x) & Pool(y) & SwimmingUnderwater(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SwimmingUnderwater/1, SwimmingUnderwater/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: SwimmingUnderwater/1, SwimmingUnderwater/2"
+14	An American footballer is wearing the red and white strip	all x. (AmericanFootballer(x) -> WearsRedAndWhiteStrip(x))	The girl, who is little, is swinging and the woman is standing behind	all x.all y. (Girl(x) & Little(x) & Woman(y) -> (Swinging(x) & StandingBehind(y)))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingBehind/2, StandingBehind/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingBehind/2, StandingBehind/1"
+15	Two people are driving a jeep and a lady is sitting on the top of it	exists x. exists y. exists z. (Person(x) & Person(y) & Jeep(z) & Driving(x, z) & Driving(y, z) & Lady(z) & SittingOnTop(z))	The adults and children are being gathered near an outdoor seating arrangement	all x. all y. (Adult(x) & Child(y) -> GatheredNearOutdoorSeatingArrangement(x, y))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: GatheredNearOutdoorSeatingArrangement/1, GatheredNearOutdoorSeatingArrangement/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: GatheredNearOutdoorSeatingArrangement/1, GatheredNearOutdoorSeatingArrangement/2"
+16	A skateboarder is jumping off a ramp	all x. all y. (Skateboarder(x) & Ramp(y) -> JumpsOff(x, y))	The black bird with a yellow beak is standing in the green grass	all x.all y.all z. (BlackBird(x) & YellowBeak(y) & GreenGrass(z) -> StandingIn(x, y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: StandingIn/2, StandingIn/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: StandingIn/2, StandingIn/3"
+17	A small white dog is running across a lawn	exists x. (Dog(x) & Small(x) & White(x) & RunningAcross(x, lawn))	A black dog on a leash is walking in the water	all x.all y. (BlackDog(x) & Leash(y) & OnLeash(x, y) -> WalkingInWater(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: OnLeash/1, OnLeash/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: OnLeash/1, OnLeash/2"
+18	A small white dog is running across a lawn	exists x. (Dog(x) & Small(x) & White(x) & RunningAcross(x, lawn))	Two males are standing on a cliff edge and one is jumping into the water	exists x. exists y. exists z. (Male(x) & Male(y) & Male(z) & StandingOnCliffEdge(x) & StandingOnCliffEdge(y) & JumpingIntoWater(z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: JumpingIntoWater/2, JumpingIntoWater/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: JumpingIntoWater/2, JumpingIntoWater/1"

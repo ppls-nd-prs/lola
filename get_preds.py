@@ -72,15 +72,16 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         else:
             lk = [] #no lexical knowledge 
 
+        nl_ps = nl_ps_list[0]
+        fol_ps = fol_ps_list[0]
+        for i in range(len(nl_ps_list))[1:]:
+            nl_ps = nl_ps + " ## " + nl_ps_list[i]  
+            fol_ps = fol_ps + " ## "  + fol_ps_list[i]
+
         try:
             e_pred = prover9_prove(PROVER9_BIN, fol_h, fol_ps_list + lk)
             c_pred = prover9_prove(PROVER9_BIN, fol_not_h, fol_ps_list + lk)
-            
-            nl_ps = nl_ps_list[0]
-            fol_ps = fol_ps_list[0]
-            for i in range(len(nl_ps_list))[1:]:
-                nl_ps = nl_ps + " ## " + nl_ps_list[i]  
-                fol_ps = fol_ps + " ## "  + fol_ps_list[i] 
+             
             df.loc[len(df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
             'e_pred':e_pred,'c_pred':c_pred}
         except Exception as a: 
