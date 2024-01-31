@@ -87,7 +87,6 @@ class modifying:
             preds_info =[]
             for p in preds:
                 parts = re.findall('[A-Z][^A-Z]*', p)
-                print(parts)
                 args = get_args(p, s_nltk)
                 preds_info.append((p, parts, args))
             # print("preds info: ", preds_info)   #DEBUG
