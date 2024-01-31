@@ -76,7 +76,33 @@ class modifying:
         except: #if it can't be turned into nltk expression (in get_preds), don't do anything 
             return s 
         
-       
+    def split_adj(s:str) -> str:
+        """
+        Split predicates of the form "AdjectiveNoun(x)" into "Adjective(x) ∧ Noun(y)"
+        """
+        try:
+            s_nltk = preprocessing.fol2nltk(s)
+            preds = get_preds(s_nltk)
+            
+            preds_info =[]
+            for p in preds:
+                parts = re.findall('[A-Z][^A-Z]*', p)
+                print(parts)
+                args = get_args(p, s_nltk)
+                preds_info.append((p, parts, args))
+            # print("preds info: ", preds_info)   #DEBUG
+            
+            for pred, parts, args in preds_info:
+                if len(parts) == 2 and len(args) == 1: #only split predicates of 2 words, with 1 argument 
+                    arg = args[0]
+                    old = f"{pred}\({arg}\)" #old predicate with argument 
+                    # print("old: ", old) #DEBUG
+                    new = f"{parts[0]}({arg}) ∧ {parts[1]}({arg})"
+                    # print("new: ", new) #DEBUG
+                    s = re.sub(old, new, s)
 
+            return s 
 
+        except: #if it can't be turned into nltk expression (in get_preds), don't do anything 
+            return s    
         
