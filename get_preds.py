@@ -101,7 +101,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
 #get dataset information
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
-parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'none'],help='modification_id')   #possible to have no modification
+parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'split', 'none'],help='modification_id')   #possible to have no modification
 parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
