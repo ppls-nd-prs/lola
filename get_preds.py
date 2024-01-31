@@ -10,6 +10,9 @@ import os
 import numpy as np
 from data_transformations import prepare_for_translation
 import argparse
+import warnings
+
+warnings.filterwarnings("ignore")
 
 def negated(fol_string):
     return "not " + fol_string
@@ -50,19 +53,12 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         fol_ps_list = []
         # Get premises and hypothesis natural string representation
         nl_ps_string = dataset[columns[0]][i_dat]
-        print("nl p string: ", nl_ps_string)
         nl_ps_list = nl_ps_string.split(" ## ")
-        print("nl p list: ", nl_ps_list)
 
         for nl_p in nl_ps_list:
             fol_p = translation_dict[nl_p]
             fol_p = preprocessing.fol2nltk(fol_p)
-            fol_ps_list.append(fol_p)
-        
-        # for prem_col in columns[0]:
-        #     nl_p = dataset[prem_col][i_dat]
-        #     nl_ps_list.append(nl_p)
-            
+            fol_ps_list.append(fol_p)            
 
         # Get label
         label = judgment_dict[dataset[columns[2]][i_dat]]
@@ -84,8 +80,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
              
             df.loc[len(df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
             'e_pred':e_pred,'c_pred':c_pred}
-        except Exception as a: 
-            print(a)       
+        except Exception as a:      
             e_df.loc[len(e_df)] = {'nl_ps':nl_ps,'fol_ps':fol_ps,'nl_h':nl_h,'fol_h':fol_h,'label':label,
             'exception':str(a)}
     if modification_id == "none" and not use_lk: #if there was no modification 

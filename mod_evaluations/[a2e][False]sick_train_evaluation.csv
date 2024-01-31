@@ -1,4 +1,4 @@
-	p_1_nl	p_1_fol	h_nl	h_fol	label	e_pred	c_pred
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
 0	A group of kids is playing in a yard and an old man is standing in the background	exists x. exists y. (Kid(x) & Yard(y) & PlayingIn(x, y) & OldMan(z) & StandingInBackground(z, y))	A group of boys in a yard is playing and a man is standing in the background	exists x.exists y. (GroupOfBoys(x) & Yard(y) -> Playing(x, y)) & exists z. (Man(z) -> exists w. (Yard(w) & StandingInBackground(z, w)))	n	False	False
 1	The young boys are playing outdoors and the man is smiling nearby	exists x.exists y. (YoungBoy(x) & Outdoors(y) -> Plays(x, y)) & (Man(z) & Smiling(z))	The kids are playing outdoors near a man with a smile	exists x.exists y.exists z. (Kid(x) & Outdoors(y) & Man(z) & Smile(z) -> PlayingNear(x, y, z))	e	False	False
 2	The kids are playing outdoors near a man with a smile	exists x.exists y.exists z. (Kid(x) & Outdoors(y) & Man(z) & Smile(z) -> PlayingNear(x, y, z))	A group of kids is playing in a yard and an old man is standing in the background	exists x. exists y. (Kid(x) & Yard(y) & PlayingIn(x, y) & OldMan(z) & StandingInBackground(z, y))	n	False	False
