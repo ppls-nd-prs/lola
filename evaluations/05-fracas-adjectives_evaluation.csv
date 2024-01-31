@@ -1,0 +1,22 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
+0	John has a genuine diamond.	all x. (Diamond(x) & Genuine(x) -> OwnedBy(x, John))	John has a diamond.	HasDiamond(john)	e	False	False
+1	John is a former university student.	FormerStudent(john)	John is a university student.	UniversityStudent(john)	c	False	False
+2	John is a successful former university student.	SuccessfulFormerStudent(john)	John is successful.	Successful(john)	e	False	False
+3	John is a former successful university student.	FormerSuccessfulStudent(john)	John is successful.	Successful(john)	n	False	False
+4	John is a former successful university student.	FormerSuccessfulStudent(john)	John is a university student.	UniversityStudent(john)	n	False	False
+5	Every mammal is an animal.	all x. (Mammal(x) -> Animal(x))	Every four-legged mammal is a four-legged animal.	all x. (FourLeggedMammal(x) -> FourLeggedAnimal(x))	e	False	False
+6	Dumbo is a four-legged animal.	FourLeggedAnimal(dumbo)	Dumbo is four-legged.	FourLegged(dumbo)	e	False	False
+7	Mickey is a small animal.	all x. (Animal(x) & Small(x) -> Mickey(x))	Mickey is a large animal.	LargeAnimal(mickey)	c	False	False
+8	Dumbo is a large animal.	LargeAnimal(dumbo)	Dumbo is a small animal.	SmallAnimal(dumbo)	c	False	False
+9	Fido is not a small animal.	all x. (Animal(x) & Small(x) -> not Fido(x))	Fido is a large animal.	LargeAnimal(fido)	n	False	False
+10	Fido is not a large animal.	all x. (Animal(x) & Large(x) -> not Fido(x))	Fido is a small animal.	SmallAnimal(fido)	n	False	False
+11	All mice are small animals. ## Mickey is a large mouse.	all x. (Mouse(x) -> SmallAnimal(x)) ## LargeMouse(mickey)	Mickey is a large animal.	LargeAnimal(mickey)	c	False	False
+12	All elephants are large animals. ## Dumbo is a small elephant.	all x. (Elephant(x) -> LargeAnimal(x)) ## SmallElephant(dumbo)	Dumbo is a small animal.	SmallAnimal(dumbo)	c	False	False
+13	All mice are small animals. ## All elephants are large animals. ## Mickey is a large mouse. ## Dumbo is a small elephant.	all x. (Mouse(x) -> SmallAnimal(x)) ## all x. (Elephant(x) -> LargeAnimal(x)) ## LargeMouse(mickey) ## SmallElephant(dumbo)	Dumbo is larger than Mickey.	Larger(Dumbo, Mickey)	e	False	False
+14	All mice are small animals. ## Mickey is a large mouse.	all x. (Mouse(x) -> SmallAnimal(x)) ## LargeMouse(mickey)	Mickey is small.	all x. (Mouse(x) -> Small(x))	n	False	False
+15	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	all x. (LegalAuthority(x) -> LawLecturer(x)) ## all x. (LawLecturer(x) -> LegalAuthority(x))	All fat legal authorities are fat law lecturers.	all x. (FatLegalAuthority(x) -> FatLawLecturer(x))	e	False	False
+16	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	all x. (LegalAuthority(x) -> LawLecturer(x)) ## all x. (LawLecturer(x) -> LegalAuthority(x))	All competent legal authorities are competent law lecturers.	all x. (CompetentLegalAuthority(x) -> LawLecturer(x))	n	False	False
+17	John is a fatter politician than Bill.	Fatter(john, bill)	John is fatter than Bill.	Fatter(john, bill)	e	True	False
+18	John is a cleverer politician than Bill.	Cleverer(John, Bill)	John is cleverer than Bill.	Cleverer(john, bill)	n	False	False
+19	Kim is a clever person.	Clever(Kim)	Kim is clever.	Clever(kim)	e	False	False
+20	Kim is a clever politician.	Clever(Kim)	Kim is clever.	Clever(kim)	n	False	False

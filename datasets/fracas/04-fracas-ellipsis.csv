@@ -1,0 +1,56 @@
+	id	premises	h	label
+0	142	John spoke to Mary. ## So did Bill.	Bill spoke to Mary.	yes
+1	143	John spoke to Mary. ## So did Bill. ## John spoke to Mary at four o'clock.	Bill spoke to Mary at four o'clock.	unknown
+2	144	John spoke to Mary at four o'clock. ## So did Bill.	Bill spoke to Mary at four o'clock.	yes
+3	145	John spoke to Mary at four o'clock. ## And Bill did at five o'clock.	Bill spoke to Mary at five o'clock.	yes
+4	146	John has spoken to Mary. ## Bill is going to.	Bill will speak to Mary.	yes
+5	147	John spoke to Mary on Monday. ## Bill didn't.	Bill spoke to Mary on Monday.	no
+6	148	Has John spoken to Mary? ## Bill has.	Bill has spoken to Mary.	yes
+7	149	John has spoken to Mary. ## The students have too.	The students have spoken to Mary.	yes
+8	150	John went to Paris by car, and Bill by train.	Bill went to Paris by train.	yes
+9	151	John went to Paris by car, and Bill by train to Berlin.	Bill went to Berlin by train.	yes
+10	152	John went to Paris by car, and Bill to Berlin.	Bill went to Berlin by car.	yes
+11	153	John is going to Paris by car, and the students by train.	The students are going to Paris by train.	yes
+12	154	John went to Paris by car. ## Bill by train.	Bill went to Paris by train.	yes
+13	155	John owns a car. ## Bill owns one too.	Bill owns a car.	yes
+14	156	John owns a car. ## Bill owns one too.	There is a car that John and Bill own.	unknown
+15	157	John owns a red car. ## Bill owns a blue one.	Bill owns a blue car.	yes
+16	158	John owns a red car. ## Bill owns a blue one.	Bill owns a red car.	unknown
+17	159	John owns a red car. ## Bill owns a fast one.	Bill owns a fast car.	yes
+18	160	John owns a red car. ## Bill owns a fast one.	Bill owns a fast red car.	yes
+19	161	John owns a red car. ## Bill owns a fast one.	Bill owns a fast red car.	unknown
+20	162	John owns a fast red car. ## Bill owns a slow one.	Bill owns a slow red car.	yes
+21	163	John had his paper accepted. ## Bill doesn't know why.	Bill knows why John had his paper accepted.	no
+22	164	John spoke to Mary. ## And to Sue.	John spoke to Sue.	yes
+23	165	John spoke to Mary. ## On Friday.	John spoke to Mary on Friday.	yes
+24	166	John spoke to Mary on Thursday. ## And on Friday.	John spoke to Mary on Friday.	yes
+25	167	Twenty men work in the Sales Department. ## But only one woman.	Two women work in the Sales Department.	no
+26	168	Five men work part time. ## And forty five women.	Forty five women work part time.	yes
+27	169	John found Mary before Bill.	John found Mary before Bill found Mary.	yes
+28	170	John found Mary before Bill.	John found Mary before John found Bill.	yes
+29	171	John wants to know how many men work part time. ## And women.	John wants to know how many women work part time.	yes
+30	172	John wants to know how many men work part time, and which.	John wants to know which men work part time.	yes
+31	173	Bill spoke to everyone that John did. ## John spoke to Mary.	Bill spoke to Mary.	yes
+32	174	Bill spoke to everyone that John did. ## Bill spoke to Mary.	John spoke to Mary.	unknown
+33	175	John said Mary wrote a report, and Bill did too.	Bill said Mary wrote a report.	yes
+34	176	John said Mary wrote a report, and Bill did too.	John said Bill wrote a report.	yes
+35	177	John said that Mary wrote a report, and that Bill did too.	Bill said Mary wrote a report.	unknown
+36	178	John wrote a report, and Bill said Peter did too.	Bill said Peter wrote a report.	yes
+37	179	If John wrote a report, then Bill did too. ## John wrote a report.	Bill wrote a report.	yes
+38	180	John wanted to buy a car, and he did.	John bought a car.	yes
+39	181	John needed to buy a car, and Bill did.	Bill bought a car.	unknown
+40	182	Smith represents his company and so does Jones.	Jones represents Jones' company.	yes
+41	183	Smith represents his company and so does Jones.	Jones represents Smith's company.	yes
+42	184	Smith represents his company and so does Jones.	Smith represents Jones' company.	unknown
+43	185	Smith claimed he had costed his proposal and so did Jones.	Jones claimed he had costed his own proposal.	yes
+44	186	Smith claimed he had costed his proposal and so did Jones.	Jones claimed he had costed Smith's proposal.	yes
+45	187	Smith claimed he had costed his proposal and so did Jones.	Jones claimed Smith had costed Smith's proposal.	yes
+46	188	Smith claimed he had costed his proposal and so did Jones.	Jones claimed Smith had costed Jones' proposal.	unknown
+47	189	John is a man and Mary is a woman. ## John represents his company and so does Mary.	Mary represents her own company.	yes
+48	190	John is a man and Mary is a woman. ## John represents his company and so does Mary.	Mary represents John's company.	yes
+49	191	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan should go together.	yes
+50	192	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	unknown
+51	193	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan's wife should go together.	yes
+52	194	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	unknown
+53	195	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	yes
+54	196	A lawyer signed every report, and so did an auditor. ## That is, there was one lawyer who signed all the reports.	There was one auditor who signed all the reports.	yes

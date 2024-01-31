@@ -1,0 +1,24 @@
+	id	premises	h	label
+0	197	John has a genuine diamond.	John has a diamond.	yes
+1	198	John is a former university student.	John is a university student.	no
+2	199	John is a successful former university student.	John is successful.	yes
+3	200	John is a former successful university student.	John is successful.	unknown
+4	201	John is a former successful university student.	John is a university student.	unknown
+5	202	Every mammal is an animal.	Every four-legged mammal is a four-legged animal.	yes
+6	203	Dumbo is a four-legged animal.	Dumbo is four-legged.	yes
+7	204	Mickey is a small animal.	Mickey is a large animal.	no
+8	205	Dumbo is a large animal.	Dumbo is a small animal.	no
+9	206	Fido is not a small animal.	Fido is a large animal.	unknown
+10	207	Fido is not a large animal.	Fido is a small animal.	unknown
+11	208	Mickey is a small animal. ## Dumbo is a large animal.	Mickey is smaller than Dumbo.	yes
+12	209	Mickey is a small animal. ## Dumbo is a large animal.	Mickey is larger than Dumbo.	no
+13	210	All mice are small animals. ## Mickey is a large mouse.	Mickey is a large animal.	no
+14	211	All elephants are large animals. ## Dumbo is a small elephant.	Dumbo is a small animal.	no
+15	212	All mice are small animals. ## All elephants are large animals. ## Mickey is a large mouse. ## Dumbo is a small elephant.	Dumbo is larger than Mickey.	yes
+16	213	All mice are small animals. ## Mickey is a large mouse.	Mickey is small.	undef
+17	214	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	All fat legal authorities are fat law lecturers.	yes
+18	215	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	All competent legal authorities are competent law lecturers.	unknown
+19	216	John is a fatter politician than Bill.	John is fatter than Bill.	yes
+20	217	John is a cleverer politician than Bill.	John is cleverer than Bill.	unknown
+21	218	Kim is a clever person.	Kim is clever.	yes
+22	219	Kim is a clever politician.	Kim is clever.	unknown

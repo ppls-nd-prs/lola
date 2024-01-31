@@ -1,0 +1,81 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	The PC-6082 is as fast as the ITEL-XZ. ## The ITEL-XZ is fast.	all x.all y. (PC6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## Fast(ITELXZ)	The PC-6082 is fast.	Fast(PC6082)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: ITELXZ/1, ITELXZ/0, PC6082/1, PC6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: ITELXZ/1, ITELXZ/0, PC6082/1, PC6082/0"
+1	The PC-6082 is as fast as the ITEL-XZ.	all x.all y. (PC6082(x) & ITELXZ(y) -> AsFastAs(x, y))	The PC-6082 is fast.	Fast(PC6082)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PC6082/1, PC6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PC6082/1, PC6082/0"
+2	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is fast.	all x.all y. (PC6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## Fast(PC6082)	The ITEL-XZ is fast.	Fast(ITELXZ)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PC6082/1, PC6082/0, ITELXZ/1, ITELXZ/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PC6082/1, PC6082/0, ITELXZ/1, ITELXZ/0"
+3	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is slow.	all x.all y. (PC6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## all x. (PC6082(x) -> Slow(x))	The ITEL-XZ is fast.	Fast(ITELXZ)	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: ITELXZ/1, ITELXZ/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: ITELXZ/1, ITELXZ/0"
+4	ITEL won more orders than APCOM did.	MoreOrders(ITEL, APCOM)	APCOM won some orders.	exists x. (APCOM(x) & WonOrders(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+5	ITEL won more orders than APCOM did. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+6	ITEL won more orders than APCOM.	MoreOrders(ITEL, APCOM)	APCOM won some orders.	exists x. (APCOM(x) & WonOrders(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+7	ITEL won more orders than APCOM. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+8	ITEL won twice as many orders than APCOM. ## APCOM won ten orders.	WonOrders(ITEL, 2) & WonOrders(APCOM, 1) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won twenty orders.	WonOrders(ITEL, 20)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+9	ITEL won more orders than APCOM lost.	MoreOrdersWon(ITEL, APCOM)	APCOM lost some orders.	exists x. (APCOM(x) & LostOrders(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+10	ITEL sold 3000 more computers than APCOM. ## APCOM sold exactly 2500 computers.	Sold(ITEL, 3000, Computers) & Sold(APCOM, 0, Computers) ## all x. (APCOM(x) -> SoldExactly2500Computers(x))	ITEL sold 5500 computers.	Sold(ITEL, 5500, Computers)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
+11	The PC-6082 is faster than every ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanEveryITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
+12	The PC-6082 is faster than some ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
+13	The PC-6082 is faster than any ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
+14	The PC-6082 is faster than the ITEL-ZX and the ITEL-ZY.	all x. all y. all z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) -> Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0"
+15	The PC-6082 is faster than the ITEL-ZX or the ITEL-ZY.	all x. all y. all z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) -> Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0"

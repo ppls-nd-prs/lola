@@ -1,0 +1,9 @@
+	id	premises	h	label
+0	326	ITEL built MTALK in 1993.	ITEL finished MTALK in 1993.	yes
+1	327	ITEL was building MTALK in 1993.	ITEL finished MTALK in 1993.	unknown
+2	328	ITEL won the contract from APCOM in 1993.	ITEL won a contract in 1993.	yes
+3	329	ITEL was winning the contract from APCOM in 1993.	ITEL won a contract in 1993.	unknown
+4	330	ITEL owned APCOM from 1988 to 1992.	ITEL owned APCOM in 1990.	yes
+5	331	Smith and Jones left the meeting.	Smith left the meeting.	yes
+6	332	Smith and Jones left the meeting.	Jones left the meeting.	yes
+7	333	Smith, Anderson and Jones met.	There was a group of people that met.	yes

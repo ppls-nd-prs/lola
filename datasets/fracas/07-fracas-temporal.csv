@@ -1,0 +1,72 @@
+	id	premises	h	label
+0	251	ITEL has a factory in Birmingham.	ITEL currently has a factory in Birmingham.	yes
+1	252	Since 1992 ITEL has been in Birmingham. ## It is now 1996.	Itel was in Birmingham in 1993.	yes
+2	253	ITEL has developed a new editor since 1992. ## It is now 1996.	ITEL developed a new editor in 1993.	unknown
+3	254	ITEL has expanded since 1992. ## It is now 1996.	ITEL expanded in 1993.	unknown
+4	255	Since 1992 ITEL has made a loss. ## It is now 1996.	ITEL made a loss in 1993.	yes
+5	256	ITEL has made a loss since 1992. ## It is now 1996.	ITEL made a loss in 1993.	unknown
+6	257	ITEL has made a loss since 1992. ## It is now 1996.	ITEL made a loss in 1993.	yes
+7	258	In March 1993 APCOM founded ITEL.	ITEL existed in 1992.	no
+8	259	The conference started on July 4th, 1994. ## It lasted 2 days.	The conference was over on July 8th, 1994.	yes
+9	260	Yesterday APCOM signed the contract. ## Today is Saturday, July 14th.	APCOM signed the contract Friday, 13th.	yes
+10	261	Smith left before Jones left. ## Jones left before Anderson left.	Smith left before Anderson left.	yes
+11	262	Smith left after Jones left. ## Jones left after Anderson left.	Smith left after Anderson left.	yes
+12	263	Smith was present after Jones left. ## Jones left after Anderson was present.	Smith was present after Anderson was present.	unknown
+13	264	Smith left. ## Jones left. ## Smith left before Jones left.	Jones left after Smith left.	yes
+14	265	Smith left. ## Jones left. ## Smith left after Jones left.	Jones left before Smith left.	yes
+15	266	Smith left. ## Jones left. ## Jones left before Smith left.	Smith left after Jones left.	yes
+16	267	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract before Smith did.	Smith revised the contract after Jones did.	yes
+17	268	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract after Smith did.	Smith revised the contract before Jones did.	yes
+18	269	Smith swam. ## Jones swam. ## Smith swam before Jones swam.	Jones swam after Smith swam.	unknown
+19	270	Smith swam to the shore. ## Jones swam to the shore. ## Smith swam to the shore before Jones swam to the shore.	Jones swam to the shore after Smith swam to the shore.	yes
+20	271	Smith was present. ## Jones was present. ## Smith was present after Jones was present.	Jones was present before Smith was present.	unknown
+21	272	Smith was present. ## Jones was present. ## Smith was present before Jones was present.	Jones was present after Smith was present.	unknown
+22	273	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report before Jones was writing a report.	Jones was writing a report after Smith was writing a report.	unknown
+23	274	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report after Jones was writing a report.	Jones was writing a report before Smith was writing a report.	unknown
+24	275	Smith left the meeting before he lost his temper.	Smith lost his temper.	unknown
+25	277	Smith lived in Birmingham in 1991.	Smith lived in Birmingham in 1992.	unknown
+26	278	Smith wrote his first novel in 1991.	Smith wrote his first novel in 1992.	no
+27	279	Smith wrote a novel in 1991.	Smith wrote it in 1992.	no
+28	280	Smith wrote a novel in 1991.	Smith wrote a novel in 1992.	unknown
+29	281	Smith was running a business in 1991.	Smith was running it in 1992.	unknown
+30	282	Smith discovered a new species in 1991.	Smith discovered it in 1992.	no
+31	283	Smith discovered a new species in 1991.	Smith discovered a new species in 1992.	unknown
+32	284	Smith wrote a report in two hours. ## Smith started writing the report at 8 am.	Smith had finished writing the report by 11 am.	yes
+33	285	Smith wrote a report in two hours.	Smith spent two hours writing the report.	unknown
+34	286	Smith wrote a report in two hours.	Smith spent more than two hours writing the report.	no
+35	287	Smith wrote a report in two hours.	Smith wrote a report in one hour.	unknown
+36	288	Smith wrote a report in two hours.	Smith wrote a report.	yes
+37	289	Smith discovered a new species in two hours.	Smith spent two hours discovering the new species.	no
+38	290	Smith discovered a new species in two hours.	Smith discovered a new species.	yes
+39	291	Smith discovered many new species in two hours.	Smith spent two hours discovering new species.	yes
+40	292	Smith was running his own business in two years.	Smith spent two years running his own business.	unknown
+41	293	Smith was running his own business in two years.	Smith spent more than two years running his own business.	unknown
+42	294	Smith was running his own business in two years.	Smith ran his own business.	yes
+43	295	In two years Smith owned a chain of businesses.	Smith owned a chain of business for two years.	unknown
+44	296	In two years Smith owned a chain of businesses.	Smith owned a chain of business for more than two years.	unknown
+45	297	In two years Smith owned a chain of businesses.	Smith owned a chain of business.	yes
+46	298	Smith lived in Birmingham for two years.	Smith lived in Birmingham for a year.	yes
+47	299	Smith lived in Birmingham for two years.	Smith lived in Birmingham for exactly a year.	no
+48	300	Smith lived in Birmingham for two years.	Smith lived in Birmingham.	yes
+49	301	Smith ran his own business for two years.	Smith ran his own business for a year.	yes
+50	302	Smith ran his own business for two years.	Smith ran his own business.	yes
+51	303	Smith wrote a report for two hours.	Smith wrote a report for an hour.	yes
+52	304	Smith wrote a report for two hours.	Smith wrote a report.	unknown
+53	306	Smith discovered new species for two years.	Smith discovered new species.	yes
+54	307	In 1994 ITEL sent a progress report every month.	ITEL sent a progress report in July 1994.	yes
+55	308	Smith wrote to a representative every week.	There is a representative that Smith wrote to every week.	undef
+56	311	Smith had left the house at a quarter past five. ## Then she took a taxi to the station.	Smith left the house before she took a taxi to the station.	yes
+57	312	ITEL always delivers reports late. ## In 1993 ITEL delivered reports.	ITEL delivered reports late in 1993.	yes
+58	313	ITEL never delivers reports late. ## In 1993 ITEL delivered reports.	ITEL delivered reports late in 1993.	no
+59	314	Smith arrived in Paris on the 5th of May, 1995. ## Today is the 15th of May, 1995. ## She is still in Paris.	Smith was in Paris on the 7th of May, 1995.	yes
+60	315	When Smith arrived in Katmandu she had been travelling for three days.	Smith had been travelling the day before she arrived in Katmandu.	yes
+61	316	Jones graduated in March and has been employed ever since. ## Jones has been unemployed in the past.	Jones was unemployed at some time before he graduated.	yes
+62	317	Every representative has read this report. ## No two representatives have read it at the same time. ## No representative took less than half a day to read the report. ## There are sixteen representatives.	It took the representatives more than a week to read the report.	yes
+63	318	While Jones was updating the program, Mary came in and told him about the board meeting. ## She finished before he did.	Mary's story lasted as long as Jones's updating the program.	no
+64	319	Before APCOM bought its present office building, it had been paying mortgage interest on the previous one for 8 years. ## Since APCOM bought its present office building it has been paying mortgage interest on it for more than 10 years.	APCOM has been paying mortgage interest for a total of 15 years or more.	yes
+65	320	When Jones got his job at the CIA, he knew that he would never be allowed to write his memoirs.	It is the case that Jones is not and will never be allowed to write his memoirs.	yes
+66	321	Smith has been to Florence twice in the past. ## Smith will go to Florence twice in the coming year.	Two years from now Smith will have been to Florence at least four times.	yes
+67	322	Last week I already knew that when, in a month's time, Smith would discover that she had been duped she would be furious.	It will be the case that in a few weeks Smith will discover that she has been duped; and she will be furious.	yes
+68	323	No one gambling seriously stops until he is broke. ## No one can gamble when he is broke.	Everyone who starts gambling seriously stops the moment he is broke.	yes
+69	324	No one who starts gambling seriously stops until he is broke.	Everyone who starts gambling seriously continues until he is broke.	yes
+70	325	Nobody who is asleep ever knows that he is asleep. ## But some people know that they have been asleep after they have been asleep.	Some people discover that they have been asleep.	yes

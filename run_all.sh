@@ -2,14 +2,8 @@
 
 # Shell script for obtaining all evaluation and exceptions files
 
-for SET in sick_trial sick_train sick_test syllogisms
+for SET in 07-fracas-temporal 09-fracas-attitudes
 do
-    for MOD in a2e i2c_a2e split_verb split_adj none
-    do
-        for LK in True False
-        do
-            echo "Run with $SET - $MOD - $LK"
-            python get_preds.py $SET $MOD $LK
-        done
-    done
+    echo "Run with $SET"
+    python get_preds.py $SET none False
 done

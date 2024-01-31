@@ -96,8 +96,11 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
 
 #get dataset information
 parser = argparse.ArgumentParser()
-parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test','syllogisms'],help='dataset_name')
-parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'split_verb','split_adj', 'none'],help='modification_id')   #possible to have no modification
+parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test',
+'01-fracas-quantifier','02-fracas-plural','03-fracas-anaphora','04-fracas-ellipsis',
+'05-fracas-adjectives','06-fracas-comparatives','07-fracas-temporal',
+'08-fracas-verbs','09-fracas-attitudes','syllogisms'],help='dataset_name')
+parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'split_verb','split_adj', 'a2e_i2c_split_adj', 'none'],help='modification_id')   #possible to have no modification
 parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
@@ -124,7 +127,21 @@ if re.search(r'sick',dataset_name):
         dataset_path = "datasets/sick/SICK_train.csv"
     elif dataset_name == "sick_test":
         dataset_path = "datasets/sick/SICK_test_annotated.csv"
-
+elif re.search(r'fracas',dataset_name):
+    # set modification type
+    if modification_id == "none": 
+        dictionary_path = "dictionaries/fracas/full_splitted_prems_fracas_dict.json"
+    else:
+        raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
+    #set lexical knowledge 
+    if lexical_knowledge == "True":
+        raise Exception(f"There is no lexical knowledge for the {dataset_name} data set")
+    else:
+        use_lk = False
+    #set basic info
+    relevant_column_list = ['premises','h','label']
+    judgment_dict = {"yes":"e","no":"c","undef":"n","unknown":"n"}
+    dataset_path = f"datasets/fracas/{dataset_name}.csv"
 elif dataset_name == "syllogisms":
     dataset_path = "datasets/syllogisms/syllogisms.csv"
     # set modification type
@@ -145,7 +162,6 @@ elif dataset_name == "syllogisms":
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"
-print("cur dir: ", os.getcwd())
 #load dataset
 dataset = pd.read_csv(dataset_path,header=0,sep="\t")
 
