@@ -131,6 +131,8 @@ elif re.search(r'fracas',dataset_name):
     # set modification type
     if modification_id == "none": 
         dictionary_path = "dictionaries/fracas/full_splitted_prems_fracas_dict.json"
+    elif modification_id == "split_adj":
+        dictionary_path = "mod_dictionaries/[split_adj]full_splitted_prems_fracas_dict.json"
     else:
         raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
     #set lexical knowledge 

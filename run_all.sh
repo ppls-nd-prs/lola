@@ -2,8 +2,8 @@
 
 # Shell script for obtaining all evaluation and exceptions files
 
-for SET in 07-fracas-temporal 09-fracas-attitudes
+for FILE in quantifier_ev plural_ev anaphora_ev ellipsis_ev adjectives_ev comparatives_ev temporal_ev verbs_ev attitudes_ev
 do
-    echo "Run with $SET"
-    python get_preds.py $SET none False
+    echo "Run with $FILE"
+    python get_conf_mats.py evaluations/*$FILE*
 done
