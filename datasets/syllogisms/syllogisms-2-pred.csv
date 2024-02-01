@@ -1,0 +1,257 @@
+	Unnamed: 0	hypothesis	label	premises
+0	0	All linguists are engineers	entailment	All bad musicians are engineers ## All linguists are bad musicians
+1	1	All linguists are engineers	neutral	All bad musicians are engineers ## No linguists are bad musicians
+2	2	All linguists are engineers	neutral	All bad musicians are engineers ## Some linguists are bad musicians
+3	3	All linguists are engineers	neutral	All bad musicians are engineers ## Some linguists are not bad musicians
+4	4	All linguists are engineers	neutral	No bad musicians are engineers ## All linguists are bad musicians
+5	5	All linguists are engineers	neutral	No bad musicians are engineers ## No linguists are bad musicians
+6	6	All linguists are engineers	contradiction	No bad musicians are engineers ## Some linguists are bad musicians
+7	7	All linguists are engineers	neutral	No bad musicians are engineers ## Some linguists are not bad musicians
+8	8	All linguists are engineers	neutral	Some bad musicians are engineers ## All linguists are bad musicians
+9	9	All linguists are engineers	neutral	Some bad musicians are engineers ## No linguists are bad musicians
+10	10	All linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are bad musicians
+11	11	All linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are not bad musicians
+12	12	All linguists are engineers	neutral	Some bad musicians are not engineers ## All linguists are bad musicians
+13	13	All linguists are engineers	neutral	Some bad musicians are not engineers ## No linguists are bad musicians
+14	14	All linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are bad musicians
+15	15	All linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are not bad musicians
+16	16	No linguists are engineers	neutral	All bad musicians are engineers ## All linguists are bad musicians
+17	17	No linguists are engineers	neutral	All bad musicians are engineers ## No linguists are bad musicians
+18	18	No linguists are engineers	contradiction	All bad musicians are engineers ## Some linguists are bad musicians
+19	19	No linguists are engineers	neutral	All bad musicians are engineers ## Some linguists are not bad musicians
+20	20	No linguists are engineers	entailment	No bad musicians are engineers ## All linguists are bad musicians
+21	21	No linguists are engineers	neutral	No bad musicians are engineers ## No linguists are bad musicians
+22	22	No linguists are engineers	neutral	No bad musicians are engineers ## Some linguists are bad musicians
+23	23	No linguists are engineers	neutral	No bad musicians are engineers ## Some linguists are not bad musicians
+24	24	No linguists are engineers	neutral	Some bad musicians are engineers ## All linguists are bad musicians
+25	25	No linguists are engineers	neutral	Some bad musicians are engineers ## No linguists are bad musicians
+26	26	No linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are bad musicians
+27	27	No linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are not bad musicians
+28	28	No linguists are engineers	neutral	Some bad musicians are not engineers ## All linguists are bad musicians
+29	29	No linguists are engineers	neutral	Some bad musicians are not engineers ## No linguists are bad musicians
+30	30	No linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are bad musicians
+31	31	No linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are not bad musicians
+32	32	Some linguists are engineers	neutral	All bad musicians are engineers ## All linguists are bad musicians
+33	33	Some linguists are engineers	neutral	All bad musicians are engineers ## No linguists are bad musicians
+34	34	Some linguists are engineers	entailment	All bad musicians are engineers ## Some linguists are bad musicians
+35	35	Some linguists are engineers	neutral	All bad musicians are engineers ## Some linguists are not bad musicians
+36	36	Some linguists are engineers	contradiction	No bad musicians are engineers ## All linguists are bad musicians
+37	37	Some linguists are engineers	neutral	No bad musicians are engineers ## No linguists are bad musicians
+38	38	Some linguists are engineers	neutral	No bad musicians are engineers ## Some linguists are bad musicians
+39	39	Some linguists are engineers	neutral	No bad musicians are engineers ## Some linguists are not bad musicians
+40	40	Some linguists are engineers	neutral	Some bad musicians are engineers ## All linguists are bad musicians
+41	41	Some linguists are engineers	neutral	Some bad musicians are engineers ## No linguists are bad musicians
+42	42	Some linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are bad musicians
+43	43	Some linguists are engineers	neutral	Some bad musicians are engineers ## Some linguists are not bad musicians
+44	44	Some linguists are engineers	neutral	Some bad musicians are not engineers ## All linguists are bad musicians
+45	45	Some linguists are engineers	neutral	Some bad musicians are not engineers ## No linguists are bad musicians
+46	46	Some linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are bad musicians
+47	47	Some linguists are engineers	neutral	Some bad musicians are not engineers ## Some linguists are not bad musicians
+48	48	Some linguists are not engineers	contradiction	All bad musicians are engineers ## All linguists are bad musicians
+49	49	Some linguists are not engineers	neutral	All bad musicians are engineers ## No linguists are bad musicians
+50	50	Some linguists are not engineers	neutral	All bad musicians are engineers ## Some linguists are bad musicians
+51	51	Some linguists are not engineers	neutral	All bad musicians are engineers ## Some linguists are not bad musicians
+52	52	Some linguists are not engineers	neutral	No bad musicians are engineers ## All linguists are bad musicians
+53	53	Some linguists are not engineers	neutral	No bad musicians are engineers ## No linguists are bad musicians
+54	54	Some linguists are not engineers	entailment	No bad musicians are engineers ## Some linguists are bad musicians
+55	55	Some linguists are not engineers	neutral	No bad musicians are engineers ## Some linguists are not bad musicians
+56	56	Some linguists are not engineers	neutral	Some bad musicians are engineers ## All linguists are bad musicians
+57	57	Some linguists are not engineers	neutral	Some bad musicians are engineers ## No linguists are bad musicians
+58	58	Some linguists are not engineers	neutral	Some bad musicians are engineers ## Some linguists are bad musicians
+59	59	Some linguists are not engineers	neutral	Some bad musicians are engineers ## Some linguists are not bad musicians
+60	60	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## All linguists are bad musicians
+61	61	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## No linguists are bad musicians
+62	62	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## Some linguists are bad musicians
+63	63	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## Some linguists are not bad musicians
+64	64	All linguists are engineers	neutral	All engineers are bad musicians ## All linguists are bad musicians
+65	65	All linguists are engineers	neutral	All engineers are bad musicians ## No linguists are bad musicians
+66	66	All linguists are engineers	neutral	All engineers are bad musicians ## Some linguists are bad musicians
+67	67	All linguists are engineers	contradiction	All engineers are bad musicians ## Some linguists are not bad musicians
+68	68	All linguists are engineers	neutral	No engineers are bad musicians ## All linguists are bad musicians
+69	69	All linguists are engineers	neutral	No engineers are bad musicians ## No linguists are bad musicians
+70	70	All linguists are engineers	contradiction	No engineers are bad musicians ## Some linguists are bad musicians
+71	71	All linguists are engineers	neutral	No engineers are bad musicians ## Some linguists are not bad musicians
+72	72	All linguists are engineers	neutral	Some engineers are bad musicians ## All linguists are bad musicians
+73	73	All linguists are engineers	neutral	Some engineers are bad musicians ## No linguists are bad musicians
+74	74	All linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are bad musicians
+75	75	All linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are not bad musicians
+76	76	All linguists are engineers	neutral	Some engineers are not bad musicians ## All linguists are bad musicians
+77	77	All linguists are engineers	neutral	Some engineers are not bad musicians ## No linguists are bad musicians
+78	78	All linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are bad musicians
+79	79	All linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are not bad musicians
+80	80	No linguists are engineers	neutral	All engineers are bad musicians ## All linguists are bad musicians
+81	81	No linguists are engineers	entailment	All engineers are bad musicians ## No linguists are bad musicians
+82	82	No linguists are engineers	neutral	All engineers are bad musicians ## Some linguists are bad musicians
+83	83	No linguists are engineers	neutral	All engineers are bad musicians ## Some linguists are not bad musicians
+84	84	No linguists are engineers	entailment	No engineers are bad musicians ## All linguists are bad musicians
+85	85	No linguists are engineers	neutral	No engineers are bad musicians ## No linguists are bad musicians
+86	86	No linguists are engineers	neutral	No engineers are bad musicians ## Some linguists are bad musicians
+87	87	No linguists are engineers	neutral	No engineers are bad musicians ## Some linguists are not bad musicians
+88	88	No linguists are engineers	neutral	Some engineers are bad musicians ## All linguists are bad musicians
+89	89	No linguists are engineers	neutral	Some engineers are bad musicians ## No linguists are bad musicians
+90	90	No linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are bad musicians
+91	91	No linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are not bad musicians
+92	92	No linguists are engineers	neutral	Some engineers are not bad musicians ## All linguists are bad musicians
+93	93	No linguists are engineers	neutral	Some engineers are not bad musicians ## No linguists are bad musicians
+94	94	No linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are bad musicians
+95	95	No linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are not bad musicians
+96	96	Some linguists are engineers	neutral	All engineers are bad musicians ## All linguists are bad musicians
+97	97	Some linguists are engineers	contradiction	All engineers are bad musicians ## No linguists are bad musicians
+98	98	Some linguists are engineers	neutral	All engineers are bad musicians ## Some linguists are bad musicians
+99	99	Some linguists are engineers	neutral	All engineers are bad musicians ## Some linguists are not bad musicians
+100	100	Some linguists are engineers	contradiction	No engineers are bad musicians ## All linguists are bad musicians
+101	101	Some linguists are engineers	neutral	No engineers are bad musicians ## No linguists are bad musicians
+102	102	Some linguists are engineers	neutral	No engineers are bad musicians ## Some linguists are bad musicians
+103	103	Some linguists are engineers	neutral	No engineers are bad musicians ## Some linguists are not bad musicians
+104	104	Some linguists are engineers	neutral	Some engineers are bad musicians ## All linguists are bad musicians
+105	105	Some linguists are engineers	neutral	Some engineers are bad musicians ## No linguists are bad musicians
+106	106	Some linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are bad musicians
+107	107	Some linguists are engineers	neutral	Some engineers are bad musicians ## Some linguists are not bad musicians
+108	108	Some linguists are engineers	neutral	Some engineers are not bad musicians ## All linguists are bad musicians
+109	109	Some linguists are engineers	neutral	Some engineers are not bad musicians ## No linguists are bad musicians
+110	110	Some linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are bad musicians
+111	111	Some linguists are engineers	neutral	Some engineers are not bad musicians ## Some linguists are not bad musicians
+112	112	Some linguists are not engineers	neutral	All engineers are bad musicians ## All linguists are bad musicians
+113	113	Some linguists are not engineers	neutral	All engineers are bad musicians ## No linguists are bad musicians
+114	114	Some linguists are not engineers	neutral	All engineers are bad musicians ## Some linguists are bad musicians
+115	115	Some linguists are not engineers	entailment	All engineers are bad musicians ## Some linguists are not bad musicians
+116	116	Some linguists are not engineers	neutral	No engineers are bad musicians ## All linguists are bad musicians
+117	117	Some linguists are not engineers	neutral	No engineers are bad musicians ## No linguists are bad musicians
+118	118	Some linguists are not engineers	entailment	No engineers are bad musicians ## Some linguists are bad musicians
+119	119	Some linguists are not engineers	neutral	No engineers are bad musicians ## Some linguists are not bad musicians
+120	120	Some linguists are not engineers	neutral	Some engineers are bad musicians ## All linguists are bad musicians
+121	121	Some linguists are not engineers	neutral	Some engineers are bad musicians ## No linguists are bad musicians
+122	122	Some linguists are not engineers	neutral	Some engineers are bad musicians ## Some linguists are bad musicians
+123	123	Some linguists are not engineers	neutral	Some engineers are bad musicians ## Some linguists are not bad musicians
+124	124	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## All linguists are bad musicians
+125	125	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## No linguists are bad musicians
+126	126	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## Some linguists are bad musicians
+127	127	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## Some linguists are not bad musicians
+128	128	All linguists are engineers	neutral	All bad musicians are engineers ## All bad musicians are linguists
+129	129	All linguists are engineers	neutral	All bad musicians are engineers ## No bad musicians are linguists
+130	130	All linguists are engineers	neutral	All bad musicians are engineers ## Some bad musicians are linguists
+131	131	All linguists are engineers	neutral	All bad musicians are engineers ## Some bad musicians are not linguists
+132	132	All linguists are engineers	neutral	No bad musicians are engineers ## All bad musicians are linguists
+133	133	All linguists are engineers	neutral	No bad musicians are engineers ## No bad musicians are linguists
+134	134	All linguists are engineers	contradiction	No bad musicians are engineers ## Some bad musicians are linguists
+135	135	All linguists are engineers	neutral	No bad musicians are engineers ## Some bad musicians are not linguists
+136	136	All linguists are engineers	neutral	Some bad musicians are engineers ## All bad musicians are linguists
+137	137	All linguists are engineers	neutral	Some bad musicians are engineers ## No bad musicians are linguists
+138	138	All linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are linguists
+139	139	All linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are not linguists
+140	140	All linguists are engineers	contradiction	Some bad musicians are not engineers ## All bad musicians are linguists
+141	141	All linguists are engineers	neutral	Some bad musicians are not engineers ## No bad musicians are linguists
+142	142	All linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are linguists
+143	143	All linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are not linguists
+144	144	No linguists are engineers	neutral	All bad musicians are engineers ## All bad musicians are linguists
+145	145	No linguists are engineers	neutral	All bad musicians are engineers ## No bad musicians are linguists
+146	146	No linguists are engineers	contradiction	All bad musicians are engineers ## Some bad musicians are linguists
+147	147	No linguists are engineers	neutral	All bad musicians are engineers ## Some bad musicians are not linguists
+148	148	No linguists are engineers	neutral	No bad musicians are engineers ## All bad musicians are linguists
+149	149	No linguists are engineers	neutral	No bad musicians are engineers ## No bad musicians are linguists
+150	150	No linguists are engineers	neutral	No bad musicians are engineers ## Some bad musicians are linguists
+151	151	No linguists are engineers	neutral	No bad musicians are engineers ## Some bad musicians are not linguists
+152	152	No linguists are engineers	contradiction	Some bad musicians are engineers ## All bad musicians are linguists
+153	153	No linguists are engineers	neutral	Some bad musicians are engineers ## No bad musicians are linguists
+154	154	No linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are linguists
+155	155	No linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are not linguists
+156	156	No linguists are engineers	neutral	Some bad musicians are not engineers ## All bad musicians are linguists
+157	157	No linguists are engineers	neutral	Some bad musicians are not engineers ## No bad musicians are linguists
+158	158	No linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are linguists
+159	159	No linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are not linguists
+160	160	Some linguists are engineers	neutral	All bad musicians are engineers ## All bad musicians are linguists
+161	161	Some linguists are engineers	neutral	All bad musicians are engineers ## No bad musicians are linguists
+162	162	Some linguists are engineers	entailment	All bad musicians are engineers ## Some bad musicians are linguists
+163	163	Some linguists are engineers	neutral	All bad musicians are engineers ## Some bad musicians are not linguists
+164	164	Some linguists are engineers	neutral	No bad musicians are engineers ## All bad musicians are linguists
+165	165	Some linguists are engineers	neutral	No bad musicians are engineers ## No bad musicians are linguists
+166	166	Some linguists are engineers	neutral	No bad musicians are engineers ## Some bad musicians are linguists
+167	167	Some linguists are engineers	neutral	No bad musicians are engineers ## Some bad musicians are not linguists
+168	168	Some linguists are engineers	entailment	Some bad musicians are engineers ## All bad musicians are linguists
+169	169	Some linguists are engineers	neutral	Some bad musicians are engineers ## No bad musicians are linguists
+170	170	Some linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are linguists
+171	171	Some linguists are engineers	neutral	Some bad musicians are engineers ## Some bad musicians are not linguists
+172	172	Some linguists are engineers	neutral	Some bad musicians are not engineers ## All bad musicians are linguists
+173	173	Some linguists are engineers	neutral	Some bad musicians are not engineers ## No bad musicians are linguists
+174	174	Some linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are linguists
+175	175	Some linguists are engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are not linguists
+176	176	Some linguists are not engineers	neutral	All bad musicians are engineers ## All bad musicians are linguists
+177	177	Some linguists are not engineers	neutral	All bad musicians are engineers ## No bad musicians are linguists
+178	178	Some linguists are not engineers	neutral	All bad musicians are engineers ## Some bad musicians are linguists
+179	179	Some linguists are not engineers	neutral	All bad musicians are engineers ## Some bad musicians are not linguists
+180	180	Some linguists are not engineers	neutral	No bad musicians are engineers ## All bad musicians are linguists
+181	181	Some linguists are not engineers	neutral	No bad musicians are engineers ## No bad musicians are linguists
+182	182	Some linguists are not engineers	entailment	No bad musicians are engineers ## Some bad musicians are linguists
+183	183	Some linguists are not engineers	neutral	No bad musicians are engineers ## Some bad musicians are not linguists
+184	184	Some linguists are not engineers	neutral	Some bad musicians are engineers ## All bad musicians are linguists
+185	185	Some linguists are not engineers	neutral	Some bad musicians are engineers ## No bad musicians are linguists
+186	186	Some linguists are not engineers	neutral	Some bad musicians are engineers ## Some bad musicians are linguists
+187	187	Some linguists are not engineers	neutral	Some bad musicians are engineers ## Some bad musicians are not linguists
+188	188	Some linguists are not engineers	entailment	Some bad musicians are not engineers ## All bad musicians are linguists
+189	189	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## No bad musicians are linguists
+190	190	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are linguists
+191	191	Some linguists are not engineers	neutral	Some bad musicians are not engineers ## Some bad musicians are not linguists
+192	192	All linguists are engineers	neutral	All engineers are bad musicians ## All bad musicians are linguists
+193	193	All linguists are engineers	neutral	All engineers are bad musicians ## No bad musicians are linguists
+194	194	All linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are linguists
+195	195	All linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are not linguists
+196	196	All linguists are engineers	neutral	No engineers are bad musicians ## All bad musicians are linguists
+197	197	All linguists are engineers	neutral	No engineers are bad musicians ## No bad musicians are linguists
+198	198	All linguists are engineers	contradiction	No engineers are bad musicians ## Some bad musicians are linguists
+199	199	All linguists are engineers	neutral	No engineers are bad musicians ## Some bad musicians are not linguists
+200	200	All linguists are engineers	neutral	Some engineers are bad musicians ## All bad musicians are linguists
+201	201	All linguists are engineers	neutral	Some engineers are bad musicians ## No bad musicians are linguists
+202	202	All linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are linguists
+203	203	All linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are not linguists
+204	204	All linguists are engineers	neutral	Some engineers are not bad musicians ## All bad musicians are linguists
+205	205	All linguists are engineers	neutral	Some engineers are not bad musicians ## No bad musicians are linguists
+206	206	All linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are linguists
+207	207	All linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are not linguists
+208	208	No linguists are engineers	neutral	All engineers are bad musicians ## All bad musicians are linguists
+209	209	No linguists are engineers	entailment	All engineers are bad musicians ## No bad musicians are linguists
+210	210	No linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are linguists
+211	211	No linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are not linguists
+212	212	No linguists are engineers	neutral	No engineers are bad musicians ## All bad musicians are linguists
+213	213	No linguists are engineers	neutral	No engineers are bad musicians ## No bad musicians are linguists
+214	214	No linguists are engineers	neutral	No engineers are bad musicians ## Some bad musicians are linguists
+215	215	No linguists are engineers	neutral	No engineers are bad musicians ## Some bad musicians are not linguists
+216	216	No linguists are engineers	contradiction	Some engineers are bad musicians ## All bad musicians are linguists
+217	217	No linguists are engineers	neutral	Some engineers are bad musicians ## No bad musicians are linguists
+218	218	No linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are linguists
+219	219	No linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are not linguists
+220	220	No linguists are engineers	neutral	Some engineers are not bad musicians ## All bad musicians are linguists
+221	221	No linguists are engineers	neutral	Some engineers are not bad musicians ## No bad musicians are linguists
+222	222	No linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are linguists
+223	223	No linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are not linguists
+224	224	Some linguists are engineers	neutral	All engineers are bad musicians ## All bad musicians are linguists
+225	225	Some linguists are engineers	contradiction	All engineers are bad musicians ## No bad musicians are linguists
+226	226	Some linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are linguists
+227	227	Some linguists are engineers	neutral	All engineers are bad musicians ## Some bad musicians are not linguists
+228	228	Some linguists are engineers	neutral	No engineers are bad musicians ## All bad musicians are linguists
+229	229	Some linguists are engineers	neutral	No engineers are bad musicians ## No bad musicians are linguists
+230	230	Some linguists are engineers	neutral	No engineers are bad musicians ## Some bad musicians are linguists
+231	231	Some linguists are engineers	neutral	No engineers are bad musicians ## Some bad musicians are not linguists
+232	232	Some linguists are engineers	entailment	Some engineers are bad musicians ## All bad musicians are linguists
+233	233	Some linguists are engineers	neutral	Some engineers are bad musicians ## No bad musicians are linguists
+234	234	Some linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are linguists
+235	235	Some linguists are engineers	neutral	Some engineers are bad musicians ## Some bad musicians are not linguists
+236	236	Some linguists are engineers	neutral	Some engineers are not bad musicians ## All bad musicians are linguists
+237	237	Some linguists are engineers	neutral	Some engineers are not bad musicians ## No bad musicians are linguists
+238	238	Some linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are linguists
+239	239	Some linguists are engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are not linguists
+240	240	Some linguists are not engineers	neutral	All engineers are bad musicians ## All bad musicians are linguists
+241	241	Some linguists are not engineers	neutral	All engineers are bad musicians ## No bad musicians are linguists
+242	242	Some linguists are not engineers	neutral	All engineers are bad musicians ## Some bad musicians are linguists
+243	243	Some linguists are not engineers	neutral	All engineers are bad musicians ## Some bad musicians are not linguists
+244	244	Some linguists are not engineers	neutral	No engineers are bad musicians ## All bad musicians are linguists
+245	245	Some linguists are not engineers	neutral	No engineers are bad musicians ## No bad musicians are linguists
+246	246	Some linguists are not engineers	entailment	No engineers are bad musicians ## Some bad musicians are linguists
+247	247	Some linguists are not engineers	neutral	No engineers are bad musicians ## Some bad musicians are not linguists
+248	248	Some linguists are not engineers	neutral	Some engineers are bad musicians ## All bad musicians are linguists
+249	249	Some linguists are not engineers	neutral	Some engineers are bad musicians ## No bad musicians are linguists
+250	250	Some linguists are not engineers	neutral	Some engineers are bad musicians ## Some bad musicians are linguists
+251	251	Some linguists are not engineers	neutral	Some engineers are bad musicians ## Some bad musicians are not linguists
+252	252	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## All bad musicians are linguists
+253	253	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## No bad musicians are linguists
+254	254	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are linguists
+255	255	Some linguists are not engineers	neutral	Some engineers are not bad musicians ## Some bad musicians are not linguists

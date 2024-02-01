@@ -100,7 +100,7 @@ parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test
 '01-fracas-quantifier','02-fracas-plural','03-fracas-anaphora','04-fracas-ellipsis',
 '05-fracas-adjectives','06-fracas-comparatives','07-fracas-temporal',
 '08-fracas-verbs','09-fracas-attitudes','syllogisms'],help='dataset_name')
-parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'split_verb','split_adj', 'a2e_i2c_split_adj', 'none'],help='modification_id')   #possible to have no modification
+parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'e_i2c', 'e_i2c_split_adj', 'split_verb','split_adj', 'a2e_i2c_split_adj', 'none'],help='modification_id')   #possible to have no modification
 parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
 dataset_name = args.dataset_name  
@@ -145,15 +145,19 @@ elif re.search(r'fracas',dataset_name):
     judgment_dict = {"yes":"e","no":"c","undef":"n","unknown":"n"}
     dataset_path = f"datasets/fracas/{dataset_name}.csv"
 elif dataset_name == "syllogisms":
-    dataset_path = "datasets/syllogisms/syllogisms.csv"
+    pred_size = input("What is the pred size? (1,2,3)")
+    dataset_name = f"syllogisms-{pred_size}-pred"
+    dataset_path = f"datasets/syllogisms/syllogisms-{pred_size}-pred.csv"
     # set modification type
     if modification_id == "none": 
-        dictionary_path = "dictionaries/syllogisms/syllogism_dict.json"
+        dictionary_path = f"dictionaries/syllogisms/syllogism-{pred_size}-pred-dict.json"
+    elif modification_id == "e_i2c" and pred_size == str(3):
+        dictionary_path = f"mod_dictionaries/[e_i2c]full_syllogisms_3_dictionary.json"
     else:
         raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
     #set lexical knowledge 
     if lexical_knowledge == "True":
-        raise Exception(f"There is no lexical knowledge for the {dataset_name} data set")
+        use_lk = True
     else:
         use_lk = False
     #set basic info

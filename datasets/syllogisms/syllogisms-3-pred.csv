@@ -1,0 +1,257 @@
+	Unnamed: 0	hypothesis	label	premises
+0	0	All linguists are engineers	entailment	All people with mustaches are engineers ## All linguists are people with mustaches
+1	1	All linguists are engineers	neutral	All people with mustaches are engineers ## No linguists are people with mustaches
+2	2	All linguists are engineers	neutral	All people with mustaches are engineers ## Some linguists are people with mustaches
+3	3	All linguists are engineers	neutral	All people with mustaches are engineers ## Some linguists are not people with mustaches
+4	4	All linguists are engineers	neutral	No people with mustaches are engineers ## All linguists are people with mustaches
+5	5	All linguists are engineers	neutral	No people with mustaches are engineers ## No linguists are people with mustaches
+6	6	All linguists are engineers	contradiction	No people with mustaches are engineers ## Some linguists are people with mustaches
+7	7	All linguists are engineers	neutral	No people with mustaches are engineers ## Some linguists are not people with mustaches
+8	8	All linguists are engineers	neutral	Some people with mustaches are engineers ## All linguists are people with mustaches
+9	9	All linguists are engineers	neutral	Some people with mustaches are engineers ## No linguists are people with mustaches
+10	10	All linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are people with mustaches
+11	11	All linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are not people with mustaches
+12	12	All linguists are engineers	neutral	Some people with mustaches are not engineers ## All linguists are people with mustaches
+13	13	All linguists are engineers	neutral	Some people with mustaches are not engineers ## No linguists are people with mustaches
+14	14	All linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are people with mustaches
+15	15	All linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are not people with mustaches
+16	16	No linguists are engineers	neutral	All people with mustaches are engineers ## All linguists are people with mustaches
+17	17	No linguists are engineers	neutral	All people with mustaches are engineers ## No linguists are people with mustaches
+18	18	No linguists are engineers	contradiction	All people with mustaches are engineers ## Some linguists are people with mustaches
+19	19	No linguists are engineers	neutral	All people with mustaches are engineers ## Some linguists are not people with mustaches
+20	20	No linguists are engineers	entailment	No people with mustaches are engineers ## All linguists are people with mustaches
+21	21	No linguists are engineers	neutral	No people with mustaches are engineers ## No linguists are people with mustaches
+22	22	No linguists are engineers	neutral	No people with mustaches are engineers ## Some linguists are people with mustaches
+23	23	No linguists are engineers	neutral	No people with mustaches are engineers ## Some linguists are not people with mustaches
+24	24	No linguists are engineers	neutral	Some people with mustaches are engineers ## All linguists are people with mustaches
+25	25	No linguists are engineers	neutral	Some people with mustaches are engineers ## No linguists are people with mustaches
+26	26	No linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are people with mustaches
+27	27	No linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are not people with mustaches
+28	28	No linguists are engineers	neutral	Some people with mustaches are not engineers ## All linguists are people with mustaches
+29	29	No linguists are engineers	neutral	Some people with mustaches are not engineers ## No linguists are people with mustaches
+30	30	No linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are people with mustaches
+31	31	No linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are not people with mustaches
+32	32	Some linguists are engineers	neutral	All people with mustaches are engineers ## All linguists are people with mustaches
+33	33	Some linguists are engineers	neutral	All people with mustaches are engineers ## No linguists are people with mustaches
+34	34	Some linguists are engineers	entailment	All people with mustaches are engineers ## Some linguists are people with mustaches
+35	35	Some linguists are engineers	neutral	All people with mustaches are engineers ## Some linguists are not people with mustaches
+36	36	Some linguists are engineers	contradiction	No people with mustaches are engineers ## All linguists are people with mustaches
+37	37	Some linguists are engineers	neutral	No people with mustaches are engineers ## No linguists are people with mustaches
+38	38	Some linguists are engineers	neutral	No people with mustaches are engineers ## Some linguists are people with mustaches
+39	39	Some linguists are engineers	neutral	No people with mustaches are engineers ## Some linguists are not people with mustaches
+40	40	Some linguists are engineers	neutral	Some people with mustaches are engineers ## All linguists are people with mustaches
+41	41	Some linguists are engineers	neutral	Some people with mustaches are engineers ## No linguists are people with mustaches
+42	42	Some linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are people with mustaches
+43	43	Some linguists are engineers	neutral	Some people with mustaches are engineers ## Some linguists are not people with mustaches
+44	44	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## All linguists are people with mustaches
+45	45	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## No linguists are people with mustaches
+46	46	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are people with mustaches
+47	47	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## Some linguists are not people with mustaches
+48	48	Some linguists are not engineers	contradiction	All people with mustaches are engineers ## All linguists are people with mustaches
+49	49	Some linguists are not engineers	neutral	All people with mustaches are engineers ## No linguists are people with mustaches
+50	50	Some linguists are not engineers	neutral	All people with mustaches are engineers ## Some linguists are people with mustaches
+51	51	Some linguists are not engineers	neutral	All people with mustaches are engineers ## Some linguists are not people with mustaches
+52	52	Some linguists are not engineers	neutral	No people with mustaches are engineers ## All linguists are people with mustaches
+53	53	Some linguists are not engineers	neutral	No people with mustaches are engineers ## No linguists are people with mustaches
+54	54	Some linguists are not engineers	entailment	No people with mustaches are engineers ## Some linguists are people with mustaches
+55	55	Some linguists are not engineers	neutral	No people with mustaches are engineers ## Some linguists are not people with mustaches
+56	56	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## All linguists are people with mustaches
+57	57	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## No linguists are people with mustaches
+58	58	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## Some linguists are people with mustaches
+59	59	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## Some linguists are not people with mustaches
+60	60	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## All linguists are people with mustaches
+61	61	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## No linguists are people with mustaches
+62	62	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## Some linguists are people with mustaches
+63	63	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## Some linguists are not people with mustaches
+64	64	All linguists are engineers	neutral	All engineers are people with mustaches ## All linguists are people with mustaches
+65	65	All linguists are engineers	neutral	All engineers are people with mustaches ## No linguists are people with mustaches
+66	66	All linguists are engineers	neutral	All engineers are people with mustaches ## Some linguists are people with mustaches
+67	67	All linguists are engineers	contradiction	All engineers are people with mustaches ## Some linguists are not people with mustaches
+68	68	All linguists are engineers	neutral	No engineers are people with mustaches ## All linguists are people with mustaches
+69	69	All linguists are engineers	neutral	No engineers are people with mustaches ## No linguists are people with mustaches
+70	70	All linguists are engineers	contradiction	No engineers are people with mustaches ## Some linguists are people with mustaches
+71	71	All linguists are engineers	neutral	No engineers are people with mustaches ## Some linguists are not people with mustaches
+72	72	All linguists are engineers	neutral	Some engineers are people with mustaches ## All linguists are people with mustaches
+73	73	All linguists are engineers	neutral	Some engineers are people with mustaches ## No linguists are people with mustaches
+74	74	All linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are people with mustaches
+75	75	All linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are not people with mustaches
+76	76	All linguists are engineers	neutral	Some engineers are not people with mustaches ## All linguists are people with mustaches
+77	77	All linguists are engineers	neutral	Some engineers are not people with mustaches ## No linguists are people with mustaches
+78	78	All linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are people with mustaches
+79	79	All linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are not people with mustaches
+80	80	No linguists are engineers	neutral	All engineers are people with mustaches ## All linguists are people with mustaches
+81	81	No linguists are engineers	entailment	All engineers are people with mustaches ## No linguists are people with mustaches
+82	82	No linguists are engineers	neutral	All engineers are people with mustaches ## Some linguists are people with mustaches
+83	83	No linguists are engineers	neutral	All engineers are people with mustaches ## Some linguists are not people with mustaches
+84	84	No linguists are engineers	entailment	No engineers are people with mustaches ## All linguists are people with mustaches
+85	85	No linguists are engineers	neutral	No engineers are people with mustaches ## No linguists are people with mustaches
+86	86	No linguists are engineers	neutral	No engineers are people with mustaches ## Some linguists are people with mustaches
+87	87	No linguists are engineers	neutral	No engineers are people with mustaches ## Some linguists are not people with mustaches
+88	88	No linguists are engineers	neutral	Some engineers are people with mustaches ## All linguists are people with mustaches
+89	89	No linguists are engineers	neutral	Some engineers are people with mustaches ## No linguists are people with mustaches
+90	90	No linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are people with mustaches
+91	91	No linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are not people with mustaches
+92	92	No linguists are engineers	neutral	Some engineers are not people with mustaches ## All linguists are people with mustaches
+93	93	No linguists are engineers	neutral	Some engineers are not people with mustaches ## No linguists are people with mustaches
+94	94	No linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are people with mustaches
+95	95	No linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are not people with mustaches
+96	96	Some linguists are engineers	neutral	All engineers are people with mustaches ## All linguists are people with mustaches
+97	97	Some linguists are engineers	contradiction	All engineers are people with mustaches ## No linguists are people with mustaches
+98	98	Some linguists are engineers	neutral	All engineers are people with mustaches ## Some linguists are people with mustaches
+99	99	Some linguists are engineers	neutral	All engineers are people with mustaches ## Some linguists are not people with mustaches
+100	100	Some linguists are engineers	contradiction	No engineers are people with mustaches ## All linguists are people with mustaches
+101	101	Some linguists are engineers	neutral	No engineers are people with mustaches ## No linguists are people with mustaches
+102	102	Some linguists are engineers	neutral	No engineers are people with mustaches ## Some linguists are people with mustaches
+103	103	Some linguists are engineers	neutral	No engineers are people with mustaches ## Some linguists are not people with mustaches
+104	104	Some linguists are engineers	neutral	Some engineers are people with mustaches ## All linguists are people with mustaches
+105	105	Some linguists are engineers	neutral	Some engineers are people with mustaches ## No linguists are people with mustaches
+106	106	Some linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are people with mustaches
+107	107	Some linguists are engineers	neutral	Some engineers are people with mustaches ## Some linguists are not people with mustaches
+108	108	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## All linguists are people with mustaches
+109	109	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## No linguists are people with mustaches
+110	110	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are people with mustaches
+111	111	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## Some linguists are not people with mustaches
+112	112	Some linguists are not engineers	neutral	All engineers are people with mustaches ## All linguists are people with mustaches
+113	113	Some linguists are not engineers	neutral	All engineers are people with mustaches ## No linguists are people with mustaches
+114	114	Some linguists are not engineers	neutral	All engineers are people with mustaches ## Some linguists are people with mustaches
+115	115	Some linguists are not engineers	entailment	All engineers are people with mustaches ## Some linguists are not people with mustaches
+116	116	Some linguists are not engineers	neutral	No engineers are people with mustaches ## All linguists are people with mustaches
+117	117	Some linguists are not engineers	neutral	No engineers are people with mustaches ## No linguists are people with mustaches
+118	118	Some linguists are not engineers	entailment	No engineers are people with mustaches ## Some linguists are people with mustaches
+119	119	Some linguists are not engineers	neutral	No engineers are people with mustaches ## Some linguists are not people with mustaches
+120	120	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## All linguists are people with mustaches
+121	121	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## No linguists are people with mustaches
+122	122	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## Some linguists are people with mustaches
+123	123	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## Some linguists are not people with mustaches
+124	124	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## All linguists are people with mustaches
+125	125	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## No linguists are people with mustaches
+126	126	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## Some linguists are people with mustaches
+127	127	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## Some linguists are not people with mustaches
+128	128	All linguists are engineers	neutral	All people with mustaches are engineers ## All people with mustaches are linguists
+129	129	All linguists are engineers	neutral	All people with mustaches are engineers ## No people with mustaches are linguists
+130	130	All linguists are engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are linguists
+131	131	All linguists are engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are not linguists
+132	132	All linguists are engineers	neutral	No people with mustaches are engineers ## All people with mustaches are linguists
+133	133	All linguists are engineers	neutral	No people with mustaches are engineers ## No people with mustaches are linguists
+134	134	All linguists are engineers	contradiction	No people with mustaches are engineers ## Some people with mustaches are linguists
+135	135	All linguists are engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are not linguists
+136	136	All linguists are engineers	neutral	Some people with mustaches are engineers ## All people with mustaches are linguists
+137	137	All linguists are engineers	neutral	Some people with mustaches are engineers ## No people with mustaches are linguists
+138	138	All linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are linguists
+139	139	All linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are not linguists
+140	140	All linguists are engineers	contradiction	Some people with mustaches are not engineers ## All people with mustaches are linguists
+141	141	All linguists are engineers	neutral	Some people with mustaches are not engineers ## No people with mustaches are linguists
+142	142	All linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are linguists
+143	143	All linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are not linguists
+144	144	No linguists are engineers	neutral	All people with mustaches are engineers ## All people with mustaches are linguists
+145	145	No linguists are engineers	neutral	All people with mustaches are engineers ## No people with mustaches are linguists
+146	146	No linguists are engineers	contradiction	All people with mustaches are engineers ## Some people with mustaches are linguists
+147	147	No linguists are engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are not linguists
+148	148	No linguists are engineers	neutral	No people with mustaches are engineers ## All people with mustaches are linguists
+149	149	No linguists are engineers	neutral	No people with mustaches are engineers ## No people with mustaches are linguists
+150	150	No linguists are engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are linguists
+151	151	No linguists are engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are not linguists
+152	152	No linguists are engineers	contradiction	Some people with mustaches are engineers ## All people with mustaches are linguists
+153	153	No linguists are engineers	neutral	Some people with mustaches are engineers ## No people with mustaches are linguists
+154	154	No linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are linguists
+155	155	No linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are not linguists
+156	156	No linguists are engineers	neutral	Some people with mustaches are not engineers ## All people with mustaches are linguists
+157	157	No linguists are engineers	neutral	Some people with mustaches are not engineers ## No people with mustaches are linguists
+158	158	No linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are linguists
+159	159	No linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are not linguists
+160	160	Some linguists are engineers	neutral	All people with mustaches are engineers ## All people with mustaches are linguists
+161	161	Some linguists are engineers	neutral	All people with mustaches are engineers ## No people with mustaches are linguists
+162	162	Some linguists are engineers	entailment	All people with mustaches are engineers ## Some people with mustaches are linguists
+163	163	Some linguists are engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are not linguists
+164	164	Some linguists are engineers	neutral	No people with mustaches are engineers ## All people with mustaches are linguists
+165	165	Some linguists are engineers	neutral	No people with mustaches are engineers ## No people with mustaches are linguists
+166	166	Some linguists are engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are linguists
+167	167	Some linguists are engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are not linguists
+168	168	Some linguists are engineers	entailment	Some people with mustaches are engineers ## All people with mustaches are linguists
+169	169	Some linguists are engineers	neutral	Some people with mustaches are engineers ## No people with mustaches are linguists
+170	170	Some linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are linguists
+171	171	Some linguists are engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are not linguists
+172	172	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## All people with mustaches are linguists
+173	173	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## No people with mustaches are linguists
+174	174	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are linguists
+175	175	Some linguists are engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are not linguists
+176	176	Some linguists are not engineers	neutral	All people with mustaches are engineers ## All people with mustaches are linguists
+177	177	Some linguists are not engineers	neutral	All people with mustaches are engineers ## No people with mustaches are linguists
+178	178	Some linguists are not engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are linguists
+179	179	Some linguists are not engineers	neutral	All people with mustaches are engineers ## Some people with mustaches are not linguists
+180	180	Some linguists are not engineers	neutral	No people with mustaches are engineers ## All people with mustaches are linguists
+181	181	Some linguists are not engineers	neutral	No people with mustaches are engineers ## No people with mustaches are linguists
+182	182	Some linguists are not engineers	entailment	No people with mustaches are engineers ## Some people with mustaches are linguists
+183	183	Some linguists are not engineers	neutral	No people with mustaches are engineers ## Some people with mustaches are not linguists
+184	184	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## All people with mustaches are linguists
+185	185	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## No people with mustaches are linguists
+186	186	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are linguists
+187	187	Some linguists are not engineers	neutral	Some people with mustaches are engineers ## Some people with mustaches are not linguists
+188	188	Some linguists are not engineers	entailment	Some people with mustaches are not engineers ## All people with mustaches are linguists
+189	189	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## No people with mustaches are linguists
+190	190	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are linguists
+191	191	Some linguists are not engineers	neutral	Some people with mustaches are not engineers ## Some people with mustaches are not linguists
+192	192	All linguists are engineers	neutral	All engineers are people with mustaches ## All people with mustaches are linguists
+193	193	All linguists are engineers	neutral	All engineers are people with mustaches ## No people with mustaches are linguists
+194	194	All linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are linguists
+195	195	All linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are not linguists
+196	196	All linguists are engineers	neutral	No engineers are people with mustaches ## All people with mustaches are linguists
+197	197	All linguists are engineers	neutral	No engineers are people with mustaches ## No people with mustaches are linguists
+198	198	All linguists are engineers	contradiction	No engineers are people with mustaches ## Some people with mustaches are linguists
+199	199	All linguists are engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are not linguists
+200	200	All linguists are engineers	neutral	Some engineers are people with mustaches ## All people with mustaches are linguists
+201	201	All linguists are engineers	neutral	Some engineers are people with mustaches ## No people with mustaches are linguists
+202	202	All linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are linguists
+203	203	All linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are not linguists
+204	204	All linguists are engineers	neutral	Some engineers are not people with mustaches ## All people with mustaches are linguists
+205	205	All linguists are engineers	neutral	Some engineers are not people with mustaches ## No people with mustaches are linguists
+206	206	All linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are linguists
+207	207	All linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are not linguists
+208	208	No linguists are engineers	neutral	All engineers are people with mustaches ## All people with mustaches are linguists
+209	209	No linguists are engineers	entailment	All engineers are people with mustaches ## No people with mustaches are linguists
+210	210	No linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are linguists
+211	211	No linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are not linguists
+212	212	No linguists are engineers	neutral	No engineers are people with mustaches ## All people with mustaches are linguists
+213	213	No linguists are engineers	neutral	No engineers are people with mustaches ## No people with mustaches are linguists
+214	214	No linguists are engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are linguists
+215	215	No linguists are engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are not linguists
+216	216	No linguists are engineers	contradiction	Some engineers are people with mustaches ## All people with mustaches are linguists
+217	217	No linguists are engineers	neutral	Some engineers are people with mustaches ## No people with mustaches are linguists
+218	218	No linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are linguists
+219	219	No linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are not linguists
+220	220	No linguists are engineers	neutral	Some engineers are not people with mustaches ## All people with mustaches are linguists
+221	221	No linguists are engineers	neutral	Some engineers are not people with mustaches ## No people with mustaches are linguists
+222	222	No linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are linguists
+223	223	No linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are not linguists
+224	224	Some linguists are engineers	neutral	All engineers are people with mustaches ## All people with mustaches are linguists
+225	225	Some linguists are engineers	contradiction	All engineers are people with mustaches ## No people with mustaches are linguists
+226	226	Some linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are linguists
+227	227	Some linguists are engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are not linguists
+228	228	Some linguists are engineers	neutral	No engineers are people with mustaches ## All people with mustaches are linguists
+229	229	Some linguists are engineers	neutral	No engineers are people with mustaches ## No people with mustaches are linguists
+230	230	Some linguists are engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are linguists
+231	231	Some linguists are engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are not linguists
+232	232	Some linguists are engineers	entailment	Some engineers are people with mustaches ## All people with mustaches are linguists
+233	233	Some linguists are engineers	neutral	Some engineers are people with mustaches ## No people with mustaches are linguists
+234	234	Some linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are linguists
+235	235	Some linguists are engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are not linguists
+236	236	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## All people with mustaches are linguists
+237	237	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## No people with mustaches are linguists
+238	238	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are linguists
+239	239	Some linguists are engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are not linguists
+240	240	Some linguists are not engineers	neutral	All engineers are people with mustaches ## All people with mustaches are linguists
+241	241	Some linguists are not engineers	neutral	All engineers are people with mustaches ## No people with mustaches are linguists
+242	242	Some linguists are not engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are linguists
+243	243	Some linguists are not engineers	neutral	All engineers are people with mustaches ## Some people with mustaches are not linguists
+244	244	Some linguists are not engineers	neutral	No engineers are people with mustaches ## All people with mustaches are linguists
+245	245	Some linguists are not engineers	neutral	No engineers are people with mustaches ## No people with mustaches are linguists
+246	246	Some linguists are not engineers	entailment	No engineers are people with mustaches ## Some people with mustaches are linguists
+247	247	Some linguists are not engineers	neutral	No engineers are people with mustaches ## Some people with mustaches are not linguists
+248	248	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## All people with mustaches are linguists
+249	249	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## No people with mustaches are linguists
+250	250	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are linguists
+251	251	Some linguists are not engineers	neutral	Some engineers are people with mustaches ## Some people with mustaches are not linguists
+252	252	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## All people with mustaches are linguists
+253	253	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## No people with mustaches are linguists
+254	254	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are linguists
+255	255	Some linguists are not engineers	neutral	Some engineers are not people with mustaches ## Some people with mustaches are not linguists

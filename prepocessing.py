@@ -46,6 +46,15 @@ class modifying:
         s = re.sub('→', '∧', s)
         return s 
     
+    def e_i2c(s:str) -> str:
+        """
+        Replace all instances of '→' in s, with '∧' if main quantifier is '∃'
+        Note: this is before the strings are in NLTK friendly format 
+        """
+        if s[0] == '∃':
+            s = re.sub('→', '∧', s)
+        return s 
+    
     def split_verb(s:str) -> str:
         """
         Split predicates of the form "VerbObject(x)" into "∃y Verb(x,y) ∧ Object(y)"
@@ -104,4 +113,3 @@ class modifying:
 
         except: #if it can't be turned into nltk expression (in get_preds), don't do anything 
             return s    
-        
