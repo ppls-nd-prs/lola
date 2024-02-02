@@ -26,7 +26,6 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
     modification_id indicates the modification used
     Returns a pandas dataframe with premises, hypothesis, e_pred and c_pred
     '''
-    #TODO: change premises indeling back to one column with lists
     # Set everything up:
     # Exception dataframe
     start_d = {}
@@ -63,6 +62,7 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         # Get label
         label = judgment_dict[dataset[columns[2]][i_dat]]
 
+        # Possibly TODO: make below generalized
         if use_lk: 
             lk = get_hypo_syn_lk(fol_ps_list[0], fol_h) #in sick there's only 1 premise 
         else:
@@ -162,9 +162,7 @@ elif dataset_name == "syllogisms":
         use_lk = False
     #set basic info
     relevant_column_list = ['premises','hypothesis','label']
-    judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}
-
-#TODO: extend for other datasets    
+    judgment_dict = {"entailment":"e","neutral":"n","contradiction":"c"}   
 
 #locate prover9
 PROVER9_BIN = "./prover9/bin"

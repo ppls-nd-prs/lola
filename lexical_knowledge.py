@@ -22,24 +22,18 @@ def get_hypo_syn_lk(prem : str, hyp : str):
 
     try:
         prem_preds = get_preds(prem)
-        # print(prem_preds)   #DEBUG
         hyp_preds = get_preds(hyp)
-        # print(hyp_preds)    #DEBUG 
     except:
         prem_preds = []
         hyp_preds = []
 
     for p1, p2 in itertools.product(prem_preds, hyp_preds):  #go thrhough all combinations of words between premise and hypothesis
-        # print(p1, p2)   #DEBUG 
         try:    #if either don't have a synset
             p1_synset = wn.synsets(p1)[0] 
             p1_args = get_args(p1, prem) #get the arguments of the predicate 
-            # print(p1_synset)    #DEBUG
             p2_synset = wn.synsets(p2)[0]
             p2_args = get_args(p2, hyp)
-            # print(p2_synset)    #DEBUG
         except:
-            # print(f"no synset for either {p1} or {p2}") #DEBUG 
             continue
         
         if len(p1_args) != len(p2_args):    #skip if the two predicates don't have the same arity 
