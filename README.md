@@ -5,6 +5,13 @@ Dictionaries for evaluation can be obtained by running the notebook Dictionary-C
 
 The dictionaries containing the direct translation from LogicLLaMA for this research can be found in the folder <code>dictionaries</code>.
 
+It is possible to obtain dictionaries with the lexical modifications researched to boost performance. These can be created by running the code in <code>modify_dicts.ipynb</code>. Make sure the new dictionaries are saved in the <code>mod_dictionaries</code> folder. 
+
+Now the evaluation of the LogicLLaMA translations can be performed by running
+<code>python get_preds.py</code> with the proper arguments (see code for argument specification). Evaluation files will be created either in the <code>evaluations</code> or in the <code>mod_evaluations</code> folder, depending on whether a modified dictionary was used.
+
+Finally, the confusion matrices for the evaluations can be computed by running <code>python get_conf_mats.py [filename]</code>.
+
 
 
 
