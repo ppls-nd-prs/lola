@@ -1,8 +1,5 @@
 
 .ipynb_checkpoints/main-checkpoint.ipynb
-notes/Output_notes.txt
-notes/NLTK_notes.txt
-notes/Dataset_notes.txt
 __pycache__/evaluation.cpython-311.pyc
 Working_NL_to_FOL.ipynb
 .DS_Store
