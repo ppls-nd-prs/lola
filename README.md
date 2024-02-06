@@ -42,3 +42,13 @@ Run in command line with: <code>python</code> <code>get_conf_mats.py</code> <cod
 
 <code>*File name*</code>: file path of any CSV evaluations file.
 
+---
+---
+
+### Explorative code
+The folder <code>explorative_code</code> contains 2 files that were used in the evaluation, but didn't give any notable outcomes and were therefore not used for the final report. The files are included here to give the reader an idea of further analyses that can be performed. 
+
+<code>evaluation.py</code> contains functions to get all wrongly classified or rightly classified instances of an evaluation. As well as a function to collect FOL expressions and all instances with free variables. 
+
+<code>perform_evaluation.py</code> shows a way to use the functions in <code>evaluation.py</code>. Specifically, it shows how to get all instances with free variables for correctly classified and wrongly classified instances separately. 
+
