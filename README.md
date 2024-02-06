@@ -35,6 +35,8 @@ Run in command line with: <code>python</code> <code>get_preds.py</code> <code>*D
 <code>*modification-id*</code>: see <code>README.md</code> in the <code>mod_dictionaries</code> folder. <br>
 <code>*lexical-knowledge*</code>: use "True" if you want the prover to use lexical knowledge when making the predictions, otherwise use "False".
 
+Note: this file makes use of Prover9, which needs Linux. For a way to run this code on a different operating system, Google Colab can be used (since it runs on Linux). For notebook demonstrating this see the <code>colab_notebooks</code> folder.
+
 ---
 
 #### <code>get_conf_mats.py</code>: <br>
