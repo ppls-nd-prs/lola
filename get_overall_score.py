@@ -29,5 +29,5 @@ for f in os.listdir("mod_evaluations"):
 
 scores = scores.T
 
-scores.to_csv('overall_scores.csv',sep='\t')
+scores.to_csv('overall_scores.csv')
 

@@ -1,33 +1,33 @@
-	correctly classified
-01-fracas-quantifier_evaluation	0.6197183098591549
-03-fracas-anaphora_evaluation	0.125
-syllogisms-1-pred_evaluation	1.0
-04-fracas-ellipsis_evaluation	0.24390243902439024
-02-fracas-plural_evaluation	0.5454545454545454
-07-fracas-temporal_evaluation	0.3541666666666667
-09-fracas-attitudes_evaluation	0.5
-sick_test_evaluation	0.6341825902335456
-08-fracas-verbs_evaluation	0.2857142857142857
-syllogisms-3-pred_evaluation	0.9296875
-06-fracas-comparatives_evaluation	0.3333333333333333
-05-fracas-adjectives_evaluation	0.42857142857142855
-syllogisms-2-pred_evaluation	0.9765625
-[e_i2c][True]sick_test_evaluation	0.6478691347395609
-[split_adj][False]01-fracas-quantifier_evaluation	0.6764705882352942
-[a2e][True]sick_test_evaluation	0.6489453293155403
-[a2e_i2c_split_adj][True]sick_test_evaluation	0.6837219832465474
-[e_i2c_split_adj][True]sick_test_evaluation	0.6721756848539733
-[a2e_i2c_split_adj][False]sick_test_evaluation	0.6645865834633385
-[split_adj][True]sick_test_evaluation	0.6721756848539733
-[none][True]sick_test_evaluation	0.6478691347395609
-[i2c_a2e][False]sick_test_evaluation	0.638004246284501
-[a2e][False]sick_test_evaluation	0.6350318471337579
-[e_i2c][False]sick_test_evaluation	0.6341825902335456
-[e_i2c][False]syllogisms-3-pred_evaluation	0.953125
-[e_i2c_split_adj][False]sick_test_evaluation	0.6558948072208602
-[none][True]syllogisms-3-pred_evaluation	0.9609375
-[i2c_a2e][True]sick_test_evaluation	0.6538958243650452
-[split_verb][False]sick_test_evaluation	0.6326484533754798
-[split_adj][False]sick_test_evaluation	0.6558948072208602
-[split_verb][True]sick_test_evaluation	0.6496888684028578
-[e_i2c][True]syllogisms-3-pred_evaluation	0.984375
+,correctly classified
+01-fracas-quantifier_evaluation,0.6197183098591549
+03-fracas-anaphora_evaluation,0.125
+syllogisms-1-pred_evaluation,1.0
+04-fracas-ellipsis_evaluation,0.24390243902439024
+02-fracas-plural_evaluation,0.5454545454545454
+07-fracas-temporal_evaluation,0.3541666666666667
+09-fracas-attitudes_evaluation,0.5
+sick_test_evaluation,0.6341825902335456
+08-fracas-verbs_evaluation,0.2857142857142857
+syllogisms-3-pred_evaluation,0.9296875
+06-fracas-comparatives_evaluation,0.3333333333333333
+05-fracas-adjectives_evaluation,0.42857142857142855
+syllogisms-2-pred_evaluation,0.9765625
+[e_i2c][True]sick_test_evaluation,0.6478691347395609
+[split_adj][False]01-fracas-quantifier_evaluation,0.6764705882352942
+[a2e][True]sick_test_evaluation,0.6489453293155403
+[a2e_i2c_split_adj][True]sick_test_evaluation,0.6837219832465474
+[e_i2c_split_adj][True]sick_test_evaluation,0.6721756848539733
+[a2e_i2c_split_adj][False]sick_test_evaluation,0.6645865834633385
+[split_adj][True]sick_test_evaluation,0.6721756848539733
+[none][True]sick_test_evaluation,0.6478691347395609
+[i2c_a2e][False]sick_test_evaluation,0.638004246284501
+[a2e][False]sick_test_evaluation,0.6350318471337579
+[e_i2c][False]sick_test_evaluation,0.6341825902335456
+[e_i2c][False]syllogisms-3-pred_evaluation,0.953125
+[e_i2c_split_adj][False]sick_test_evaluation,0.6558948072208602
+[none][True]syllogisms-3-pred_evaluation,0.9609375
+[i2c_a2e][True]sick_test_evaluation,0.6538958243650452
+[split_verb][False]sick_test_evaluation,0.6326484533754798
+[split_adj][False]sick_test_evaluation,0.6558948072208602
+[split_verb][True]sick_test_evaluation,0.6496888684028578
+[e_i2c][True]syllogisms-3-pred_evaluation,0.984375
