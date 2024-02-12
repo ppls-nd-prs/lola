@@ -1,0 +1,343 @@
+	_id	premises	h	label
+0	1	An Italian became the world's greatest tenor.	There was an Italian who became the world's greatest tenor.	yes
+1	2	Every Italian man wants to be a great tenor. ## Some Italian men are great tenors.	There are Italian men who want to be a great tenor.	yes
+2	3	All Italian men want to be a great tenor. ## Some Italian men are great tenors.	There are Italian men who want to be a great tenor.	yes
+3	4	Each Italian tenor wants to be great. ## Some Italian tenors are great.	There are Italian tenors who want to be great.	yes
+4	5	The really ambitious tenors are Italian.	There are really ambitious tenors who are Italian.	yes
+5	6	No really great tenors are modest.	There are really great tenors who are modest.	no
+6	7	Some great tenors are Swedish.	There are great tenors who are Swedish.	yes
+7	8	Many great tenors are German.	There are great tenors who are German.	yes
+8	9	Several great tenors are British.	There are great tenors who are British.	yes
+9	10	Most great tenors are Italian.	There are great tenors who are Italian.	yes
+10	11	A few great tenors sing popular music. ## Some great tenors like popular music.	There are great tenors who sing popular music.	yes
+11	12	Few great tenors are poor.	There are great tenors who are poor.	undef
+12	13	Both leading tenors are excellent. ## Leading tenors who are excellent are indispensable.	Both leading tenors are indispensable.	yes
+13	14	Neither leading tenor comes cheap. ## One of the leading tenors is Pavarotti.	Pavarotti is a leading tenor who comes cheap.	no
+14	15	At least three tenors will take part in the concert.	There are tenors who will take part in the concert.	yes
+15	16	At most two tenors will contribute their fees to charity.	There are tenors who will contribute their fees to charity.	undef
+16	17	An Irishman won the Nobel prize for literature.	An Irishman won a Nobel prize.	yes
+17	18	Every European has the right to live in Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	Every European can travel freely within Europe.	yes
+18	19	All Europeans have the right to live in Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	All Europeans can travel freely within Europe.	yes
+19	20	Each European has the right to live in Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	Each European can travel freely within Europe.	yes
+20	21	The residents of member states have the right to live in Europe. ## All residents of member states are individuals. ## Every individual who has the right to live in Europe can travel freely within Europe.	The residents of member states can travel freely within Europe.	yes
+21	22	No delegate finished the report on time.	No delegate finished the report.	unknown
+22	23	Some delegates finished the survey on time.	Some delegates finished the survey.	yes
+23	24	Many delegates obtained interesting results from the survey.	Many delegates obtained results from the survey.	yes
+24	25	Several delegates got the results published in major national newspapers.	Several delegates got the results published.	yes
+25	26	Most Europeans are resident in Europe. ## All Europeans are people. ## All people who are resident in Europe can travel freely within Europe.	Most Europeans can travel freely within Europe.	yes
+26	27	A few committee members are from Sweden. ## All committee members are people. ## All people who are from Sweden are from Scandinavia.	At least a few committee members are from Scandinavia.	yes
+27	28	Few committee members are from Portugal. ## All committee members are people. ## All people who are from Portugal are from southern Europe.	There are few committee members from southern Europe.	unknown
+28	29	Both commissioners used to be leading businessmen.	Both commissioners used to be businessmen.	yes
+29	30	Neither commissioner spends a lot of time at home.	Neither commissioner spends time at home.	unknown
+30	31	At least three commissioners spend a lot of time at home.	At least three commissioners spend time at home.	yes
+31	32	At most ten commissioners spend a lot of time at home.	At most ten commissioners spend time at home.	unknown
+32	33	An Irishman won a Nobel prize.	An Irishman won the Nobel prize for literature.	unknown
+33	34	Every European can travel freely within Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	Every European has the right to live in Europe.	unknown
+34	35	All Europeans can travel freely within Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	All Europeans have the right to live in Europe.	unknown
+35	36	Each European can travel freely within Europe. ## Every European is a person. ## Every person who has the right to live in Europe can travel freely within Europe.	Each European has the right to live in Europe.	unknown
+36	37	The residents of member states can travel freely within Europe. ## All residents of member states are individuals. ## Every individual who has the right to live anywhere in Europe can travel freely within Europe.	The residents of member states have the right to live anywhere in Europe.	unknown
+37	38	No delegate finished the report.	Some delegate finished the report on time.	no
+38	39	Some delegates finished the survey.	Some delegates finished the survey on time.	unknown
+39	40	Many delegates obtained results from the survey.	Many delegates obtained interesting results from the survey.	unknown
+40	41	Several delegates got the results published.	Several delegates got the results published in major national newspapers.	unknown
+41	42	Most Europeans can travel freely within Europe. ## All Europeans are people. ## All people who are resident in Europe can travel freely within Europe.	Most Europeans are resident in Europe.	unknown
+42	43	A few committee members are from Scandinavia. ## All committee members are people. ## All people who are from Sweden are from Scandinavia.	At least a few committee members are from Sweden.	unknown
+43	44	Few committee members are from southern Europe. ## All committee members are people. ## All people who are from Portugal are from southern Europe.	There are few committee members from Portugal.	yes
+44	45	Both commissioners used to be businessmen.	Both commissioners used to be leading businessmen.	unknown
+45	46	Neither commissioner spends time at home.	One of the commissioners spends a lot of time at home.	no
+46	47	At least three commissioners spend time at home.	At least three commissioners spend a lot of time at home.	unknown
+47	48	At most ten commissioners spend time at home.	At most ten commissioners spend a lot of time at home.	yes
+48	49	A Swede won a Nobel prize. ## Every Swede is a Scandinavian.	A Scandinavian won a Nobel prize.	yes
+49	50	Every Canadian resident can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	Every resident of the North American continent can travel freely within Europe.	unknown
+50	51	All Canadian residents can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	All residents of the North American continent can travel freely within Europe.	unknown
+51	52	Each Canadian resident can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	Each resident of the North American continent can travel freely within Europe.	unknown
+52	53	The residents of major western countries can travel freely within Europe. ## All residents of major western countries are residents of western countries.	The residents of western countries have the right to live in Europe.	unknown
+53	54	No Scandinavian delegate finished the report on time.	Some delegate finished the report on time.	unknown
+54	55	Some Irish delegates finished the survey on time.	Some delegates finished the survey on time.	yes
+55	56	Many British delegates obtained interesting results from the survey.	Many delegates obtained interesting results from the survey.	unknown
+56	57	Several Portuguese delegates got the results published in major national newspapers.	Several delegates got the results published in major national newspapers.	yes
+57	58	Most Europeans who are resident in Europe can travel freely within Europe.	Most Europeans can travel freely within Europe.	unknown
+58	59	A few female committee members are from Scandinavia.	At least a few committee members are from Scandinavia.	yes
+59	60	Few female committee members are from southern Europe.	Few committee members are from southern Europe.	unknown
+60	61	Both female commissioners used to be in business.	Both commissioners used to be in business.	undef
+61	62	Neither female commissioner spends a lot of time at home.	One of the commissioners spends a lot of time at home.	undef
+62	63	At least three female commissioners spend time at home.	At least three commissioners spend time at home.	yes
+63	64	At most ten female commissioners spend time at home.	At most ten commissioners spend time at home.	unknown
+64	65	A Scandinavian won a Nobel prize. ## Every Swede is a Scandinavian.	A Swede won a Nobel prize.	unknown
+65	66	Every resident of the North American continent can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	Every Canadian resident can travel freely within Europe.	yes
+66	67	All residents of the North American continent can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	All Canadian residents can travel freely within Europe.	yes
+67	68	Each resident of the North American continent can travel freely within Europe. ## Every Canadian resident is a resident of the North American continent.	Each Canadian resident can travel freely within Europe.	yes
+68	69	The residents of western countries can travel freely within Europe. ## All residents of major western countries are residents of western countries.	The residents of major western countries have the right to live in Europe.	yes
+69	70	No delegate finished the report on time.	Some Scandinavian delegate finished the report on time.	no
+70	71	Some delegates finished the survey on time.	Some Irish delegates finished the survey on time.	unknown
+71	72	Many delegates obtained interesting results from the survey.	Many British delegates obtained interesting results from the survey.	unknown
+72	73	Several delegates got the results published in major national newspapers.	Several Portuguese delegates got the results published in major national newspapers.	unknown
+73	74	Most Europeans can travel freely within Europe.	Most Europeans who are resident outside Europe can travel freely within Europe.	unknown
+74	75	A few committee members are from Scandinavia.	At least a few female committee members are from Scandinavia.	unknown
+75	76	Few committee members are from southern Europe.	Few female committee members are from southern Europe.	yes
+76	77	Both commissioners used to be in business.	Both female commissioners used to be in business.	undef
+77	78	Neither commissioner spends a lot of time at home.	One of the female commissioners spends a lot of time at home.	undef
+78	79	At least three commissioners spend time at home.	At least three male commissioners spend time at home.	unknown
+79	80	At most ten commissioners spend time at home.	At most ten female commissioners spend time at home.	yes
+80	81	Smith, Jones and Anderson signed the contract.	Jones signed the contract.	yes
+81	82	Smith, Jones and several lawyers signed the contract.	Jones signed the contract.	yes
+82	83	Either Smith, Jones or Anderson signed the contract.	Jones signed the contract.	unknown
+83	84	Either Smith, Jones or Anderson signed the contract.	If Smith and Anderson did not sign the contract, Jones signed the contract.	yes
+84	85	Exactly two lawyers and three accountants signed the contract.	Six lawyers signed the contract.	no
+85	86	Exactly two lawyers and three accountants signed the contract.	Six accountants signed the contract.	no
+86	87	Every representative and client was at the meeting.	Every representative was at the meeting.	yes
+87	88	Every representative and client was at the meeting.	Every representative was at the meeting.	unknown
+88	89	Every representative or client was at the meeting.	Every representative and every client was at the meeting.	yes
+89	90	The chairman read out the items on the agenda.	The chairman read out every item on the agenda.	yes
+90	91	The people who were at the meeting voted for a new chairman.	Everyone at the meeting voted for a new chairman.	unknown
+91	92	All the people who were at the meeting voted for a new chairman.	Everyone at the meeting voted for a new chairman.	yes
+92	93	The people who were at the meeting all voted for a new chairman.	Everyone at the meeting voted for a new chairman.	yes
+93	94	The inhabitants of Cambridge voted for a Labour MP.	Every inhabitant of Cambridge voted for a Labour MP.	unknown
+94	95	The Ancient Greeks were noted philosophers.	Every Ancient Greek was a noted philosopher.	unknown
+95	96	The Ancient Greeks were all noted philosophers.	Every Ancient Greek was a noted philosopher.	yes
+96	97	Software faults were blamed for the system failure.	The system failure was blamed on one or more software faults.	yes
+97	98	Software faults were blamed for the system failure. ## Bug # 32-985 is a known software fault.	Bug # 32-985 was blamed for the system failure.	unknown
+98	99	Clients at the demonstration were all impressed by the system's performance. ## Smith was a client at the demonstration.	Smith was impressed by the system's performance.	yes
+99	100	Clients at the demonstration were impressed by the system's performance.	Most clients at the demonstration were impressed by the system's performance.	yes
+100	101	University graduates make poor stock-market traders. ## Smith is a university graduate.	Smith is likely to make a poor stock market trader.	yes
+101	102	University graduates make poor stock-market traders. ## Smith is a university graduate.	Smith will make a poor stock market trader.	unknown
+102	103	All APCOM managers have company cars. ## Jones is an APCOM manager.	Jones has a company car.	yes
+103	104	All APCOM managers have company cars. ## Jones is an APCOM manager.	Jones has more than one company car.	unknown
+104	105	Just one accountant attended the meeting.	No accountants attended the meeting.	no
+105	106	Just one accountant attended the meeting.	No accountant attended the meeting.	no
+106	107	Just one accountant attended the meeting.	Some accountants attended the meeting.	yes
+107	108	Just one accountant attended the meeting.	Some accountant attended the meeting.	yes
+108	109	Just one accountant attended the meeting.	Some accountants attended the meeting.	no
+109	110	Just one accountant attended the meeting.	Some accountant attended the meeting.	yes
+110	111	Smith signed one contract. ## Jones signed another contract.	Smith and Jones signed two contracts.	yes
+111	112	Smith signed two contracts. ## Jones signed two contracts.	Smith and Jones signed two contracts.	yes
+112	113	Smith signed two contracts. ## Jones also signed them.	Smith and Jones signed two contracts.	yes
+113	114	Mary used her workstation.	Mary's workstation was used.	yes
+114	115	Mary used her workstation.	Mary has a workstation.	yes
+115	116	Mary used her workstation.	Mary is female.	yes
+116	117	Every student used her workstation. ## Mary is a student.	Mary used her workstation.	yes
+117	118	Every student used her workstation. ## Mary is a student.	Mary has a workstation.	yes
+118	119	No student used her workstation. ## Mary is a student.	Mary used a workstation.	no
+119	120	Smith attended a meeting. ## She chaired it.	Smith chaired a meeting.	yes
+120	121	Smith delivered a report to ITEL. ## She also delivered them an invoice. ## And she delivered them a project proposal.	Smith delivered a report, an invoice and a project proposal to ITEL.	yes
+121	122	Every committee has a chairman. ## He is appointed its members.	Every committee has a chairman appointed by members of the committee.	yes
+122	123	ITEL has sent most of the reports Smith needs. ## They are on her desk.	There are some reports from ITEL on Smith's desk.	yes
+123	124	Two out of ten machines are missing. ## They have been removed.	Two machines have been removed.	yes
+124	125	Two out of ten machines are missing. ## They have been removed.	Eight machines have been removed.	unknown
+125	126	Two out of ten machines are missing. ## They were all here yesterday.	Ten machines were here yesterday.	yes
+126	127	Smith took a machine on Tuesday, and Jones took a machine on Wednesday. ## They put them in the lobby.	Smith and Jones put two machines in the lobby.	yes
+127	128	John and his colleagues went to a meeting. ## They hated it.	John's colleagues hated the meeting.	yes
+128	129	John and his colleagues went to a meeting. ## They hated it.	John hated the meeting.	yes
+129	130	John and his colleagues went to a meeting. ## They hated it.	John hated the meeting.	unknown
+130	131	Each department has a dedicated line. ## They rent them from BT.	Every department rents a line from BT.	yes
+131	132	Each department has a dedicated line. ## The sales department rents it from BT.	The sales department rents a line from BT.	yes
+132	133	GFI owns several computers. ## ITEL maintains them.	ITEL maintains all the computers that GFI owns.	yes
+133	134	Every customer who owns a computer has a service contract for it. ## MFI is a customer that owns exactly one computer.	MFI has a service contract for all its computers.	yes
+134	135	Every customer who owns a computer has a service contract for it. ## MFI is a customer that owns several computers.	MFI has a service contract for all its computers.	yes
+135	136	Every executive who had a laptop computer brought it to take notes at the meeting. ## Smith is a executive who owns five different laptop computers.	Smith took five laptop computers to the meeting.	unknown
+136	137	There are 100 companies. ## ICM is one of the companies and owns 150 computers. ## It does not have service contracts for any of its computers. ## Each of the other 99 companies owns one computer. ## They have service contracts for them.	Most companies that own a computer have a service contract for it.	yes
+137	138	Every report has a cover page. ## R-95-103 is a report. ## Smith signed the cover page.	Smith signed the cover page of R-95-103.	yes
+138	139	A company director awarded himself a large payrise.	A company director has awarded and been awarded a payrise.	yes
+139	140	John said Bill had hurt himself.	John said Bill had been hurt.	yes
+140	141	John said Bill had hurt himself.	Someone said John had been hurt.	unknown
+141	142	John spoke to Mary. ## So did Bill.	Bill spoke to Mary.	yes
+142	143	John spoke to Mary. ## So did Bill. ## John spoke to Mary at four o'clock.	Bill spoke to Mary at four o'clock.	unknown
+143	144	John spoke to Mary at four o'clock. ## So did Bill.	Bill spoke to Mary at four o'clock.	yes
+144	145	John spoke to Mary at four o'clock. ## And Bill did at five o'clock.	Bill spoke to Mary at five o'clock.	yes
+145	146	John has spoken to Mary. ## Bill is going to.	Bill will speak to Mary.	yes
+146	147	John spoke to Mary on Monday. ## Bill didn't.	Bill spoke to Mary on Monday.	no
+147	148	Has John spoken to Mary? ## Bill has.	Bill has spoken to Mary.	yes
+148	149	John has spoken to Mary. ## The students have too.	The students have spoken to Mary.	yes
+149	150	John went to Paris by car, and Bill by train.	Bill went to Paris by train.	yes
+150	151	John went to Paris by car, and Bill by train to Berlin.	Bill went to Berlin by train.	yes
+151	152	John went to Paris by car, and Bill to Berlin.	Bill went to Berlin by car.	yes
+152	153	John is going to Paris by car, and the students by train.	The students are going to Paris by train.	yes
+153	154	John went to Paris by car. ## Bill by train.	Bill went to Paris by train.	yes
+154	155	John owns a car. ## Bill owns one too.	Bill owns a car.	yes
+155	156	John owns a car. ## Bill owns one too.	There is a car that John and Bill own.	unknown
+156	157	John owns a red car. ## Bill owns a blue one.	Bill owns a blue car.	yes
+157	158	John owns a red car. ## Bill owns a blue one.	Bill owns a red car.	unknown
+158	159	John owns a red car. ## Bill owns a fast one.	Bill owns a fast car.	yes
+159	160	John owns a red car. ## Bill owns a fast one.	Bill owns a fast red car.	yes
+160	161	John owns a red car. ## Bill owns a fast one.	Bill owns a fast red car.	unknown
+161	162	John owns a fast red car. ## Bill owns a slow one.	Bill owns a slow red car.	yes
+162	163	John had his paper accepted. ## Bill doesn't know why.	Bill knows why John had his paper accepted.	no
+163	164	John spoke to Mary. ## And to Sue.	John spoke to Sue.	yes
+164	165	John spoke to Mary. ## On Friday.	John spoke to Mary on Friday.	yes
+165	166	John spoke to Mary on Thursday. ## And on Friday.	John spoke to Mary on Friday.	yes
+166	167	Twenty men work in the Sales Department. ## But only one woman.	Two women work in the Sales Department.	no
+167	168	Five men work part time. ## And forty five women.	Forty five women work part time.	yes
+168	169	John found Mary before Bill.	John found Mary before Bill found Mary.	yes
+169	170	John found Mary before Bill.	John found Mary before John found Bill.	yes
+170	171	John wants to know how many men work part time. ## And women.	John wants to know how many women work part time.	yes
+171	172	John wants to know how many men work part time, and which.	John wants to know which men work part time.	yes
+172	173	Bill spoke to everyone that John did. ## John spoke to Mary.	Bill spoke to Mary.	yes
+173	174	Bill spoke to everyone that John did. ## Bill spoke to Mary.	John spoke to Mary.	unknown
+174	175	John said Mary wrote a report, and Bill did too.	Bill said Mary wrote a report.	yes
+175	176	John said Mary wrote a report, and Bill did too.	John said Bill wrote a report.	yes
+176	177	John said that Mary wrote a report, and that Bill did too.	Bill said Mary wrote a report.	unknown
+177	178	John wrote a report, and Bill said Peter did too.	Bill said Peter wrote a report.	yes
+178	179	If John wrote a report, then Bill did too. ## John wrote a report.	Bill wrote a report.	yes
+179	180	John wanted to buy a car, and he did.	John bought a car.	yes
+180	181	John needed to buy a car, and Bill did.	Bill bought a car.	unknown
+181	182	Smith represents his company and so does Jones.	Jones represents Jones' company.	yes
+182	183	Smith represents his company and so does Jones.	Jones represents Smith's company.	yes
+183	184	Smith represents his company and so does Jones.	Smith represents Jones' company.	unknown
+184	185	Smith claimed he had costed his proposal and so did Jones.	Jones claimed he had costed his own proposal.	yes
+185	186	Smith claimed he had costed his proposal and so did Jones.	Jones claimed he had costed Smith's proposal.	yes
+186	187	Smith claimed he had costed his proposal and so did Jones.	Jones claimed Smith had costed Smith's proposal.	yes
+187	188	Smith claimed he had costed his proposal and so did Jones.	Jones claimed Smith had costed Jones' proposal.	unknown
+188	189	John is a man and Mary is a woman. ## John represents his company and so does Mary.	Mary represents her own company.	yes
+189	190	John is a man and Mary is a woman. ## John represents his company and so does Mary.	Mary represents John's company.	yes
+190	191	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan should go together.	yes
+191	192	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	unknown
+192	193	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan's wife should go together.	yes
+193	194	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	unknown
+194	195	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	yes
+195	196	A lawyer signed every report, and so did an auditor. ## That is, there was one lawyer who signed all the reports.	There was one auditor who signed all the reports.	yes
+196	197	John has a genuine diamond.	John has a diamond.	yes
+197	198	John is a former university student.	John is a university student.	no
+198	199	John is a successful former university student.	John is successful.	yes
+199	200	John is a former successful university student.	John is successful.	unknown
+200	201	John is a former successful university student.	John is a university student.	unknown
+201	202	Every mammal is an animal.	Every four-legged mammal is a four-legged animal.	yes
+202	203	Dumbo is a four-legged animal.	Dumbo is four-legged.	yes
+203	204	Mickey is a small animal.	Mickey is a large animal.	no
+204	205	Dumbo is a large animal.	Dumbo is a small animal.	no
+205	206	Fido is not a small animal.	Fido is a large animal.	unknown
+206	207	Fido is not a large animal.	Fido is a small animal.	unknown
+207	208	Mickey is a small animal. ## Dumbo is a large animal.	Mickey is smaller than Dumbo.	yes
+208	209	Mickey is a small animal. ## Dumbo is a large animal.	Mickey is larger than Dumbo.	no
+209	210	All mice are small animals. ## Mickey is a large mouse.	Mickey is a large animal.	no
+210	211	All elephants are large animals. ## Dumbo is a small elephant.	Dumbo is a small animal.	no
+211	212	All mice are small animals. ## All elephants are large animals. ## Mickey is a large mouse. ## Dumbo is a small elephant.	Dumbo is larger than Mickey.	yes
+212	213	All mice are small animals. ## Mickey is a large mouse.	Mickey is small.	undef
+213	214	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	All fat legal authorities are fat law lecturers.	yes
+214	215	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	All competent legal authorities are competent law lecturers.	unknown
+215	216	John is a fatter politician than Bill.	John is fatter than Bill.	yes
+216	217	John is a cleverer politician than Bill.	John is cleverer than Bill.	unknown
+217	218	Kim is a clever person.	Kim is clever.	yes
+218	219	Kim is a clever politician.	Kim is clever.	unknown
+219	220	The PC-6082 is faster than the ITEL-XZ. ## The ITEL-XZ is fast.	The PC-6082 is fast.	yes
+220	221	The PC-6082 is faster than the ITEL-XZ.	The PC-6082 is fast.	unknown
+221	222	The PC-6082 is faster than the ITEL-XZ. ## The PC-6082 is fast.	The ITEL-XZ is fast.	unknown
+222	223	The PC-6082 is faster than the ITEL-XZ. ## The PC-6082 is slow.	The ITEL-XZ is fast.	no
+223	224	The PC-6082 is as fast as the ITEL-XZ. ## The ITEL-XZ is fast.	The PC-6082 is fast.	yes
+224	225	The PC-6082 is as fast as the ITEL-XZ.	The PC-6082 is fast.	unknown
+225	226	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is fast.	The ITEL-XZ is fast.	unknown
+226	227	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is slow.	The ITEL-XZ is fast.	no
+227	228	The PC-6082 is as fast as the ITEL-XZ.	The PC-6082 is faster than the ITEL-XZ.	unknown
+228	229	The PC-6082 is as fast as the ITEL-XZ.	The PC-6082 is slower than the ITEL-XZ.	no
+229	230	ITEL won more orders than APCOM did.	ITEL won some orders.	yes
+230	231	ITEL won more orders than APCOM did.	APCOM won some orders.	unknown
+231	232	ITEL won more orders than APCOM did. ## APCOM won ten orders.	ITEL won at least eleven orders.	yes
+232	233	ITEL won more orders than APCOM.	ITEL won some orders.	yes
+233	234	ITEL won more orders than APCOM.	APCOM won some orders.	unknown
+234	235	ITEL won more orders than APCOM. ## APCOM won ten orders.	ITEL won at least eleven orders.	yes
+235	236	ITEL won more orders than the APCOM contract.	ITEL won the APCOM contract.	yes
+236	237	ITEL won more orders than the APCOM contract.	ITEL won more than one order.	yes
+237	238	ITEL won twice as many orders than APCOM. ## APCOM won ten orders.	ITEL won twenty orders.	yes
+238	239	ITEL won more orders than APCOM lost.	ITEL won some orders.	yes
+239	240	ITEL won more orders than APCOM lost.	APCOM lost some orders.	unknown
+240	241	ITEL won more orders than APCOM lost. ## APCOM lost ten orders.	ITEL won at least eleven orders.	yes
+241	242	The PC-6082 is faster than 500 MIPS. ## The ITEL-ZX is slower than 500 MIPS.	The PC-6082 is faster than the ITEL-ZX.	yes
+242	243	ITEL sold 3000 more computers than APCOM. ## APCOM sold exactly 2500 computers.	ITEL sold 5500 computers.	yes
+243	244	APCOM has a more important customer than ITEL.	APCOM has a more important customer than ITEL is.	yes
+244	245	APCOM has a more important customer than ITEL.	APCOM has a more important customer than ITEL has.	yes
+245	246	The PC-6082 is faster than every ITEL computer. ## The ITEL-ZX is an ITEL computer.	The PC-6082 is faster than the ITEL-ZX.	yes
+246	247	The PC-6082 is faster than some ITEL computer. ## The ITEL-ZX is an ITEL computer.	The PC-6082 is faster than the ITEL-ZX.	unknown
+247	248	The PC-6082 is faster than any ITEL computer. ## The ITEL-ZX is an ITEL computer.	The PC-6082 is faster than the ITEL-ZX.	yes
+248	249	The PC-6082 is faster than the ITEL-ZX and the ITEL-ZY.	The PC-6082 is faster than the ITEL-ZX.	yes
+249	250	The PC-6082 is faster than the ITEL-ZX or the ITEL-ZY.	The PC-6082 is faster than the ITEL-ZX.	yes
+250	251	ITEL has a factory in Birmingham.	ITEL currently has a factory in Birmingham.	yes
+251	252	Since 1992 ITEL has been in Birmingham. ## It is now 1996.	Itel was in Birmingham in 1993.	yes
+252	253	ITEL has developed a new editor since 1992. ## It is now 1996.	ITEL developed a new editor in 1993.	unknown
+253	254	ITEL has expanded since 1992. ## It is now 1996.	ITEL expanded in 1993.	unknown
+254	255	Since 1992 ITEL has made a loss. ## It is now 1996.	ITEL made a loss in 1993.	yes
+255	256	ITEL has made a loss since 1992. ## It is now 1996.	ITEL made a loss in 1993.	unknown
+256	257	ITEL has made a loss since 1992. ## It is now 1996.	ITEL made a loss in 1993.	yes
+257	258	In March 1993 APCOM founded ITEL.	ITEL existed in 1992.	no
+258	259	The conference started on July 4th, 1994. ## It lasted 2 days.	The conference was over on July 8th, 1994.	yes
+259	260	Yesterday APCOM signed the contract. ## Today is Saturday, July 14th.	APCOM signed the contract Friday, 13th.	yes
+260	261	Smith left before Jones left. ## Jones left before Anderson left.	Smith left before Anderson left.	yes
+261	262	Smith left after Jones left. ## Jones left after Anderson left.	Smith left after Anderson left.	yes
+262	263	Smith was present after Jones left. ## Jones left after Anderson was present.	Smith was present after Anderson was present.	unknown
+263	264	Smith left. ## Jones left. ## Smith left before Jones left.	Jones left after Smith left.	yes
+264	265	Smith left. ## Jones left. ## Smith left after Jones left.	Jones left before Smith left.	yes
+265	266	Smith left. ## Jones left. ## Jones left before Smith left.	Smith left after Jones left.	yes
+266	267	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract before Smith did.	Smith revised the contract after Jones did.	yes
+267	268	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract after Smith did.	Smith revised the contract before Jones did.	yes
+268	269	Smith swam. ## Jones swam. ## Smith swam before Jones swam.	Jones swam after Smith swam.	unknown
+269	270	Smith swam to the shore. ## Jones swam to the shore. ## Smith swam to the shore before Jones swam to the shore.	Jones swam to the shore after Smith swam to the shore.	yes
+270	271	Smith was present. ## Jones was present. ## Smith was present after Jones was present.	Jones was present before Smith was present.	unknown
+271	272	Smith was present. ## Jones was present. ## Smith was present before Jones was present.	Jones was present after Smith was present.	unknown
+272	273	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report before Jones was writing a report.	Jones was writing a report after Smith was writing a report.	unknown
+273	274	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report after Jones was writing a report.	Jones was writing a report before Smith was writing a report.	unknown
+274	275	Smith left the meeting before he lost his temper.	Smith lost his temper.	unknown
+275	277	Smith lived in Birmingham in 1991.	Smith lived in Birmingham in 1992.	unknown
+276	278	Smith wrote his first novel in 1991.	Smith wrote his first novel in 1992.	no
+277	279	Smith wrote a novel in 1991.	Smith wrote it in 1992.	no
+278	280	Smith wrote a novel in 1991.	Smith wrote a novel in 1992.	unknown
+279	281	Smith was running a business in 1991.	Smith was running it in 1992.	unknown
+280	282	Smith discovered a new species in 1991.	Smith discovered it in 1992.	no
+281	283	Smith discovered a new species in 1991.	Smith discovered a new species in 1992.	unknown
+282	284	Smith wrote a report in two hours. ## Smith started writing the report at 8 am.	Smith had finished writing the report by 11 am.	yes
+283	285	Smith wrote a report in two hours.	Smith spent two hours writing the report.	unknown
+284	286	Smith wrote a report in two hours.	Smith spent more than two hours writing the report.	no
+285	287	Smith wrote a report in two hours.	Smith wrote a report in one hour.	unknown
+286	288	Smith wrote a report in two hours.	Smith wrote a report.	yes
+287	289	Smith discovered a new species in two hours.	Smith spent two hours discovering the new species.	no
+288	290	Smith discovered a new species in two hours.	Smith discovered a new species.	yes
+289	291	Smith discovered many new species in two hours.	Smith spent two hours discovering new species.	yes
+290	292	Smith was running his own business in two years.	Smith spent two years running his own business.	unknown
+291	293	Smith was running his own business in two years.	Smith spent more than two years running his own business.	unknown
+292	294	Smith was running his own business in two years.	Smith ran his own business.	yes
+293	295	In two years Smith owned a chain of businesses.	Smith owned a chain of business for two years.	unknown
+294	296	In two years Smith owned a chain of businesses.	Smith owned a chain of business for more than two years.	unknown
+295	297	In two years Smith owned a chain of businesses.	Smith owned a chain of business.	yes
+296	298	Smith lived in Birmingham for two years.	Smith lived in Birmingham for a year.	yes
+297	299	Smith lived in Birmingham for two years.	Smith lived in Birmingham for exactly a year.	no
+298	300	Smith lived in Birmingham for two years.	Smith lived in Birmingham.	yes
+299	301	Smith ran his own business for two years.	Smith ran his own business for a year.	yes
+300	302	Smith ran his own business for two years.	Smith ran his own business.	yes
+301	303	Smith wrote a report for two hours.	Smith wrote a report for an hour.	yes
+302	304	Smith wrote a report for two hours.	Smith wrote a report.	unknown
+303	306	Smith discovered new species for two years.	Smith discovered new species.	yes
+304	307	In 1994 ITEL sent a progress report every month.	ITEL sent a progress report in July 1994.	yes
+305	308	Smith wrote to a representative every week.	There is a representative that Smith wrote to every week.	undef
+306	311	Smith had left the house at a quarter past five. ## Then she took a taxi to the station.	Smith left the house before she took a taxi to the station.	yes
+307	312	ITEL always delivers reports late. ## In 1993 ITEL delivered reports.	ITEL delivered reports late in 1993.	yes
+308	313	ITEL never delivers reports late. ## In 1993 ITEL delivered reports.	ITEL delivered reports late in 1993.	no
+309	314	Smith arrived in Paris on the 5th of May, 1995. ## Today is the 15th of May, 1995. ## She is still in Paris.	Smith was in Paris on the 7th of May, 1995.	yes
+310	315	When Smith arrived in Katmandu she had been travelling for three days.	Smith had been travelling the day before she arrived in Katmandu.	yes
+311	316	Jones graduated in March and has been employed ever since. ## Jones has been unemployed in the past.	Jones was unemployed at some time before he graduated.	yes
+312	317	Every representative has read this report. ## No two representatives have read it at the same time. ## No representative took less than half a day to read the report. ## There are sixteen representatives.	It took the representatives more than a week to read the report.	yes
+313	318	While Jones was updating the program, Mary came in and told him about the board meeting. ## She finished before he did.	Mary's story lasted as long as Jones's updating the program.	no
+314	319	Before APCOM bought its present office building, it had been paying mortgage interest on the previous one for 8 years. ## Since APCOM bought its present office building it has been paying mortgage interest on it for more than 10 years.	APCOM has been paying mortgage interest for a total of 15 years or more.	yes
+315	320	When Jones got his job at the CIA, he knew that he would never be allowed to write his memoirs.	It is the case that Jones is not and will never be allowed to write his memoirs.	yes
+316	321	Smith has been to Florence twice in the past. ## Smith will go to Florence twice in the coming year.	Two years from now Smith will have been to Florence at least four times.	yes
+317	322	Last week I already knew that when, in a month's time, Smith would discover that she had been duped she would be furious.	It will be the case that in a few weeks Smith will discover that she has been duped; and she will be furious.	yes
+318	323	No one gambling seriously stops until he is broke. ## No one can gamble when he is broke.	Everyone who starts gambling seriously stops the moment he is broke.	yes
+319	324	No one who starts gambling seriously stops until he is broke.	Everyone who starts gambling seriously continues until he is broke.	yes
+320	325	Nobody who is asleep ever knows that he is asleep. ## But some people know that they have been asleep after they have been asleep.	Some people discover that they have been asleep.	yes
+321	326	ITEL built MTALK in 1993.	ITEL finished MTALK in 1993.	yes
+322	327	ITEL was building MTALK in 1993.	ITEL finished MTALK in 1993.	unknown
+323	328	ITEL won the contract from APCOM in 1993.	ITEL won a contract in 1993.	yes
+324	329	ITEL was winning the contract from APCOM in 1993.	ITEL won a contract in 1993.	unknown
+325	330	ITEL owned APCOM from 1988 to 1992.	ITEL owned APCOM in 1990.	yes
+326	331	Smith and Jones left the meeting.	Smith left the meeting.	yes
+327	332	Smith and Jones left the meeting.	Jones left the meeting.	yes
+328	333	Smith, Anderson and Jones met.	There was a group of people that met.	yes
+329	334	Smith knew that ITEL had won the contract in 1992.	ITEL won the contract in 1992.	yes
+330	335	Smith believed that ITEL had won the contract in 1992.	ITEL won the contract in 1992.	unknown
+331	336	ITEL managed to win the contract in 1992.	ITEL won the contract in 1992.	yes
+332	337	ITEL tried to win the contract in 1992.	ITEL won the contract in 1992.	unknown
+333	338	It is true that ITEL won the contract in 1992.	ITEL won the contract in 1992.	yes
+334	339	It is false that ITEL won the contract in 1992.	ITEL won the contract in 1992.	no
+335	340	Smith saw Jones sign the contract. ## If Jones signed the contract, his heart was beating.	Smith saw Jones' heart beat.	unknown
+336	341	Smith saw Jones sign the contract. ## When Jones signed the contract, his heart was beating.	Smith saw Jones' heart beat.	unknown
+337	342	Smith saw Jones sign the contract.	Jones signed the contract.	yes
+338	343	Smith saw Jones sign the contract. ## Jones is the chairman of ITEL.	Smith saw the chairman of ITEL sign the contract.	yes
+339	344	Helen saw the chairman of the department answer the phone. ## The chairman of the department is a person.	There is someone whom Helen saw answer the phone.	yes
+340	345	Smith saw Jones sign the contract and his secretary make a copy.	Smith saw Jones sign the contract.	yes
+341	346	Smith saw Jones sign the contract or cross out the crucial clause.	Smith either saw Jones sign the contract or saw Jones cross out the crucial clause.	yes

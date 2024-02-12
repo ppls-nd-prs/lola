@@ -63,8 +63,10 @@ def get_preds(translation_dict,dataset,columns,judgment_dict,csv_name: str, modi
         label = judgment_dict[dataset[columns[2]][i_dat]]
 
         # Possibly TODO: make below generalized
+        lk = []
         if use_lk: 
-            lk = get_hypo_syn_lk(fol_ps_list[0], fol_h) #in sick there's only 1 premise 
+            for i in fol_ps_list:
+                lk += get_hypo_syn_lk(i, fol_h) #in sick there's only 1 premise 
         else:
             lk = [] #no lexical knowledge 
 
@@ -99,7 +101,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('dataset_name',choices=['sick_trial','sick_train','sick_test',
 '01-fracas-quantifier','02-fracas-plural','03-fracas-anaphora','04-fracas-ellipsis',
 '05-fracas-adjectives','06-fracas-comparatives','07-fracas-temporal',
-'08-fracas-verbs','09-fracas-attitudes','syllogisms'],help='dataset_name')
+'08-fracas-verbs','09-fracas-attitudes','fracas-full','syllogisms'],help='dataset_name')
 parser.add_argument('modification_id',choices=['a2e', 'i2c_a2e', 'e_i2c', 'e_i2c_split_adj', 'split_verb','split_adj', 'a2e_i2c_split_adj', 'none'],help='modification_id')   #possible to have no modification
 parser.add_argument('lexical_knowledge',choices=['True', 'False'],help='use lexical knowledge')   #possible to have no modification
 args = parser.parse_args()
@@ -137,7 +139,7 @@ elif re.search(r'fracas',dataset_name):
         raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
     #set lexical knowledge 
     if lexical_knowledge == "True":
-        raise Exception(f"There is no lexical knowledge for the {dataset_name} data set")
+        use_lk = True
     else:
         use_lk = False
     #set basic info

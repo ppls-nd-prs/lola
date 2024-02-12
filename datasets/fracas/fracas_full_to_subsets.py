@@ -1,13 +1,12 @@
 import pandas as pd
 
-df_fracas = pd.read_csv("fracas_full.csv",sep='\t')
+df_fracas = pd.read_csv("fracas-full.csv",sep='\t')
 df_res = pd.DataFrame({'id':[],'premises':[],'h':[],'label':[]})
 
 # Quantifier set 1-80
 for i in range(len(df_fracas.index)):
     row = df_fracas.iloc[i]
-    if type(row['h']) == str:
-        df_res.loc[len(df_res.index)] = {'id':row['_id'],'premises':row['premises'],'h':row['h'],'label':row['label']}
+    df_res.loc[len(df_res.index)] = {'id':row['_id'],'premises':row['premises'],'h':row['h'],'label':row['label']}
     if row['_id'] == 80:
         df_res.to_csv("01-fracas-quantifier.csv",sep="\t")
         df_res = pd.DataFrame({'id':[],'premises':[],'h':[],'label':[]})
