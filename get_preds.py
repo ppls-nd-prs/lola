@@ -155,6 +155,8 @@ elif dataset_name == "syllogisms":
         dictionary_path = f"dictionaries/syllogisms/syllogism-{pred_size}-pred-dict.json"
     elif modification_id == "e_i2c" and pred_size == str(3):
         dictionary_path = f"mod_dictionaries/[e_i2c]full_syllogisms_3_dictionary.json"
+    elif modification_id == "split_adj" and pred_size == str(3):
+        dictionary_path = f"mod_dictionaries/[split_adj]syllogism-3-pred-dict.json"
     else:
         raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
     #set lexical knowledge 
