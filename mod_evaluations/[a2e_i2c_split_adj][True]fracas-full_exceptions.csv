@@ -4,29 +4,29 @@
 
 
 Fatal error:  The following symbols are used with multiple arities: WonNobelPrize/2, WonNobelPrize/1"
-1	Neither commissioner spends a lot of time at home.	not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))	Neither commissioner spends time at home.	all x. all y. (Commissioner(x) & Commissioner(y) -> not SpendsTimeAtHome(x) & not SpendsTimeAtHome(y))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+1	Neither commissioner spends a lot of time at home.	not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))	Neither commissioner spends time at home.	exists x. exists y. (Commissioner(x) & Commissioner(y) & not SpendsTimeAtHome(x) & not SpendsTimeAtHome(y))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
 not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))
                                          ^"
-2	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & all w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & all v. (Commission	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
-exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & all w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & all v. (Commission
+2	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission
                                      ^"
 3	An Irishman won a Nobel prize.	exists x. (Irishman(x) & WonNobelPrize(x))	An Irishman won the Nobel prize for literature.	exists x. (Irishman(x) & WonNobelPrize(x, Literature))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: WonNobelPrize/1, WonNobelPrize/2.
 
 
 Fatal error:  The following symbols are used with multiple arities: WonNobelPrize/1, WonNobelPrize/2"
-4	A few committee members are from Scandinavia. ## All committee members are people. ## All people who are from Sweden are from Scandinavia.	exists x.exists y.exists z. (Committee(x) & Member(x) & Scandinavia(y) & CommitteeMember(z) & From(x, y) & From(z, y)) ## all x. (Committee(x) & Member(x) -> Person(x)) ## all x. (Person(x) & From(x) & Sweden(x) -> From(x) & Scandinavia(x))	At least a few committee members are from Sweden.	exists x. (Committee(x) & Member(x) & From(x) & Sweden(x))	n	"(FATAL)
+4	A few committee members are from Scandinavia. ## All committee members are people. ## All people who are from Sweden are from Scandinavia.	exists x.exists y.exists z. (Committee(x) & Member(x) & Scandinavia(y) & CommitteeMember(z) & From(x, y) & From(z, y)) ## exists x. (Committee(x) & Member(x) & Person(x)) ## exists x. (Person(x) & From(x) & Sweden(x) & From(x) & Scandinavia(x))	At least a few committee members are from Sweden.	exists x. (Committee(x) & Member(x) & From(x) & Sweden(x))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: From/2, From/1.
 
 
 Fatal error:  The following symbols are used with multiple arities: From/2, From/1"
-5	Few committee members are from southern Europe. ## All committee members are people. ## All people who are from Portugal are from southern Europe.	exists x. (Committee(x) & Member(x) & FromSouthernEurope(x)) ## all x. (Committee(x) & Member(x) -> Person(x)) ## all x. (Person(x) & From(x) & Portugal(x) -> Southern(x) & European(x))	There are few committee members from Portugal.	exists x. (Committee(x) & Member(x) & From(x, Portugal))	e	"(FATAL)
+5	Few committee members are from southern Europe. ## All committee members are people. ## All people who are from Portugal are from southern Europe.	exists x. (Committee(x) & Member(x) & FromSouthernEurope(x)) ## exists x. (Committee(x) & Member(x) & Person(x)) ## exists x. (Person(x) & From(x) & Portugal(x) & Southern(x) & European(x))	There are few committee members from Portugal.	exists x. (Committee(x) & Member(x) & From(x, Portugal))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: From/1, From/2, Portugal/1, Portugal/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: From/1, From/2, Portugal/1, Portugal/0"
-6	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & all w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & all v. (Commission	e	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
-exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & all w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & all v. (Commission
+6	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission	e	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission
                                      ^"
 7	Several Portuguese delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Portuguese(x) & Delegate(x) & Newspaper(y) & National(z) & Results(x) & PublishedIn(x, y) & In(y, z))	Several delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Delegate(x) & Delegate(y) & Delegate(z) & National(n) & Newspaper(n) & Major(m) & PublishedIn(x, n, m) & PublishedIn(y, n, m) & PublishedIn(z, n, m))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: PublishedIn/2, PublishedIn/3.
@@ -62,7 +62,7 @@ Fatal error:  The following symbols are used with multiple arities: SignedContra
 14	Either Smith, Jones or Anderson signed the contract.	SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)	Jones signed the contract.	SignedContract(jones, contract)	n	"Unexpected token: '⊕'.
 SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)
                       ^"
-15	Either Smith, Jones or Anderson signed the contract.	SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)	If Smith and Anderson did not sign the contract, Jones signed the contract.	all x. all y. all z. (Smith(x) & Anderson(y) & Jones(z) & not (SignedContract(x, y) & SignedContract(y, z)) -> SignedContract(z, x))	e	"Unexpected token: '⊕'.
+15	Either Smith, Jones or Anderson signed the contract.	SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)	If Smith and Anderson did not sign the contract, Jones signed the contract.	exists x. exists y. exists z. (Smith(x) & Anderson(y) & Jones(z) & not (SignedContract(x, y) & SignedContract(y, z)) & SignedContract(z, x))	e	"Unexpected token: '⊕'.
 SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)
                       ^"
 16	Exactly two lawyers and three accountants signed the contract.	exists x. exists y. exists z. (Lawyer(x) & Lawyer(y) & Accountant(z) & SignedContract(x, y, z))	Six lawyers signed the contract.	exists x. exists y. exists z. exists w. exists v. exists u. (Lawyer(x) & Lawyer(y) & Lawyer(z) & Lawyer(w) & Lawyer(v) & Lawyer(u) & SignedContract(x, y, z, w, v, u))	c	"(FATAL)
@@ -75,18 +75,18 @@ Fatal error:  The following symbols are used with multiple arities: SignedContra
 
 
 Fatal error:  The following symbols are used with multiple arities: SignedContract/3, SignedContract/6"
-18	All APCOM managers have company cars. ## Jones is an APCOM manager.	all x. (APCOMManager(x) -> HasCompanyCar(x)) ## all x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has a company car.	HasCompanyCar(jones)	e	"Unexpected token: '↔'.  Expected token ')'.
-all x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
-                        ^"
-19	All APCOM managers have company cars. ## Jones is an APCOM manager.	all x. (APCOMManager(x) -> HasCompanyCar(x)) ## all x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has more than one company car.	exists x. (Company(x) & Car(x) & Owns(x, Jones))	n	"Unexpected token: '↔'.  Expected token ')'.
-all x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
-                        ^"
+18	All APCOM managers have company cars. ## Jones is an APCOM manager.	exists x. (APCOMManager(x) & HasCompanyCar(x)) ## exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has a company car.	HasCompanyCar(jones)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
+                           ^"
+19	All APCOM managers have company cars. ## Jones is an APCOM manager.	exists x. (APCOMManager(x) & HasCompanyCar(x)) ## exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has more than one company car.	exists x. (Company(x) & Car(x) & Owns(x, Jones))	n	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
+                           ^"
 20	Smith signed one contract. ## Jones signed another contract.	exists x. (Contract(x) & SignedBy(x, Smith)) ## exists x. (Contract(x) & SignedBy(x, Jones))	Smith and Jones signed two contracts.	exists x. exists y. (Smith(x) & Jones(y) & Contract(z) & Signed(x, z) & Signed(y, z))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
-21	Smith signed two contracts. ## Jones also signed them.	exists x. exists y. (Smith(x) & Contract(y) & Signed(x, y)) ## all x. (Signed(x) -> (Jones(x) | Smith(x)))	Smith and Jones signed two contracts.	exists x. exists y. (Smith(x) & Jones(y) & Contract(z) & Signed(x, z) & Signed(y, z))	e	"(FATAL)
+21	Smith signed two contracts. ## Jones also signed them.	exists x. exists y. (Smith(x) & Contract(y) & Signed(x, y)) ## exists x. (Signed(x) & (Jones(x) | Smith(x)))	Smith and Jones signed two contracts.	exists x. exists y. (Smith(x) & Jones(y) & Contract(z) & Signed(x, z) & Signed(y, z))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Signed/1, Signed/2.
 
 
@@ -100,39 +100,39 @@ all mary. (Workstation(mary) -> Workstation(mary))
 24	Smith attended a meeting. ## She chaired it.	Attended(smith) & Meeting(smith) ## Chaired(she, it)	Smith chaired a meeting.	Chaired(smith) & Meeting(smith)	e	"'smith' is an illegal variable name.  Constants may not be quantified.
 all smith. (Meeting(smith) -> Meeting(smith))
     ^"
-25	Every committee has a chairman. ## He is appointed its members.	all x. (Committee(x) -> exists y. (Chairman(y) & ChairmanOf(y, x))) ## all x.all y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))	Every committee has a chairman appointed by members of the committee.	all x. (Committee(x) -> exists y. (Chairman(y) & AppointedByMembers(y, x)))	e	"Unexpected token: '↔'.  Expected token ')'.
-all x.all y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))
-                             ^"
-26	ITEL has sent most of the reports Smith needs. ## They are on her desk.	all x.all y. (ITEL(x) & Smith(y) -> SentReports(x, y)) ## exists x. (Desk(x) & On(x, her))	There are some reports from ITEL on Smith's desk.	exists x. (Report(x) & From(x, ITEL) & On(x, Smith))	e	"'her' is an illegal variable name.  Constants may not be quantified.
+25	Every committee has a chairman. ## He is appointed its members.	exists x. (Committee(x) & exists y. (Chairman(y) & ChairmanOf(y, x))) ## exists x.exists y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))	Every committee has a chairman appointed by members of the committee.	exists x. (Committee(x) & exists y. (Chairman(y) & AppointedByMembers(y, x)))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x.exists y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))
+                                   ^"
+26	ITEL has sent most of the reports Smith needs. ## They are on her desk.	exists x.exists y. (ITEL(x) & Smith(y) & SentReports(x, y)) ## exists x. (Desk(x) & On(x, her))	There are some reports from ITEL on Smith's desk.	exists x. (Report(x) & From(x, ITEL) & On(x, Smith))	e	"'her' is an illegal variable name.  Constants may not be quantified.
 all x. all her. (On(x, her) -> On(x, her))
            ^"
-27	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## all x. (Removed(x))	Two machines have been removed.	exists x. exists y. (Machine(x) & Machine(y) & Removed(x) & Removed(y))	e	"End of input found.  Expression expected.
+27	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Removed(x))	Two machines have been removed.	exists x. exists y. (Machine(x) & Machine(y) & Removed(x) & Removed(y))	e	"End of input found.  Expression expected.
 exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) &
                                                                                                                                                                                                                                                            ^"
-28	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## all x. (Removed(x))	Eight machines have been removed.	exists x. (Machine(x) & Removed(x)) & exists y. (Machine(y) & Removed(y)) & exists z. (Machine(z) & Removed(z)) & exists w. (Machine(w) & Removed(w)) & exists v. (Machine(v) & Removed(v)) & exists u. (Machine(u) & Removed(u)) & exists t. (Machine(t) &	n	"End of input found.  Expression expected.
+28	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Removed(x))	Eight machines have been removed.	exists x. (Machine(x) & Removed(x)) & exists y. (Machine(y) & Removed(y)) & exists z. (Machine(z) & Removed(z)) & exists w. (Machine(w) & Removed(w)) & exists v. (Machine(v) & Removed(v)) & exists u. (Machine(u) & Removed(u)) & exists t. (Machine(t) &	n	"End of input found.  Expression expected.
 exists x. (Machine(x) & Removed(x)) & exists y. (Machine(y) & Removed(y)) & exists z. (Machine(z) & Removed(z)) & exists w. (Machine(w) & Removed(w)) & exists v. (Machine(v) & Removed(v)) & exists u. (Machine(u) & Removed(u)) & exists t. (Machine(t) &
                                                                                                                                                                                                                                                            ^"
-29	Two out of ten machines are missing. ## They were all here yesterday.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## all x. (Person(x) -> exists y. (Yesterday(y) & Here(x, y)))	Ten machines were here yesterday.	exists x. (Machine(x) & Here(x, yest) & Machine(x) & Yesterday(yest))	e	"End of input found.  Expression expected.
+29	Two out of ten machines are missing. ## They were all here yesterday.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Person(x) & exists y. (Yesterday(y) & Here(x, y)))	Ten machines were here yesterday.	exists x. (Machine(x) & Here(x, yest) & Machine(x) & Yesterday(yest))	e	"End of input found.  Expression expected.
 exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) &
                                                                                                                                                                                                                                                            ^"
-30	John and his colleagues went to a meeting. ## They hated it.	all x.all y. (John(x) & Colleague(y) -> WentToMeeting(x, y)) ## all x. (Hated(x) ↔ (They(x) & Hated(x)))	John's colleagues hated the meeting.	all x. (Colleague(x) & Meeting(m) & Attended(x, m) -> Hated(x, m))	e	"Unexpected token: '↔'.  Expected token ')'.
-all x. (Hated(x) ↔ (They(x) & Hated(x)))
-                 ^"
-31	John and his colleagues went to a meeting. ## They hated it.	all x.all y. (John(x) & Colleague(y) -> WentToMeeting(x, y)) ## all x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	e	"Unexpected token: '↔'.  Expected token ')'.
-all x. (Hated(x) ↔ (They(x) & Hated(x)))
-                 ^"
-32	John and his colleagues went to a meeting. ## They hated it.	all x.all y. (John(x) & Colleague(y) -> WentToMeeting(x, y)) ## all x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	n	"Unexpected token: '↔'.  Expected token ')'.
-all x. (Hated(x) ↔ (They(x) & Hated(x)))
-                 ^"
-33	Each department has a dedicated line. ## They rent them from BT.	all x. (Department(x) -> HasDedicatedLine(x)) ## all x.all y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))	Every department rents a line from BT.	all x. (Department(x) -> RentsLineFromBT(x))	e	"Unexpected token: '↔'.  Expected token ')'.
-all x.all y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))
-                             ^"
-34	There are 100 companies. ## ICM is one of the companies and owns 150 computers. ## It does not have service contracts for any of its computers. ## Each of the other 99 companies owns one computer. ## They have service contracts for them.	exists x. (Company(x) & NumberOfCompanies(x, 100)) ## all x. (ICM(x) -> (Company(x) & OwnsComputers(x, 150))) ## all x. (Computer(x) -> not HasServiceContracts(x)) ## all x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 -> OwnsOneComputer(x)) ## all x. (Service(x) & Contract(x) -> Have(x))	Most companies that own a computer have a service contract for it.	all x. (Company(x) & Owns(x) & Computer(x) -> HasServiceContract(x))	e	"Unexpected token: '100'.  Expected token ')'.
-all x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 -> OwnsOneComputer(x))
-                            ^"
-35	Every report has a cover page. ## R-95-103 is a report. ## Smith signed the cover page.	all x. (Report(x) -> HasCoverPage(x)) ## all x. (Report(x) ↔ R_95_103(x)) ## SignedCoverPage(Smith)	Smith signed the cover page of R-95-103.	SignedCoverPage(smith, r95103)	e	"Unexpected token: '↔'.  Expected token ')'.
-all x. (Report(x) ↔ R_95_103(x))
-                  ^"
+30	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John's colleagues hated the meeting.	exists x. (Colleague(x) & Meeting(m) & Attended(x, m) & Hated(x, m))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+31	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+32	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	n	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+33	Each department has a dedicated line. ## They rent them from BT.	exists x. (Department(x) & HasDedicatedLine(x)) ## exists x.exists y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))	Every department rents a line from BT.	exists x. (Department(x) & RentsLineFromBT(x))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x.exists y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))
+                                   ^"
+34	There are 100 companies. ## ICM is one of the companies and owns 150 computers. ## It does not have service contracts for any of its computers. ## Each of the other 99 companies owns one computer. ## They have service contracts for them.	exists x. (Company(x) & NumberOfCompanies(x, 100)) ## exists x. (ICM(x) & (Company(x) & OwnsComputers(x, 150))) ## exists x. (Computer(x) & not HasServiceContracts(x)) ## exists x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 & OwnsOneComputer(x)) ## exists x. (Service(x) & Contract(x) & Have(x))	Most companies that own a computer have a service contract for it.	exists x. (Company(x) & Owns(x) & Computer(x) & HasServiceContract(x))	e	"Unexpected token: '100'.  Expected token ')'.
+exists x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 & OwnsOneComputer(x))
+                               ^"
+35	Every report has a cover page. ## R-95-103 is a report. ## Smith signed the cover page.	exists x. (Report(x) & HasCoverPage(x)) ## exists x. (Report(x) ↔ R_95_103(x)) ## SignedCoverPage(Smith)	Smith signed the cover page of R-95-103.	SignedCoverPage(smith, r95103)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Report(x) ↔ R_95_103(x))
+                     ^"
 36	John said Bill had hurt himself.	Said(john, Bill, hurt)	John said Bill had been hurt.	Said(john, bill, hurt)	e	"'john' is an illegal variable name.  Constants may not be quantified.
 all john. all Bill. all hurt. (Said(john, Bill, hurt) -> Said(john, Bill, hurt))
     ^"
@@ -150,28 +150,28 @@ all bill. (Bill(bill) -> Bill(bill))
 40	John spoke to Mary at four o'clock. ## So did Bill.	SpokeTo(john, mary, fourOclock) ## Did(bill) & Bill(bill)	Bill spoke to Mary at four o'clock.	exists x. exists y. exists z. (Bill(x) & Mary(y) & Four(z) & Oclock(z) & SpokenAt(x, y, z))	e	"'bill' is an illegal variable name.  Constants may not be quantified.
 all bill. (Bill(bill) -> Bill(bill))
     ^"
-41	John went to Paris by car, and Bill by train.	all x. all y. (John(x) & Paris(y) -> WentByCar(x, y)) & (Bill(x) & Train(y) -> WentByTrain(x, y))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+41	John went to Paris by car, and Bill by train.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Train(y) & WentByTrain(x, y))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
-42	John went to Paris by car, and Bill by train to Berlin.	all x.all y. (John(x) & Bill(y) -> (WentToParisByCar(x) & WentToBerlinByTrain(y)))	Bill went to Berlin by train.	WentTo(Bill, Berlin, Train)	e	"(FATAL)
+42	John went to Paris by car, and Bill by train to Berlin.	exists x.exists y. (John(x) & Bill(y) & (WentToParisByCar(x) & WentToBerlinByTrain(y)))	Bill went to Berlin by train.	WentTo(Bill, Berlin, Train)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
-43	John went to Paris by car, and Bill to Berlin.	all x. all y. (John(x) & Paris(y) -> WentByCar(x, y)) & (Bill(x) & Berlin(y) -> WentByCar(x, y))	Bill went to Berlin by car.	WentTo(Bill, Berlin, Car)	e	"(FATAL)
+43	John went to Paris by car, and Bill to Berlin.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Berlin(y) & WentByCar(x, y))	Bill went to Berlin by car.	WentTo(Bill, Berlin, Car)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0"
-44	John went to Paris by car. ## Bill by train.	WentToParisByCar(john) ## all x. (Train(x) -> Bill(x))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+44	John went to Paris by car. ## Bill by train.	WentToParisByCar(john) ## exists x. (Train(x) & Bill(x))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
 45	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	Bill owns a car.	Owns(bill) & Car(bill)	e	"'john' is an illegal variable name.  Constants may not be quantified.
-all john. (Car(john) -> Car(john))
+all john. (Owns(john) -> Owns(john))
     ^"
 46	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	There is a car that John and Bill own.	exists x. (Car(x) & OwnedBy(x, John) & OwnedBy(x, Bill))	n	"'john' is an illegal variable name.  Constants may not be quantified.
 all john. (Car(john) -> Car(john))
@@ -194,68 +194,68 @@ all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
 52	John owns a fast red car. ## Bill owns a slow one.	Owns(john, fastRedCar) ## exists x. (Person(x) & Slow(x) & One(x))	Bill owns a slow red car.	exists x. (Car(x) & Owns(bill, x) & Slow(x) & Red(x))	e	"'john' is an illegal variable name.  Constants may not be quantified.
 all john. all fastRedCar. (Owns(john, fastRedCar) -> Owns(john, fastRedCar))
     ^"
-53	Five men work part time. ## And forty five women.	exists x. exists y. exists z. exists w. exists v. (Man(x) & Man(y) & Man(z) & Man(w) & Man(v) & WorkPartTime(x) & WorkPartTime(y) & WorkPartTime(z) & WorkPartTime(w) & WorkPartTime(v)) ## all x. (Woman(x) & Age(x, 45))	Forty five women work part time.	exists x. (WorkPartTime(x) & Woman(x) & Age(x, 45))	e	"'45' is an illegal variable name.  Constants may not be quantified.
+53	Five men work part time. ## And forty five women.	exists x. exists y. exists z. exists w. exists v. (Man(x) & Man(y) & Man(z) & Man(w) & Man(v) & WorkPartTime(x) & WorkPartTime(y) & WorkPartTime(z) & WorkPartTime(w) & WorkPartTime(v)) ## exists x. (Woman(x) & Age(x, 45))	Forty five women work part time.	exists x. (WorkPartTime(x) & Woman(x) & Age(x, 45))	e	"'45' is an illegal variable name.  Constants may not be quantified.
 all x. all 45. (Age(x, 45) -> Age(x, 45))
            ^"
-54	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before Bill found Mary.	all x. all y. all z. (Person(x) & Person(y) & Person(z) & Found(x, z) & Found(y, z) -> FoundBefore(x, y))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+54	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before Bill found Mary.	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & Found(x, z) & Found(y, z) & FoundBefore(x, y))	e	"'John' is an illegal variable name.  Constants may not be quantified.
 all John. all Mary. (Found(John, Mary) -> Found(John, Mary))
     ^"
-55	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before John found Bill.	all x. all y. all z. (Person(x) & Person(y) & Person(z) & Found(x, y) & Found(x, z) -> FoundBefore(y, z))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+55	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before John found Bill.	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & Found(x, y) & Found(x, z) & FoundBefore(y, z))	e	"'John' is an illegal variable name.  Constants may not be quantified.
 all John. all Mary. (Found(John, Mary) -> Found(John, Mary))
     ^"
-56	John said Mary wrote a report, and Bill did too.	all x. all y. all z. (John(x) & Mary(y) & Bill(z) -> (Said(x, y) & Said(x, z)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	e	"(FATAL)
+56	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0"
-57	John said Mary wrote a report, and Bill did too.	all x. all y. all z. (John(x) & Mary(y) & Bill(z) -> (Said(x, y) & Said(x, z)))	John said Bill wrote a report.	Said(john, bill, wroteReport)	e	"(FATAL)
+57	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	John said Bill wrote a report.	Said(john, bill, wroteReport)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Said/2, Said/3.
 
 
 Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3"
-58	John said that Mary wrote a report, and that Bill did too.	all x. all y. all z. (John(x) & Mary(y) & Bill(z) -> (Said(x, y, Report) & Said(x, z, Report)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	n	"'Report' is an illegal variable name.  Constants may not be quantified.
+58	John said that Mary wrote a report, and that Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y, Report) & Said(x, z, Report)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	n	"'Report' is an illegal variable name.  Constants may not be quantified.
 all x. all y. all Report. (Said(x, y, Report) -> Said(x, y, Report))
                   ^"
-59	John wrote a report, and Bill said Peter did too.	all x. all y. all z. (John(x) & Report(y) & Bill(z) -> (Wrote(x, y) & Said(z, Peter, DidToo)))	Bill said Peter wrote a report.	Said(bill, peter, wroteReport)	e	"'Peter' is an illegal variable name.  Constants may not be quantified.
+59	John wrote a report, and Bill said Peter did too.	exists x. exists y. exists z. (John(x) & Report(y) & Bill(z) & (Wrote(x, y) & Said(z, Peter, DidToo)))	Bill said Peter wrote a report.	Said(bill, peter, wroteReport)	e	"'Peter' is an illegal variable name.  Constants may not be quantified.
 all z. all Peter. all DidToo. (Said(z, Peter, DidToo) -> Said(z, Peter, DidToo))
            ^"
-60	If John wrote a report, then Bill did too. ## John wrote a report.	all x.all y. (Wrote(x) & Report(x) & WroteReport(y) & Person(x) & Person(y) -> DidReport(x, y)) ## exists x. (Report(x) & Wrote(John, x))	Bill wrote a report.	exists x. (Report(x) & Wrote(bill, x))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+60	If John wrote a report, then Bill did too. ## John wrote a report.	exists x.exists y. (Wrote(x) & Report(x) & WroteReport(y) & Person(x) & Person(y) & DidReport(x, y)) ## exists x. (Report(x) & Wrote(John, x))	Bill wrote a report.	exists x. (Report(x) & Wrote(bill, x))	e	"'John' is an illegal variable name.  Constants may not be quantified.
 all John. all x. (Wrote(John, x) -> Wrote(John, x))
     ^"
 61	John wanted to buy a car, and he did.	WantedToBuyCar(john) & Bought(john) & Car(john)	John bought a car.	exists x. (Car(x) & BoughtBy(x, John))	e	"'john' is an illegal variable name.  Constants may not be quantified.
 all john. (Car(john) -> Car(john))
     ^"
-62	Smith represents his company and so does Jones.	all x.all y. (Smith(x) & Company(y) -> Represents(x, y)) & (Jones(x) & Company(y) -> Represents(x, y))	Jones represents Jones' company.	Represents(Jones, JonesCompany)	e	"(FATAL)
+62	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Jones' company.	Represents(Jones, JonesCompany)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0"
-63	Smith represents his company and so does Jones.	all x.all y. (Smith(x) & Company(y) -> Represents(x, y)) & (Jones(x) & Company(y) -> Represents(x, y))	Jones represents Smith's company.	Represents(Jones, Smith) & Represents(Jones, Company)	e	"(FATAL)
+63	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Smith's company.	Represents(Jones, Smith) & Represents(Jones, Company)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0"
-64	Smith represents his company and so does Jones.	all x.all y. (Smith(x) & Company(y) -> Represents(x, y)) & (Jones(x) & Company(y) -> Represents(x, y))	Smith represents Jones' company.	Represents(Smith, Jones)	n	"(FATAL)
+64	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Smith represents Jones' company.	Represents(Smith, Jones)	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
-65	John is a man and Mary is a woman. ## John represents his company and so does Mary.	all x. all y. (Man(x) & Woman(y) -> (John(x) & Mary(y))) ## all x.all y. (John(x) & Mary(y) -> (Represents(x) & Company(x) & RepresentsCompany(y)))	Mary represents John's company.	Represents(Mary, John) & Represents(Mary, Company)	e	"(FATAL)
+65	John is a man and Mary is a woman. ## John represents his company and so does Mary.	exists x. exists y. (Man(x) & Woman(y) & (John(x) & Mary(y))) ## exists x.exists y. (John(x) & Mary(y) & (Represents(x) & Company(x) & RepresentsCompany(y)))	Mary represents John's company.	Represents(Mary, John) & Represents(Mary, Company)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Represents/1, Represents/2, Company/1, Company/0, John/1, John/0, Mary/1, Mary/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Represents/1, Represents/2, Company/1, Company/0, John/1, John/0, Mary/1, Mary/0"
-66	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	all x.all y.all z. (Bill(x) & Frank(y) & Alan(z) -> (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	all x. all y. all z. all w. (Suggested(x, y, z) & Suggested(y, w) -> (Bill(x) & Frank(y) & Carl(z) & Alan(w)))	n	"(FATAL)
+66	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Suggested(y, w) & (Bill(x) & Frank(y) & Carl(z) & Alan(w)))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Suggested/2, Suggested/3.
 
 
 Fatal error:  The following symbols are used with multiple arities: Suggested/2, Suggested/3"
-67	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	all x.all y.all z. (Bill(x) & Frank(y) & Alan(z) -> (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	all x. all y. all z. all w. (Suggested(x, y, z) & Boss(y) & Bill(x) & Frank(y) -> Suggested(w, z, Alan) & Carl(w) & Boss(z))	n	"(FATAL)
+67	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Boss(y) & Bill(x) & Frank(y) & Suggested(w, z, Alan) & Carl(w) & Boss(z))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Alan/1, Alan/0"
-68	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	all x.all y.all z. (Bill(x) & Frank(y) & Alan(z) -> (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	all x. all y. all z. (Suggested(x, y, z) & Bill(x) & Frank(y) & Frank(z) & Boss(z) -> Suggested(Carl, Alan, AlanWife))	e	"(FATAL)
+68	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	exists x. exists y. exists z. (Suggested(x, y, z) & Bill(x) & Frank(y) & Frank(z) & Boss(z) & Suggested(Carl, Alan, AlanWife))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
 
 
@@ -266,23 +266,23 @@ all john. (Student(john) -> Student(john))
 70	Dumbo is a large animal.	Large(dumbo) & Animal(dumbo)	Dumbo is a small animal.	Small(dumbo) & Animal(dumbo)	c	"'dumbo' is an illegal variable name.  Constants may not be quantified.
 all dumbo. (Animal(dumbo) -> Animal(dumbo))
     ^"
-71	Mickey is a small animal. ## Dumbo is a large animal.	all x. (Animal(x) & Small(x) -> Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is smaller than Dumbo.	Smaller(Mickey, Dumbo)	e	"(FATAL)
+71	Mickey is a small animal. ## Dumbo is a large animal.	exists x. (Animal(x) & Small(x) & Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is smaller than Dumbo.	Smaller(Mickey, Dumbo)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Mickey/1, Mickey/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Mickey/1, Mickey/0"
-72	Mickey is a small animal. ## Dumbo is a large animal.	all x. (Animal(x) & Small(x) -> Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is larger than Dumbo.	Larger(Mickey, Dumbo)	c	"(FATAL)
+72	Mickey is a small animal. ## Dumbo is a large animal.	exists x. (Animal(x) & Small(x) & Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is larger than Dumbo.	Larger(Mickey, Dumbo)	c	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Mickey/1, Mickey/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Mickey/1, Mickey/0"
-73	All mice are small animals. ## Mickey is a large mouse.	all x. (Mouse(x) -> Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is a large animal.	Large(mickey) & Animal(mickey)	c	"'mickey' is an illegal variable name.  Constants may not be quantified.
+73	All mice are small animals. ## Mickey is a large mouse.	exists x. (Mouse(x) & Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is a large animal.	Large(mickey) & Animal(mickey)	c	"'mickey' is an illegal variable name.  Constants may not be quantified.
 all mickey. (Large(mickey) -> Large(mickey))
     ^"
-74	All elephants are large animals. ## Dumbo is a small elephant.	all x. (Elephant(x) -> Large(x) & Animal(x)) ## Small(dumbo) & Elephant(dumbo)	Dumbo is a small animal.	Small(dumbo) & Animal(dumbo)	c	"'dumbo' is an illegal variable name.  Constants may not be quantified.
-all dumbo. (Small(dumbo) -> Small(dumbo))
+74	All elephants are large animals. ## Dumbo is a small elephant.	exists x. (Elephant(x) & Large(x) & Animal(x)) ## Small(dumbo) & Elephant(dumbo)	Dumbo is a small animal.	Small(dumbo) & Animal(dumbo)	c	"'dumbo' is an illegal variable name.  Constants may not be quantified.
+all dumbo. (Elephant(dumbo) -> Animal(dumbo))
     ^"
-75	All mice are small animals. ## Mickey is a large mouse.	all x. (Mouse(x) -> Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is small.	all x. (Mouse(x) -> Small(x))	n	"'mickey' is an illegal variable name.  Constants may not be quantified.
+75	All mice are small animals. ## Mickey is a large mouse.	exists x. (Mouse(x) & Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is small.	exists x. (Mouse(x) & Small(x))	n	"'mickey' is an illegal variable name.  Constants may not be quantified.
 all mickey. (Mouse(mickey) -> Mouse(mickey))
     ^"
 76	John is a fatter politician than Bill.	Fatter(john, bill)	John is fatter than Bill.	Fatter(john, bill)	e	"'john' is an illegal variable name.  Constants may not be quantified.
@@ -303,13 +303,13 @@ all ITELXZ. (Fast(ITELXZ) -> Fast(ITELXZ))
 81	The PC-6082 is faster than the ITEL-XZ. ## The PC-6082 is fast.	Faster(PC_6082, ITEL_XZ) ## Fast(PC6082)	The ITEL-XZ is fast.	Fast(ITELXZ)	n	"'PC6082' is an illegal variable name.  Constants may not be quantified.
 all PC6082. (Fast(PC6082) -> Fast(PC6082))
     ^"
-82	The PC-6082 is as fast as the ITEL-XZ. ## The ITEL-XZ is fast.	all x.all y. (P(x) & C6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## Fast(ITELXZ)	The PC-6082 is fast.	Fast(PC6082)	e	"'ITELXZ' is an illegal variable name.  Constants may not be quantified.
+82	The PC-6082 is as fast as the ITEL-XZ. ## The ITEL-XZ is fast.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y)) ## Fast(ITELXZ)	The PC-6082 is fast.	Fast(PC6082)	e	"'ITELXZ' is an illegal variable name.  Constants may not be quantified.
 all ITELXZ. (Fast(ITELXZ) -> Fast(ITELXZ))
     ^"
-83	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is fast.	all x.all y. (P(x) & C6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## Fast(PC6082)	The ITEL-XZ is fast.	Fast(ITELXZ)	n	"'PC6082' is an illegal variable name.  Constants may not be quantified.
+83	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is fast.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y)) ## Fast(PC6082)	The ITEL-XZ is fast.	Fast(ITELXZ)	n	"'PC6082' is an illegal variable name.  Constants may not be quantified.
 all PC6082. (Fast(PC6082) -> Fast(PC6082))
     ^"
-84	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is slow.	all x.all y. (P(x) & C6082(x) & ITELXZ(y) -> AsFastAs(x, y)) ## all x. (P(x) & C6082(x) -> Slow(x))	The ITEL-XZ is fast.	Fast(ITELXZ)	c	"(FATAL)
+84	The PC-6082 is as fast as the ITEL-XZ. ## The PC-6082 is slow.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y)) ## exists x. (P(x) & C6082(x) & Slow(x))	The ITEL-XZ is fast.	Fast(ITELXZ)	c	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: ITELXZ/1, ITELXZ/0.
 
 
@@ -319,7 +319,7 @@ Fatal error:  The following symbols are used with multiple arities: ITELXZ/1, IT
 
 
 Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
-86	ITEL won more orders than APCOM did. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
+86	ITEL won more orders than APCOM did. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## exists x. (APCOM(x) & WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
 
 
@@ -329,12 +329,12 @@ Fatal error:  The following symbols are used with multiple arities: APCOM/1, APC
 
 
 Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
-88	ITEL won more orders than APCOM. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
+88	ITEL won more orders than APCOM. ## APCOM won ten orders.	MoreOrders(ITEL, APCOM) ## exists x. (APCOM(x) & WonTenOrders(x))	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
-89	ITEL won twice as many orders than APCOM. ## APCOM won ten orders.	WonOrders(ITEL, 2) & WonOrders(APCOM, 1) ## all x. (APCOM(x) -> WonTenOrders(x))	ITEL won twenty orders.	WonOrders(ITEL, 20)	e	"(FATAL)
+89	ITEL won twice as many orders than APCOM. ## APCOM won ten orders.	WonOrders(ITEL, 2) & WonOrders(APCOM, 1) ## exists x. (APCOM(x) & WonTenOrders(x))	ITEL won twenty orders.	WonOrders(ITEL, 20)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: APCOM/1, APCOM/0.
 
 
@@ -344,35 +344,35 @@ Fatal error:  The following symbols are used with multiple arities: APCOM/1, APC
 
 
 Fatal error:  The following symbols are used with multiple arities: APCOM/1, APCOM/0"
-91	ITEL sold 3000 more computers than APCOM. ## APCOM sold exactly 2500 computers.	Sold(ITEL, 3000, Computers) & Sold(APCOM, 0, Computers) ## all x. (APCOM(x) -> SoldExactly2500Computers(x))	ITEL sold 5500 computers.	Sold(ITEL, 5500, Computers)	e	"'ITEL' is an illegal variable name.  Constants may not be quantified.
+91	ITEL sold 3000 more computers than APCOM. ## APCOM sold exactly 2500 computers.	Sold(ITEL, 3000, Computers) & Sold(APCOM, 0, Computers) ## exists x. (APCOM(x) & SoldExactly2500Computers(x))	ITEL sold 5500 computers.	Sold(ITEL, 5500, Computers)	e	"'ITEL' is an illegal variable name.  Constants may not be quantified.
 all ITEL. all 3000. all Computers. (Sold(ITEL, 3000, Computers) -> Sold(ITEL, 3000, Computers))
     ^"
-92	The PC-6082 is faster than every ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanEveryITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+92	The PC-6082 is faster than every ITEL computer. ## The ITEL-ZX is an ITEL computer.	exists x. (PC_6082(x) & FasterThanEveryITEL(x)) ## exists x. (ITELZX(x) & ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
-93	The PC-6082 is faster than some ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	n	"(FATAL)
+93	The PC-6082 is faster than some ITEL computer. ## The ITEL-ZX is an ITEL computer.	exists x. (PC_6082(x) & FasterThanITEL(x)) ## exists x. (ITELZX(x) & ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
-94	The PC-6082 is faster than any ITEL computer. ## The ITEL-ZX is an ITEL computer.	all x. (PC_6082(x) -> FasterThanITEL(x)) ## all x. (ITELZX(x) -> ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+94	The PC-6082 is faster than any ITEL computer. ## The ITEL-ZX is an ITEL computer.	exists x. (PC_6082(x) & FasterThanITEL(x)) ## exists x. (ITELZX(x) & ITELComputer(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: PC_6082/1, PC_6082/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: PC_6082/1, PC_6082/0"
-95	The PC-6082 is faster than the ITEL-ZX and the ITEL-ZY.	all x. all y. all z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) -> Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+95	The PC-6082 is faster than the ITEL-ZX and the ITEL-ZY.	exists x. exists y. exists z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) & Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0"
-96	The PC-6082 is faster than the ITEL-ZX or the ITEL-ZY.	all x. all y. all z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) -> Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
+96	The PC-6082 is faster than the ITEL-ZX or the ITEL-ZY.	exists x. exists y. exists z. (PC_6082(x) & ITEL_ZX(y) & ITEL_ZY(z) & Faster(x, y, z))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Faster/3, Faster/2, ITEL_ZX/1, ITEL_ZX/0, PC_6082/1, PC_6082/0"
-97	ITEL has developed a new editor since 1992. ## It is now 1996.	all x. (Editor(x) & DevelopedBy(x, ITEL) -> Year(x, 1992)) ## Year(1996)	ITEL developed a new editor in 1993.	all x. (Editor(x) & DevelopedIn(x, 1993) -> ITEL(x))	n	"(FATAL)
+97	ITEL has developed a new editor since 1992. ## It is now 1996.	exists x. (Editor(x) & DevelopedBy(x, ITEL) & Year(x, 1992)) ## Year(1996)	ITEL developed a new editor in 1993.	exists x. (Editor(x) & DevelopedIn(x, 1993) & ITEL(x))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Year/1, Year/2, ITEL/1, ITEL/0.
 
 
@@ -380,7 +380,7 @@ Fatal error:  The following symbols are used with multiple arities: Year/1, Year
 98	ITEL has expanded since 1992. ## It is now 1996.	Expanded(ITEL, 1992) ## Year(1996)	ITEL expanded in 1993.	Expanded(ITEL, 1993)	n	"'ITEL' is an illegal variable name.  Constants may not be quantified.
 all ITEL. all 1992. (Expanded(ITEL, 1992) -> Expanded(ITEL, 1992))
     ^"
-99	Since 1992 ITEL has made a loss. ## It is now 1996.	all x. (ITEL(x) & Year(y) & Year(z) & Year(w) -> (MadeLoss(x, y, z, w)) & (Year(y) & Year(z) & Year(w) & MadeLoss(x, y, z, w))) ## Year(1996)	ITEL made a loss in 1993.	exists x. (ITEL(x) & MadeLoss(x, 1993))	e	"(FATAL)
+99	Since 1992 ITEL has made a loss. ## It is now 1996.	exists x. (ITEL(x) & Year(y) & Year(z) & Year(w) & (MadeLoss(x, y, z, w)) & (Year(y) & Year(z) & Year(w) & MadeLoss(x, y, z, w))) ## Year(1996)	ITEL made a loss in 1993.	exists x. (ITEL(x) & MadeLoss(x, 1993))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: MadeLoss/4, MadeLoss/2.
 
 
@@ -393,12 +393,12 @@ Fatal error:  The following symbols are used with multiple arities: Conference/1
 101	Smith left. ## Jones left. ## Smith left before Jones left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## LeftBefore(smith, jones)	Jones left after Smith left.	Left(jones) & Left(smith) & LeftAfter(smith, jones)	e	"'jones' is an illegal variable name.  Constants may not be quantified.
 all jones. (Left(jones) -> Left(jones))
     ^"
-102	Smith left. ## Jones left. ## Smith left after Jones left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## all x. all y. (Smith(x) & Jones(y) -> LeftAfter(x, y))	Jones left before Smith left.	LeftBefore(jones, smith)	e	"(FATAL)
+102	Smith left. ## Jones left. ## Smith left after Jones left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## exists x. exists y. (Smith(x) & Jones(y) & LeftAfter(x, y))	Jones left before Smith left.	LeftBefore(jones, smith)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0"
-103	Smith left. ## Jones left. ## Jones left before Smith left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## LeftBefore(jones, smith)	Smith left after Jones left.	all x. all y. (Smith(x) & Jones(y) -> LeftAfter(x, y))	e	"(FATAL)
+103	Smith left. ## Jones left. ## Jones left before Smith left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## LeftBefore(jones, smith)	Smith left after Jones left.	exists x. exists y. (Smith(x) & Jones(y) & LeftAfter(x, y))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0.
 
 
@@ -411,17 +411,17 @@ all Jones. all Contract. (Revised(Jones, Contract) -> Revised(Jones, Contract))
 
 
 Fatal error:  The following symbols are used with multiple arities: RevisedContract/2, RevisedContract/1, Revised/2, Revised/1"
-106	Smith swam. ## Jones swam. ## Smith swam before Jones swam.	exists x. (Swimmer(x) & Swam(x, smith)) ## Swam(jones) ## all x.all y. (Smith(x) & Jones(y) -> SwamBefore(x, y))	Jones swam after Smith swam.	all x. all y. (Jones(x) & Smith(y) -> SwamAfter(x, y))	n	"(FATAL)
+106	Smith swam. ## Jones swam. ## Smith swam before Jones swam.	exists x. (Swimmer(x) & Swam(x, smith)) ## Swam(jones) ## exists x.exists y. (Smith(x) & Jones(y) & SwamBefore(x, y))	Jones swam after Smith swam.	exists x. exists y. (Jones(x) & Smith(y) & SwamAfter(x, y))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Swam/1, Swam/2.
 
 
 Fatal error:  The following symbols are used with multiple arities: Swam/1, Swam/2"
-107	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report before Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## all x.all y. (Smith(x) & Report(x) & Jones(y) & Report(y) -> exists z. (Writing(z) & Before(z, x) & Writing(z, y)))	Jones was writing a report after Smith was writing a report.	WasWritingReport(jones) & WasWritingReport(smith)	n	"(FATAL)
+107	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report before Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## exists x.exists y. (Smith(x) & Report(x) & Jones(y) & Report(y) & exists z. (Writing(z) & Before(z, x) & Writing(z, y)))	Jones was writing a report after Smith was writing a report.	WasWritingReport(jones) & WasWritingReport(smith)	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Writing/2, Writing/1, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Writing/2, Writing/1, Smith/1, Smith/0"
-108	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report after Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## Writing(Smith) & Report(Smith) & WritingReport(Jones)	Jones was writing a report before Smith was writing a report.	all x.all y. (Writing(x) & Report(x) & WritingReport(y) -> (WritingReportBefore(x, y)))	n	"'Smith' is an illegal variable name.  Constants may not be quantified.
+108	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report after Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## Writing(Smith) & Report(Smith) & WritingReport(Jones)	Jones was writing a report before Smith was writing a report.	exists x.exists y. (Writing(x) & Report(x) & WritingReport(y) & (WritingReportBefore(x, y)))	n	"'Smith' is an illegal variable name.  Constants may not be quantified.
 all Smith. (Writing(Smith) -> Writing(Smith))
     ^"
 109	Smith left the meeting before he lost his temper.	Left(smith) & Meeting(smith) & not Lost(smith) & Temper(smith)	Smith lost his temper.	Lost(Smith) & Temper(Smith)	n	"'smith' is an illegal variable name.  Constants may not be quantified.
@@ -435,12 +435,12 @@ exists x. (DiscoveredSpecies(x) & Year(y) & Year(z) & Year(w) & Year(x) & Year(x
 
 
 Fatal error:  The following symbols are used with multiple arities: WroteReport/3, WroteReport/2"
-112	In two years Smith owned a chain of businesses.	all x. (TwoYearsAgo(x) -> OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business for more than two years.	all x. (Smith(x) -> OwnedChainOfBusiness(x, moreThanTwoYears))	n	"(FATAL)
+112	In two years Smith owned a chain of businesses.	exists x. (TwoYearsAgo(x) & OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business for more than two years.	exists x. (Smith(x) & OwnedChainOfBusiness(x, moreThanTwoYears))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Smith/1, Smith/0"
-113	In two years Smith owned a chain of businesses.	all x. (TwoYearsAgo(x) -> OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business.	exists x. exists y. (Smith(x) & Business(y) & Owns(x, y))	e	"(FATAL)
+113	In two years Smith owned a chain of businesses.	exists x. (TwoYearsAgo(x) & OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business.	exists x. exists y. (Smith(x) & Business(y) & Owns(x, y))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Smith/1, Smith/0.
 
 
@@ -455,27 +455,27 @@ Fatal error:  The following symbols are used with multiple arities: LivedIn/3, L
 
 
 Fatal error:  The following symbols are used with multiple arities: WroteReport/3, WroteReport/2"
-116	Smith discovered new species for two years.	DiscoveredNewSpecies(smith, years)	Smith discovered new species.	all x. (DiscoveredNewSpecies(x) -> Smith(x))	e	"(FATAL)
+116	Smith discovered new species for two years.	DiscoveredNewSpecies(smith, years)	Smith discovered new species.	exists x. (DiscoveredNewSpecies(x) & Smith(x))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: DiscoveredNewSpecies/2, DiscoveredNewSpecies/1.
 
 
 Fatal error:  The following symbols are used with multiple arities: DiscoveredNewSpecies/2, DiscoveredNewSpecies/1"
-117	In 1994 ITEL sent a progress report every month.	all x. (ITEL(x) & Year(y) & Month(z) & Progress(r) & Report(r) -> SentProgressReport(x, y, z, r))	ITEL sent a progress report in July 1994.	SentProgressReport(ITEL, July1994)	e	"(FATAL)
+117	In 1994 ITEL sent a progress report every month.	exists x. (ITEL(x) & Year(y) & Month(z) & Progress(r) & Report(r) & SentProgressReport(x, y, z, r))	ITEL sent a progress report in July 1994.	SentProgressReport(ITEL, July1994)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: SentProgressReport/4, SentProgressReport/2, ITEL/1, ITEL/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: SentProgressReport/4, SentProgressReport/2, ITEL/1, ITEL/0"
-118	Smith wrote to a representative every week.	all x.all y. (Smith(x) & Representative(y) -> WritesTo(x, y, Weekly))	There is a representative that Smith wrote to every week.	exists x. (Representative(x) & WritesTo(x, Smith) & Weekly(x))	n	"(FATAL)
+118	Smith wrote to a representative every week.	exists x.exists y. (Smith(x) & Representative(y) & WritesTo(x, y, Weekly))	There is a representative that Smith wrote to every week.	exists x. (Representative(x) & WritesTo(x, Smith) & Weekly(x))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: WritesTo/3, WritesTo/2, Weekly/1, Weekly/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: WritesTo/3, WritesTo/2, Weekly/1, Weekly/0, Smith/1, Smith/0"
-119	ITEL always delivers reports late. ## In 1993 ITEL delivered reports.	all x. (ITEL(x) -> DeliversReportsLate(x)) ## all x. (ITEL(x) & Year(y) & Year(z) -> DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	all x. (ITEL(x) & DeliveredReports(x, 1993) -> Late(x, 1993))	e	"(FATAL)
+119	ITEL always delivers reports late. ## In 1993 ITEL delivered reports.	exists x. (ITEL(x) & DeliversReportsLate(x)) ## exists x. (ITEL(x) & Year(y) & Year(z) & DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	exists x. (ITEL(x) & DeliveredReports(x, 1993) & Late(x, 1993))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2.
 
 
 Fatal error:  The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2"
-120	ITEL never delivers reports late. ## In 1993 ITEL delivered reports.	all x. (ITEL(x) -> not DeliversReportsLate(x)) ## all x. (ITEL(x) & Year(y) & Year(z) -> DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	all x. (ITEL(x) & DeliveredReports(x, 1993) -> Late(x, 1993))	c	"(FATAL)
+120	ITEL never delivers reports late. ## In 1993 ITEL delivered reports.	exists x. (ITEL(x) & not DeliversReportsLate(x)) ## exists x. (ITEL(x) & Year(y) & Year(z) & DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	exists x. (ITEL(x) & DeliveredReports(x, 1993) & Late(x, 1993))	c	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2.
 
 
@@ -485,17 +485,17 @@ Fatal error:  The following symbols are used with multiple arities: DeliveredRep
 
 
 Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0"
-122	Every representative has read this report. ## No two representatives have read it at the same time. ## No representative took less than half a day to read the report. ## There are sixteen representatives.	all x. (Representative(x) -> Read(x) & Report(x)) ## not exists x.exists y. (Representative(x) & Representative(y) & Read(x, z) & Read(y, z) & Same(z) & Time(z)) ## all x. (Representative(x) & TookLessThanHalfADay(x) -> not Read(x) & Report(x)) ## exists x. (Representative(x) & NumberOfRepresentatives(x, 16))	It took the representatives more than a week to read the report.	all x. (Representative(x) & Read(x) & Report(x) -> MoreThanWeek(x))	e	"(FATAL)
+122	Every representative has read this report. ## No two representatives have read it at the same time. ## No representative took less than half a day to read the report. ## There are sixteen representatives.	exists x. (Representative(x) & Read(x) & Report(x)) ## not exists x.exists y. (Representative(x) & Representative(y) & Read(x, z) & Read(y, z) & Same(z) & Time(z)) ## exists x. (Representative(x) & TookLessThanHalfADay(x) & not Read(x) & Report(x)) ## exists x. (Representative(x) & NumberOfRepresentatives(x, 16))	It took the representatives more than a week to read the report.	exists x. (Representative(x) & Read(x) & Report(x) & MoreThanWeek(x))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Read/2, Read/1.
 
 
 Fatal error:  The following symbols are used with multiple arities: Read/2, Read/1"
-123	Before APCOM bought its present office building, it had been paying mortgage interest on the previous one for 8 years. ## Since APCOM bought its present office building it has been paying mortgage interest on it for more than 10 years.	all x. (APCOM(x) & PresentOfficeBuilding(x) -> (exists y. (Mortgage(y) & Interest(y) & PreviousOfficeBuilding(y) & PaidFor8Years(x, y)))) ## all x. (APCOM(x) & BoughtOfficeBuilding(x) -> (PayingMortgageInterest(x) & MoreThan10Years(x)))	APCOM has been paying mortgage interest for a total of 15 years or more.	all x. (APCOM(x) -> (PayingMortgageInterest(x) & Years(y) & Total(y) & Years(y) & GreaterThan(y, 15) & PayingMortgageInterest(x, y)))	e	"(FATAL)
+123	Before APCOM bought its present office building, it had been paying mortgage interest on the previous one for 8 years. ## Since APCOM bought its present office building it has been paying mortgage interest on it for more than 10 years.	exists x. (APCOM(x) & PresentOfficeBuilding(x) & (exists y. (Mortgage(y) & Interest(y) & PreviousOfficeBuilding(y) & PaidFor8Years(x, y)))) ## exists x. (APCOM(x) & BoughtOfficeBuilding(x) & (PayingMortgageInterest(x) & MoreThan10Years(x)))	APCOM has been paying mortgage interest for a total of 15 years or more.	exists x. (APCOM(x) & (PayingMortgageInterest(x) & Years(y) & Total(y) & Years(y) & GreaterThan(y, 15) & PayingMortgageInterest(x, y)))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: PayingMortgageInterest/2, PayingMortgageInterest/1.
 
 
 Fatal error:  The following symbols are used with multiple arities: PayingMortgageInterest/2, PayingMortgageInterest/1"
-124	Smith has been to Florence twice in the past. ## Smith will go to Florence twice in the coming year.	exists x. (Smith(x) & HasBeenToFlorenceTwice(x)) ## all x. (Smith(x) -> (GoesToFlorenceTwice(x) & Year(y) & Coming(y) & Year(y)))	Two years from now Smith will have been to Florence at least four times.	TwoYearsFromNow(Smith) & TravelledTo(Smith, Florence) & NumberOfTimes(Smith, Florence, ≥4)	e	'utf-8' codec can't decode byte 0xe2 in position 794: invalid continuation byte
+124	Smith has been to Florence twice in the past. ## Smith will go to Florence twice in the coming year.	exists x. (Smith(x) & HasBeenToFlorenceTwice(x)) ## exists x. (Smith(x) & (GoesToFlorenceTwice(x) & Year(y) & Coming(y) & Year(y)))	Two years from now Smith will have been to Florence at least four times.	TwoYearsFromNow(Smith) & TravelledTo(Smith, Florence) & NumberOfTimes(Smith, Florence, ≥4)	e	'utf-8' codec can't decode byte 0xe2 in position 796: invalid continuation byte
 125	ITEL won the contract from APCOM in 1993.	WonContract(ITEL, APCOM, 1993)	ITEL won a contract in 1993.	WonContract(ITEL, 1993)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: WonContract/3, WonContract/2.
 
@@ -509,31 +509,31 @@ all ITEL. all APCOM. all 1988. (Owned(ITEL, APCOM, 1988) -> Owned(ITEL, APCOM, 1
 
 
 Fatal error:  The following symbols are used with multiple arities: WonContract/2, WonContract/0"
-128	Smith saw Jones sign the contract. ## If Jones signed the contract, his heart was beating.	Saw(Smith, Jones, Contract) ## all x. (Signed(x) & Contract(x) -> Beating(x) & Heart(x))	Smith saw Jones' heart beat.	all x.all y. (Smith(x) & Jones(y) -> SawHeartBeat(x, y))	n	"(FATAL)
+128	Smith saw Jones sign the contract. ## If Jones signed the contract, his heart was beating.	Saw(Smith, Jones, Contract) ## exists x. (Signed(x) & Contract(x) & Beating(x) & Heart(x))	Smith saw Jones' heart beat.	exists x.exists y. (Smith(x) & Jones(y) & SawHeartBeat(x, y))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Contract/1, Contract/0, Jones/1, Jones/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Contract/1, Contract/0, Jones/1, Jones/0, Smith/1, Smith/0"
-129	Smith saw Jones sign the contract. ## When Jones signed the contract, his heart was beating.	Saw(Smith, Jones, Contract) ## all x. (SignedContract(x, jones) -> Heart(jones) & Beating(jones))	Smith saw Jones' heart beat.	all x.all y. (Smith(x) & Jones(y) -> SawHeartBeat(x, y))	n	"(FATAL)
+129	Smith saw Jones sign the contract. ## When Jones signed the contract, his heart was beating.	Saw(Smith, Jones, Contract) ## exists x. (SignedContract(x, jones) & Heart(jones) & Beating(jones))	Smith saw Jones' heart beat.	exists x.exists y. (Smith(x) & Jones(y) & SawHeartBeat(x, y))	n	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
-130	Smith saw Jones sign the contract. ## Jones is the chairman of ITEL.	Saw(Smith, Jones, Contract) ## Chairman(Jones, ITEL)	Smith saw the chairman of ITEL sign the contract.	all x.all y. (Smith(x) & ChairmanOfITEL(y) -> SawSignContract(x, y))	e	"(FATAL)
+130	Smith saw Jones sign the contract. ## Jones is the chairman of ITEL.	Saw(Smith, Jones, Contract) ## Chairman(Jones, ITEL)	Smith saw the chairman of ITEL sign the contract.	exists x.exists y. (Smith(x) & ChairmanOfITEL(y) & SawSignContract(x, y))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Smith/1, Smith/0"
-131	Helen saw the chairman of the department answer the phone. ## The chairman of the department is a person.	all x.all y. (Helen(x) & ChairmanOfDepartment(y) -> SawAnswerPhone(x, y)) ## all x. (Chairman(x) -> Person(x))	There is someone whom Helen saw answer the phone.	exists x. (Person(x) & SeenAnswerPhone(x, Helen))	e	"(FATAL)
+131	Helen saw the chairman of the department answer the phone. ## The chairman of the department is a person.	exists x.exists y. (Helen(x) & ChairmanOfDepartment(y) & SawAnswerPhone(x, y)) ## exists x. (Chairman(x) & Person(x))	There is someone whom Helen saw answer the phone.	exists x. (Person(x) & SeenAnswerPhone(x, Helen))	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Helen/1, Helen/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Helen/1, Helen/0"
-132	Smith saw Jones sign the contract and his secretary make a copy.	all x. all y. all z. (Smith(x) & Jones(y) & Contract(z) -> (Saw(x, y, z) & Secretary(x, z)))	Smith saw Jones sign the contract.	Saw(Smith, Jones, Contract)	e	"(FATAL)
+132	Smith saw Jones sign the contract and his secretary make a copy.	exists x. exists y. exists z. (Smith(x) & Jones(y) & Contract(z) & (Saw(x, y, z) & Secretary(x, z)))	Smith saw Jones sign the contract.	Saw(Smith, Jones, Contract)	e	"(FATAL)
 %%ERROR: The following symbols are used with multiple arities: Contract/1, Contract/0, Jones/1, Jones/0, Smith/1, Smith/0.
 
 
 Fatal error:  The following symbols are used with multiple arities: Contract/1, Contract/0, Jones/1, Jones/0, Smith/1, Smith/0"
-133	Smith saw Jones sign the contract or cross out the crucial clause.	all x.all y.all z. (Smith(x) & Jones(y) & Contract(z) -> (SawSign(x, y, z) | CrossedOutCrucialClause(x, y, z)))	Smith either saw Jones sign the contract or saw Jones cross out the crucial clause.	(SawJonesSignContract(smith) ⊕ SawJonesCrossOutClause(smith))	e	"Unexpected token: '⊕'.  Expected token ')'.
+133	Smith saw Jones sign the contract or cross out the crucial clause.	exists x.exists y.exists z. (Smith(x) & Jones(y) & Contract(z) & (SawSign(x, y, z) | CrossedOutCrucialClause(x, y, z)))	Smith either saw Jones sign the contract or saw Jones cross out the crucial clause.	(SawJonesSignContract(smith) ⊕ SawJonesCrossOutClause(smith))	e	"Unexpected token: '⊕'.  Expected token ')'.
 (SawJonesSignContract(smith) ⊕ SawJonesCrossOutClause(smith))
                              ^"

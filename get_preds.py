@@ -133,10 +133,8 @@ elif re.search(r'fracas',dataset_name):
     # set modification type
     if modification_id == "none": 
         dictionary_path = "dictionaries/fracas/full_splitted_prems_fracas_dict.json"
-    elif modification_id == "split_adj":
-        dictionary_path = "mod_dictionaries/[split_adj]full_splitted_prems_fracas_dict.json"
     else:
-        raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
+        dictionary_path = f"mod_dictionaries/[{modification_id}]full_splitted_prems_fracas_dict.json"
     #set lexical knowledge 
     if lexical_knowledge == "True":
         use_lk = True
@@ -151,14 +149,11 @@ elif dataset_name == "syllogisms":
     dataset_name = f"syllogisms-{pred_size}-pred"
     dataset_path = f"datasets/syllogisms/syllogisms-{pred_size}-pred.csv"
     # set modification type
-    if modification_id == "none": 
-        dictionary_path = f"dictionaries/syllogisms/syllogism-{pred_size}-pred-dict.json"
-    elif modification_id == "e_i2c" and pred_size == str(3):
-        dictionary_path = f"mod_dictionaries/[e_i2c]full_syllogisms_3_dictionary.json"
-    elif modification_id == "split_adj" and pred_size == str(3):
-        dictionary_path = f"mod_dictionaries/[split_adj]syllogism-3-pred-dict.json"
-    else:
-        raise Exception(f"There are no modified dictionaries for the {dataset_name} data set")
+    if pred_size == str(3):
+        if modification_id == "none":
+            dictionary_path = f"dictionaries/syllogisms/syllogism-{pred_size}-pred-dict.json"
+        else:
+            dictionary_path = f"mod_dictionaries/[{modification_id}]syllogism-3-pred-dict.json"
     #set lexical knowledge 
     if lexical_knowledge == "True":
         use_lk = True

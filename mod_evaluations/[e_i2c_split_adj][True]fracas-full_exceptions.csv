@@ -171,7 +171,7 @@ Fatal error:  The following symbols are used with multiple arities: Berlin/1, Be
 
 Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
 45	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	Bill owns a car.	Owns(bill) & Car(bill)	e	"'john' is an illegal variable name.  Constants may not be quantified.
-all john. (Car(john) -> Car(john))
+all john. (Owns(john) -> Owns(john))
     ^"
 46	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	There is a car that John and Bill own.	exists x. (Car(x) & OwnedBy(x, John) & OwnedBy(x, Bill))	n	"'john' is an illegal variable name.  Constants may not be quantified.
 all john. (Car(john) -> Car(john))
@@ -425,7 +425,7 @@ Fatal error:  The following symbols are used with multiple arities: Writing/2, W
 all Smith. (Writing(Smith) -> Writing(Smith))
     ^"
 109	Smith left the meeting before he lost his temper.	Left(smith) & Meeting(smith) & not Lost(smith) & Temper(smith)	Smith lost his temper.	Lost(Smith) & Temper(Smith)	n	"'smith' is an illegal variable name.  Constants may not be quantified.
-all smith. (Temper(smith) -> Temper(smith))
+all smith. (Lost(smith) -> Lost(smith))
     ^"
 110	Smith discovered a new species in 1991.	exists x. (DiscoveredNewSpecies(x) & Year(x, 1991))	Smith discovered a new species in 1992.	exists x. (DiscoveredSpecies(x) & Year(y) & Year(z) & Year(w) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(	n	"End of input found.  Expression expected.
 exists x. (DiscoveredSpecies(x) & Year(y) & Year(z) & Year(w) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(
