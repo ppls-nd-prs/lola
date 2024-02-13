@@ -1,0 +1,38 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	John is a former university student.	Former(john) & Student(john)	John is a university student.	University(john) & Student(john)	c	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. (Student(john) -> Student(john))
+    ^"
+1	Dumbo is a large animal.	Large(dumbo) & Animal(dumbo)	Dumbo is a small animal.	Small(dumbo) & Animal(dumbo)	c	"'dumbo' is an illegal variable name.  Constants may not be quantified.
+all dumbo. (Animal(dumbo) -> Animal(dumbo))
+    ^"
+2	Mickey is a small animal. ## Dumbo is a large animal.	exists x. (Animal(x) & Small(x) & Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is smaller than Dumbo.	Smaller(Mickey, Dumbo)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Mickey/1, Mickey/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Mickey/1, Mickey/0"
+3	Mickey is a small animal. ## Dumbo is a large animal.	exists x. (Animal(x) & Small(x) & Mickey(x)) ## Large(dumbo) & Animal(dumbo)	Mickey is larger than Dumbo.	Larger(Mickey, Dumbo)	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Mickey/1, Mickey/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Mickey/1, Mickey/0"
+4	All mice are small animals. ## Mickey is a large mouse.	exists x. (Mouse(x) & Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is a large animal.	Large(mickey) & Animal(mickey)	c	"'mickey' is an illegal variable name.  Constants may not be quantified.
+all mickey. (Large(mickey) -> Large(mickey))
+    ^"
+5	All elephants are large animals. ## Dumbo is a small elephant.	exists x. (Elephant(x) & Large(x) & Animal(x)) ## Small(dumbo) & Elephant(dumbo)	Dumbo is a small animal.	Small(dumbo) & Animal(dumbo)	c	"'dumbo' is an illegal variable name.  Constants may not be quantified.
+all dumbo. (Small(dumbo) -> Small(dumbo))
+    ^"
+6	All mice are small animals. ## Mickey is a large mouse.	exists x. (Mouse(x) & Small(x) & Animal(x)) ## Large(mickey) & Mouse(mickey)	Mickey is small.	exists x. (Mouse(x) & Small(x))	n	"'mickey' is an illegal variable name.  Constants may not be quantified.
+all mickey. (Mouse(mickey) -> Mouse(mickey))
+    ^"
+7	John is a fatter politician than Bill.	Fatter(john, bill)	John is fatter than Bill.	Fatter(john, bill)	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all bill. (Fatter(john, bill) -> Fatter(john, bill))
+    ^"
+8	John is a cleverer politician than Bill.	Cleverer(John, Bill)	John is cleverer than Bill.	Cleverer(john, bill)	n	"'John' is an illegal variable name.  Constants may not be quantified.
+all John. all Bill. (Cleverer(John, Bill) -> Cleverer(John, Bill))
+    ^"
+9	Kim is a clever person.	Clever(Kim)	Kim is clever.	Clever(kim)	e	"'Kim' is an illegal variable name.  Constants may not be quantified.
+all Kim. (Clever(Kim) -> Clever(Kim))
+    ^"
+10	Kim is a clever politician.	Clever(Kim)	Kim is clever.	Clever(kim)	n	"'Kim' is an illegal variable name.  Constants may not be quantified.
+all Kim. (Clever(Kim) -> Clever(Kim))
+    ^"

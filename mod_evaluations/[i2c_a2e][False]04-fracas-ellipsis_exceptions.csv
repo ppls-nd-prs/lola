@@ -1,0 +1,71 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	John went to Paris by car, and Bill by train.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Train(y) & WentByTrain(x, y))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+1	John went to Paris by car, and Bill by train to Berlin.	exists x.exists y. (John(x) & Bill(y) & (WentToParisByCar(x) & WentToBerlinByTrain(y)))	Bill went to Berlin by train.	WentTo(Bill, Berlin, Train)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+2	John went to Paris by car, and Bill to Berlin.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Berlin(y) & WentByCar(x, y))	Bill went to Berlin by car.	WentTo(Bill, Berlin, Car)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0"
+3	John went to Paris by car. ## Bill by train.	WentToParisByCar(john) ## exists x. (Train(x) & Bill(x))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+4	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0"
+5	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	John said Bill wrote a report.	Said(john, bill, wroteReport)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Said/2, Said/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3"
+6	John said that Mary wrote a report, and that Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y, Report) & Said(x, z, Report)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Mary/1, Mary/0, Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Mary/1, Mary/0, Bill/1, Bill/0"
+7	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Jones' company.	Represents(Jones, JonesCompany)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0"
+8	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Smith's company.	Represents(Jones, Smith) & Represents(Jones, Company)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0"
+9	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Smith represents Jones' company.	Represents(Smith, Jones)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
+10	John is a man and Mary is a woman. ## John represents his company and so does Mary.	exists x. exists y. (Man(x) & Woman(y) & (John(x) & Mary(y))) ## exists x.exists y. (John(x) & Mary(y) & (RepresentsCompany(x) & RepresentsCompany(y)))	Mary represents John's company.	Represents(Mary, John) & Represents(Mary, Company)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: John/1, John/0, Mary/1, Mary/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: John/1, John/0, Mary/1, Mary/0"
+11	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Suggested(y, w) & (Bill(x) & Frank(y) & Carl(z) & Alan(w)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Suggested/2, Suggested/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Suggested/2, Suggested/3"
+12	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Boss(y) & Bill(x) & Frank(y) & Suggested(w, z, Alan) & Carl(w) & Boss(z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Alan/1, Alan/0"
+13	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	exists x. exists y. exists z. (Suggested(x, y, z) & Bill(x) & Frank(y) & FrankBoss(z) & Suggested(Carl, Alan, AlanWife))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Alan/1, Alan/0"

@@ -1,0 +1,42 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	Every committee has a chairman. ## He is appointed its members.	exists x. (Committee(x) & exists y. (Chairman(y) & ChairmanOf(y, x))) ## exists x.exists y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))	Every committee has a chairman appointed by members of the committee.	exists x. (Committee(x) & exists y. (Chairman(y) & AppointedByMembers(y, x)))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x.exists y. (Appoints(x, y) ↔ (Member(y) & AppointedBy(y, x)))
+                                   ^"
+1	ITEL has sent most of the reports Smith needs. ## They are on her desk.	exists x.exists y. (ITEL(x) & Smith(y) & SentReports(x, y)) ## exists x. (Desk(x) & On(x, her))	There are some reports from ITEL on Smith's desk.	exists x. (Report(x) & From(x, ITEL) & On(x, Smith))	e	"'her' is an illegal variable name.  Constants may not be quantified.
+all x. all her. (On(x, her) -> On(x, her))
+           ^"
+2	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Removed(x))	Two machines have been removed.	exists x. exists y. (Machine(x) & Machine(y) & Removed(x) & Removed(y))	e	"End of input found.  Expression expected.
+exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) &
+                                                                                                                                                                                                                                                           ^"
+3	Two out of ten machines are missing. ## They have been removed.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Removed(x))	Eight machines have been removed.	exists x. (Machine(x) & Removed(x)) & exists y. (Machine(y) & Removed(y)) & exists z. (Machine(z) & Removed(z)) & exists w. (Machine(w) & Removed(w)) & exists v. (Machine(v) & Removed(v)) & exists u. (Machine(u) & Removed(u)) & exists t. (Machine(t) &	n	"End of input found.  Expression expected.
+exists x. (Machine(x) & Removed(x)) & exists y. (Machine(y) & Removed(y)) & exists z. (Machine(z) & Removed(z)) & exists w. (Machine(w) & Removed(w)) & exists v. (Machine(v) & Removed(v)) & exists u. (Machine(u) & Removed(u)) & exists t. (Machine(t) &
+                                                                                                                                                                                                                                                           ^"
+4	Two out of ten machines are missing. ## They were all here yesterday.	exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) & ## exists x. (Person(x) & exists y. (Yesterday(y) & Here(x, y)))	Ten machines were here yesterday.	exists x. (Machine(x) & Here(x, yest) & Machine(x) & Yesterday(yest))	e	"End of input found.  Expression expected.
+exists x. (Machine(x) & Missing(x)) & exists y. (Machine(y) & Missing(y)) & exists z. (Machine(z) & Missing(z)) & exists w. (Machine(w) & Missing(w)) & exists v. (Machine(v) & Missing(v)) & exists u. (Machine(u) & Missing(u)) & exists t. (Machine(t) &
+                                                                                                                                                                                                                                                           ^"
+5	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John's colleagues hated the meeting.	exists x. (Colleague(x) & Meeting(m) & Attended(x, m) & Hated(x, m))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+6	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+7	John and his colleagues went to a meeting. ## They hated it.	exists x.exists y. (John(x) & Colleague(y) & WentToMeeting(x, y)) ## exists x. (Hated(x) ↔ (They(x) & Hated(x)))	John hated the meeting.	Hated(john, meeting)	n	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Hated(x) ↔ (They(x) & Hated(x)))
+                    ^"
+8	Each department has a dedicated line. ## They rent them from BT.	exists x. (Department(x) & HasDedicatedLine(x)) ## exists x.exists y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))	Every department rents a line from BT.	exists x. (Department(x) & RentsLineFromBT(x))	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x.exists y. (RentFrom(x, y) ↔ (Rent(x, y) & From(y, BT)))
+                                   ^"
+9	There are 100 companies. ## ICM is one of the companies and owns 150 computers. ## It does not have service contracts for any of its computers. ## Each of the other 99 companies owns one computer. ## They have service contracts for them.	exists x. (Company(x) & NumberOfCompanies(x, 100)) ## exists x. (ICM(x) & (Company(x) & OwnsComputers(x, 150))) ## exists x. (Computer(x) & not HasServiceContracts(x)) ## exists x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 & OwnsOneComputer(x)) ## exists x. (ServiceContract(x) & Have(x))	Most companies that own a computer have a service contract for it.	exists x. (Company(x) & OwnsComputer(x) & HasServiceContract(x))	e	"Unexpected token: '100'.  Expected token ')'.
+exists x. (OtherCompany(x) & ≠ 100 & ≠ 0 & ≠ 1 & OwnsOneComputer(x))
+                               ^"
+10	Every report has a cover page. ## R-95-103 is a report. ## Smith signed the cover page.	exists x. (Report(x) & HasCoverPage(x)) ## exists x. (Report(x) ↔ R_95_103(x)) ## SignedCoverPage(Smith)	Smith signed the cover page of R-95-103.	SignedCoverPage(smith, r95103)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (Report(x) ↔ R_95_103(x))
+                     ^"
+11	John said Bill had hurt himself.	Said(john, Bill, hurt)	John said Bill had been hurt.	Said(john, bill, hurt)	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all Bill. all hurt. (Said(john, Bill, hurt) -> Said(john, Bill, hurt))
+    ^"
+12	John said Bill had hurt himself.	Said(john, Bill, hurt)	Someone said John had been hurt.	exists x. (Person(x) & Said(x, John) & Hurt(x, John))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Said/3, Said/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Said/3, Said/2"

@@ -1,0 +1,48 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	Smith, Jones and Anderson signed the contract.	exists x. exists y. exists z. (SignedContract(x) & SignedContract(y) & SignedContract(z) & Smith(x) & Jones(y) & Anderson(z))	Jones signed the contract.	SignedContract(jones, contract)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SignedContract/1, SignedContract/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: SignedContract/1, SignedContract/2"
+1	Smith, Jones and several lawyers signed the contract.	exists x. exists y. exists z. (Smith(x) & Jones(y) & Lawyer(z) & SignedContract(x, y, z))	Jones signed the contract.	SignedContract(jones, contract)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SignedContract/3, SignedContract/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: SignedContract/3, SignedContract/2"
+2	Either Smith, Jones or Anderson signed the contract.	SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)	Jones signed the contract.	SignedContract(jones, contract)	n	"Unexpected token: '⊕'.
+SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)
+                      ^"
+3	Either Smith, Jones or Anderson signed the contract.	SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)	If Smith and Anderson did not sign the contract, Jones signed the contract.	exists x. exists y. exists z. (Smith(x) & Anderson(y) & Jones(z) & not (SignedContract(x, y) & SignedContract(y, z)) & SignedContract(z, x))	e	"Unexpected token: '⊕'.
+SignedContract(smith) ⊕ SignedContract(jones) ⊕ SignedContract(anderson)
+                      ^"
+4	Exactly two lawyers and three accountants signed the contract.	exists x. exists y. exists z. (Lawyer(x) & Lawyer(y) & Accountant(z) & SignedContract(x, y, z))	Six lawyers signed the contract.	exists x. exists y. exists z. exists w. exists v. exists u. (Lawyer(x) & Lawyer(y) & Lawyer(z) & Lawyer(w) & Lawyer(v) & Lawyer(u) & SignedContract(x, y, z, w, v, u))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SignedContract/3, SignedContract/6.
+
+
+Fatal error:  The following symbols are used with multiple arities: SignedContract/3, SignedContract/6"
+5	Exactly two lawyers and three accountants signed the contract.	exists x. exists y. exists z. (Lawyer(x) & Lawyer(y) & Accountant(z) & SignedContract(x, y, z))	Six accountants signed the contract.	exists x. exists y. exists z. exists w. exists u. exists v. (Accountant(x) & Accountant(y) & Accountant(z) & Accountant(w) & Accountant(u) & Accountant(v) & SignedContract(x, y, z, w, u, v))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SignedContract/3, SignedContract/6.
+
+
+Fatal error:  The following symbols are used with multiple arities: SignedContract/3, SignedContract/6"
+6	Every representative or client was at the meeting.	exists x. (Representative(x) | Client(x) & AtMeeting(x))	Every representative and every client was at the meeting.	exists x. exists y. (Representative(x) & Client(y) & AtMeeting(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: AtMeeting/1, AtMeeting/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: AtMeeting/1, AtMeeting/2"
+7	All APCOM managers have company cars. ## Jones is an APCOM manager.	exists x. (APCOMManager(x) & HasCompanyCar(x)) ## exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has a company car.	HasCompanyCar(jones)	e	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
+                           ^"
+8	All APCOM managers have company cars. ## Jones is an APCOM manager.	exists x. (APCOMManager(x) & HasCompanyCar(x)) ## exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))	Jones has more than one company car.	exists x. (CompanyCar(x) & Owns(x, Jones))	n	"Unexpected token: '↔'.  Expected token ')'.
+exists x. (APCOMManager(x) ↔ (Person(x) & Manager(x) & WorksForAPCOM(x)))
+                           ^"
+9	Smith signed one contract. ## Jones signed another contract.	exists x. (Contract(x) & SignedBy(x, Smith)) ## exists x. (Contract(x) & SignedBy(x, Jones))	Smith and Jones signed two contracts.	exists x. exists y. (Smith(x) & Jones(y) & Contract(z) & Signed(x, z) & Signed(y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
+10	Smith signed two contracts. ## Jones also signed them.	exists x. exists y. (Smith(x) & Contract(y) & Signed(x, y)) ## exists x. (Signed(x) & (Jones(x) | Smith(x)))	Smith and Jones signed two contracts.	exists x. exists y. (Smith(x) & Jones(y) & Contract(z) & Signed(x, z) & Signed(y, z))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Signed/1, Signed/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Signed/1, Signed/2"

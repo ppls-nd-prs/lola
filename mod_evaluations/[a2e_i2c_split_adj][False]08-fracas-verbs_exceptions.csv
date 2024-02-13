@@ -1,0 +1,6 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	ITEL won the contract from APCOM in 1993.	WonContract(ITEL, APCOM, 1993)	ITEL won a contract in 1993.	WonContract(ITEL, 1993)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WonContract/3, WonContract/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WonContract/3, WonContract/2"

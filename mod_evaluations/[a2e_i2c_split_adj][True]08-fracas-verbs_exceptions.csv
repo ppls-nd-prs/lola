@@ -1,0 +1,9 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	ITEL won the contract from APCOM in 1993.	WonContract(ITEL, APCOM, 1993)	ITEL won a contract in 1993.	WonContract(ITEL, 1993)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WonContract/3, WonContract/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WonContract/3, WonContract/2"
+1	ITEL owned APCOM from 1988 to 1992.	Owned(ITEL, APCOM, 1988) & Owned(ITEL, APCOM, 1989) & Owned(ITEL, APCOM, 1990) & Owned(ITEL, APCOM, 1991) & Owned(ITEL, APCOM, 1992)	ITEL owned APCOM in 1990.	Owned(APCOM, ITEL, 1990)	e	"'ITEL' is an illegal variable name.  Constants may not be quantified.
+all ITEL. all APCOM. all 1988. (Owned(ITEL, APCOM, 1988) -> Owned(ITEL, APCOM, 1988))
+    ^"

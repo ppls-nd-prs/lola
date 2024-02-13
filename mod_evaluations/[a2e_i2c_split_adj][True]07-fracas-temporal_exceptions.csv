@@ -1,0 +1,125 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	ITEL has developed a new editor since 1992. ## It is now 1996.	exists x. (Editor(x) & DevelopedBy(x, ITEL) & Year(x, 1992)) ## Year(1996)	ITEL developed a new editor in 1993.	exists x. (Editor(x) & DevelopedIn(x, 1993) & ITEL(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Year/1, Year/2, ITEL/1, ITEL/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Year/1, Year/2, ITEL/1, ITEL/0"
+1	ITEL has expanded since 1992. ## It is now 1996.	Expanded(ITEL, 1992) ## Year(1996)	ITEL expanded in 1993.	Expanded(ITEL, 1993)	n	"'ITEL' is an illegal variable name.  Constants may not be quantified.
+all ITEL. all 1992. (Expanded(ITEL, 1992) -> Expanded(ITEL, 1992))
+    ^"
+2	Since 1992 ITEL has made a loss. ## It is now 1996.	exists x. (ITEL(x) & Year(y) & Year(z) & Year(w) & (MadeLoss(x, y, z, w)) & (Year(y) & Year(z) & Year(w) & MadeLoss(x, y, z, w))) ## Year(1996)	ITEL made a loss in 1993.	exists x. (ITEL(x) & MadeLoss(x, 1993))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: MadeLoss/4, MadeLoss/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: MadeLoss/4, MadeLoss/2"
+3	The conference started on July 4th, 1994. ## It lasted 2 days.	StartedOn(Conference, 1994, 7, 4) ## Lasted(x, 2)	The conference was over on July 8th, 1994.	Conference(conference) & Over(conference, july8th1994)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Conference/1, Conference/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Conference/1, Conference/0"
+4	Smith left. ## Jones left. ## Smith left before Jones left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## LeftBefore(smith, jones)	Jones left after Smith left.	Left(jones) & Left(smith) & LeftAfter(smith, jones)	e	"'jones' is an illegal variable name.  Constants may not be quantified.
+all jones. (Left(jones) -> Left(jones))
+    ^"
+5	Smith left. ## Jones left. ## Smith left after Jones left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## exists x. exists y. (Smith(x) & Jones(y) & LeftAfter(x, y))	Jones left before Smith left.	LeftBefore(jones, smith)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0"
+6	Smith left. ## Jones left. ## Jones left before Smith left.	exists x. (Person(x) & Left(x, Smith)) ## Left(jones) ## LeftBefore(jones, smith)	Smith left after Jones left.	exists x. exists y. (Smith(x) & Jones(y) & LeftAfter(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Left/1, Left/2, Smith/1, Smith/0"
+7	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract before Smith did.	RevisedContract(jones, contract) ## RevisedContract(smith, contract) ## Revised(Jones, Contract) & not Revised(Smith, Contract)	Smith revised the contract after Jones did.	Revised(Contract, Smith) & not Revised(Contract, Jones)	e	"'Jones' is an illegal variable name.  Constants may not be quantified.
+all Jones. all Contract. (Revised(Jones, Contract) -> Revised(Jones, Contract))
+    ^"
+8	Jones revised the contract. ## Smith revised the contract. ## Jones revised the contract after Smith did.	RevisedContract(jones, contract) ## RevisedContract(smith, contract) ## Revised(jones, contract) & Revised(smith, contract) & not Simultaneous(jones, smith, contract)	Smith revised the contract before Jones did.	Revised(smith) & Contract(smith) & RevisedContract(jones) & Before(smith, jones)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: RevisedContract/2, RevisedContract/1, Revised/2, Revised/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: RevisedContract/2, RevisedContract/1, Revised/2, Revised/1"
+9	Smith swam. ## Jones swam. ## Smith swam before Jones swam.	exists x. (Swimmer(x) & Swam(x, smith)) ## Swam(jones) ## exists x.exists y. (Smith(x) & Jones(y) & SwamBefore(x, y))	Jones swam after Smith swam.	exists x. exists y. (Jones(x) & Smith(y) & SwamAfter(x, y))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Swam/1, Swam/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: Swam/1, Swam/2"
+10	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report before Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## exists x.exists y. (Smith(x) & Report(x) & Jones(y) & Report(y) & exists z. (Writing(z) & Before(z, x) & Writing(z, y)))	Jones was writing a report after Smith was writing a report.	WasWritingReport(jones) & WasWritingReport(smith)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Writing/2, Writing/1, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Writing/2, Writing/1, Smith/1, Smith/0"
+11	Smith was writing a report. ## Jones was writing a report. ## Smith was writing a report after Jones was writing a report.	exists x. (Report(x) & Writer(x, Smith)) ## exists x. (Person(x) & Report(x) & Writing(x)) ## Writing(Smith) & Report(Smith) & WritingReport(Jones)	Jones was writing a report before Smith was writing a report.	exists x.exists y. (Writing(x) & Report(x) & WritingReport(y) & (WritingReportBefore(x, y)))	n	"'Smith' is an illegal variable name.  Constants may not be quantified.
+all Smith. (Writing(Smith) -> Writing(Smith))
+    ^"
+12	Smith left the meeting before he lost his temper.	Left(smith) & Meeting(smith) & not Lost(smith) & Temper(smith)	Smith lost his temper.	Lost(Smith) & Temper(Smith)	n	"'smith' is an illegal variable name.  Constants may not be quantified.
+all smith. (Temper(smith) -> Temper(smith))
+    ^"
+13	Smith discovered a new species in 1991.	exists x. (DiscoveredNewSpecies(x) & Year(x, 1991))	Smith discovered a new species in 1992.	exists x. (DiscoveredSpecies(x) & Year(y) & Year(z) & Year(w) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(	n	"End of input found.  Expression expected.
+exists x. (DiscoveredSpecies(x) & Year(y) & Year(z) & Year(w) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(x) & Year(
+                                                                                                                                                                                                       ^"
+14	Smith wrote a report in two hours.	WroteReport(smith, report, twoHours)	Smith wrote a report in one hour.	WroteReport(smith, oneHour)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WroteReport/3, WroteReport/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WroteReport/3, WroteReport/2"
+15	In two years Smith owned a chain of businesses.	exists x. (TwoYearsAgo(x) & OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business for more than two years.	exists x. (Smith(x) & OwnedChainOfBusiness(x, moreThanTwoYears))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Smith/1, Smith/0"
+16	In two years Smith owned a chain of businesses.	exists x. (TwoYearsAgo(x) & OwnedChainOfBusinesses(x, Smith))	Smith owned a chain of business.	exists x. exists y. (Smith(x) & Business(y) & Owns(x, y))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Smith/1, Smith/0"
+17	Smith lived in Birmingham for two years.	LivedIn(Smith, Birmingham, 2)	Smith lived in Birmingham.	LivedIn(Smith, Birmingham)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: LivedIn/3, LivedIn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: LivedIn/3, LivedIn/2"
+18	Smith wrote a report for two hours.	WroteReport(smith, report, twoHours)	Smith wrote a report for an hour.	WroteReport(smith, hour)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WroteReport/3, WroteReport/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WroteReport/3, WroteReport/2"
+19	Smith discovered new species for two years.	DiscoveredNewSpecies(smith, years)	Smith discovered new species.	exists x. (DiscoveredNewSpecies(x) & Smith(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: DiscoveredNewSpecies/2, DiscoveredNewSpecies/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: DiscoveredNewSpecies/2, DiscoveredNewSpecies/1"
+20	In 1994 ITEL sent a progress report every month.	exists x. (ITEL(x) & Year(y) & Month(z) & Progress(r) & Report(r) & SentProgressReport(x, y, z, r))	ITEL sent a progress report in July 1994.	SentProgressReport(ITEL, July1994)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: SentProgressReport/4, SentProgressReport/2, ITEL/1, ITEL/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: SentProgressReport/4, SentProgressReport/2, ITEL/1, ITEL/0"
+21	Smith wrote to a representative every week.	exists x.exists y. (Smith(x) & Representative(y) & WritesTo(x, y, Weekly))	There is a representative that Smith wrote to every week.	exists x. (Representative(x) & WritesTo(x, Smith) & Weekly(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WritesTo/3, WritesTo/2, Weekly/1, Weekly/0, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: WritesTo/3, WritesTo/2, Weekly/1, Weekly/0, Smith/1, Smith/0"
+22	ITEL always delivers reports late. ## In 1993 ITEL delivered reports.	exists x. (ITEL(x) & DeliversReportsLate(x)) ## exists x. (ITEL(x) & Year(y) & Year(z) & DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	exists x. (ITEL(x) & DeliveredReports(x, 1993) & Late(x, 1993))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2"
+23	ITEL never delivers reports late. ## In 1993 ITEL delivered reports.	exists x. (ITEL(x) & not DeliversReportsLate(x)) ## exists x. (ITEL(x) & Year(y) & Year(z) & DeliveredReports(x, y, z))	ITEL delivered reports late in 1993.	exists x. (ITEL(x) & DeliveredReports(x, 1993) & Late(x, 1993))	c	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: DeliveredReports/3, DeliveredReports/2"
+24	Jones graduated in March and has been employed ever since. ## Jones has been unemployed in the past.	Graduated(Jones, March) & Employed(Jones) ## exists x. (Person(x) & Unemployed(x))	Jones was unemployed at some time before he graduated.	exists x. (Unemployed(x) & Jones(x) & Before(x) & Graduation(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0"
+25	Every representative has read this report. ## No two representatives have read it at the same time. ## No representative took less than half a day to read the report. ## There are sixteen representatives.	exists x. (Representative(x) & Read(x) & Report(x)) ## not exists x.exists y. (Representative(x) & Representative(y) & Read(x, z) & Read(y, z) & Same(z) & Time(z)) ## exists x. (Representative(x) & TookLessThanHalfADay(x) & not Read(x) & Report(x)) ## exists x. (Representative(x) & NumberOfRepresentatives(x, 16))	It took the representatives more than a week to read the report.	exists x. (Representative(x) & Read(x) & Report(x) & MoreThanWeek(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Read/2, Read/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: Read/2, Read/1"
+26	Before APCOM bought its present office building, it had been paying mortgage interest on the previous one for 8 years. ## Since APCOM bought its present office building it has been paying mortgage interest on it for more than 10 years.	exists x. (APCOM(x) & PresentOfficeBuilding(x) & (exists y. (Mortgage(y) & Interest(y) & PreviousOfficeBuilding(y) & PaidFor8Years(x, y)))) ## exists x. (APCOM(x) & BoughtOfficeBuilding(x) & (PayingMortgageInterest(x) & MoreThan10Years(x)))	APCOM has been paying mortgage interest for a total of 15 years or more.	exists x. (APCOM(x) & (PayingMortgageInterest(x) & Years(y) & Total(y) & Years(y) & GreaterThan(y, 15) & PayingMortgageInterest(x, y)))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PayingMortgageInterest/2, PayingMortgageInterest/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: PayingMortgageInterest/2, PayingMortgageInterest/1"
+27	Smith has been to Florence twice in the past. ## Smith will go to Florence twice in the coming year.	exists x. (Smith(x) & HasBeenToFlorenceTwice(x)) ## exists x. (Smith(x) & (GoesToFlorenceTwice(x) & Year(y) & Coming(y) & Year(y)))	Two years from now Smith will have been to Florence at least four times.	TwoYearsFromNow(Smith) & TravelledTo(Smith, Florence) & NumberOfTimes(Smith, Florence, ≥4)	e	'utf-8' codec can't decode byte 0xe2 in position 797: invalid continuation byte

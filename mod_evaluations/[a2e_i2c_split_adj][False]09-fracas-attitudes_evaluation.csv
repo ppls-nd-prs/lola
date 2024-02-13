@@ -1,0 +1,7 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
+0	Smith knew that ITEL had won the contract in 1992.	Knew(Smith, ITEL, WonContractIn(1992))	ITEL won the contract in 1992.	WonContract(ITEL, 1992)	e	False	False
+1	ITEL managed to win the contract in 1992.	ManagedToWinContract(ITEL, 1992)	ITEL won the contract in 1992.	WonContract(ITEL, 1992)	e	False	False
+2	ITEL tried to win the contract in 1992.	TriedToWinContract(ITEL, 1992)	ITEL won the contract in 1992.	WonContract(ITEL, 1992)	n	False	False
+3	It is true that ITEL won the contract in 1992.	WonContract(ITEL, 1992)	ITEL won the contract in 1992.	WonContract(ITEL, 1992)	e	True	False
+4	It is false that ITEL won the contract in 1992.	not WonContract(ITEL, 1992)	ITEL won the contract in 1992.	WonContract(ITEL, 1992)	c	False	True
+5	Smith saw Jones sign the contract.	Saw(Smith, Jones, Contract)	Jones signed the contract.	SignedContract(jones, contract)	e	False	False

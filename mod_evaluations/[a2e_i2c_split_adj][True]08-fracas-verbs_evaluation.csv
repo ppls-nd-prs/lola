@@ -1,0 +1,7 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
+0	ITEL built MTALK in 1993.	BuiltIn(ITEL, MTALK, 1993)	ITEL finished MTALK in 1993.	Finished(ITEL, MTALK, 1993)	e	False	False
+1	ITEL was building MTALK in 1993.	Building(ITEL, MTALK, 1993)	ITEL finished MTALK in 1993.	Finished(ITEL, MTALK, 1993)	n	False	False
+2	ITEL was winning the contract from APCOM in 1993.	WinningContract(ITEL, APCOM, 1993)	ITEL won a contract in 1993.	WonContract(ITEL, 1993)	n	False	False
+3	Smith and Jones left the meeting.	exists x. exists y. (Smith(x) & Jones(y) & Left(x) & Meeting(x) & LeftMeeting(y))	Smith left the meeting.	Left(smith) & Meeting(smith)	e	False	False
+4	Smith and Jones left the meeting.	exists x. exists y. (Smith(x) & Jones(y) & Left(x) & Meeting(x) & LeftMeeting(y))	Jones left the meeting.	Left(jones) & Meeting(jones)	e	False	False
+5	Smith, Anderson and Jones met.	Meeting(smith, anderson, jones)	There was a group of people that met.	exists x.exists y.exists z. (Person(x) & Person(y) & Person(z) & Met(x, y, z))	e	False	False

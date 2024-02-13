@@ -1,0 +1,51 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	An Irishman won the Nobel prize for literature.	exists x. (Irishman(x) & WonNobelPrize(x, Literature))	An Irishman won a Nobel prize.	exists x. (Irishman(x) & WonNobelPrize(x))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WonNobelPrize/2, WonNobelPrize/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: WonNobelPrize/2, WonNobelPrize/1"
+1	Neither commissioner spends a lot of time at home.	not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))	Neither commissioner spends time at home.	exists x. exists y. (Commissioner(x) & Commissioner(y) & not SpendsTimeAtHome(x) & not SpendsTimeAtHome(y))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))
+                                         ^"
+2	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission
+                                     ^"
+3	An Irishman won a Nobel prize.	exists x. (Irishman(x) & WonNobelPrize(x))	An Irishman won the Nobel prize for literature.	exists x. (Irishman(x) & WonNobelPrize(x, Literature))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: WonNobelPrize/1, WonNobelPrize/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: WonNobelPrize/1, WonNobelPrize/2"
+4	A few committee members are from Scandinavia. ## All committee members are people. ## All people who are from Sweden are from Scandinavia.	exists x.exists y.exists z. (Committee(x) & Member(x) & Scandinavia(y) & CommitteeMember(z) & From(x, y) & From(z, y)) ## exists x. (Committee(x) & Member(x) & Person(x)) ## exists x. (Person(x) & From(x) & Sweden(x) & From(x) & Scandinavia(x))	At least a few committee members are from Sweden.	exists x. (Committee(x) & Member(x) & From(x) & Sweden(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: From/2, From/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: From/2, From/1"
+5	Few committee members are from southern Europe. ## All committee members are people. ## All people who are from Portugal are from southern Europe.	exists x. (Committee(x) & Member(x) & FromSouthernEurope(x)) ## exists x. (Committee(x) & Member(x) & Person(x)) ## exists x. (Person(x) & From(x) & Portugal(x) & Southern(x) & European(x))	There are few committee members from Portugal.	exists x. (Committee(x) & Member(x) & From(x, Portugal))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: From/1, From/2, Portugal/1, Portugal/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: From/1, From/2, Portugal/1, Portugal/0"
+6	At most ten commissioners spend time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x, 10))	At most ten commissioners spend a lot of time at home.	exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission	e	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x)) & exists y. (Commissioner(y) & not SpendsA lotOfTimeAtHome(y)) & exists z. (Commissioner(z) & not SpendsA lotOfTimeAtHome(z)) & exists w. (Commissioner(w) & not SpendsA lotOfTimeAtHome(w)) & exists v. (Commission
+                                     ^"
+7	Several Portuguese delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Portuguese(x) & Delegate(x) & Newspaper(y) & National(z) & Results(x) & PublishedIn(x, y) & In(y, z))	Several delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Delegate(x) & Delegate(y) & Delegate(z) & National(n) & Newspaper(n) & Major(m) & PublishedIn(x, n, m) & PublishedIn(y, n, m) & PublishedIn(z, n, m))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PublishedIn/2, PublishedIn/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: PublishedIn/2, PublishedIn/3"
+8	Neither female commissioner spends a lot of time at home.	not exists x. (Commissioner(x) & Female(x) & SpendsA lotOfTimeAtHome(x))	One of the commissioners spends a lot of time at home.	exists x. (Commissioner(x) & SpendsTimeAtHome(x))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+not exists x. (Commissioner(x) & Female(x) & SpendsA lotOfTimeAtHome(x))
+                                                     ^"
+9	Several delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Delegate(x) & Delegate(y) & Delegate(z) & National(n) & Newspaper(n) & Major(m) & PublishedIn(x, n, m) & PublishedIn(y, n, m) & PublishedIn(z, n, m))	Several Portuguese delegates got the results published in major national newspapers.	exists x. exists y. exists z. (Portuguese(x) & Delegate(x) & Newspaper(y) & National(z) & Results(x) & PublishedIn(x, y) & In(y, z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: PublishedIn/3, PublishedIn/2.
+
+
+Fatal error:  The following symbols are used with multiple arities: PublishedIn/3, PublishedIn/2"
+10	A few committee members are from Scandinavia.	exists x.exists y.exists z. (Committee(x) & Member(x) & Scandinavia(y) & CommitteeMember(z) & From(x, y) & From(z, y))	At least a few female committee members are from Scandinavia.	exists x. (FemaleCommitteeMember(x) & From(x) & Scandinavia(x))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: From/2, From/1.
+
+
+Fatal error:  The following symbols are used with multiple arities: From/2, From/1"
+11	Neither commissioner spends a lot of time at home.	not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))	One of the female commissioners spends a lot of time at home.	exists x. (Commissioner(x) & Female(x) & SpendsTimeAtHome(x))	n	"Unexpected token: 'lotOfTimeAtHome'.  Expected token ')'.
+not exists x. (Commissioner(x) & SpendsA lotOfTimeAtHome(x))
+                                         ^"

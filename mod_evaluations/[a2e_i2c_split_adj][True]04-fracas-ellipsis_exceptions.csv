@@ -1,0 +1,120 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	exception
+0	John spoke to Mary. ## So did Bill.	exists x. exists y. (Person(x) & Person(y) & SpokenTo(x, y)) ## Did(bill) & Bill(bill)	Bill spoke to Mary.	exists x. exists y. (Bill(x) & Mary(y) & SpokeTo(x, y))	e	"'bill' is an illegal variable name.  Constants may not be quantified.
+all bill. (Bill(bill) -> Bill(bill))
+    ^"
+1	John spoke to Mary. ## So did Bill. ## John spoke to Mary at four o'clock.	exists x. exists y. (Person(x) & Person(y) & SpokenTo(x, y)) ## Did(bill) & Bill(bill) ## SpokeTo(john, mary, fourOclock)	Bill spoke to Mary at four o'clock.	exists x. exists y. exists z. (Bill(x) & Mary(y) & Four(z) & Oclock(z) & SpokenAt(x, y, z))	n	"'bill' is an illegal variable name.  Constants may not be quantified.
+all bill. (Bill(bill) -> Bill(bill))
+    ^"
+2	John spoke to Mary at four o'clock. ## So did Bill.	SpokeTo(john, mary, fourOclock) ## Did(bill) & Bill(bill)	Bill spoke to Mary at four o'clock.	exists x. exists y. exists z. (Bill(x) & Mary(y) & Four(z) & Oclock(z) & SpokenAt(x, y, z))	e	"'bill' is an illegal variable name.  Constants may not be quantified.
+all bill. (Bill(bill) -> Bill(bill))
+    ^"
+3	John went to Paris by car, and Bill by train.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Train(y) & WentByTrain(x, y))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+4	John went to Paris by car, and Bill by train to Berlin.	exists x.exists y. (John(x) & Bill(y) & (WentToParisByCar(x) & WentToBerlinByTrain(y)))	Bill went to Berlin by train.	WentTo(Bill, Berlin, Train)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+5	John went to Paris by car, and Bill to Berlin.	exists x. exists y. (John(x) & Paris(y) & WentByCar(x, y)) & (Bill(x) & Berlin(y) & WentByCar(x, y))	Bill went to Berlin by car.	WentTo(Bill, Berlin, Car)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Berlin/1, Berlin/0, Bill/1, Bill/0"
+6	John went to Paris by car. ## Bill by train.	WentToParisByCar(john) ## exists x. (Train(x) & Bill(x))	Bill went to Paris by train.	WentToParisByTrain(Bill)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Bill/1, Bill/0"
+7	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	Bill owns a car.	Owns(bill) & Car(bill)	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. (Car(john) -> Car(john))
+    ^"
+8	John owns a car. ## Bill owns one too.	Owns(john) & Car(john) ## exists x. (Person(x) & Owns(x, 1))	There is a car that John and Bill own.	exists x. (Car(x) & OwnedBy(x, John) & OwnedBy(x, Bill))	n	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. (Car(john) -> Car(john))
+    ^"
+9	John owns a red car. ## Bill owns a blue one.	Owns(john, redCar) ## exists x. (Person(x) & Owns(x, BlueOne))	Bill owns a blue car.	Owns(Bill, BlueCar)	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
+    ^"
+10	John owns a red car. ## Bill owns a blue one.	Owns(john, redCar) ## exists x. (Person(x) & Owns(x, BlueOne))	Bill owns a red car.	Owns(Bill, RedCar)	n	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
+    ^"
+11	John owns a red car. ## Bill owns a fast one.	Owns(john, redCar) ## exists x. (Fast(x) & One(x) & Owns(Bill, x))	Bill owns a fast car.	exists x. (Car(x) & Fast(x) & Owns(bill, x))	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
+    ^"
+12	John owns a red car. ## Bill owns a fast one.	Owns(john, redCar) ## exists x. (Fast(x) & One(x) & Owns(Bill, x))	Bill owns a fast red car.	exists x. (Car(x) & Owns(bill, x) & Fast(x) & Red(x))	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
+    ^"
+13	John owns a red car. ## Bill owns a fast one.	Owns(john, redCar) ## exists x. (Fast(x) & One(x) & Owns(Bill, x))	Bill owns a fast red car.	exists x. (Car(x) & Owns(bill, x) & Fast(x) & Red(x))	n	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all redCar. (Owns(john, redCar) -> Owns(john, redCar))
+    ^"
+14	John owns a fast red car. ## Bill owns a slow one.	Owns(john, fastRedCar) ## exists x. (Person(x) & Slow(x) & One(x))	Bill owns a slow red car.	exists x. (Car(x) & Owns(bill, x) & Slow(x) & Red(x))	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. all fastRedCar. (Owns(john, fastRedCar) -> Owns(john, fastRedCar))
+    ^"
+15	Five men work part time. ## And forty five women.	exists x. exists y. exists z. exists w. exists v. (Man(x) & Man(y) & Man(z) & Man(w) & Man(v) & WorkPartTime(x) & WorkPartTime(y) & WorkPartTime(z) & WorkPartTime(w) & WorkPartTime(v)) ## exists x. (Woman(x) & Age(x, 45))	Forty five women work part time.	exists x. (WorkPartTime(x) & Woman(x) & Age(x, 45))	e	"'45' is an illegal variable name.  Constants may not be quantified.
+all x. all 45. (Age(x, 45) -> Age(x, 45))
+           ^"
+16	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before Bill found Mary.	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & Found(x, z) & Found(y, z) & FoundBefore(x, y))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+all John. all Mary. (Found(John, Mary) -> Found(John, Mary))
+    ^"
+17	John found Mary before Bill.	Found(John, Mary) & Found(Bill, Mary) & not Found(John, Bill) & not Found(Bill, John)	John found Mary before John found Bill.	exists x. exists y. exists z. (Person(x) & Person(y) & Person(z) & Found(x, y) & Found(x, z) & FoundBefore(y, z))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+all John. all Mary. (Found(John, Mary) -> Found(John, Mary))
+    ^"
+18	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3, Mary/1, Mary/0, Bill/1, Bill/0"
+19	John said Mary wrote a report, and Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y) & Said(x, z)))	John said Bill wrote a report.	Said(john, bill, wroteReport)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Said/2, Said/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Said/2, Said/3"
+20	John said that Mary wrote a report, and that Bill did too.	exists x. exists y. exists z. (John(x) & Mary(y) & Bill(z) & (Said(x, y, Report) & Said(x, z, Report)))	Bill said Mary wrote a report.	Said(Bill, Mary, WroteReport)	n	"'Report' is an illegal variable name.  Constants may not be quantified.
+all x. all y. all Report. (Said(x, y, Report) -> Said(x, y, Report))
+                  ^"
+21	John wrote a report, and Bill said Peter did too.	exists x. exists y. exists z. (John(x) & Report(y) & Bill(z) & (Wrote(x, y) & Said(z, Peter, DidToo)))	Bill said Peter wrote a report.	Said(bill, peter, wroteReport)	e	"'Peter' is an illegal variable name.  Constants may not be quantified.
+all z. all Peter. all DidToo. (Said(z, Peter, DidToo) -> Said(z, Peter, DidToo))
+           ^"
+22	If John wrote a report, then Bill did too. ## John wrote a report.	exists x.exists y. (Wrote(x) & Report(x) & WroteReport(y) & Person(x) & Person(y) & DidReport(x, y)) ## exists x. (Report(x) & Wrote(John, x))	Bill wrote a report.	exists x. (Report(x) & Wrote(bill, x))	e	"'John' is an illegal variable name.  Constants may not be quantified.
+all John. all x. (Wrote(John, x) -> Wrote(John, x))
+    ^"
+23	John wanted to buy a car, and he did.	WantedToBuyCar(john) & Bought(john) & Car(john)	John bought a car.	exists x. (Car(x) & BoughtBy(x, John))	e	"'john' is an illegal variable name.  Constants may not be quantified.
+all john. (Car(john) -> Car(john))
+    ^"
+24	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Jones' company.	Represents(Jones, JonesCompany)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0"
+25	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Jones represents Smith's company.	Represents(Jones, Smith) & Represents(Jones, Company)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Company/1, Company/0, Smith/1, Smith/0, Jones/1, Jones/0"
+26	Smith represents his company and so does Jones.	exists x.exists y. (Smith(x) & Company(y) & Represents(x, y)) & (Jones(x) & Company(y) & Represents(x, y))	Smith represents Jones' company.	Represents(Smith, Jones)	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Jones/1, Jones/0, Smith/1, Smith/0"
+27	John is a man and Mary is a woman. ## John represents his company and so does Mary.	exists x. exists y. (Man(x) & Woman(y) & (John(x) & Mary(y))) ## exists x.exists y. (John(x) & Mary(y) & (Represents(x) & Company(x) & RepresentsCompany(y)))	Mary represents John's company.	Represents(Mary, John) & Represents(Mary, Company)	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Represents/1, Represents/2, Company/1, Company/0, John/1, John/0, Mary/1, Mary/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Represents/1, Represents/2, Company/1, Company/0, John/1, John/0, Mary/1, Mary/0"
+28	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank should go together, it was suggested that Carl and Alan's wife should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Suggested(y, w) & (Bill(x) & Frank(y) & Carl(z) & Alan(w)))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Suggested/2, Suggested/3.
+
+
+Fatal error:  The following symbols are used with multiple arities: Suggested/2, Suggested/3"
+29	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill and Frank's boss should go together, it was suggested that Carl and Alan should go together.	exists x. exists y. exists z. exists w. (Suggested(x, y, z) & Boss(y) & Bill(x) & Frank(y) & Suggested(w, z, Alan) & Carl(w) & Boss(z))	n	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Alan/1, Alan/0"
+30	Bill suggested to Frank's boss that they should go to the meeting together, and Carl to Alan's wife.	exists x.exists y.exists z. (Bill(x) & Frank(y) & Alan(z) & (SuggestedTo(x, y, z) & not SuggestedTo(x, z, y)))	If it was suggested that Bill, Frank and Frank's boss should go together, it was suggested that Carl, Alan and Alan's wife should go together.	exists x. exists y. exists z. (Suggested(x, y, z) & Bill(x) & Frank(y) & Frank(z) & Boss(z) & Suggested(Carl, Alan, AlanWife))	e	"(FATAL)
+%%ERROR: The following symbols are used with multiple arities: Alan/1, Alan/0.
+
+
+Fatal error:  The following symbols are used with multiple arities: Alan/1, Alan/0"

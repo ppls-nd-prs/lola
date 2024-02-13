@@ -145,7 +145,8 @@ elif re.search(r'fracas',dataset_name):
     judgment_dict = {"yes":"e","no":"c","undef":"n","unknown":"n"}
     dataset_path = f"datasets/fracas/{dataset_name}.csv"
 elif dataset_name == "syllogisms":
-    pred_size = input("What is the pred size? (1,2,3)")
+    pred_size = "3" 
+    #input("What is the pred size? (1,2,3)")
     dataset_name = f"syllogisms-{pred_size}-pred"
     dataset_path = f"datasets/syllogisms/syllogisms-{pred_size}-pred.csv"
     # set modification type

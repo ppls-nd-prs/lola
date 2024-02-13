@@ -1,0 +1,13 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
+0	John has a genuine diamond.	exists x. (Diamond(x) & Genuine(x) & OwnedBy(x, John))	John has a diamond.	Has(john) & Diamond(john)	e	False	False
+1	John is a successful former university student.	SuccessfulFormerStudent(john)	John is successful.	Successful(john)	e	False	False
+2	John is a former successful university student.	FormerSuccessfulStudent(john)	John is successful.	Successful(john)	n	False	False
+3	John is a former successful university student.	FormerSuccessfulStudent(john)	John is a university student.	University(john) & Student(john)	n	False	False
+4	Every mammal is an animal.	exists x. (Mammal(x) & Animal(x))	Every four-legged mammal is a four-legged animal.	exists x. (FourLeggedMammal(x) & FourLeggedAnimal(x))	e	False	False
+5	Dumbo is a four-legged animal.	FourLeggedAnimal(dumbo)	Dumbo is four-legged.	Four(dumbo) & Legged(dumbo)	e	False	False
+6	Mickey is a small animal.	exists x. (Animal(x) & Small(x) & Mickey(x))	Mickey is a large animal.	Large(mickey) & Animal(mickey)	c	False	False
+7	Fido is not a small animal.	exists x. (Animal(x) & Small(x) & not Fido(x))	Fido is a large animal.	Large(fido) & Animal(fido)	n	False	False
+8	Fido is not a large animal.	exists x. (Animal(x) & Large(x) & not Fido(x))	Fido is a small animal.	Small(fido) & Animal(fido)	n	False	False
+9	All mice are small animals. ## All elephants are large animals. ## Mickey is a large mouse. ## Dumbo is a small elephant.	exists x. (Mouse(x) & Small(x) & Animal(x)) ## exists x. (Elephant(x) & Large(x) & Animal(x)) ## Large(mickey) & Mouse(mickey) ## Small(dumbo) & Elephant(dumbo)	Dumbo is larger than Mickey.	Larger(Dumbo, Mickey)	e	False	False
+10	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	exists x. (Legal(x) & Authority(x) & Law(x) & Lecturer(x)) ## exists x. (Law(x) & Lecturer(x) & Legal(x) & Authority(x))	All fat legal authorities are fat law lecturers.	exists x. (FatLegalAuthority(x) & FatLawLecturer(x))	e	False	False
+11	All legal authorities are law lecturers. ## All law lecturers are legal authorities.	exists x. (Legal(x) & Authority(x) & Law(x) & Lecturer(x)) ## exists x. (Law(x) & Lecturer(x) & Legal(x) & Authority(x))	All competent legal authorities are competent law lecturers.	exists x. (CompetentLegalAuthority(x) & Law(x) & Lecturer(x))	n	False	False

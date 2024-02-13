@@ -1,0 +1,15 @@
+	nl_ps	fol_ps	nl_h	fol_h	label	e_pred	c_pred
+0	The PC-6082 is faster than the ITEL-XZ.	Faster(PC_6082, ITEL_XZ)	The PC-6082 is fast.	Fast(PC6082)	n	False	False
+1	The PC-6082 is faster than the ITEL-XZ. ## The PC-6082 is slow.	Faster(PC_6082, ITEL_XZ) ## exists x. (P(x) & C6082(x) & Slow(x))	The ITEL-XZ is fast.	Fast(ITELXZ)	c	False	False
+2	The PC-6082 is as fast as the ITEL-XZ.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y))	The PC-6082 is fast.	Fast(PC6082)	n	False	False
+3	The PC-6082 is as fast as the ITEL-XZ.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y))	The PC-6082 is faster than the ITEL-XZ.	Faster(PC_6082, ITEL_XZ)	n	False	False
+4	The PC-6082 is as fast as the ITEL-XZ.	exists x.exists y. (P(x) & C6082(x) & ITELXZ(y) & AsFastAs(x, y))	The PC-6082 is slower than the ITEL-XZ.	exists x. exists y. (PC_6082(x) & ITEL_XZ(y) & SlowerThan(x, y))	c	False	False
+5	ITEL won more orders than APCOM did.	MoreOrders(ITEL, APCOM)	ITEL won some orders.	exists x. (Order(x) & Won(x, ITEL))	e	False	False
+6	ITEL won more orders than APCOM.	MoreOrders(ITEL, APCOM)	ITEL won some orders.	exists x. (Order(x) & Won(x, ITEL))	e	False	False
+7	ITEL won more orders than the APCOM contract.	MoreOrders(ITEL, APCOM)	ITEL won the APCOM contract.	WonAPCOMContract(ITEL)	e	False	False
+8	ITEL won more orders than the APCOM contract.	MoreOrders(ITEL, APCOM)	ITEL won more than one order.	exists x. (Order(x) & Won(ITEL, x))	e	False	False
+9	ITEL won more orders than APCOM lost.	MoreOrdersWon(ITEL, APCOM)	ITEL won some orders.	exists x. (Order(x) & Won(x, ITEL))	e	False	False
+10	ITEL won more orders than APCOM lost. ## APCOM lost ten orders.	MoreOrdersWon(ITEL, APCOM) ## LostOrders(APCOM, 10)	ITEL won at least eleven orders.	exists x. (Order(x) & Won(x, ITEL))	e	False	False
+11	The PC-6082 is faster than 500 MIPS. ## The ITEL-ZX is slower than 500 MIPS.	FasterThan(PC6082, 500MIPS) ## exists x. (ITELZX(x) & SlowerThan500MIPS(x))	The PC-6082 is faster than the ITEL-ZX.	Faster(PC_6082, ITEL_ZX)	e	False	False
+12	APCOM has a more important customer than ITEL.	exists x.exists y. (APCOM(x) & ITEL(y) & MoreImportantCustomer(x, y))	APCOM has a more important customer than ITEL is.	exists x.exists y. (APCOM(x) & ITEL(y) & MoreImportantCustomer(x, y))	e	True	False
+13	APCOM has a more important customer than ITEL.	exists x.exists y. (APCOM(x) & ITEL(y) & MoreImportantCustomer(x, y))	APCOM has a more important customer than ITEL has.	exists x.exists y. (APCOM(x) & ITEL(y) & MoreImportantCustomer(x, y))	e	True	False
