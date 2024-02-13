@@ -12,7 +12,8 @@ Now the evaluation of the LogicLLaMA translations can be performed by running
 The evaluations for this research can be found in these folders as well.
 
 Finally, the confusion matrices for the evaluations can be computed by running <code>get_conf_mats.py</code>. <br>
-The confusion matrices for this research can be found in both evaluation folders and are marked with "[metrics]" at the end of the file name.  
+The confusion matrices for this research can be found in both evaluation folders and are marked with "[metrics]" at the end of the file name. <br>
+The overall percentage that's correctly classified for all datasets with a "[metrics]" file can be obtained by running <code>get_overall_score.py</code>. This will give you a file <code>overall_scores.csv</code> which contains the scores in descending order. Note that any datset with "train" or "test" in the name is left out.
 
 ### Specifics for various files
 Here we specify how to run various files.
@@ -29,7 +30,7 @@ Follow the examples in the notebook to create a new dictionary with your desired
 ---
 
 #### <code>get_preds.py</code>: <br>
-Run in command line with: <code>python</code> <code>get_preds.py</code> <code>*Data-set*</code> <code>*modification-id*</code> <code>*lexical-knowledge*</code>
+Run with: <code>python</code> <code>get_preds.py</code> <code>*Data-set*</code> <code>*modification-id*</code> <code>*lexical-knowledge*</code>
 
 <code>*Data-set*</code>: name of any file in (a folder in) the <code>datasets</code> folder <br>
 <code>*modification-id*</code>: see <code>README.md</code> in the <code>mod_dictionaries</code> folder. <br>
@@ -40,9 +41,14 @@ Note: this file makes use of Prover9, which needs Linux. For a way to run this c
 ---
 
 #### <code>get_conf_mats.py</code>: <br>
-Run in command line with: <code>python</code> <code>get_conf_mats.py</code> <code>*File name*</code> 
+Run with: <code>python</code> <code>get_conf_mats.py</code> <code>*File name*</code> 
 
 <code>*File name*</code>: file path of any CSV evaluations file.
+
+---
+
+#### <code>get_overall_score.py</code>: <br>
+Run without any arguments.  
 
 ---
 ---
