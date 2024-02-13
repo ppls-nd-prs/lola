@@ -28,6 +28,7 @@ for f in os.listdir("mod_evaluations"):
         scores[name] = get_scores(path)
 
 scores = scores.T
+scores = scores.sort_values(by='correctly classified', ascending=False)
 
-scores.to_csv('overall_scores.csv')
+scores = scores.to_csv('overall_scores.csv', sep = '\t')
 
