@@ -1,57 +1,57 @@
-,correctly classified
-fracas-full_evaluation,0.42105263157894735
-syllogisms-1-pred_evaluation,1.0
-08-fracas-verbs_evaluation,0.2857142857142857
-09-fracas-attitudes_evaluation,0.5
-syllogisms-3-pred_evaluation,0.9296875
-06-fracas-comparatives_evaluation,0.3333333333333333
-syllogisms-2-pred_evaluation,0.9765625
-05-fracas-adjectives_evaluation,0.42857142857142855
-01-fracas-quantifier_evaluation,0.6197183098591549
-02-fracas-plural_evaluation,0.5454545454545454
-07-fracas-temporal_evaluation,0.3541666666666667
-03-fracas-anaphora_evaluation,0.125
-04-fracas-ellipsis_evaluation,0.24390243902439024
-sick_test_evaluation,0.6341825902335456
-[a2e_i2c_split_adj][False]fracas-full_evaluation,0.3983402489626556
-[e_i2c][True]syllogisms-3-pred_evaluation,1.0
-[a2e][True]syllogisms-3-pred_evaluation,0.7734375
-[a2e_i2c_split_adj][True]sick_test_evaluation,0.6837219832465474
-[e_i2c_split_adj][True]syllogisms-3-pred_evaluation,1.0
-[e_i2c][False]syllogisms-3-pred_evaluation,0.953125
-[split_adj][True]fracas-full_evaluation,0.44711538461538464
-[i2c_a2e][False]sick_test_evaluation,0.638004246284501
-[split_verb][False]sick_test_evaluation,0.6326484533754798
-[split_adj][False]fracas-full_evaluation,0.43568464730290457
-[e_i2c_split_adj][True]fracas-full_evaluation,0.44711538461538464
-[none][True]fracas-full_evaluation,0.42035398230088494
-[e_i2c][False]sick_test_evaluation,0.6341825902335456
-[split_verb][True]sick_test_evaluation,0.6496888684028578
-[split_adj][True]sick_test_evaluation,0.6721756848539733
-[a2e_i2c_split_adj][False]sick_test_evaluation,0.6645865834633385
-[none][True]syllogisms-3-pred_evaluation,0.9765625
-[e_i2c][True]fracas-full_evaluation,0.42035398230088494
-[split_verb][False]fracas-full_evaluation,0.4025423728813559
-[e_i2c][True]sick_test_evaluation,0.6478691347395609
-[a2e][True]sick_test_evaluation,0.6489453293155403
-[i2c_a2e][True]fracas-full_evaluation,0.37610619469026546
-[i2c_a2e][False]fracas-full_evaluation,0.3765182186234818
-[e_i2c_split_adj][False]sick_test_evaluation,0.6558948072208602
-[a2e][False]syllogisms-3-pred_evaluation,0.76953125
-[split_adj][False]01-fracas-quantifier_evaluation,0.6764705882352942
-[a2e_i2c_split_adj][True]fracas-full_evaluation,0.40865384615384615
-[split_adj][True]syllogisms-3-pred_evaluation,0.9765625
-[i2c_a2e][True]syllogisms-3-pred_evaluation,0.8828125
-[split_adj][False]sick_test_evaluation,0.6558948072208602
-[none][True]sick_test_evaluation,0.6478691347395609
-[split_adj][False]syllogisms-3-pred_evaluation,0.9296875
-[i2c_a2e][False]syllogisms-3-pred_evaluation,0.8828125
-[e_i2c_split_adj][False]syllogisms-3-pred_evaluation,0.953125
-[split_verb][False]syllogisms-3-pred_evaluation,0.8828125
-[e_i2c][False]fracas-full_evaluation,0.42105263157894735
-[a2e][False]sick_test_evaluation,0.6350318471337579
-[split_verb][True]fracas-full_evaluation,0.40375586854460094
-[i2c_a2e][True]sick_test_evaluation,0.6538958243650452
-[e_i2c_split_adj][True]sick_test_evaluation,0.6721756848539733
-[e_i2c_split_adj][False]fracas-full_evaluation,0.43568464730290457
-[split_verb][True]syllogisms-3-pred_evaluation,0.8828125
+	correctly classified
+[e_i2c_split_adj][True]syllogisms-3-pred_evaluation	1.0
+[e_i2c][True]syllogisms-3-pred_evaluation	1.0
+syllogisms-1-pred_evaluation	1.0
+[split_adj][True]syllogisms-3-pred_evaluation	0.9765625
+syllogisms-2-pred_evaluation	0.9765625
+[none][True]syllogisms-3-pred_evaluation	0.9765625
+[e_i2c_split_adj][False]syllogisms-3-pred_evaluation	0.953125
+[e_i2c][False]syllogisms-3-pred_evaluation	0.953125
+syllogisms-3-pred_evaluation	0.9296875
+[split_adj][False]syllogisms-3-pred_evaluation	0.9296875
+[split_verb][True]syllogisms-3-pred_evaluation	0.8828125
+[i2c_a2e][False]syllogisms-3-pred_evaluation	0.8828125
+[split_verb][False]syllogisms-3-pred_evaluation	0.8828125
+[i2c_a2e][True]syllogisms-3-pred_evaluation	0.8828125
+[a2e][True]syllogisms-3-pred_evaluation	0.7734375
+[a2e][False]syllogisms-3-pred_evaluation	0.76953125
+[a2e_i2c_split_adj][True]sick_test_evaluation	0.6837219832465474
+[split_adj][False]01-fracas-quantifier_evaluation	0.6764705882352942
+[e_i2c_split_adj][True]sick_test_evaluation	0.6721756848539733
+[split_adj][True]sick_test_evaluation	0.6721756848539733
+[a2e_i2c_split_adj][False]sick_test_evaluation	0.6645865834633385
+[split_adj][False]sick_test_evaluation	0.6558948072208602
+[e_i2c_split_adj][False]sick_test_evaluation	0.6558948072208602
+[i2c_a2e][True]sick_test_evaluation	0.6538958243650452
+[split_verb][True]sick_test_evaluation	0.6496888684028578
+[a2e][True]sick_test_evaluation	0.6489453293155403
+[none][True]sick_test_evaluation	0.6478691347395609
+[e_i2c][True]sick_test_evaluation	0.6478691347395609
+[i2c_a2e][False]sick_test_evaluation	0.638004246284501
+[a2e][False]sick_test_evaluation	0.6350318471337579
+sick_test_evaluation	0.6341825902335456
+[e_i2c][False]sick_test_evaluation	0.6341825902335456
+[split_verb][False]sick_test_evaluation	0.6326484533754798
+01-fracas-quantifier_evaluation	0.6197183098591549
+02-fracas-plural_evaluation	0.5454545454545454
+09-fracas-attitudes_evaluation	0.5
+[e_i2c_split_adj][True]fracas-full_evaluation	0.44711538461538464
+[split_adj][True]fracas-full_evaluation	0.44711538461538464
+[e_i2c_split_adj][False]fracas-full_evaluation	0.43568464730290457
+[split_adj][False]fracas-full_evaluation	0.43568464730290457
+05-fracas-adjectives_evaluation	0.42857142857142855
+[e_i2c][False]fracas-full_evaluation	0.42105263157894735
+fracas-full_evaluation	0.42105263157894735
+[e_i2c][True]fracas-full_evaluation	0.42035398230088494
+[none][True]fracas-full_evaluation	0.42035398230088494
+[a2e_i2c_split_adj][True]fracas-full_evaluation	0.40865384615384615
+[split_verb][True]fracas-full_evaluation	0.40375586854460094
+[split_verb][False]fracas-full_evaluation	0.4025423728813559
+[a2e_i2c_split_adj][False]fracas-full_evaluation	0.3983402489626556
+[i2c_a2e][False]fracas-full_evaluation	0.3765182186234818
+[i2c_a2e][True]fracas-full_evaluation	0.37610619469026546
+07-fracas-temporal_evaluation	0.3541666666666667
+06-fracas-comparatives_evaluation	0.3333333333333333
+08-fracas-verbs_evaluation	0.2857142857142857
+04-fracas-ellipsis_evaluation	0.24390243902439024
+03-fracas-anaphora_evaluation	0.125
