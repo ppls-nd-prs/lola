@@ -1,4 +1,10 @@
 # LoLa
+
+| True/Pred | Pos | Neg |
+|-----------|-----|-----|
+|       Pos |159 |     |
+|-----------|-----|-----|
+|       Neg |     |     |
 This repository contains the necessary code for the research *Beyond Translation: An Evaluatory Study of LogicLLaMA's Performance for Natural Language Inference*.
 
 Dictionaries containing the FOL translation as predicted by the LogicLLaMA model can be obtained by running the notebook Dictionary-Creator (https://colab.research.google.com/drive/17aHKSSeDpQvHjzoGQdrKQVbO1sCNwjkX?usp=sharing). The notebook can be either run directly or one can copy it to their own Google Drive to edit and customize for alternative datasets. For backup purposes, Dictionary-Creator outputs small subsets of the full dictionary for the SICK and FraCaS datasets. These dictionaries can be merged by customizing and running the code in <code>merge_dictionaries.py</code>. <br>
