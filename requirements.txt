@@ -60,7 +60,7 @@ srsly==2.4.8
 stack-data==0.6.3
 sympy==1.12
 thinc==8.2.3
-torch==2.2.0
+torch==2.13.0
 tornado==6.4
 tqdm==4.66.1
 traitlets==5.14.1
